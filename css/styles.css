@@ -15,6 +15,26 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+.double-slash {
+	color: red;
+}
+
+.intro {
+	font-family: 'Oswald', sans-serif;
+	font-weight: bolder;
+	font-size: 600%;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+.intro-nav {
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	margin-top: 15em;
+	text-transform: uppercase;
+}
+
 .section {
 	display: flex;
 	justify-content: center;
@@ -29,9 +49,19 @@
 	background-color: #4c69f6;
 }
 
+.sub-intro {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.001em;
+	font-weight: bold;
+	font-size: 150%;
+	display: block;
+	text-align: center;
+}
+
 .sub-title-text {
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
+	margin: auto;
 }
 
 .title-text {
@@ -42,7 +72,7 @@
 	margin: auto;
 }
 
-.title-text::after {
+.vspace {
 	content: '\a';
 	white-space: pre;
 }
