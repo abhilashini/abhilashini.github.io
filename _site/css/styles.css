@@ -12,9 +12,9 @@
 .about-right-panel {
 	width: 90%;
 	height: 90%;
-	margin-top: 2em;
+	margin-top: 4em;
 	margin-right: -10em;
-	padding: 6em 3em 6em 3em;
+	padding: 6em 3em 6em 5em;
 	background-color: #FED8B1;
 	border-radius: 50px;
 }
@@ -82,6 +82,14 @@
 	font-weight: bold;
 	font-size: 20px;
 	color: #3C1414;
+}
+
+.copyright {
+	bottom: 5px;
+	right: 5px;
+	font-size: 10px;
+	position: fixed;
+	text-transform: uppercase;
 }
 
 .empty-block {
@@ -178,6 +186,41 @@
 	.hero-title {
 		-webkit-text-stroke: 1px #3C1414;
 	}
+}
+
+@media screen and (max-width: 640px) {
+	body {
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		padding: 0.5em;
+	}
+
+	.copyright {
+		margin-left: 12em;
+		margin-right: 12em;
+		font-size: 8px;
+	}
+
+	.hero-block {
+		display: block;
+		margin: auto;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-title {
+		font-size: 35px;
+		text-align: center;
+	}
+
+	.hero-block-img {
+		height: 100px;
+		width: 100px;
+		display: block;
+	}	
 }
 
 .highlight-bar {
@@ -320,14 +363,6 @@ i.fab, i.fas {
 @media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
 	.sidenav a {font-size: 10px;}
-}
-
-.copyright {
-	bottom: 5px;
-	right: 5px;
-	font-size: 10px;
-	position: fixed;
-	text-transform: uppercase;
 }
 
 .text-center {
