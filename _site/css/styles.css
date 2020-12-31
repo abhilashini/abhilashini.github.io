@@ -345,7 +345,7 @@ i.fab, i.fas {
 	padding: 20px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 640px) and (min-width: 300px) {
 	body {
 		text-align: center;
 		justify-content: center;
