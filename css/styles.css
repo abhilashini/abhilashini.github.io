@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;800&family=Open+Sans&display=swap");
 
 .about-left-panel {
+	padding: 3em;
 	width: 100%;
 }
 
@@ -48,6 +49,10 @@
 	border-left: 3px solid #3C1414;
 	border-bottom: 3px solid #3C1414;
 	border-radius: 1em;*/
+}
+
+.card {
+	border-color: #3C1414;
 }
 
 .col-sm-3 ul li {
