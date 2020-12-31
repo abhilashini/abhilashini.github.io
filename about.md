@@ -1,16 +1,26 @@
 ---
-layout: page
+layout: landing
 title: About
 permalink: /about/
-order: 3
+order: 4
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+<div class="row">
+	<div class="col-lg-9 about-left-panel">
+	</div>
+	<div class="col-lg-3 about-right-panel">
+		<img src="/images/SleekDoodle.svg" height="250px" width="250px">
+		<embed src="/Abhilashini A J Resume.pdf" width="300px" height="500px" class="resume" />
+	</div>
+</div>
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+<nav class="nav">
+	<a href="/">Home</a>
+	<a href="/projects">Projects</a>
+	<a href="/other_works">Other Works</a>
+	<a href="{{ page.url | prepend: site.baseurl }}" class="active">About</a>
+</nav>
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+<span class="copyright">
+	Site created by Abhilashini A J &copy; 2020
+</span>
