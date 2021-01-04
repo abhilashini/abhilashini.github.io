@@ -10,8 +10,8 @@ order: 2
 	<div class="flex-column">
 		<span class="projects-section-title">Python Web</span>
 			<ul class="projects-list">
-				<li><a href="">Ingredients Analyser</a></li>
-				<li><a href="">SMS Gita</a></li>
+				<li><a href="https://github.com/abhilashini/IngredientsAnalyser">Ingredients Analyser</a></li>
+				<li><a href="https://github.com/abhilashini/sms_bhagavad_gita">SMS Gita</a></li>
 			</ul>
 	</div>
 	<div class="flex-column">
@@ -25,19 +25,19 @@ order: 2
 	<div class="flex-column">
 		<span class="projects-section-title">Andrdoid with Python</span>
 			<ul class="projects-list">
-				<li><a href="">Basic Calculator</a></li>
-				<li><a href="">Pong</a></li>
+				<li><a href="https://github.com/abhilashini/KivyCalculator">Basic Calculator</a></li>
+				<li><a href="https://github.com/abhilashini/KivyPong">Pong Arcade Game</a></li>
 			</ul>
 	</div>
 	<div class="flex-column">
 		<span class="projects-section-title">Python Games</span>
 			<ul class="projects-list">
-				<li><a href="#">Snake</a></li>
-				<li><a href="#">Turtle Crossing</a></li>
-				<li><a href="#">Pong</a></li>
-				<li><a href="#">Identify US States</a></li>
-				<li><a href="#">Identify India States</a></li>
-				<li><a href="#">Rock Paper Scissors (CLI)</a></li>
+				<li><a href="https://github.com/abhilashini/games/tree/main/snake_game">Snake</a></li>
+				<li><a href="https://github.com/abhilashini/games/tree/main/turtle_crossing">Turtle Crossing</a></li>
+				<li><a href="https://github.com/abhilashini/games/tree/main/pong">Pong</a></li>
+				<li><a href="https://github.com/abhilashini/games/tree/main/identify_the_states">Identify US States</a></li>
+				<li><a href="https://github.com/abhilashini/games/tree/main/identify_the_states">Identify India States</a></li>
+				<li><a href="https://github.com/abhilashini/games/blob/main/rock_paper_scissors.py">Rock Paper Scissors (CLI)</a></li>
 				<li><a href="#">Hangman (CLI)</a></li>
 			</ul>
 	</div>
