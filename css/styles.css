@@ -178,6 +178,64 @@ img.projects-corner {
 	color: #3C1414;
 }
 
+.other-works-corner-img {
+	/*background: url('/images/LayingDoodle.svg') left bottom no-repeat;*/
+	bottom: 0;
+	left: 0;
+	margin-left: -5em;
+	height: 30%;
+	width: 30%;
+	position: fixed;
+}
+
+.other-works-flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1em;
+}
+
+.other-works-flex-sm-column {
+	flex: 20%;
+}
+
+.other-works-flex-lg-column {
+	flex: 80%;
+}
+
+.sidenav {
+	height: 100%;
+	width: 10%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	text-align: right;
+}
+
+.sidenav a {
+	font-family: "Dosis", sans-serif;
+	font-weight: bold;
+	padding: 0.7em 0;
+	text-decoration: none;
+	font-size: 20px;
+	color: #3C1414;
+	display: block;
+}
+
+.sidenav a:hover {
+	color: #000;
+}
+
+.wip {
+	font-family: "Dosis", sans-serif;
+	text-align: center;
+	background-color: #FED8B1;
+	border-radius: 50px;
+	margin-top: 2em;
+	padding: 20px;
+}
+
 @media (max-width: 800px) {
 
 	.about-flex-column {
@@ -317,6 +375,52 @@ img.projects-corner {
 		width: 10em;
 		height: 10em;
 	}
+
+	/* OTHER WORKS PAGE STYLING */
+	.other-works-corner-img {
+		bottom: 0;
+		left: 30%;
+		margin-left: auto;
+		margin-right: auto;
+		height: 40%;
+		width: 40%;
+		/*position: fixed;*/
+	}
+	.other-works-flex-sm-column {
+		flex: 100%;
+		margin-bottom: -10em;
+	}
+
+	.other-works-flex-lg-column {
+		flex: 100%;
+	}
+
+	.sidenav {
+		padding: 0.3em;
+		display: inline;
+		height: 5%;
+		width: 100%;
+		overflow: hidden;
+		text-align: center;
+		background-color: #FED8B1;
+		vertical-align: middle;
+	}
+
+	.sidenav a {
+		vertical-align: middle;
+		font-family: "Dosis", sans-serif;
+		font-weight: bold;
+		padding: 1em;
+		text-decoration: none;
+		font-size: 80%;
+		color: #3C1414;
+		display: inline;
+	}
+
+	.wip {
+		margin-top: 5em;
+		vertical-align: middle;
+	}
 }
 
   /*------------------------------------*/
@@ -376,16 +480,6 @@ img.projects-corner {
 	}
 }*/
 
-.gallery-corner-img {
-	/*background: url('/images/LayingDoodle.svg') left bottom no-repeat;*/
-	bottom: 0;
-	left: 0;
-	margin-left: -5em;
-	height: 30%;
-	width: 30%;
-	position: fixed;
-}
-
 .gallery-row {
 	width: 100%;
 }
@@ -441,7 +535,7 @@ i.fab, i.fas {
 	margin: 1em;
 }
 
-.sidenav {
+/*.sidenav {
 	height: 100%;
 	width: 10%;
 	position: fixed;
@@ -464,9 +558,9 @@ i.fab, i.fas {
 
 .sidenav a:hover {
 	color: #000;
-}
+}*/
 
-.sidenav-container {
+/*.sidenav-container {
 	height: 43em;
 	width: 80%;
 	margin-left: 20%;
@@ -492,7 +586,7 @@ i.fab, i.fas {
 	-webkit-border-radius: 15px;
 	background-color: #3C1414;
 	-webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
-}
+}*/
 
 @media screen and (max-height: 450px) {
 	.sidenav {padding-top: 15px;}
@@ -503,18 +597,6 @@ i.fab, i.fas {
 	text-align: center;
 	margin: auto;
 	float: center;
-}
-
-.wip {
-	font-family: "Dosis", sans-serif;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #FED8B1;
-	border-radius: 50px;
-	margin-top: 3.5em;
-	padding: 20px;
 }
 
 @media screen and (max-width: 640px) and (min-width: 300px) {
@@ -570,4 +652,4 @@ i.fab, i.fas {
 	.nav a.active {
 		font-size: 16px;
 	}
-}/
+}
