@@ -147,6 +147,19 @@ img.projects-corner {
 	height: 15em;
 }
 
+.popover {
+	background-color: #FED8B1;
+	border-color: #FED8B1;
+	font-size: 80%;
+	text-align: center;
+}
+
+.bs-popover-auto[x-placement^="bottom"] .arrow::after,
+.bs-popover-bottom .arrow::after {
+    top: 1px;
+    border-bottom-color: #FED8B1;
+}
+
 .projects-list li {
 	list-style: none;
 }

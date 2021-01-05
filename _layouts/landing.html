@@ -2,8 +2,13 @@
 <html>
 	<head>
 		{% include head.html %}
-	</head>
+	</head> 
 	<body class="main-container">
 		{{ content }}
+		<script>
+			$(document).ready(function(){
+				$('[data-toggle="popover"]').popover();
+			});
+		</script>
 	</body>
 </html>
