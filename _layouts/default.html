@@ -4,24 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>{{ site.title }}</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#blog">Blog</a>
-    </nav>
-  </header>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+    <img src="{{ '/assets/images/PlantDoodle.png' | relative_url }}" alt="Doodle" class="doodle">
+  </nav>
   <main>
     {{ content }}
   </main>
-  <footer>
-    <p>Connect with me on <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>.</p>
-  </footer>
   <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>
