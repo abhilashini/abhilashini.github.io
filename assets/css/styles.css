@@ -3,42 +3,40 @@
 
 /* Variables */
 :root {
-  --primary-color: #6B705C; /* Muted green */
-  --secondary-color: #A5A58D; /* Light brown */
-  --background-color: #FFF1E6; /* Off-white */
-  --text-color: #333;
+  --primary-color: #333; /* Dark gray for text */
+  --secondary-color: #6B705C; /* Muted green for accents */
+  --background-color: #f9f9f9; /* Off-white */
 }
 
 /* Base Styles */
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--text-color);
+  color: var(--primary-color);
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
-  display: flex;
-  min-height: 100vh;
+  line-height: 1.6;
 }
 
 /* Navigation */
 nav {
-  width: 200px;
-  background-color: var(--primary-color);
-  padding: 2rem;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 2rem 0;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-  margin-bottom: 1.5rem;
+  display: inline-block;
+  margin: 0 1rem;
 }
 
 nav ul li a {
-  color: var(--background-color);
+  color: var(--primary-color);
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
@@ -48,20 +46,16 @@ nav ul li a:hover {
   color: var(--secondary-color);
 }
 
-.doodle {
-  width: 100%;
-  margin-top: 2rem;
-}
-
 /* Main Content */
 main {
-  flex: 1;
   padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Sections */
 section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
@@ -76,20 +70,22 @@ section.visible {
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 p {
-  line-height: 1.6;
   margin-bottom: 1.5rem;
 }
 
