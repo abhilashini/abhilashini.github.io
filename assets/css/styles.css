@@ -26,6 +26,10 @@ body {
   padding: 2rem;
 }
 
+.centered > h1 {
+    font-style: oblique;
+}
+
 /* Hero Doodle */
 .hero-doodle {
   width: 100%;
@@ -39,13 +43,15 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin: 4rem auto;
-  max-width: 1200px;
+  max-width: 800px; /* Match About Me section width */
   padding: 0 2rem;
 }
 
 /* Doodles */
 .doodle {
   width: 100%;
+  max-width: 300px; /* Resize doodles */
+  margin: 0 auto;
   border-radius: 8px;
 }
 
@@ -83,18 +89,35 @@ a:hover {
   color: var(--primary-color);
 }
 
-/* LinkedIn Icon */
+/* LinkedIn Section */
+.linkedin-section {
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 800px;
+}
+
 .linkedin-icon {
   width: 40px;
   height: 40px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   display: block;
 }
 
-/* Abstract Graphic */
-.abstract-graphic {
+.linkedin-message {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Creative End Section */
+.creative-end {
+  text-align: center;
+  margin: 4rem auto;
+  max-width: 800px;
+}
+
+.creative-end img {
   width: 100%;
-  max-width: 600px;
-  margin: 2rem auto;
+  max-width: 400px;
+  margin: 0 auto;
   display: block;
 }
