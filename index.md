@@ -3,38 +3,52 @@ layout: default
 title: Home
 ---
 
-<section id="about">
-  <h1>About Me</h1>
-  <p>I’m a multidisciplinary developer and designer with a passion for creating intuitive, user-focused experiences. My work spans full-stack development, UX/UI design, and creative problem-solving.</p>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="gallery">
-    <div>
-      <h3>Project 1: UX/UI Design</h3>
-      <p>A case study on designing an accessible web app.</p>
-    </div>
-    <div>
-      <h3>Project 2: Full-Stack Development</h3>
-      <p>A web app built with React and Node.js.</p>
-    </div>
-  </div>
-</section>
-
-<section id="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="/assets/images/sketch1.jpg" alt="Sketch 1">
-    <img src="/assets/images/sketch2.jpg" alt="Sketch 2">
-  </div>
-</section>
-
-<section id="blog">
-  <h2>Blog Highlights</h2>
+<div class="grid">
   <div>
-    <h3>5 Lessons I Learned from Designing for Accessibility</h3>
-    <p>A deep dive into the principles of accessible design.</p>
-    <a href="#">Read on Medium</a>
+    <img src="/assets/images/SittingDoodle.svg" alt="Sitting Doodle" class="doodle">
   </div>
-</section>
+  <div>
+    <h1>About Me</h1>
+    <p>I’m a multidisciplinary developer and designer with a passion for creating intuitive, user-focused experiences. My work spans full-stack development, UX/UI design, and creative problem-solving.</p>
+    <p><a href="#">Learn more</a></p>
+  </div>
+</div>
+
+<div class="grid">
+  <div>
+    <h2>Projects</h2>
+    <p>Here are a few projects I’ve worked on:</p>
+    <ul>
+      <li><a href="#">Project 1: UX/UI Design</a></li>
+      <li><a href="#">Project 2: Full-Stack Development</a></li>
+    </ul>
+  </div>
+  <div>
+    <img src="/assets/images/LayingDoodle.svg" alt="Laying Doodle" class="doodle">
+  </div>
+</div>
+
+<div class="grid">
+  <div>
+    <img src="/assets/images/ReadingDoodle.svg" alt="Reading Doodle" class="doodle">
+  </div>
+  <div>
+    <h2>Gallery</h2>
+    <p>A selection of my design sketches and doodles.</p>
+    <p><a href="#">View gallery</a></p>
+  </div>
+</div>
+
+<div class="grid">
+  <div>
+    <h2>Blog</h2>
+    <p>Here are some of my recent blog posts:</p>
+    <ul>
+      <li><a href="#">5 Lessons I Learned from Designing for Accessibility</a></li>
+      <li><a href="#">How I Built a Full-Stack App in 30 Days</a></li>
+    </ul>
+  </div>
+  <div>
+    <img src="/assets/images/SleekDoodle.svg" alt="Sleek Doodle" class="doodle">
+  </div>
+</div>
