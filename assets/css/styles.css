@@ -18,10 +18,18 @@ body {
   line-height: 1.6;
 }
 
-/* Main Content */
-main {
+/* Centered Content */
+.centered {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
   padding: 2rem;
-  max-width: 1200px;
+}
+
+/* Hero Doodle */
+.hero-doodle {
+  width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -30,7 +38,9 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+  padding: 0 2rem;
 }
 
 /* Doodles */
@@ -71,4 +81,20 @@ a {
 
 a:hover {
   color: var(--primary-color);
+}
+
+/* LinkedIn Icon */
+.linkedin-icon {
+  width: 40px;
+  height: 40px;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Abstract Graphic */
+.abstract-graphic {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  display: block;
 }

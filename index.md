@@ -5,11 +5,11 @@ title: Home
 
 <div class="grid">
   <div>
-    <img src="/assets/images/SittingDoodle.svg" alt="Sitting Doodle" class="doodle">
+    <img src="/assets/images/IceCreamDoodle.svg" alt="IceCreamDoodle" class="doodle">
   </div>
   <div>
-    <h1>About Me</h1>
-    <p>I’m a multidisciplinary developer and designer with a passion for creating intuitive, user-focused experiences. My work spans full-stack development, UX/UI design, and creative problem-solving.</p>
+    <h1>Hi there!</h1>
+    <p>I’m Abhilashini. A multidisciplinary developer and designer with a passion for creating intuitive, user-focused experiences. My work spans full-stack development, UX/UI design, and creative problem-solving.</p>
     <p><a href="#">Learn more</a></p>
   </div>
 </div>
