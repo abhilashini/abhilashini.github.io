@@ -1,3 +1,73 @@
+<section class="code-grid-section">
+  <h2 class="code-grid-title">Code Patterns</h2>
+  <p class="code-grid-subtitle">Common solutions, uncommon attention</p>
+  
+  <div class="code-grid">
+    <!-- React -->
+    <div class="code-card" data-description="Component-driven architecture for reusable UI">
+      <pre><code class="language-jsx">
+function UserProfile({ avatar, name }) {
+  return (
+    &lt;div className="profile"&gt;
+      &lt;img src={avatar} alt={name} /&gt;
+      &lt;h2&gt;{name}&lt;/h2&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+    </div>
+
+    <!-- Java -->
+    <div class="code-card" data-description="Type-safe domain modeling">
+      <pre><code class="language-java">
+public record Address(
+  String street,
+  String city,
+  String postCode
+) {
+  public Address {
+    Objects.requireNonNull(street);
+    Objects.requireNonNull(city);
+  }
+}
+      </code></pre>
+    </div>
+
+    <!-- Go -->
+    <div class="code-card" data-description="Concurrent processing made simple">
+      <pre><code class="language-go">
+func ProcessTasks(tasks []string) {
+  var wg sync.WaitGroup
+  wg.Add(len(tasks))
+  
+  for _, task := range tasks {
+    go func(t string) {
+      defer wg.Done()
+      // Process task
+    }(task)
+  }
+  
+  wg.Wait()
+}
+      </code></pre>
+    </div>
+
+    <!-- HTML/CSS -->
+    <div class="code-card" data-description="Semantic markup meets modern styling">
+      <pre><code class="language-html">
+&lt;article class="card"&gt;
+  &lt;header class="card-header"&gt;
+    &lt;h2&gt;Accessible Components&lt;/h2&gt;
+  &lt;/header&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p&gt;Proper semantics ensure usability for all&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+      </code></pre>
+    </div>
+  </div>
+</section>
+
 <section id="code-philosophy" class="code-section">
   <h2 class="section-heading">Engineering Patterns</h2>
   <p class="section-subhead">Silent solutions speak louder than explanations</p>
