@@ -6,60 +6,61 @@
   <title>{{ site.title }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Prism.js Syntax Highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet">
 </head>
 <body>
-  <main>
-    <!-- Hero Doodle -->
-    <div class="centered">
+  <main class="flow-container">
+    <!-- Hero Section -->
+    <section class="centered hero-section">
       <img src="/assets/images/IceCreamDoodle.svg" alt="Hero Doodle" class="hero-doodle">
-    </div>
-
-    <!-- About Me -->
-    <div class="centered">
       <h1>Hi there!</h1>
-      <p>I’m Abhilashini - a multidisciplinary developer and designer with a passion for creating intuitive, user-focused experiences. My work spans full-stack development, UX/UI design, and creative problem-solving.</p>
-    </div>
+      <p class="intro-text">I'm Abhilashini - multidisciplinary developer & designer</p>
+    </section>
 
-    <!-- Projects Section -->
-    <div class="grid">
-      <div>
-        <img src="/assets/images/AnimatedPlantDoodle.svg" alt="Project Doodle" class="doodle">
+    <!-- About Section -->
+    <section class="centered content-section">
+      <div class="text-block">
+        <h2>Creative Technologist</h2>
+        <p>Bridging code and design to create meaningful experiences</p>
       </div>
-      <div>
-        <h2>Projects</h2>
-        <p>Here are a few projects I’ve worked on:</p>
-        <ul>
-          <li><a href="#">Project 1: UX/UI Design</a></li>
-          <li><a href="#">Project 2: Full-Stack Development</a></li>
-        </ul>
-        <p><a href="https://github.com/abhilashini">View my GitHub</a></p>
+      <img src="/assets/images/AnimatedPlantDoodle.svg" alt="About Visual" class="section-doodle">
+    </section>
+
+    <!-- Code Philosophy Section -->
+    <section class="code-philosophy">
+      <div class="centered">
+        <h2>Development Patterns</h2>
+        <p class="section-subhead">Expressed through idiomatic code</p>
       </div>
-    </div>
+      {% include code-grid.html %}
+    </section>
 
     <!-- Experience Section -->
-    <div class="grid">
-      <div>
-        <h2>Experience</h2>
-        <p>With 10 years of industry experience as a full-stack developer, I also enjoy designing and writing. <!--In the future, this section will include a link to my gallery.--></p>
+    <section class="centered content-section reverse">
+      <div class="text-block">
+        <h2>Technical Journey</h2>
+        <p>10 years shaping digital experiences across the stack</p>
       </div>
-      <div>
-        <img src="/assets/images/AnimatedSwingingDoodle.svg" alt="Experience Doodle" class="doodle">
-      </div>
-    </div>
+      <img src="/assets/images/AnimatedSwingingDoodle.svg" alt="Experience Visual" class="section-doodle">
+    </section>
 
-    <!-- LinkedIn Section -->
-    <div class="linkedin-section">
-      <a href="https://linkedin.com/in/abhilashini">
-        <img src="/assets/images/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
+    <!-- Connect Section -->
+    <section class="centered connect-section">
+      <h2>Let's Create Together</h2>
+      <a href="https://linkedin.com/in/abhilashini" class="linkedin-link">
+        <i class="fab fa-linkedin"></i>
+        <span>Connect on LinkedIn</span>
       </a>
-      <p class="linkedin-message">Let’s connect on LinkedIn!</p>
-    </div>
-
-    <!-- Creative End Section -->
-    <!-- <div class="creative-end">
-      <img src="/assets/images/creative_end.svg" alt="Creative End Graphic">
-    </div> -->
+    </section>
   </main>
+
+  <!-- Scripts at bottom -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-jsx.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
   <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>

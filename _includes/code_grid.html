@@ -1,0 +1,142 @@
+<section id="code-philosophy" class="code-section">
+  <h2 class="section-heading">Engineering Patterns</h2>
+  <p class="section-subhead">Silent solutions speak louder than explanations</p>
+
+  <div class="code-grid">
+    <!-- React -->
+    <div class="code-card">
+      <i class="fab fa-react lang-icon"></i>
+      <pre><code class="language-jsx">
+// Component Composition
+const Form = ({ children }) => (
+  &lt;form className="space-y-4"&gt;{children}&lt;/form&gt;
+);
+
+const Input = ({ label, ...props }) => (
+  &lt;div&gt;
+    &lt;label className="block mb-1"&gt;{label}&lt;/label&gt;
+    &lt;input {...props} className="input-base" /&gt;
+  &lt;/div&gt;
+);
+      </code></pre>
+    </div>
+
+    <!-- Go -->
+    <div class="code-card">
+      <i class="fab fa-golang lang-icon"></i>
+      <pre><code class="language-go">
+// Concurrent Processing
+func ProcessTasks(tasks []string) {
+  ch := make(chan string)
+  for _, task := range tasks {
+    go func(t string) { 
+      ch <- fmt.Sprintf("Processed: %s", t) 
+    }(task)
+  }
+  for range tasks { fmt.Println(&lt;-ch) }
+}
+      </code></pre>
+    </div>
+
+    <!-- Python -->
+    <div class="code-card">
+      <i class="fab fa-python lang-icon"></i>
+      <pre><code class="language-python">
+# Context Management
+@contextmanager
+def atomic_write(path):
+    tmp = f"{path}.tmp"
+    with open(tmp, 'w') as f:
+        yield f
+    os.replace(tmp, path)
+      </code></pre>
+    </div>
+
+    <!-- Database Patterns -->
+    <div class="code-card">
+      <i class="fas fa-database lang-icon"></i>
+      <pre><code class="language-sql">
+-- Transactional Integrity
+BEGIN;
+UPDATE accounts SET balance = balance - 100 WHERE id = 'A';
+UPDATE accounts SET balance = balance + 100 WHERE id = 'B';
+COMMIT;
+      </code></pre>
+    </div>
+  </div>
+</section>
+
+<style>
+.code-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: #2d3748;
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subhead {
+  text-align: center;
+  color: #718096;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.code-card {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.code-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.lang-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #718096;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+pre[class*="language-"] {
+  background: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+</style>
+
+<script>
+// Smooth hover activation
+document.querySelectorAll('.code-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+  });
+});
+</script>
