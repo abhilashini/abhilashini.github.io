@@ -227,56 +227,52 @@ code {
   line-height: 1.4;
 }
 
-/* Code Mirror Design */
-.code-mirrors {
+/* Code Idioms Design */
+.code-idioms {
   padding: 4rem 1rem;
-  background: rgba(255,255,255,0.9);
+  background: #f9f9f9;
 }
 
-.code-grid {
+.idiom-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.code-frame {
+.idiom-card {
+  position: relative;
   background: #1e1e1e;
   border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s ease;
 }
 
-.code-frame:hover {
-  transform: perspective(1000px) rotateX(5deg) translateY(-4px);
+.idiom-card:hover {
+  transform: translateY(-5px);
 }
 
-.code-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: #252526;
+.idiom-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(45, 45, 45, 0.9);
   color: #d4d4d4;
+  padding: 1rem;
   font-family: 'Fira Code', monospace;
   font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.code-header i, .code-header img {
-  width: 24px;
-  height: 24px;
+.idiom-card:hover .idiom-overlay {
+  opacity: 1;
 }
 
-pre[class*="language-"] {
-  margin: 0;
-  padding: 1.5rem !important;
-  background: #1e1e1e !important;
-}
-
-/* Syntax highlighting overrides */
+/* Syntax Highlighting */
 .token.keyword { color: #569cd6; }
-.token.function { color: #dcdcaa; }
 .token.comment { color: #6a9955; font-style: italic; }
 .token.string { color: #ce9178; }
+.token.number { color: #b5cea8; }
