@@ -4,59 +4,44 @@ body {
     line-height: 1.6;
     max-width: 600px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 1rem 0 4rem; /* Add left padding for notebook lines */
     color: #2a2a2a;
     background: #fcfaf5;
-    border-left: 1px solid #e0e0e0;
     min-height: 100vh;
+    position: relative;
   }
   
-  /* Notebook lines */
-  body::after {
+  /* Notebook lines (vertical ruling) */
+  body::before {
     content: "";
     position: fixed;
     top: 0;
-    left: 60px;
+    left: 3.5rem; /* Align with left padding */
     width: 1px;
     height: 100%;
     background: repeating-linear-gradient(
-      180deg,
+      to bottom,
       transparent 0,
       transparent 24px,
       #e0e0e0 24px,
       #e0e0e0 26px
     );
-    z-index: -1;
-  }
-
-  /* Critiques */
-.critiques pre {
-    background: #f8f8f8;
-    border: 1px solid #eee;
-    padding: 1rem;
-    font-family: 'EB Garamond', serif;
+    z-index: 1;
   }
   
-  /* Bookshelf */
-  .books p {
-    margin: 0.5rem 0;
-    padding-left: 1rem;
-    text-indent: -1rem;
-  }
-  
-  /* Keyboard-navigable sections */
+  /* Sections */
   section {
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     margin: 1rem 0;
     border-bottom: 1px solid transparent;
     transition: 0.2s;
+    position: relative;
   }
   
   section:focus {
     outline: none;
-    border-color: #6a6a6a;
-    background: #f8f8f8;
-    box-shadow: -2px 0 0 #6a6a6a;
+    background: rgba(248, 248, 248, 0.5);
+    box-shadow: -8px 0 0 rgba(106, 106, 106, 0.1);
   }
   
   /* Monospace elements */
@@ -69,30 +54,33 @@ body {
   details[open] summary {
     margin-bottom: 1.5rem;
   }
+  
   summary {
     cursor: help;
     list-style: none;
     text-align: center;
+    font-size: 1.1em;
   }
+  
   summary::-webkit-details-marker {
     display: none;
   }
   
   /* Code poetry */
   pre {
-    border-left: 2px solid #eee;
+    border-left: 2px solid #e0e0e0;
     padding-left: 1rem;
     margin: 2rem 0;
     overflow-x: auto;
-  }
-  pre code {
-    color: #444;
-  }
-  .comment {
-    color: #8b0000; /* Muted red */
+    background: rgba(255, 255, 255, 0.5);
   }
   
-  /* Retired tech timeline */
+  .comment {
+    color: #8b0000; /* Muted red */
+    font-style: italic;
+  }
+  
+  /* Timeline */
   .timeline {
     display: flex;
     gap: 1.5rem;
@@ -100,15 +88,28 @@ body {
     margin: 2rem 0;
     font-size: 0.9em;
   }
+  
   .timeline-item:hover {
     cursor: default;
     color: #444;
-    transition: 0.2s;
   }
   
   /* Bookshelf */
   .books {
     margin-top: 3rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #e0e0e0;
     padding-top: 1rem;
   }
+  
+  .books p {
+    margin: 0.75rem 0;
+  }
+  
+  /* Critiques */
+  .critiques pre {
+    background: rgba(248, 248, 248, 0.5);
+    padding: 1rem;
+    border-radius: 2px;
+  }
+
+  body { border: 1px solid red; } /* Temporary test */
