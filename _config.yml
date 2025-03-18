@@ -3,4 +3,3 @@ description: "Personal Page"
 baseurl: /
 url: "https://abhilashini.github.io"
 markdown: kramdown
-theme: minima
