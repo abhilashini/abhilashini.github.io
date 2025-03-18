@@ -1,55 +1,68 @@
 ---
 layout: default
-title: Home
 ---
 
-<!-- Hero Doodle -->
-<div class="centered">
-  <img src="/assets/images/hero_doodle.svg" alt="Hero Doodle" class="hero-doodle">
-</div>
+<!-- TL;DR Section -->
+<details>
+  <summary class="mono">tl;dr: I solve problems you don't notice until they're gone.</summary>
+  <p><em>11 years of quiet fixes...</em></p>
+</details>
 
-<!-- About Me -->
-<div class="centered">
-  <h1>Hi there!</h1>
-  <p>I’m a multidisciplinary developer and designer with a passion for creating intuitive, user-focused experiences. My work spans full-stack development, UX/UI design, and creative problem-solving.</p>
-</div>
+---
 
-<!-- Projects Section -->
-<div class="grid">
-  <div>
-    <img src="/assets/images/project_doodle.svg" alt="Project Doodle" class="doodle">
-  </div>
-  <div>
-    <h2>Projects</h2>
-    <p>Here are a few projects I’ve worked on:</p>
-    <ul>
-      <li><a href="#">Project 1: UX/UI Design</a></li>
-      <li><a href="#">Project 2: Full-Stack Development</a></li>
-    </ul>
-    <p><a href="https://github.com/yourusername">View my GitHub</a></p>
-  </div>
-</div>
+### Principles, Not Tools
+```html
+{% raw %}<pre class="mono">
+if (problem) {  
+  // Solve for the edge cases first.  
+  // Design for the 2nd user (the maintainer).  
+  // Data is a liability if it doesn’t drive decisions.  
+}
+</pre>{% endraw %}
 
-<!-- Experience Section -->
-<div class="grid">
-  <div>
-    <h2>Experience</h2>
-    <p>With 10 years of industry experience as a full-stack developer, I also enjoy designing and writing. In the future, this section will include a link to my gallery.</p>
-  </div>
-  <div>
-    <img src="/assets/images/experience_doodle.svg" alt="Experience Doodle" class="doodle">
-  </div>
-</div>
+---
 
-<!-- LinkedIn Section -->
-<div class="linkedin-section">
-  <a href="https://linkedin.com/in/yourprofile">
-    <img src="/assets/images/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
-  </a>
-  <p class="linkedin-message">Let’s connect on LinkedIn!</p>
-</div>
+### Code as Poetry
 
-<!-- Creative End Section -->
-<div class="creative-end">
-  <img src="/assets/images/creative_end.svg" alt="Creative End Graphic">
-</div>
+{% raw %}
+<pre class="mono">
+def sanitize_input(text):
+    <span class="comment"># Trust no one, not even yourself.</span>
+    return html.escape(text, quote=True)
+</pre>
+
+<pre class="mono">
+.grid {
+  display: grid;
+  <span class="comment">/* Sometimes 12 columns are 11 too many */</span>
+}
+</pre>
+{% endraw %}
+
+---
+
+### Critiques, Not Brags
+
+**Design Mistakes I Avoid**  
+
+1. "60 FPS animations on static dashboards  
+   → Motion ≠ value.  
+2. User testing with perfect data  
+   → Test with chaos.  
+
+**Debugging Hall of Shame**
+- "Assumed the compiler was wrong. (Spoiler: It wasn’t.) – 2016"  
+- "Fought CSS !important for 3 days. Lost. – 2019"  
+
+---
+
+### Tools I Buried
+
+<div class="timeline"> <span class="timeline-item">2013: jQuery</span> <span class="timeline-item">2015: Angular</span> <span class="timeline-item">2018: React</span> </div>
+
+---
+
+### Bookshelf of Influence
+
+<div class="books"> 1. "Moby Dick" → Obsession with unseen systems. 2. "The Phoenix Project" → Why bottlenecks matter. 3. "The Art of War" → Debugging as strategy. </div> ```
+

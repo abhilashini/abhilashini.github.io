@@ -1,75 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Prism.js Syntax Highlighting -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-jsx.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-java.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-markup.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-sql.min.js"></script>
-</head>
-<body>
-  <main class="flow-container">
-    <!-- Hero Section -->
-    <section class="centered hero-section">
-      <img src="/assets/images/IceCreamDoodle.svg" alt="Hero Doodle" class="hero-doodle">
-      <h1>Hi there!</h1>
-      <p class="intro-text">I'm Abhilashini - multidisciplinary developer & designer</p>
-    </section>
-
-    <!-- About Section -->
-    <section class="centered content-section">
-      <div class="text-block">
-        <h2>Creative Technologist</h2>
-        <p>Bridging code and design to create meaningful experiences</p>
+<html>
+  {% include head.html %}
+  <body>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
       </div>
-      <img src="/assets/images/AnimatedPlantDoodle.svg" alt="About Visual" class="section-doodle">
-    </section>
-
-    <!-- Code Philosophy Section -->
-    <section class="code-philosophy">
-      <div class="centered">
-        <h2>Development Patterns</h2>
-        <p class="section-subhead">Expressed through idiomatic code</p>
-      </div>
-      {% include code-illusions.html %}
-    </section>
-
-    <!-- Experience Section -->
-    <section class="centered content-section reverse">
-      <div class="text-block">
-        <h2>Technical Journey</h2>
-        <p>10 years shaping digital experiences across the stack</p>
-      </div>
-      <img src="/assets/images/AnimatedSwingingDoodle.svg" alt="Experience Visual" class="section-doodle">
-    </section>
-
-    <!-- Connect Section -->
-    <section class="centered connect-section">
-      <h2>Let's Create Together</h2>
-      <a href="https://linkedin.com/in/abhilashini" class="linkedin-link">
-        <i class="fab fa-linkedin"></i>
-        <span>Connect on LinkedIn</span>
-      </a>
-    </section>
-  </main>
-
-  <!-- Scripts at bottom -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-jsx.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-go.min.js"></script>
-  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
-</body>
+    </main>
+  </body>
 </html>

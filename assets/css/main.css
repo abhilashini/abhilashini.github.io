@@ -1,0 +1,64 @@
+/* Base */
+body {
+    font-family: 'EB Garamond', serif;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    color: #222;
+    background: #fafafa;
+  }
+  
+  /* Monospace elements */
+  code, pre, .mono {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+  }
+  
+  /* TL;DR section */
+  details[open] summary {
+    margin-bottom: 1.5rem;
+  }
+  summary {
+    cursor: help;
+    list-style: none;
+    text-align: center;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  /* Code poetry */
+  pre {
+    border-left: 2px solid #eee;
+    padding-left: 1rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+  }
+  pre code {
+    color: #444;
+  }
+  .comment {
+    color: #8b0000; /* Muted red */
+  }
+  
+  /* Retired tech timeline */
+  .timeline {
+    display: flex;
+    gap: 1.5rem;
+    color: #666;
+    margin: 2rem 0;
+    font-size: 0.9em;
+  }
+  .timeline-item:hover {
+    cursor: default;
+    color: #444;
+    transition: 0.2s;
+  }
+  
+  /* Bookshelf */
+  .books {
+    margin-top: 3rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+  }
