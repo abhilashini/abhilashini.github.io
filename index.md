@@ -19,7 +19,7 @@ if (problem) {
   // Data is a liability if it doesn’t drive decisions.  
 }
 </pre>{% endraw %}
-
+```
 ---
 
 ### Code as Poetry
@@ -64,5 +64,5 @@ def sanitize_input(text):
 
 ### Bookshelf of Influence
 
-<div class="books"> 1. "Moby Dick" → Obsession with unseen systems. 2. "The Phoenix Project" → Why bottlenecks matter. 3. "The Art of War" → Debugging as strategy. </div> ```
+<div class="books"> 1. "Moby Dick" → Obsession with unseen systems. 2. "The Phoenix Project" → Why bottlenecks matter. 3. "The Art of War" → Debugging as strategy. </div>
 
