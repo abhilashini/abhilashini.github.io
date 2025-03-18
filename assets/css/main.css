@@ -28,6 +28,21 @@ body {
     );
     z-index: -1;
   }
+
+  /* Critiques */
+.critiques pre {
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    padding: 1rem;
+    font-family: 'EB Garamond', serif;
+  }
+  
+  /* Bookshelf */
+  .books p {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    text-indent: -1rem;
+  }
   
   /* Keyboard-navigable sections */
   section {
