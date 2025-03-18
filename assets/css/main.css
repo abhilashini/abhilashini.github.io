@@ -5,8 +5,43 @@ body {
     max-width: 600px;
     margin: 2rem auto;
     padding: 0 1rem;
-    color: #222;
-    background: #fafafa;
+    color: #2a2a2a;
+    background: #fcfaf5;
+    border-left: 1px solid #e0e0e0;
+    min-height: 100vh;
+  }
+  
+  /* Notebook lines */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 60px;
+    width: 1px;
+    height: 100%;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 24px,
+      #e0e0e0 24px,
+      #e0e0e0 26px
+    );
+    z-index: -1;
+  }
+  
+  /* Keyboard-navigable sections */
+  section {
+    padding: 1.5rem 0;
+    margin: 1rem 0;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+  }
+  
+  section:focus {
+    outline: none;
+    border-color: #6a6a6a;
+    background: #f8f8f8;
+    box-shadow: -2px 0 0 #6a6a6a;
   }
   
   /* Monospace elements */
