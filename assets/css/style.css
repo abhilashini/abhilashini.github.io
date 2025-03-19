@@ -38,6 +38,7 @@ body {
 .section {
   position: relative; /* Anchor for absolute positioning */
   margin-bottom: 4rem;
+  padding: "1rem 0rem 0rem 1rem"
 }
 
 /* Section titles */
@@ -110,6 +111,10 @@ body {
 
 .doodle--right {
   right: -16rem; /* Position to the right of the column */
+}
+
+.flip {
+  transform: scaleX(-1);
 }
 
 /* Doodle Transition */
