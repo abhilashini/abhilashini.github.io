@@ -1,0 +1,55 @@
+/* Centered container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+  }
+  
+  /* Section titles */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-title--left {
+    text-align: left;
+  }
+  
+  .section-title--right {
+    text-align: right;
+  }
+  
+  /* Doodles */
+  .doodle {
+    width: 120px;
+    position: absolute;
+    top: 1rem;
+  }
+  
+  .doodle--right {
+    right: -140px;
+  }
+  
+  .doodle--left {
+    left: -140px;
+  }
+  
+  /* Section divider */
+  .section-divider {
+    height: 1px;
+    background: #ddd;
+    margin: 4rem auto;
+    width: 50%;
+  }
+  
+  /* Mobile adaptation */
+  @media (max-width: 768px) {
+    .doodle {
+      display: none;
+    }
+  
+    .section-divider {
+      width: 30%;
+    }
+  }
