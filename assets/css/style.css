@@ -1,53 +1,43 @@
-/* Typography */
-:root {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: Georgia, serif;
-  --font-mono: Menlo, Consolas, monospace;
-  --font-size-base: 1rem;
-  --line-height-base: 1.6;
-  --color-text: #333;
-  --color-primary: #007bff;
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-sans);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  color: var(--color-text);
-  margin: 0;
-  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
-/* Grid layout */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 600px 1fr; /* Left | Center | Right */
-  gap: 2rem;
-  align-items: start;
-  max-width: 1200px;
+/* Centered content column */
+.centered-column {
+  max-width: 600px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  position: relative;
 }
 
 /* Section titles */
 .section-title {
-  font-size: 2.5rem; /* H1 level */
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0;
-  color: var(--color-text);
+  position: absolute;
+  top: 0;
+  width: 200px; /* Adjust as needed */
 }
 
 .section-title--left {
-  grid-column: 1 / 2;
+  left: -220px; /* Position to the left of the column */
   text-align: right;
-  padding-right: 1rem;
 }
 
 .section-title--right {
-  grid-column: 3 / 4;
+  right: -220px; /* Position to the right of the column */
   text-align: left;
-  padding-left: 1rem;
 }
 
 /* Sub-heading (H2) */
@@ -59,16 +49,11 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Content container */
-.container {
-  grid-column: 2 / 3;
-}
-
 /* Doodles */
 .doodle {
   width: 15rem;
-  position: sticky;
-  top: 2rem;
+  position: absolute;
+  top: 0;
 }
 
 .flip {
@@ -76,67 +61,41 @@ body {
 }
 
 .doodle--left {
-  grid-column: 1 / 2;
-  justify-self: end;
+  left: -140px; /* Position to the left of the column */
 }
 
 .doodle--right {
-  grid-column: 3 / 4;
-  justify-self: start;
+  right: -140px; /* Position to the right of the column */
 }
 
 /* Hand-drawn divider */
 .section-divider {
-  grid-column: 1 / -1;
   width: 10%;
   height: 2px;
-  background: transparent;
-  border: 0;
-  margin: 4rem auto;
-  position: relative;
-}
-
-.section-divider::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
   background: #333;
-  border-radius: 2px;
-  transform: scaleX(0.8);
-  transform-origin: center;
-  animation: draw 0.5s ease-in-out forwards;
-}
-
-@keyframes draw {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(0.8);
-  }
+  margin: 4rem auto;
 }
 
 /* Mobile adaptation */
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
   .section-title,
   .doodle {
     position: static;
-    grid-column: 1 / -1;
+    width: 100%;
     text-align: center;
-    padding: 0;
+    margin: 1rem 0;
   }
 
   .section-title--left,
   .section-title--right {
-    text-align: center;
+    left: auto;
+    right: auto;
+  }
+
+  .doodle--left,
+  .doodle--right {
+    left: auto;
+    right: auto;
   }
 
   .section-divider {
