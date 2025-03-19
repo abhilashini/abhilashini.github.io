@@ -1,15 +1,19 @@
-<div class="carousel" data-carousel>
-    {% for item in include.items %}
-    <div class="carousel-item" tabindex="0">
+<div class="carousel">
+  {% for item in include.items %}
+    <div class="card">
       {% if item.icon %}
-        <i class="{{ item.icon }}"></i>
+        <i class="{{ item.icon }} icon"></i>
+      {% endif %}
+      {% if item.text %}
+        <p>{{ item.text | markdownify }}</p>
       {% endif %}
       {% if item.code %}
-        <pre><code>{{ item.code }}</code></pre>
-      {% else %}
-        <p>{{ item.text }}</p>
+        <pre><code>{{ item.code | markdownify }}</code></pre>
       {% endif %}
     </div>
-    {% endfor %}
-    
+  {% endfor %}
+  <div class="carousel-nav">
+    <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+    <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
   </div>
+</div>

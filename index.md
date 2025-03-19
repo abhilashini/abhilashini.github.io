@@ -13,26 +13,26 @@ layout: default
 
   <hr class="section-divider">
 
-  <!-- Philosophy Section -->
-  <section class="section" id="philosophy">
-    <h1 class="section-title section-title--left" data-section="philosophy">
-      My Philosophy
-    </h1>
-    <div class="content">
-      {% include carousel.html items=site.data.philosophy %}
-    </div>
-  </section>
+ <!-- Philosophy Section -->
+<section class="section" id="philosophy">
+  <h1 class="section-title section-title--left" data-section="philosophy">
+    My Philosophy
+  </h1>
+  <div class="content">
+    {% include carousel.html items=site.data.philosophy %}
+  </div>
+</section>
 
   <hr class="section-divider">
 
   <!-- Avoid Section -->
-  <section class="section" id="avoid">
-    <h1 class="section-title section-title--right" data-section="avoid">
-      Things I Avoid
-    </h1>
-    <div class="content">
-      {% include carousel.html items=site.data.avoid %}
-    </div>
-    <img src="/assets/doodle2.svg" class="doodle doodle--left flip" alt="">
-  </section>
+<section class="section" id="avoid">
+  <h1 class="section-title section-title--right" data-section="avoid">
+    Things I Avoid
+  </h1>
+  <div class="content">
+    {% include carousel.html items=site.data.avoid %}
+  </div>
+  <img src="/assets/doodle2.svg" class="doodle doodle--left flip" alt="">
+</section>
 </div>

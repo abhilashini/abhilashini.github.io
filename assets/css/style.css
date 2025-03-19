@@ -108,6 +108,100 @@ p {
   margin: 4rem auto;
 }
 
+/* Cards/Panels */
+.card {
+  background-color: #2d2d2d; /* Dark background */
+  color: #f8f9fa; /* Light text */
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card .icon {
+  font-size: 1.5rem;
+  color: #6c5b7b; /* Muted purple for icons */
+  border: 2px solid #6c5b7b;
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card pre {
+  background-color: #1e1e1e; /* Darker background for code */
+  color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* Carousel Navigation */
+.carousel {
+  position: relative;
+}
+
+.carousel-nav {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-nav button {
+  background: none;
+  border: none;
+  color: #6c5b7b; /* Muted purple for arrows */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel-nav button:hover {
+  color: #f8f9fa; /* Light text on hover */
+}
+
+.carousel-nav button:focus {
+  outline: 2px solid #6c5b7b; /* Focus indicator */
+}
+
+/* Active Section Highlight */
+.section.active .section-title {
+  animation: scaleUp 0.5s ease forwards;
+  color: #6c5b7b; /* Muted purple for active title */
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.section.active .card {
+  border: 2px solid #6c5b7b; /* Highlight border for active cards */
+}
+
 /* Mobile adaptation */
 @media (max-width: 768px) {
   .section-title,
