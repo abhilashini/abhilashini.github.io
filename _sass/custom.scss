@@ -1,0 +1,18 @@
+// Variables  
+$bg: #faf6f0;  
+$text: #2d2d2d;  
+
+// Base styles  
+body {  
+  background: $bg;  
+  color: $text;  
+  margin: 0;  
+  font-family: 'Roboto', sans-serif;  
+}  
+
+// Central column  
+.container {  
+  max-width: 680px;  
+  margin: 0 auto;  
+  padding: 2rem 1rem;  
+}  
