@@ -115,15 +115,6 @@ p {
   margin: 0 auto;
 }
 
-.card {
-  background-color: #2d2d2d; /* Dark background */
-  color: #e0e0e0; /* Subtle light gray text */
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  position: relative;
-  display: none; /* Hide all cards by default */
-}
 
 .card.active {
   display: block; /* Show only the active card */
@@ -145,20 +136,14 @@ p {
   justify-content: center;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  padding-right: 4rem; /* Prevent text from clashing with icon */
-  color: #e0e0e0; /* Subtle light gray text */
-}
-
 /* Card Typography */
 .card {
   font-family: 'Inter', sans-serif; /* Crisp sans-serif font */
   font-size: 1rem;
   line-height: 1.6;
-  color: #e0e0e0; /* Subtle light gray text */
+  color: #4a3f35; /* Dark brown for text */
+  background-color: #ffffff; /* White background for cards */
+  border: 1px solid #e0d6c2; /* Light border for scrapbook feel */
 }
 
 .card p {
@@ -169,12 +154,29 @@ p {
 
 .card pre {
   font-family: 'Courier New', Courier, monospace; /* Monospace for code */
-  background-color: #1e1e1e; /* Darker background for code */
-  color: #e0e0e0; /* Subtle light gray text */
+  background-color: #f5f5f5; /* Light gray background for code */
+  color: #4a3f35; /* Dark brown for code text */
   padding: 1rem;
   border-radius: 4px;
   overflow-x: auto;
   margin: 1rem 0;
+}
+
+/* Font Awesome Icons */
+.card .icon {
+  font-size: 1.5rem;
+  color: #0077cc; /* Bright blue for icons */
+  border: 2px solid #0077cc;
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2.5rem; /* Fixed width */
+  height: 2.5rem; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Carousel Navigation */
@@ -189,14 +191,14 @@ p {
 .carousel-nav button {
   background: none;
   border: none;
-  color: #6c5b7b; /* Muted purple for arrows */
+  color: #0077cc; 
   font-size: 1.2rem; /* Thin line icons */
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .carousel-nav button:hover {
-  color: #f8f9fa; /* Light text on hover */
+  color: #ff6b35; /* Warm orange on hover */
 }
 
 .carousel-nav button:focus {
@@ -206,7 +208,7 @@ p {
 /* Section Title Highlight */
 .section.active .section-title {
   animation: scaleUp 0.5s ease forwards;
-  color: #6c5b7b; /* Muted purple for active title */
+  color: #4a3f35; /* Dark brown for titles */
   transform: scale(1.1); /* Keep scaled-up state */
   position: relative; /* For squiggle positioning */
 }
@@ -226,11 +228,17 @@ p {
   display: block;
   width: 100px; /* Adjust as needed */
   height: 10px; /* Adjust as needed */
-  background: url('/assets/images/squiggle-blue.svg') no-repeat; /* Blue squiggle SVG */
+  background: url('/assets/squiggle-blue.svg') no-repeat; /* Blue squiggle SVG */
   background-size: contain;
   position: absolute;
   bottom: -10px; /* Position below the title */
   left: 0;
+}
+
+/* Fix squiggle alignment for right-aligned titles */
+.section-title--right::after {
+  left: auto;
+  right: 0;
 }
 
 /* Doodle Transition */
