@@ -1,8 +1,15 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Typography */
 :root {
-  --font-heading: 'Caveat', cursive; /* Handwritten script for headings */
-  --font-subheading: 'Patrick Hand', cursive; /* Childlike handwritten for sub-headings */
-  --font-body: 'Schoolbell', cursive; /* Playful handwritten for body text */
+  --font-heading: 'Playfair Display', serif, Georgia, 'Times New Roman', Times, serif; /* Elegant serif for headings */
+  --font-subheading: 'Lora', serif, Georgia, 'Times New Roman', Times, serif; /* Modern serif for sub-headings */
+  --font-body: 'Merriweather', serif, Georgia, 'Times New Roman', Times, serif; /* Readable serif for body text */
   --font-size-base: 1rem;
   --line-height-base: 1.6;
   --color-text: #2d2d2d; /* Dark gray for text */
@@ -11,17 +18,30 @@
 }
 
 body {
-  font-family: var(--font-body); /* Schoolbell for body text */
+  font-family: var(--font-body); /* Merriweather for body text */
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--color-text);
   background-color: var(--color-background);
 }
 
+/* Centered content column */
+.centered-column {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Section container */
+.section {
+  position: relative; /* Anchor for absolute positioning */
+  margin-bottom: 4rem;
+}
+
 /* Section titles */
 .section-title {
-  font-family: var(--font-heading); /* Caveat for headings */
-  font-size: 2.5rem; /* Larger size for emphasis */
+  font-family: var(--font-heading); /* Playfair Display for headings */
+  font-size: 1.5rem; /* Updated to 1.5rem */
   font-weight: 700; /* Bold for impact */
   line-height: 1.2;
   position: absolute;
@@ -30,10 +50,20 @@ body {
   color: var(--color-text);
 }
 
+.section-title--left {
+  right: 40rem; /* Position to the left of the column */
+  text-align: right;
+}
+
+.section-title--right {
+  left: 40rem; /* Position to the right of the column */
+  text-align: left;
+}
+
 /* Sub-heading (H2) */
 .sub-heading {
-  font-family: var(--font-subheading); /* Patrick Hand for sub-headings */
-  font-size: 1.25rem;
+  font-family: var(--font-subheading); /* Lora for sub-headings */
+  font-size: 1rem; /* Updated to 1rem */
   font-weight: 400; /* Regular weight */
   font-style: italic; /* Italic for variation */
   color: var(--color-text);
@@ -43,7 +73,7 @@ body {
 
 /* Body text */
 p {
-  font-family: var(--font-body); /* Schoolbell for paragraphs */
+  font-family: var(--font-body); /* Merriweather for paragraphs */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
