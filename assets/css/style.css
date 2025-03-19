@@ -87,13 +87,14 @@ body {
   background-size: contain;
   position: absolute;
   bottom: -10px; /* Position below the title */
-  left: 0;
 }
 
-/* Fix squiggle alignment for right-aligned titles */
-.section-title--left::after {
-  left: auto;
+.section-title--right::after {
   right: 0;
+}
+
+.section-title--left::after {
+  left: 0;
 }
 
 /* Doodles */
