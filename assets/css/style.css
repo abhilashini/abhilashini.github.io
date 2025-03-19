@@ -138,6 +138,11 @@ p {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  width: 2.5rem; /* Fixed width */
+  height: 2.5rem; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card p {
@@ -145,6 +150,7 @@ p {
   font-size: 1rem;
   line-height: 1.6;
   padding-right: 4rem; /* Prevent text from clashing with icon */
+  color: #e0e0e0; /* Subtle light gray text */
 }
 
 .card pre {
