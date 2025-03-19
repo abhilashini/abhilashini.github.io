@@ -83,7 +83,7 @@ body {
   display: block;
   width: 100px; /* Adjust as needed */
   height: 10px; /* Adjust as needed */
-  background: url('/assets/squiggle-blue.svg') no-repeat; /* Blue squiggle SVG */
+  background: url('/assets/images/squiggle-blue.svg') no-repeat; /* Blue squiggle SVG */
   background-size: contain;
   position: absolute;
   bottom: -10px; /* Position below the title */
