@@ -153,6 +153,14 @@ p {
   color: #e0e0e0; /* Subtle light gray text */
 }
 
+/* Card Typography */
+.card {
+  font-family: 'Inter', sans-serif; /* Crisp sans-serif font */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0; /* Subtle light gray text */
+}
+
 .card pre {
   background-color: #1e1e1e; /* Darker background for code */
   color: #e0e0e0; /* Subtle light gray text */
@@ -189,23 +197,49 @@ p {
   outline: 2px solid #6c5b7b; /* Focus indicator */
 }
 
-/* Active Section Highlight */
+/* Section Title Highlight */
 .section.active .section-title {
   animation: scaleUp 0.5s ease forwards;
   color: #6c5b7b; /* Muted purple for active title */
+  transform: scale(1.1); /* Keep scaled-up state */
 }
 
 @keyframes scaleUp {
   0% {
     transform: scale(1);
   }
-  50% {
+  100% {
     transform: scale(1.1);
   }
+}
+
+/* Hand-drawn Squiggle */
+.section.active .section-title::after {
+  content: '';
+  display: inline-block;
+  width: 40px; /* Adjust as needed */
+  height: 4px;
+  background: url('/assets/images/squiggle.svg') no-repeat; /* Add a hand-drawn squiggle SVG */
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Doodle Transition */
+.section.active .doodle {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
   100% {
-    transform: scale(1);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
 
 .section.active .card {
   border: 2px solid #6c5b7b; /* Highlight border for active cards */
