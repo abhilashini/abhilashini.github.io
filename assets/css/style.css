@@ -46,16 +46,20 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
-  position: relative; /* For squiggle positioning */
+  position: absolute;
+  top: 0;
+  width: 20rem;
   color: var(--color-text);
 }
 
 .section-title--left {
-  text-align: left;
+  left: -22rem; /* Position to the left of the column */
+  text-align: right;
 }
 
 .section-title--right {
-  text-align: right;
+  right: -22rem; /* Position to the right of the column */
+  text-align: left;
 }
 
 /* Active Section Highlight */
@@ -90,6 +94,21 @@ body {
 .section-title--right::after {
   left: auto;
   right: 0;
+}
+
+/* Doodles */
+.doodle {
+  width: 15rem;
+  position: absolute;
+  top: 0;
+}
+
+.doodle--left {
+  left: -16rem; /* Position to the left of the column */
+}
+
+.doodle--right {
+  right: -16rem; /* Position to the right of the column */
 }
 
 /* Doodle Transition */
