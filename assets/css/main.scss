@@ -53,14 +53,15 @@ body {
   }
 }
 
-// Doodle (first section)
-.intro-doodle {
+// Doodle (positioned outside central column)
+.doodle {
   position: absolute;
-  right: -240px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   width: 180px;
   opacity: 0.8;
+  
+  &--right { right: -240px; }
+  &--left { left: -240px; }
 }
 
 // Carousel
@@ -101,21 +102,37 @@ body {
       transition: transform 0.3s ease;
     }
   }
+
+  // Arrow icons
+  &-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    
+    i {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: $accent;
+      transition: opacity 0.3s ease;
+      
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
 }
 
 // Responsive
 @media (max-width: 768px) {
-  .section-title {
+  .section-title, .doodle {
     position: static;
     width: auto;
     text-align: left !important;
-    margin-bottom: 1rem;
-  }
-  
-  .intro-doodle {
-    position: static;
-    transform: none;
     margin: 2rem auto;
     display: block;
+  }
+  
+  .doodle {
+    width: 120px;
   }
 }

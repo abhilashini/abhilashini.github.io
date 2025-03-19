@@ -11,7 +11,7 @@ layout: default
     <p>11 years of solving problems...</p>
     <a href="#">Connect on LinkedIn <i class="fas fa-external-link-alt"></i></a>
     
-    <img src="/assets/images/SittingDoodle.svg" class="intro-doodle" alt="">
+    <img src="/assets/doodle.svg" class="doodle doodle--right" alt="">
   </div>
 </section>
 
@@ -30,6 +30,7 @@ layout: default
 <hr class="section-divider">
 
 <section class="section" id="avoid">
+  <img src="/assets/doodle2.svg" class="doodle doodle--right" alt="">
   <h2 class="section-title section-title--right" data-section="avoid">
     Things I Avoid
   </h2>
