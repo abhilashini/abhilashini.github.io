@@ -1,0 +1,9 @@
+- text: "Simplicity over cleverness. If it takes 3 lines to explain, it’s probably wrong."
+  icon: "fas fa-feather-alt"
+- code: |
+    def deploy():
+        # Ship fast, but leave breadcrumbs
+        logger.info("Deployed at midnight. Coffee saved the day.")
+  icon: "fas fa-code"
+- text: "Data isn’t truth—it’s a story waiting to be questioned."
+  icon: "fas fa-chart-line"

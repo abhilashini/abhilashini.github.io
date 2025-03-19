@@ -1,0 +1,6 @@
+- text: "Over-engineering solutions. Sometimes a simple script is enough."
+  icon: "fas fa-bomb"
+- text: "Ignoring edge cases. They’re where the real bugs hide."
+  icon: "fas fa-bug"
+- text: "Testing with perfect data. Real users are messy."
+  icon: "fas fa-users"

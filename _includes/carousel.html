@@ -1,0 +1,15 @@
+<div class="carousel" data-carousel>
+    {% for item in include.items %}
+    <div class="carousel-item" tabindex="0">
+      {% if item.icon %}
+        <i class="{{ item.icon }}"></i>
+      {% endif %}
+      {% if item.code %}
+        <pre><code>{{ item.code }}</code></pre>
+      {% else %}
+        <p>{{ item.text }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <div class="carousel-progress"></div>
+</div>
