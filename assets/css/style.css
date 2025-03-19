@@ -17,7 +17,12 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  position: relative;
+}
+
+/* Section container */
+.section {
+  position: relative; /* Anchor for absolute positioning */
+  margin-bottom: 4rem;
 }
 
 /* Section titles */
@@ -26,7 +31,7 @@ body {
   font-weight: 700;
   line-height: 1.2;
   position: absolute;
-  top: 0;
+  top: 0; /* Align with the top of the section */
   width: 200px; /* Adjust as needed */
 }
 
@@ -53,7 +58,7 @@ body {
 .doodle {
   width: 15rem;
   position: absolute;
-  top: 0;
+  top: 0; /* Align with the top of the section */
 }
 
 .flip {
@@ -70,7 +75,7 @@ body {
 
 /* Hand-drawn divider */
 .section-divider {
-  width: 10%;
+  width: 20%;
   height: 2px;
   background: #333;
   margin: 4rem auto;
