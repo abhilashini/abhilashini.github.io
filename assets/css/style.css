@@ -91,7 +91,7 @@ body {
 }
 
 /* Fix squiggle alignment for right-aligned titles */
-.section-title--right::after {
+.section-title--left::after {
   left: auto;
   right: 0;
 }
