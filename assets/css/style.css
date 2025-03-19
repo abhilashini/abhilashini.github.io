@@ -1,55 +1,91 @@
 /* Centered container */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-title--left {
+  text-align: left;
+  margin-left: -120px; /* Bring closer to the column */
+}
+
+.section-title--right {
+  text-align: right;
+  margin-right: -120px; /* Bring closer to the column */
+}
+
+/* Doodles */
+.doodle {
+  width: 15rem;
+  transform: scaleX(-1);
+  position: absolute;
+  top: 1rem;
+}
+
+.doodle--right {
+  right: -140px;
+}
+
+.doodle--left {
+  left: -140px;
+}
+
+/* Hand-drawn divider */
+.section-divider {
+  width: 60%;
+  height: 2px;
+  background: transparent;
+  border: 0;
+  margin: 4rem auto;
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transform: scaleX(0.8);
+  transform-origin: center;
+  animation: draw 0.5s ease-in-out forwards;
+}
+
+@keyframes draw {
+  from {
+    transform: scaleX(0);
   }
-  
-  /* Section titles */
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  to {
+    transform: scaleX(0.8);
   }
-  
-  .section-title--left {
-    text-align: left;
-  }
-  
-  .section-title--right {
-    text-align: right;
-  }
-  
-  /* Doodles */
+}
+
+/* Mobile adaptation */
+@media (max-width: 768px) {
   .doodle {
-    width: 120px;
-    position: absolute;
-    top: 1rem;
+    display: none;
   }
-  
-  .doodle--right {
-    right: -140px;
+
+  .section-title--left,
+  .section-title--right {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
   }
-  
-  .doodle--left {
-    left: -140px;
-  }
-  
-  /* Section divider */
+
   .section-divider {
-    height: 1px;
-    background: #ddd;
-    margin: 4rem auto;
-    width: 50%;
+    width: 40%;
   }
-  
-  /* Mobile adaptation */
-  @media (max-width: 768px) {
-    .doodle {
-      display: none;
-    }
-  
-    .section-divider {
-      width: 30%;
-    }
-  }
+}
