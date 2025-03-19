@@ -27,16 +27,17 @@ body {
   margin: 4rem 0;
   position: relative;
 
-  // Section title (left/right aligned)
+  // Section title (margin notes style)
   &-title {
     font-family: $font-heading;
     font-size: 1.8rem;
     position: absolute;
     width: 200px;
     top: 0;
+    transform: translateY(-50%);
     
-    &--left { left: -220px; }
-    &--right { right: -220px; text-align: right; }
+    &--left { left: -220px; text-align: right; }
+    &--right { right: -220px; text-align: left; }
     
     &.active {
       font-size: 2rem;
@@ -73,6 +74,7 @@ body {
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
 
+  // Carousel card
   &-item {
     scroll-snap-align: start;
     min-width: 300px;
@@ -80,6 +82,7 @@ body {
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     
     &:focus {
       outline: 2px solid $accent;

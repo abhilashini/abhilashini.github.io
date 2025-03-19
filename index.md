@@ -11,7 +11,7 @@ layout: default
     <p>11 years of solving problems...</p>
     <a href="#">Connect on LinkedIn <i class="fas fa-external-link-alt"></i></a>
     
-    <img src="/assets/doodle.svg" class="doodle doodle--right" alt="">
+    <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right" alt="">
   </div>
 </section>
 
