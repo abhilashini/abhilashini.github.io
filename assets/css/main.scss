@@ -27,7 +27,7 @@ body {
   margin: 4rem 0;
   position: relative;
 
-  // Section title (margin notes style)
+  // Section title (outside central column)
   &-title {
     font-family: $font-heading;
     font-size: 1.8rem;
@@ -54,7 +54,7 @@ body {
   }
 }
 
-// Doodle (positioned outside central column)
+// Doodle (outside central column)
 .doodle {
   position: absolute;
   top: 0;
