@@ -7,18 +7,20 @@
 
 /* Typography */
 :root {
-  --font-heading: 'Playfair Display', serif, Georgia, 'Times New Roman', Times, serif; /* Elegant serif for headings */
-  --font-subheading: 'Lora', serif, Georgia, 'Times New Roman', Times, serif; /* Modern serif for sub-headings */
-  --font-body: 'Merriweather', serif, Georgia, 'Times New Roman', Times, serif; /* Readable serif for body text */
+  --font-heading: 'Playfair Display', serif; /* Elegant serif for headings */
+  --font-body: 'Inter', sans-serif; /* Crisp sans-serif for body text */
+  --font-code: 'Courier New', Courier, monospace; /* Monospace for code */
   --font-size-base: 1rem;
   --line-height-base: 1.6;
-  --color-text: #2d2d2d; /* Dark gray for text */
-  --color-primary: #6c5b7b; /* Muted purple for accents */
-  --color-background: #f8f9fa; /* Light, neutral background */
+  --color-text: #4a3f35; /* Dark brown for text */
+  --color-background: #faf7f2; /* Soft off-white background */
+  --color-primary: #0077cc; /* Bright blue for accents */
+  --color-secondary: #ff6b35; /* Warm orange for accents */
+  --color-icon: #6c5b7b; /* Muted purple for icons */
 }
 
 body {
-  font-family: var(--font-body); /* Merriweather for body text */
+  font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--color-text);
@@ -40,177 +42,26 @@ body {
 
 /* Section titles */
 .section-title {
-  font-family: var(--font-heading); /* Playfair Display for headings */
-  font-size: 1.5rem; /* Updated to 1.5rem */
-  font-weight: 700; /* Bold for impact */
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
   line-height: 1.2;
-  position: absolute;
-  top: 0;
-  width: 20rem;
+  position: relative; /* For squiggle positioning */
   color: var(--color-text);
 }
 
 .section-title--left {
-  right: 40rem; /* Position to the left of the column */
-  text-align: right;
-}
-
-.section-title--right {
-  left: 40rem; /* Position to the right of the column */
   text-align: left;
 }
 
-/* Sub-heading (H2) */
-.sub-heading {
-  font-family: var(--font-subheading); /* Lora for sub-headings */
-  font-size: 1rem; /* Updated to 1rem */
-  font-weight: 400; /* Regular weight */
-  font-style: italic; /* Italic for variation */
-  color: var(--color-text);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+.section-title--right {
+  text-align: right;
 }
 
-/* Body text */
-p {
-  font-family: var(--font-body); /* Merriweather for paragraphs */
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--color-text);
-}
-
-/* Doodles */
-.doodle {
-  width: 15rem;
-  position: absolute;
-  top: 0;
-}
-
-.doodle--left {
-  left: -14rem; /* Reduced by 2rem */
-}
-
-.doodle--right {
-  left: 38rem; /* Reduced by 2rem */
-}
-
-/* Flip class for doodles */
-.flip {
-  transform: scaleX(-1);
-}
-
-/* Hand-drawn divider */
-.section-divider {
-  width: 60%;
-  height: 2px;
-  background: #ddd; /* Subtle divider */
-  margin: 4rem auto;
-}
-
-/* Cards/Panels */
-.carousel {
-  position: relative;
-  max-width: 600px; /* Adjust as needed */
-  margin: 0 auto;
-}
-
-
-.card.active {
-  display: block; /* Show only the active card */
-}
-
-.card .icon {
-  font-size: 1.5rem;
-  color: #6c5b7b; /* Muted purple for icons */
-  border: 2px solid #6c5b7b;
-  border-radius: 50%;
-  padding: 0.5rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 2.5rem; /* Fixed width */
-  height: 2.5rem; /* Fixed height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Card Typography */
-.card {
-  font-family: 'Inter', sans-serif; /* Crisp sans-serif font */
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #4a3f35; /* Dark brown for text */
-  background-color: #ffffff; /* White background for cards */
-  border: 1px solid #e0d6c2; /* Light border for scrapbook feel */
-}
-
-.card p {
-  font-family: 'Inter', sans-serif; /* Ensure non-code text uses Inter */
-  margin: 0;
-  padding-right: 4rem; /* Prevent text from clashing with icon */
-}
-
-.card pre {
-  font-family: 'Courier New', Courier, monospace; /* Monospace for code */
-  background-color: #f5f5f5; /* Light gray background for code */
-  color: #4a3f35; /* Dark brown for code text */
-  padding: 1rem;
-  border-radius: 4px;
-  overflow-x: auto;
-  margin: 1rem 0;
-}
-
-/* Font Awesome Icons */
-.card .icon {
-  font-size: 1.5rem;
-  color: #0077cc; /* Bright blue for icons */
-  border: 2px solid #0077cc;
-  border-radius: 50%;
-  padding: 0.5rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 2.5rem; /* Fixed width */
-  height: 2.5rem; /* Fixed height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Carousel Navigation */
-.carousel-nav {
-  position: absolute;
-  bottom: -2rem; /* Position below the card */
-  right: 0;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.carousel-nav button {
-  background: none;
-  border: none;
-  color: #0077cc; 
-  font-size: 1.2rem; /* Thin line icons */
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.carousel-nav button:hover {
-  color: #ff6b35; /* Warm orange on hover */
-}
-
-.carousel-nav button:focus {
-  outline: 2px solid #6c5b7b; /* Focus indicator */
-}
-
-/* Section Title Highlight */
+/* Active Section Highlight */
 .section.active .section-title {
   animation: scaleUp 0.5s ease forwards;
-  color: #4a3f35; /* Dark brown for titles */
   transform: scale(1.1); /* Keep scaled-up state */
-  position: relative; /* For squiggle positioning */
 }
 
 @keyframes scaleUp {
@@ -257,9 +108,85 @@ p {
   }
 }
 
+/* Cards/Panels */
+.carousel {
+  position: relative;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto;
+}
 
-.section.active .card {
-  border: 2px solid #6c5b7b; /* Highlight border for active cards */
+.card {
+  background-color: #ffffff; /* White background for cards */
+  color: var(--color-text);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+  display: none; /* Hide all cards by default */
+  border: 1px solid #e0d6c2; /* Light border for scrapbook feel */
+}
+
+.card.active {
+  display: block; /* Show only the active card */
+}
+
+.card .icon {
+  font-size: 1.5rem;
+  color: var(--color-icon); /* Muted purple for icons */
+  border: 2px solid var(--color-icon);
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 2.5rem; /* Fixed width */
+  height: 2.5rem; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-right: 4rem; /* Prevent text from clashing with icon */
+}
+
+.card pre {
+  font-family: var(--font-code); /* Monospace for code */
+  background-color: #f5f5f5; /* Light gray background for code */
+  color: var(--color-text);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+  position: absolute;
+  bottom: -2rem; /* Position below the card */
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-nav button {
+  background: none;
+  border: none;
+  color: var(--color-primary); /* Bright blue for arrows */
+  font-size: 1.2rem; /* Thin line icons */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel-nav button:hover {
+  color: var(--color-secondary); /* Warm orange on hover */
+}
+
+.carousel-nav button:focus {
+  outline: 2px solid var(--color-primary); /* Focus indicator */
 }
 
 /* Mobile adaptation */
@@ -274,8 +201,8 @@ p {
 
   .section-title--left,
   .section-title--right {
-    right: auto;
     left: auto;
+    right: auto;
   }
 
   .doodle--left,
