@@ -161,14 +161,20 @@ p {
   color: #e0e0e0; /* Subtle light gray text */
 }
 
+.card p {
+  font-family: 'Inter', sans-serif; /* Ensure non-code text uses Inter */
+  margin: 0;
+  padding-right: 4rem; /* Prevent text from clashing with icon */
+}
+
 .card pre {
+  font-family: 'Courier New', Courier, monospace; /* Monospace for code */
   background-color: #1e1e1e; /* Darker background for code */
   color: #e0e0e0; /* Subtle light gray text */
   padding: 1rem;
   border-radius: 4px;
   overflow-x: auto;
   margin: 1rem 0;
-  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
 }
 
 /* Carousel Navigation */
@@ -202,6 +208,7 @@ p {
   animation: scaleUp 0.5s ease forwards;
   color: #6c5b7b; /* Muted purple for active title */
   transform: scale(1.1); /* Keep scaled-up state */
+  position: relative; /* For squiggle positioning */
 }
 
 @keyframes scaleUp {
@@ -216,12 +223,14 @@ p {
 /* Hand-drawn Squiggle */
 .section.active .section-title::after {
   content: '';
-  display: inline-block;
-  width: 40px; /* Adjust as needed */
-  height: 4px;
-  background: url('/assets/images/squiggle.svg') no-repeat; /* Add a hand-drawn squiggle SVG */
-  margin-left: 0.5rem;
-  vertical-align: middle;
+  display: block;
+  width: 100px; /* Adjust as needed */
+  height: 10px; /* Adjust as needed */
+  background: url('/assets/images/squiggle-blue.svg') no-repeat; /* Blue squiggle SVG */
+  background-size: contain;
+  position: absolute;
+  bottom: -10px; /* Position below the title */
+  left: 0;
 }
 
 /* Doodle Transition */
