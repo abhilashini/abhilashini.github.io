@@ -10,13 +10,17 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
+  background-color: #f9f5e3; /* Muted scrapbook background */
 }
 
 /* Centered content column */
 .centered-column {
-  max-width: 600px;
+  max-width: 40rem; /* Updated */
   margin: 0 auto;
   padding: 2rem 1rem;
+  background-color: #fff; /* White center column */
+  border: 1px solid #e0d6c2; /* Subtle border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
 }
 
 /* Section container */
@@ -27,57 +31,59 @@ body {
 
 /* Section titles */
 .section-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem; /* Updated */
   font-weight: 700;
   line-height: 1.2;
   position: absolute;
   top: 0; /* Align with the top of the section */
-  width: 200px; /* Adjust as needed */
+  width: 20rem; /* Updated */
+  color: #5a4a3a; /* Muted scrapbook text color */
 }
 
 .section-title--left {
-  left: -220px; /* Position to the left of the column */
-  text-align: right;
+  right: 40rem; /* Updated */
+  text-align: right; /* Updated */
 }
 
 .section-title--right {
-  right: -220px; /* Position to the right of the column */
-  text-align: left;
+  left: 42rem; /* Updated */
+  text-align: left; /* Updated */
 }
 
 /* Sub-heading (H2) */
 .sub-heading {
-  font-size: 1.25rem;
+  font-size: 1rem; /* Updated */
   font-weight: 600;
-  color: #555;
+  color: #7a6a5a; /* Muted scrapbook text color */
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
 /* Doodles */
 .doodle {
-  width: 15rem;
+  width: 15rem; /* Updated */
   position: absolute;
   top: 0; /* Align with the top of the section */
 }
 
-.flip {
-  transform: scaleX(-1);
-}
-
 .doodle--left {
-  left: -140px; /* Position to the left of the column */
+  left: -16rem; /* Position to the left of the column */
 }
 
 .doodle--right {
-  right: -140px; /* Position to the right of the column */
+  left: 40rem; /* Updated */
+}
+
+/* Flip class for doodles */
+.flip {
+  transform: scaleX(-1); /* Added */
 }
 
 /* Hand-drawn divider */
 .section-divider {
   width: 20%;
   height: 2px;
-  background: #333;
+  background: #e0d6c2; /* Muted scrapbook divider color */
   margin: 4rem auto;
 }
 
@@ -93,8 +99,8 @@ body {
 
   .section-title--left,
   .section-title--right {
-    left: auto;
     right: auto;
+    left: auto;
   }
 
   .doodle--left,

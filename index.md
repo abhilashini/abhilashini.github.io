@@ -33,6 +33,6 @@ layout: default
     <div class="content">
       {% include carousel.html items=site.data.avoid %}
     </div>
-    <img src="/assets/doodle2.svg" class="doodle doodle--left" alt="">
+    <img src="/assets/doodle2.svg" class="doodle doodle--left flip" alt="">
   </section>
 </div>
