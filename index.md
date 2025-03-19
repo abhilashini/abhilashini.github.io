@@ -13,7 +13,7 @@ layout: default
 
   <hr class="section-divider">
 
- <!-- Philosophy Section -->
+<!-- Philosophy Section -->
 <section class="section" id="philosophy">
   <h1 class="section-title section-title--left" data-section="philosophy">
     My Philosophy
@@ -25,7 +25,7 @@ layout: default
 
   <hr class="section-divider">
 
-  <!-- Avoid Section -->
+<!-- Avoid Section -->
 <section class="section" id="avoid">
   <h1 class="section-title section-title--right" data-section="avoid">
     Things I Avoid
@@ -35,4 +35,3 @@ layout: default
   </div>
   <img src="/assets/doodle2.svg" class="doodle doodle--left flip" alt="">
 </section>
-</div>

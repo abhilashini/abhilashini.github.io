@@ -1,15 +1,29 @@
-document.addEventListener('keydown', (e) => {
-  const carousel = document.querySelector('.carousel');
-  const cards = Array.from(carousel.querySelectorAll('.card'));
-  const activeIndex = cards.findIndex(card => card.classList.contains('active'));
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.carousel');
 
-  if (e.key === 'ArrowRight') {
-    const nextIndex = (activeIndex + 1) % cards.length;
-    cards[activeIndex]?.classList.remove('active');
-    cards[nextIndex]?.classList.add('active');
-  } else if (e.key === 'ArrowLeft') {
-    const prevIndex = (activeIndex - 1 + cards.length) % cards.length;
-    cards[activeIndex]?.classList.remove('active');
-    cards[prevIndex]?.classList.add('active');
-  }
+  carousels.forEach(carousel => {
+    const cards = Array.from(carousel.querySelectorAll('.card'));
+    const prevButton = carousel.querySelector('.carousel-nav button:first-child');
+    const nextButton = carousel.querySelector('.carousel-nav button:last-child');
+    let activeIndex = 0;
+
+    const showCard = (index) => {
+      cards.forEach((card, i) => {
+        card.classList.toggle('active', i === index);
+      });
+    };
+
+    prevButton.addEventListener('click', () => {
+      activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+      showCard(activeIndex);
+    });
+
+    nextButton.addEventListener('click', () => {
+      activeIndex = (activeIndex + 1) % cards.length;
+      showCard(activeIndex);
+    });
+
+    // Show the first card initially
+    showCard(activeIndex);
+  });
 });

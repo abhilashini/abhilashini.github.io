@@ -109,19 +109,24 @@ p {
 }
 
 /* Cards/Panels */
+.carousel {
+  position: relative;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
 .card {
   background-color: #2d2d2d; /* Dark background */
-  color: #f8f9fa; /* Light text */
+  color: #e0e0e0; /* Subtle light gray text */
   padding: 1.5rem;
   border-radius: 8px;
   margin-bottom: 1rem;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: none; /* Hide all cards by default */
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.card.active {
+  display: block; /* Show only the active card */
 }
 
 .card .icon {
@@ -139,26 +144,24 @@ p {
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
+  padding-right: 4rem; /* Prevent text from clashing with icon */
 }
 
 .card pre {
   background-color: #1e1e1e; /* Darker background for code */
-  color: #f8f9fa;
+  color: #e0e0e0; /* Subtle light gray text */
   padding: 1rem;
   border-radius: 4px;
   overflow-x: auto;
   margin: 1rem 0;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
 }
 
 /* Carousel Navigation */
-.carousel {
-  position: relative;
-}
-
 .carousel-nav {
   position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: -2rem; /* Position below the card */
+  right: 0;
   display: flex;
   gap: 0.5rem;
 }
@@ -167,7 +170,7 @@ p {
   background: none;
   border: none;
   color: #6c5b7b; /* Muted purple for arrows */
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Thin line icons */
   cursor: pointer;
   transition: color 0.3s ease;
 }
