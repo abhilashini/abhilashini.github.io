@@ -186,6 +186,7 @@ body {
   border-radius: 4px;
   overflow-x: auto;
   margin: 3rem 0 0 0;
+  white-space: pre-wrap;
 }
 
 /* Carousel Navigation */
@@ -238,5 +239,51 @@ body {
 
   .section-divider {
     width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack titles/doodles above content */
+  .section-title,
+  .doodle {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  /* Center titles and doodles */
+  .section-title--left,
+  .section-title--right {
+    left: auto;
+    right: auto;
+    text-align: center;
+  }
+
+  .doodle--left,
+  .doodle--right {
+    left: auto;
+    right: auto;
+    display: block;
+    margin: 0 auto 2rem;
+  }
+
+  /* Horizontal scrolling for carousels */
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+  }
+
+  .carousel .card {
+    flex: 0 0 90%; /* 90% width for mobile cards */
+    scroll-snap-align: start;
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .carousel-nav {
+    display: none; /* Hide arrows on mobile (use swipe) */
   }
 }

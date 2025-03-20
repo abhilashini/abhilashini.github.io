@@ -49,3 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
   showSection(activeSectionIndex);
   showCard(sections[activeSectionIndex].querySelector('.carousel'), activeCarouselIndex);
 });
+
+// Add touch swipe detection
+document.querySelectorAll('.carousel').forEach(carousel => {
+  let touchStartX = 0;
+  carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+  carousel.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchStartX - touchEndX;
+    if (Math.abs(deltaX) > 50) { // Minimum swipe distance
+      if (deltaX > 0) navigateCarousel(1); // Swipe left → next
+      else navigateCarousel(-1); // Swipe right → previous
+    }
+  });
+});
