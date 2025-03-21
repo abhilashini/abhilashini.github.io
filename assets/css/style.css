@@ -243,29 +243,34 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Stack titles/doodles above content */
+  /* Reset absolute positioning for mobile */
   .section-title,
   .doodle {
     position: static !important; /* Override absolute positioning */
     width: 100%;
     text-align: center;
     margin: 1rem auto;
+    left: auto !important; /* Reset left/right positioning */
+    right: auto !important;
   }
 
-  /* Center titles and doodles */
+  /* Center titles and doodles within their sections */
   .section-title--left,
   .section-title--right {
-    left: auto;
-    right: auto;
     text-align: center;
   }
 
   .doodle--left,
   .doodle--right {
-    left: auto;
-    right: auto;
     display: block;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2rem; /* Center doodles */
+  }
+
+  /* Ensure sections stack properly */
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Horizontal scrolling for carousels */
@@ -281,9 +286,5 @@ body {
     flex: 0 0 90%; /* 90% width for mobile cards */
     scroll-snap-align: start;
     margin-right: 1rem;
-  }
-
-  .carousel-nav {
-    display: none; /* Hide arrows on mobile (use swipe) */
   }
 }

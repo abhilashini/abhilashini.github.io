@@ -40,6 +40,6 @@ permalink: /palette-exploration-journey/
     width: 100%;
   }
   td, th {
-    padding: 10px; /* Adjust padding to increase spacing */
+    padding: 10px;
   }
 </style>
