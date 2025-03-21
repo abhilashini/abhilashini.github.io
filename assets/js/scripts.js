@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = Array.from(document.querySelectorAll('.section'));
   const carousels = document.querySelectorAll('.carousel');
 
-  let activeSectionIndex = 0;
-  let activeCarouselIndex = 0;
+  let activeSectionIndex = 0; // Initialize to the first section
 
   const showSection = (index) => {
       sections.forEach((section, i) => {
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 
-  // Initialize
+  // Initialize - first section active
   showSection(activeSectionIndex);
   showCard(sections[activeSectionIndex].querySelector('.carousel'), 0);
 
@@ -79,11 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
           const touchEndX = e.changedTouches[0].clientX;
           const deltaX = touchStartX - touchEndX;
           if (Math.abs(deltaX) > 50) { // Minimum swipe distance
-              if (deltaX > 0) {
-                  navigateCarousel(carousel, 1); // Swipe left → next
-              } else {
-                  navigateCarousel(carousel, -1); // Swipe right → previous
-              }
+              navigateCarousel(carousel, deltaX > 0 ? 1 : -1);
+
+              // Mark the current section active
+              const currentSection = carousel.closest('.section');
+              const currentSectionIndex = sections.indexOf(currentSection);
+              showSection(currentSectionIndex);
+              activeSectionIndex = currentSectionIndex; // Update active index
           }
       });
   });
