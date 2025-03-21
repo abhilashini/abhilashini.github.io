@@ -1,70 +1,96 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = Array.from(document.querySelectorAll('.section'));
-  const carousels = document.querySelectorAll('.carousel');
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.section');
+  const sectionTitles = document.querySelectorAll('.section-title');
+  const doodles = document.querySelectorAll('.doodle');
+  const cards = document.querySelectorAll('.card');
+  const carouselNav = document.querySelector('.carousel-nav');
+  let currentCardIndex = 0;
 
-  let activeSectionIndex = 0;
-  let activeCarouselIndex = 0;
+  function showCard(index) {
+      cards.forEach((card, i) => {
+          card.classList.remove('active');
+          if (i === index) {
+              card.classList.add('active');
+          }
+      });
+  }
 
-  const showSection = (index) => {
-    sections.forEach((section, i) => {
-      section.classList.toggle('active', i === index);
-    });
-  };
+  function nextCard() {
+      currentCardIndex = (currentCardIndex + 1) % cards.length;
+      showCard(currentCardIndex);
+  }
 
-  const showCard = (carousel, index) => {
-    const cards = Array.from(carousel.querySelectorAll('.card'));
-    cards.forEach((card, i) => {
-      card.classList.toggle('active', i === index);
-    });
-  };
+  function prevCard() {
+      currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+      showCard(currentCardIndex);
+  }
 
-  const navigateCarousel = (direction) => {
-    const activeCarousel = sections[activeSectionIndex].querySelector('.carousel');
-    if (!activeCarousel) return;
+  if (carouselNav) {
+      const prevButton = document.createElement('button');
+      prevButton.textContent = '❮';
+      prevButton.addEventListener('click', prevCard);
 
-    const cards = Array.from(activeCarousel.querySelectorAll('.card'));
-    activeCarouselIndex = (activeCarouselIndex + direction + cards.length) % cards.length;
-    showCard(activeCarousel, activeCarouselIndex);
-  };
+      const nextButton = document.createElement('button');
+      nextButton.textContent = '❯';
+      nextButton.addEventListener('click', nextCard);
 
-  const navigateSection = (direction) => {
-    activeSectionIndex = (activeSectionIndex + direction + sections.length) % sections.length;
-    showSection(activeSectionIndex);
-    activeCarouselIndex = 0; // Reset carousel index when switching sections
-  };
+      carouselNav.appendChild(prevButton);
+      carouselNav.appendChild(nextButton);
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') {
-      navigateCarousel(1); // Next card
-    } else if (e.key === 'ArrowLeft') {
-      navigateCarousel(-1); // Previous card
-    } else if (e.key === 'ArrowDown') {
-      navigateSection(1); // Next section
-    } else if (e.key === 'ArrowUp') {
-      navigateSection(-1); // Previous section
-    }
+      // Keyboard Navigation
+      document.addEventListener('keydown', function(event) {
+          if (event.key === 'ArrowLeft') {
+              prevCard();
+          } else if (event.key === 'ArrowRight') {
+              nextCard();
+          }
+      });
+  }
+
+  function handleIntersection(entries, observer) {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+          }
+      });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.5,
   });
 
-  // Initialize
-  showSection(activeSectionIndex);
-  showCard(sections[activeSectionIndex].querySelector('.carousel'), activeCarouselIndex);
-});
+  sections.forEach(section => {
+      observer.observe(section);
+  });
 
-// Add touch swipe detection
-document.querySelectorAll('.carousel').forEach(carousel => {
+  // Touch Navigation
   let touchStartX = 0;
+  let touchEndX = 0;
 
-  carousel.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
-  });
+  function handleTouchStart(event) {
+      touchStartX = event.touches[0].clientX;
+  }
 
-  carousel.addEventListener('touchend', (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const deltaX = touchStartX - touchEndX;
+  function handleTouchEnd(event) {
+      touchEndX = event.changedTouches[0].clientX;
+      handleSwipeGesture();
+  }
 
-    if (Math.abs(deltaX) > 50) { // Minimum swipe distance
-      if (deltaX > 0) navigateCarousel(carousel, 1); // Swipe left → next
-      else navigateCarousel(carousel, -1); // Swipe right → previous
-    }
-  });
+  function handleSwipeGesture() {
+      const swipeThreshold = 50; // Adjust threshold as needed
+      const deltaX = touchEndX - touchStartX;
+
+      if (deltaX > swipeThreshold) {
+          prevCard(); // Swipe right
+      } else if (deltaX < -swipeThreshold) {
+          nextCard(); // Swipe left
+      }
+  }
+
+  const carousel = document.querySelector('.carousel');
+  if (carousel) {
+      carousel.addEventListener('touchstart', handleTouchStart);
+      carousel.addEventListener('touchend', handleTouchEnd);
+  }
 });
