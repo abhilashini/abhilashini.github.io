@@ -60,12 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
       if (prevButton) {
           prevButton.addEventListener('click', () => {
               navigateCarousel(carousel, -1);
+              // Mark the current section active
+              const currentSection = carousel.closest('.section');
+              const currentSectionIndex = sections.indexOf(currentSection);
+              showSection(currentSectionIndex);
+              activeSectionIndex = currentSectionIndex;
           });
       }
 
       if (nextButton) {
           nextButton.addEventListener('click', () => {
               navigateCarousel(carousel, 1);
+              // Mark the current section active
+              const currentSection = carousel.closest('.section');
+              const currentSectionIndex = sections.indexOf(currentSection);
+              showSection(currentSectionIndex);
+              activeSectionIndex = currentSectionIndex;
           });
       }
 
@@ -84,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
               const currentSection = carousel.closest('.section');
               const currentSectionIndex = sections.indexOf(currentSection);
               showSection(currentSectionIndex);
-              activeSectionIndex = currentSectionIndex; // Update active index
+              activeSectionIndex = currentSectionIndex;
           }
       });
   });
