@@ -215,33 +215,6 @@ body {
   outline: 2px solid var(--color-primary); /* Focus indicator */
 }
 
-/* Mobile adaptation */
-@media (max-width: 768px) {
-  .section-title,
-  .doodle {
-    position: static;
-    width: 100%;
-    text-align: center;
-    margin: 1rem 0;
-  }
-
-  .section-title--left,
-  .section-title--right {
-    left: auto;
-    right: auto;
-  }
-
-  .doodle--left,
-  .doodle--right {
-    left: auto;
-    right: auto;
-  }
-
-  .section-divider {
-    width: 40%;
-  }
-}
-
 @media (max-width: 768px) {
   /* Reset absolute positioning for mobile */
   .section-title,
