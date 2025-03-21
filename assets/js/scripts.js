@@ -19,37 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
-  const navigateCarousel = (direction) => {
-      const activeCarousel = sections[activeSectionIndex].querySelector('.carousel');
-      if (!activeCarousel) return;
+  const navigateCarousel = (carousel, direction) => {
+      if (!carousel) return;
 
-      const cards = Array.from(activeCarousel.querySelectorAll('.card'));
-      activeCarouselIndex = (activeCarouselIndex + direction + cards.length) % cards.length;
-      showCard(activeCarousel, activeCarouselIndex);
+      const cards = Array.from(carousel.querySelectorAll('.card'));
+      let carouselIndex = cards.findIndex(card => card.classList.contains('active'));
+      carouselIndex = (carouselIndex + direction + cards.length) % cards.length;
+      showCard(carousel, carouselIndex);
   };
 
   const navigateSection = (direction) => {
       activeSectionIndex = (activeSectionIndex + direction + sections.length) % sections.length;
       showSection(activeSectionIndex);
-      activeCarouselIndex = 0; // Reset carousel index when switching sections
-      showCard(sections[activeSectionIndex].querySelector('.carousel'), activeCarouselIndex);
+      showCard(sections[activeSectionIndex].querySelector('.carousel'), 0);
   };
 
   document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') {
-          navigateCarousel(1); // Next card
+          navigateCarousel(sections[activeSectionIndex].querySelector('.carousel'), 1);
       } else if (e.key === 'ArrowLeft') {
-          navigateCarousel(-1); // Previous card
+          navigateCarousel(sections[activeSectionIndex].querySelector('.carousel'), -1);
       } else if (e.key === 'ArrowDown') {
-          navigateSection(1); // Next section
+          navigateSection(1);
       } else if (e.key === 'ArrowUp') {
-          navigateSection(-1); // Previous section
+          navigateSection(-1);
       }
   });
 
   // Initialize
   showSection(activeSectionIndex);
-  showCard(sections[activeSectionIndex].querySelector('.carousel'), activeCarouselIndex);
+  showCard(sections[activeSectionIndex].querySelector('.carousel'), 0);
 
   // Add touch and click navigation for carousels
   carousels.forEach(carousel => {
@@ -61,13 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (prevButton) {
           prevButton.addEventListener('click', () => {
-              navigateCarousel(-1);
+              navigateCarousel(carousel, -1);
           });
       }
 
       if (nextButton) {
           nextButton.addEventListener('click', () => {
-              navigateCarousel(1);
+              navigateCarousel(carousel, 1);
           });
       }
 
@@ -81,33 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const deltaX = touchStartX - touchEndX;
           if (Math.abs(deltaX) > 50) { // Minimum swipe distance
               if (deltaX > 0) {
-                  navigateCarousel(1); // Swipe left → next
+                  navigateCarousel(carousel, 1); // Swipe left → next
               } else {
-                  navigateCarousel(-1); // Swipe right → previous
-              }
-          }
-      });
-
-      // Touch swipe for section change
-      carousel.addEventListener('touchstart', (e) => {
-          touchStartX = e.touches[0].clientX;
-      });
-
-      carousel.addEventListener('touchend', (e) => {
-          const touchEndX = e.changedTouches[0].clientX;
-          const deltaX = touchStartX - touchEndX;
-          if (Math.abs(deltaX) > 100) { // Larger threshold for section change
-              const currentSection = carousel.closest('.section');
-              const currentSectionIndex = sections.indexOf(currentSection);
-
-              if (deltaX > 0) { // Swipe left
-                  if (currentSectionIndex + 1 < sections.length) {
-                      navigateSection(1);
-                  }
-              } else { // Swipe right
-                  if (currentSectionIndex - 1 >= 0) {
-                      navigateSection(-1);
-                  }
+                  navigateCarousel(carousel, -1); // Swipe right → previous
               }
           }
       });
