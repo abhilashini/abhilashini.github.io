@@ -80,8 +80,35 @@ document.addEventListener('DOMContentLoaded', () => {
           const touchEndX = e.changedTouches[0].clientX;
           const deltaX = touchStartX - touchEndX;
           if (Math.abs(deltaX) > 50) { // Minimum swipe distance
-              if (deltaX > 0) navigateCarousel(1); // Swipe left → next
-              else navigateCarousel(-1); // Swipe right → previous
+              if (deltaX > 0) {
+                  navigateCarousel(1); // Swipe left → next
+              } else {
+                  navigateCarousel(-1); // Swipe right → previous
+              }
+          }
+      });
+
+      // Touch swipe for section change
+      carousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', (e) => {
+          const touchEndX = e.changedTouches[0].clientX;
+          const deltaX = touchStartX - touchEndX;
+          if (Math.abs(deltaX) > 100) { // Larger threshold for section change
+              const currentSection = carousel.closest('.section');
+              const currentSectionIndex = sections.indexOf(currentSection);
+
+              if (deltaX > 0) { // Swipe left
+                  if (currentSectionIndex + 1 < sections.length) {
+                      navigateSection(1);
+                  }
+              } else { // Swipe right
+                  if (currentSectionIndex - 1 >= 0) {
+                      navigateSection(-1);
+                  }
+              }
           }
       });
   });
