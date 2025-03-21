@@ -217,28 +217,30 @@ body {
 
 @media (max-width: 768px) {
   body {
-    background-color: red !important; /* Temp Debug: Make the background red */
+    background-color: red; /* Removed !important */
   }
 
-  /* Reset absolute positioning for mobile */
-  .section-title,
-  .doodle {
-    position: static !important; /* Override absolute positioning */
+  /* Increase specificity and use initial/unset */
+  .section .section-title--left,
+  .section .section-title--right,
+  .section .doodle--left,
+  .section .doodle--right {
+    position: static;
     width: 100%;
     text-align: center;
     margin: 1rem auto;
-    left: auto !important; /* Reset left/right positioning */
-    right: auto !important;
+    left: initial;
+    right: initial;
   }
 
   /* Center titles and doodles within their sections */
-  .section-title--left,
-  .section-title--right {
+  .section .section-title--left,
+  .section .section-title--right {
     text-align: center;
   }
 
-  .doodle--left,
-  .doodle--right {
+  .section .doodle--left,
+  .section .doodle--right {
     display: block;
     margin: 0 auto 2rem; /* Center doodles */
   }
