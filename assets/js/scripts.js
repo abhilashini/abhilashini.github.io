@@ -1,103 +1,69 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const sections = document.querySelectorAll('.section');
-  const cards = document.querySelectorAll('.card');
-  const carouselNavs = document.querySelectorAll('.carousel-nav'); // Select all navs
-  let currentCardIndices = {}; // Track card index per section
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = Array.from(document.querySelectorAll('.section'));
+  const carousels = document.querySelectorAll('.carousel');
 
-  sections.forEach(section => {
-      currentCardIndices[section.id] = 0; // Initialize card index for each section
+  let activeSectionIndex = 0;
+  let activeCarouselIndex = 0;
+
+  const showSection = (index) => {
+    sections.forEach((section, i) => {
+      section.classList.toggle('active', i === index);
+    });
+  };
+
+  const showCard = (carousel, index) => {
+    if (!carousel) return;
+    const cards = Array.from(carousel.querySelectorAll('.card'));
+    cards.forEach((card, i) => {
+      card.classList.toggle('active', i === index);
+    });
+  };
+
+  const navigateCarousel = (direction) => {
+    const activeCarousel = sections[activeSectionIndex].querySelector('.carousel');
+    if (!activeCarousel) return;
+
+    const cards = Array.from(activeCarousel.querySelectorAll('.card'));
+    activeCarouselIndex = (activeCarouselIndex + direction + cards.length) % cards.length;
+    showCard(activeCarousel, activeCarouselIndex);
+  };
+
+  const navigateSection = (direction) => {
+    activeSectionIndex = (activeSectionIndex + direction + sections.length) % sections.length;
+    showSection(activeSectionIndex);
+    activeCarouselIndex = 0; // Reset carousel index when switching sections
+    showCard(sections[activeSectionIndex].querySelector('.carousel'), activeCarouselIndex);
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      navigateCarousel(1); // Next card
+    } else if (e.key === 'ArrowLeft') {
+      navigateCarousel(-1); // Previous card
+    } else if (e.key === 'ArrowDown') {
+      navigateSection(1); // Next section
+    } else if (e.key === 'ArrowUp') {
+      navigateSection(-1); // Previous section
+    }
   });
 
-  function showCard(sectionId, index) {
-      cards.forEach(card => {
-          if (card.parentElement.parentElement.parentElement.id === sectionId) {
-              card.classList.remove('active');
-              if (parseInt(card.getAttribute('data-index')) === index) {
-                  card.classList.add('active');
-              }
-          }
-      });
-  }
+  // Initialize
+  showSection(activeSectionIndex);
+  showCard(sections[activeSectionIndex].querySelector('.carousel'), activeCarouselIndex);
 
-  function setupCarousel(section) {
-      const carouselNav = section.querySelector('.carousel-nav');
-      const sectionCards = Array.from(section.querySelectorAll('.card'));
-      const sectionId = section.id;
-
-      sectionCards.forEach((card, index) => {
-          card.setAttribute('data-index', index);
-      });
-
-      if (carouselNav) {
-          const prevButton = carouselNav.querySelector('button[aria-label="Previous"]');
-          const nextButton = carouselNav.querySelector('button[aria-label="Next"]');
-
-          if (prevButton && nextButton) {
-              prevButton.addEventListener('click', () => {
-                  currentCardIndices[sectionId] = (currentCardIndices[sectionId] - 1 + sectionCards.length) % sectionCards.length;
-                  showCard(sectionId, currentCardIndices[sectionId]);
-              });
-
-              nextButton.addEventListener('click', () => {
-                  currentCardIndices[sectionId] = (currentCardIndices[sectionId] + 1) % sectionCards.length;
-                  showCard(sectionId, currentCardIndices[sectionId]);
-              });
-          }
-
-          // Keyboard Navigation
-          document.addEventListener('keydown', (event) => {
-              if (document.querySelector(`#${sectionId}.active`)) {
-                  if (event.key === 'ArrowLeft') {
-                      currentCardIndices[sectionId] = (currentCardIndices[sectionId] - 1 + sectionCards.length) % sectionCards.length;
-                      showCard(sectionId, currentCardIndices[sectionId]);
-                  } else if (event.key === 'ArrowRight') {
-                      currentCardIndices[sectionId] = (currentCardIndices[sectionId] + 1) % sectionCards.length;
-                      showCard(sectionId, currentCardIndices[sectionId]);
-                  }
-              }
-          });
-
-          // Touch Navigation
-          let touchStartX = 0;
-          let touchEndX = 0;
-
-          section.querySelector('.carousel').addEventListener('touchstart', (event) => {
-              touchStartX = event.touches[0].clientX;
-          });
-
-          section.querySelector('.carousel').addEventListener('touchend', (event) => {
-              touchEndX = event.changedTouches[0].clientX;
-              const swipeThreshold = 50;
-              const deltaX = touchEndX - touchStartX;
-
-              if (deltaX > swipeThreshold) {
-                  currentCardIndices[sectionId] = (currentCardIndices[sectionId] - 1 + sectionCards.length) % sectionCards.length;
-                  showCard(sectionId, currentCardIndices[sectionId]);
-              } else if (deltaX < -swipeThreshold) {
-                  currentCardIndices[sectionId] = (currentCardIndices[sectionId] + 1) % sectionCards.length;
-                  showCard(sectionId, currentCardIndices[sectionId]);
-              }
-          });
+  // Add touch swipe detection
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    });
+    carousel.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaX = touchStartX - touchEndX;
+      if (Math.abs(deltaX) > 50) { // Minimum swipe distance
+        if (deltaX > 0) navigateCarousel(1); // Swipe left → next
+        else navigateCarousel(-1); // Swipe right → previous
       }
-  }
-
-  sections.forEach(setupCarousel); // Setup each carousel
-
-  function handleIntersection(entries, observer) {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-          } else {
-              entry.target.classList.remove('active');
-          }
-      });
-  }
-
-  const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5,
-  });
-
-  sections.forEach(section => {
-      observer.observe(section);
+    });
   });
 });
