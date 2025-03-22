@@ -12,11 +12,12 @@
   --font-code: 'Courier New', Courier, monospace; /* Monospace for code */
   --font-size-base: 1rem;
   --line-height-base: 1.6;
-  --color-text: #4a3f35; /* Dark brown for text */
-  --color-background: #faf7f2; /* Soft off-white background */
-  --color-primary: #0077cc; /* Bright blue for accents */
-  --color-secondary: #ff6b35; /* Warm orange for accents */
-  --color-icon: #6c5b7b; /* Muted purple for icons */
+  --color-text: #212529; 
+  --color-background: #FFFFFF;
+  --color-primary: #9775FA;
+  --color-secondary: #63E6BE; 
+  --color-icon: #4DABF7; 
+  --color-accent: #B2F2BB;
 }
 
 body {
@@ -32,6 +33,21 @@ body {
   max-width: 40rem;
   margin: 0 auto;
   padding: 2rem 1rem;
+}
+
+.sub-heading {
+  color: var(--color-secondary);
+}
+
+.section-divider {
+  width: 50%;
+  height: 8px;
+  margin: 2rem auto;
+  background: linear-gradient( to right, transparent, #b2f2bb 20%, #63e6be 40%, #4dabf7 50%, #63e6be 60%, #b2f2bb 80%, transparent );
+  border: none;
+  outline: none;
+  mask: radial-gradient(circle, black 50%, transparent 50%);
+  mask-size: 10px 10px;
 }
 
 /* Section container */
@@ -141,23 +157,33 @@ body {
 }
 
 .card {
-  background-color: #ffffff; /* White background for cards */
+  background-color: #ffffff; /* White background for openness */
   color: var(--color-text);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 4px;
   margin-bottom: 1rem;
   position: relative;
-  display: none; /* Hide all cards by default */
-  border: 1px solid #e0d6c2; /* Light border for scrapbook feel */
+  display: none;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card.active {
   display: block; /* Show only the active card */
+  transform: translateY(-3px);
+  border-color: #4dabf7;
+  border-color: rgba(77, 171, 247, 0.5); /* Soft blue border on hover */
+}
+
+.card.active .icon {
+  background-color: var(--color-icon);
+  color: var(--color-background);
+  border-color: var(--color-icon);
 }
 
 .card .icon {
   font-size: 1.5rem;
-  color: var(--color-icon); /* Muted purple for icons */
+  color: var(--color-icon);
   border: 2px solid var(--color-icon);
   border-radius: 50%;
   padding: 0.5rem;
@@ -169,6 +195,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-background); /* White background for icon */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .card p {
@@ -179,12 +207,11 @@ body {
 }
 
 .card pre {
-  font-family: var(--font-code); /* Monospace for code */
-  background-color: #f5f5f5; /* Light gray background for code */
+  font-family: var(--font-code);
+  background-color: #f8f9fa; /* Light gray background for code */
   color: var(--color-text);
   padding: 1rem;
   border-radius: 4px;
-  overflow-x: auto;
   margin: 3rem 0 0 0;
   white-space: pre-wrap;
 }
