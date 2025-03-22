@@ -35,3 +35,38 @@ layout: default
   </div>
   <img src="/assets/doodle2.svg" class="doodle doodle--left flip" alt="">
 </section>
+
+<hr class="section-divider">
+
+<!-- Left Doodle Test Section -->
+<section class="section" id="leftTest">
+  <h1 class="section-title section-title--right" data-section="avoid">
+    Things I Test
+  </h1>
+  <div class="content">
+    {% include carousel.html items=site.data.avoid %}
+  </div>
+  <img src="/assets/images/MeditatingDoodle.svg" class="doodle doodle--left" alt="">
+</section>
+
+<hr class="section-divider">
+
+<section class="section" id="rightTest2">
+  <h1 class="section-title section-title--right" data-section="philosophy">
+    Right aligned section title
+  </h1>
+  <div class="content">
+    {% include carousel.html items=site.data.philosophy %}
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="section" id="leftTest2">
+  <h1 class="section-title section-title--left" data-section="philosophy">
+    Left aligned title
+  </h1>
+  <div class="content">
+    {% include carousel.html items=site.data.philosophy %}
+  </div>
+</section>
