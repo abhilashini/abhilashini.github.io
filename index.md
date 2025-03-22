@@ -41,7 +41,7 @@ layout: default
 <!-- Left Doodle Test Section -->
 <section class="section" id="leftTest">
   <p>This is a test section with some random notes. Can have some <strong>focused highlights</strong> supplementing info in rest of the page to make it <em>stand apart</em></p>
-  <img src="/assets/images/MeditatingDoodle.svg" class="doodle doodle--left" alt="">
+  <img src="/assets/images/LayingDoodle.svg" class="doodle doodle--left" alt="">
 </section>
 
 <hr class="section-divider">
