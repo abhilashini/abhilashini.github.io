@@ -208,12 +208,12 @@ body {
 
 .card pre {
   font-family: var(--font-code);
-  background-color: #f8f9fa; /* Light gray background for code */
+  background-color: #f8f9fa !important; /* Light gray background for code */
   color: var(--color-text);
   padding: 1rem;
   border-radius: 4px;
-  margin: 3rem 0 0 0;
-  white-space: pre-wrap;
+  margin: 3rem 0 0 0 !important;
+  white-space: pre-wrap !important;
 }
 
 /* Carousel Navigation */
