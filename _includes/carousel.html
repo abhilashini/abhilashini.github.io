@@ -8,7 +8,7 @@
         <p>{{ item.text | markdownify }}</p>
       {% endif %}
       {% if item.code %}
-        <pre><code>{{ item.code | markdownify }}</code></pre>
+        <pre class="line-numbers"><code class="language-{{ item.language }}">{{ item.code | markdownify }}</code></pre>
       {% endif %}
     </div>
   {% endfor %}

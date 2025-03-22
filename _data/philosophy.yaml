@@ -5,5 +5,6 @@
         # Ship fast, but leave breadcrumbs
         logger.info("Deployed at midnight. Coffee saved the day.")
   icon: "fas fa-code"
+  language: "python"
 - text: "Data isn’t truth—it’s a story waiting to be questioned."
   icon: "fas fa-chart-line"

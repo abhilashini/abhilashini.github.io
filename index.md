@@ -5,7 +5,7 @@ layout: default
 <div class="centered-column">
   <!-- Intro Section -->
   <section class="section" id="intro">
-    <h2 class="sub-heading">Designer, Developer, Thinker</h2>
+    <h3 class="sub-heading">Designer, Developer, Thinker</h3>
     <p>11 years of solving problems...</p>
     <a href="#">Connect on LinkedIn <i class="fas fa-external-link-alt"></i></a>
     <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right flip" alt="">
