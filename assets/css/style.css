@@ -7,9 +7,9 @@
 
 /* Typography */
 :root {
-  --font-heading: 'Playfair Display', serif; /* Elegant serif for headings */
-  --font-body: 'Inter', sans-serif; /* Crisp sans-serif for body text */
-  --font-code: 'Courier New', Courier, monospace; /* Monospace for code */
+  --font-heading: 'Merriweather', serif; /* Elegant serif for headings */
+  --font-body: 'Noto Sans', sans-serif; /* Crisp sans-serif for body text */
+  --font-code: 'Source Code Pro', Courier, monospace; /* Monospace for code */
   --font-size-base: 1rem;
   --line-height-base: 1.6;
   --color-text: #212529; 
@@ -66,7 +66,7 @@ body {
   position: absolute;
   top: 0;
   width: 20rem;
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .section-title--left {
@@ -228,18 +228,18 @@ body {
 .carousel-nav button {
   background: none;
   border: none;
-  color: var(--color-primary); /* Bright blue for arrows */
+  color: var(--color-icon); /* Bright blue for arrows */
   font-size: 1.2rem; /* Thin line icons */
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .carousel-nav button:hover {
-  color: var(--color-secondary); /* Warm orange on hover */
+  color: var(--color-secondary); 
 }
 
 .carousel-nav button:focus {
-  outline: 2px solid var(--color-primary); /* Focus indicator */
+  outline: 2px solid var(--color-primary); 
 }
 
 @media (max-width: 768px) {
