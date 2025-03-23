@@ -5,8 +5,8 @@ layout: default
 <div class="centered-column">
   <!-- Intro Section -->
   <section class="section" id="intro">
-    <h3 class="sub-heading">Designer, Developer, Thinker</h3>
-    <p>11 years of solving problems...</p>
+    <h3 class="sub-heading">Hi there!</h3>
+    <p>I'm Abhilashini. Over the past 11 years, my work has revolved around three core areas: designing for the web, automating manual processes, and exploring data analysis and machine learning. While these areas may seem distinct, they share a common thread: solving real-world problems through thoughtful design and engineering. </p>
     <a href="#">Connect on LinkedIn <i class="fas fa-external-link-alt"></i></a>
     <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right flip" alt="">
   </section>
@@ -16,7 +16,7 @@ layout: default
 <!-- Philosophy Section -->
 <section class="section" id="philosophy">
   <h1 class="section-title section-title--left" data-section="philosophy">
-    My Philosophy
+    Making things simple
   </h1>
   <div class="content">
     {% include carousel.html items=site.data.philosophy %}
@@ -28,7 +28,7 @@ layout: default
 <!-- Avoid Section -->
 <section class="section" id="avoid">
   <h1 class="section-title section-title--right" data-section="avoid">
-    Things I Avoid
+    404: Mistakes Not Found (Anymore) / "Breaking the Loop of Bad Habits" 
   </h1>
   <div class="content">
     {% include carousel.html items=site.data.avoid %}
@@ -38,17 +38,9 @@ layout: default
 
 <hr class="section-divider">
 
-<!-- Left Doodle Test Section -->
-<section class="section" id="leftTest">
-  <p>This is a test section with some random notes. Can have some <strong>focused highlights</strong> supplementing info in rest of the page to make it <em>stand apart</em></p>
-  <img src="/assets/images/LayingDoodle.svg" class="doodle doodle--left" alt="">
-</section>
-
-<hr class="section-divider">
-
 <section class="section" id="rightTest2">
   <h1 class="section-title section-title--right" data-section="philosophy">
-    Right aligned section title
+    Turning Pages, Churning Ideas
   </h1>
   <div class="content">
     {% include carousel.html items=site.data.philosophy %}
@@ -59,7 +51,7 @@ layout: default
 
 <section class="section" id="leftTest2">
   <h1 class="section-title section-title--left" data-section="philosophy">
-    Left aligned title
+    AI & I: My Learning Loop
   </h1>
   <div class="content">
     {% include carousel.html items=site.data.philosophy %}
