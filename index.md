@@ -6,8 +6,10 @@ layout: default
   <!-- Intro Section -->
   <section class="section" id="intro">
     <h3 class="sub-heading">Hi there!</h3>
+    <br/>
     <p>I'm Abhilashini. Over the past 11 years, my work has revolved around three core areas: building for the web, automating manual processes, data analysis and visualisation. While these areas may seem distinct, they share a common thread: solving real-world problems through thoughtful design and engineering.</p>
-    <p>In my design and engineering journey, the best solutions emerged when clarity met iteration — and past lessons guided future work. Using this space to jot down my working notes, updated as I learn, unlearn, and rethink.</p>
+    <br/>
+    <p>In my design and engineering journey, the best solutions emerged when clarity met iteration — and past lessons guided future work. I use this space to jot down my working notes, updated as I learn, unlearn, and rethink.</p>
     <a href="https://www.linkedin.com/in/abhilashini">Find me on LinkedIn <i class="fas fa-external-link-alt"></i></a>
     <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right flip" alt="">
   </section>
