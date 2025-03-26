@@ -1,21 +1,21 @@
 - heading: "With great power, great responsibility comes messy code"
-  text: >
-  "Servers tolerate inefficient code today, but developers shouldn't. 
-   Verbose code might run faster with modern hardware, 
-   but slows down the humans maintaining it.
-   [TK] Good code communicates intent unambiguously. [TK]"
+  text: >-
+  Servers tolerate inefficient code today, but developers shouldn't. 
+  Verbose code might run faster with modern hardware, 
+  but slows down the humans maintaining it.
+  [TK] Good code communicates intent unambiguously. [TK]
   icon: "fas fa-feather-alt"
 - heading: "SOS from SOS [TK]"
-  text: >
-  "A 10-line script often outlives 500 lines of “modern” boilerplate. 
-  New tools aren’t inherently better: they’re better only if 
-  they solve a problem the team or users actually face."
+  text: >-
+  A 10-line script often outlives 500 lines of \"modern\" boilerplate. 
+  New tools aren't inherently better\: they're better only if 
+  they solve a problem the team or users actually face.
   icon: "fas fa-shiny-alt"
 - heading: "Anyone can code” ≠ “Everyone should"
-  text: >
-  "Quick scripts work for personal use. In shared systems, hacky code 
+  text: >-
+  Quick scripts work for personal use. In shared systems, hacky code 
   becomes technical debt. Code is a collaborative artifact, 
-  not a personal scratchpad."
+  not a personal scratchpad.
 - code: |
     def deploy():
         # Ship fast, but leave breadcrumbs
