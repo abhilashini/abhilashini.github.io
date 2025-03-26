@@ -1,6 +1,6 @@
 - heading: "With great power, great responsibility comes messy code"
   text: >
-  "Servers tolerate inefficient code today, but developers shouldn’t. 
+  "Servers tolerate inefficient code today, but developers shouldn't. 
    Verbose code might run faster with modern hardware, 
    but slows down the humans maintaining it.
    [TK] Good code communicates intent unambiguously. [TK]"
