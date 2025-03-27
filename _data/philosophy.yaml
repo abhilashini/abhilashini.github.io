@@ -37,3 +37,9 @@
     Tests mean more code, but they simplify debugging. 
     They break loudly when edge cases emerge. 
     No tests mean silent corruption and chaos for future work.
+
+- heading: "Universal programming"
+  text: >-
+    Universal grammar and shared design patterns underpin all software development.
+    This transcends silo-ed tech stacks. This core understanding allows 
+    developers to move between different technologies more effectively.
