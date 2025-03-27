@@ -64,8 +64,8 @@ body {
 
 /* Section titles */
 .section-title {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
   position: absolute;
@@ -202,6 +202,10 @@ body {
   justify-content: center;
   background-color: var(--color-background); /* White background for icon */
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card h4 {
+  font-family: var(--font-heading);
 }
 
 .card p {

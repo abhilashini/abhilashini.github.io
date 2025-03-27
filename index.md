@@ -11,6 +11,7 @@ layout: default
     <br/>
     <p>In my design and engineering journey, the best solutions emerged when clarity met iteration — and past lessons guided future work. I use this space to jot down my working notes, updated as I learn, unlearn, and rethink.</p>
     <a href="https://www.linkedin.com/in/abhilashini">Find me on LinkedIn <i class="fas fa-external-link-alt"></i></a>
+    <br/>
     <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right flip" alt="">
   </section>
 

@@ -4,6 +4,9 @@
       {% if item.icon %}
         <i class="{{ item.icon }} icon"></i>
       {% endif %}
+      {% if item.heading %}
+        <h4>{{ item.heading | markdownify }}</h4>
+      {% endif %}
       {% if item.text %}
         <p>{{ item.text | markdownify }}</p>
       {% endif %}

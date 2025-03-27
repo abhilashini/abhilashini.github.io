@@ -19,12 +19,21 @@
     becomes technical debt. Code is a collaborative artifact, 
     not a personal scratchpad.
 
-- code: |
-    def deploy():
-        # Ship fast, but leave breadcrumbs
-        logger.info("Deployed at midnight. Coffee saved the day.")
-  icon: "fas fa-code"
-  language: "python"
+- heading: "Redesign where needed but not to be trendy"
+  text: >-
+    UX should be user-centric, not aesthetic. If users don’t struggle 
+    with the old UI, “modernizing” it is theater. Redesign when 
+    user feedback proves the current design fails. 
+    Otherwise, focus on incremental tweaks, not overhauls.
 
-- text: "Data isn't truth—it's a story waiting to be questioned."
-  icon: "fas fa-chart-line"
+- heading: "Design for structure, not content"
+  text: >-
+    A grid showing fruits or financials should work the same way. 
+    Code shouldn’t care what the data is — only how it’s structured. 
+    The meta-structure, not the content, defines simplicity.
+
+- heading: "Tests prevent silent failures"
+  text: >-
+    Tests mean more code, but they simplify debugging. 
+    They break loudly when edge cases emerge. 
+    No tests mean silent corruption and chaos for future work.
