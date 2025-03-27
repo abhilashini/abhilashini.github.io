@@ -1,4 +1,4 @@
-- heading: "With great power, great responsibility comes messy code"
+- heading: "With great power, comes ~~great responsibility~~ messy code"
   text: >-
     Servers tolerate inefficient code today, but developers shouldn't. 
     Verbose code might run faster with modern hardware, 
