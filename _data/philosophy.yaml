@@ -45,8 +45,10 @@
 
 - heading: "Universal programming"
   text: >-
-    Programming's underlying logic and design share a universal grammar 
-    beyond specific tech stacks. This foundation
-    * enables developers to adapt to new technologies easily
-    * enhances communication and collaboration across teams
-    * fosters shared understanding through fundamental patterns
+    Programming's underlying logic and design share a universal grammar
+    beyond specific tech stacks. This shared foundation
+
+    - enables developers to adapt to new technologies easily
+    - enhances communication and collaboration across teams
+    - fosters shared understanding through fundamental patterns
+  icon: "fas fa-globe"
