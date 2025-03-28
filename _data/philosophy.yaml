@@ -1,45 +1,52 @@
-- heading: "With great power, comes ~~great responsibility~~ messy code"
+- heading: "The hidden price of powerful hardware"
   text: >-
     Servers tolerate inefficient code today, but developers shouldn't. 
     Verbose code might run faster with modern hardware, 
-    but slows down the humans maintaining it.
-    [TK] Good code communicates intent unambiguously. [TK]
+    but slows down the humans maintaining it and evolving the product.
+    Good code communicates intent unambiguously; succinctly and 
+    steadily powering a well-designed user experience.
   icon: "fas fa-feather-alt"
 
-- heading: "SOS from SOS [TK]"
+- heading: "SOS from SOS (Shiny Object Syndrome)"
   text: >-
     A 10-line script often outlives 500 lines of "modern" boilerplate. 
-    New tools aren't inherently better: they're better only if 
-    they solve a problem the team or users actually face.
+    New tools are valuable when they demonstrably improve the 
+    experience for our users or streamline the team's ability to deliver value.
   icon: "fas fa-shiny-alt"
 
 - heading: "Anyone can code ≠ Everyone should"
   text: >-
-    Quick scripts work for personal use. In shared systems, hacky code 
-    becomes technical debt. Code is a collaborative artifact, 
-    not a personal scratchpad.
+    Quick scripts are fine for personal use, but in shared systems, hacky code 
+    creates technical debt that impacts everyone, including our users. 
+    Code, like a design system, is a collaborative artifact requiring 
+    shared understanding and maintainability for a cohesive product.
 
-- heading: "Redesign where needed but not to be trendy"
+- heading: "Redesign for needs, not trends"
   text: >-
-    UX should be user-centric, not aesthetic. If users don’t struggle 
-    with the old UI, “modernizing” it is theater. Redesign when 
-    user feedback proves the current design fails. 
-    Otherwise, focus on incremental tweaks, not overhauls.
+    UX should be user-centric, not aesthetic. If users don’t struggle with 
+    the old UI, 'modernizing' it is often just theater, consuming valuable 
+    engineering resources. Redesign when user feedback and data prove 
+    the current design fails. Otherwise, focus on incremental tweaks, 
+    not costly overhauls.
 
 - heading: "Design for structure, not content"
   text: >-
-    A grid showing fruits or financials should work the same way. 
-    Code shouldn’t care what the data is — only how it’s structured. 
-    The meta-structure, not the content, defines simplicity.
+    Whether it's a grid of fruits or financials, the underlying structure 
+    benefits from consistency. Good design and robust code doesn't tightly couple
+    with specific content; rather it focuses on adaptable meta-structures. 
+    This structural thinking is key to building simple and scalable products.
 
 - heading: "Tests prevent silent failures"
   text: >-
-    Tests mean more code, but they simplify debugging. 
-    They break loudly when edge cases emerge. 
-    No tests mean silent corruption and chaos for future work.
+    Tests add to lines of code, but they drastically simplify debugging and 
+    ensure a stable product. They break loudly when edge cases emerge, 
+    preventing silent failures that erode user trust. 
+    Investing in testing is investing in a reliable and positive user experience.
 
 - heading: "Universal programming"
   text: >-
-    Universal grammar and shared design patterns underpin all software development.
-    This transcends silo-ed tech stacks. This core understanding allows 
-    developers to move between different technologies more effectively.
+    Programming's underlying logic and design share a universal grammar 
+    beyond specific tech stacks. This foundation
+    * enables developers to adapt to new technologies easily
+    * enhances communication and collaboration across teams
+    * fosters shared understanding through fundamental patterns
