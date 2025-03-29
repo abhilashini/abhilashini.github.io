@@ -1,4 +1,6 @@
-- text: "Over-engineering solutions. Sometimes a simple script is enough."
+- heading: "Respect the running code"
+  text: >-
+    
   icon: "fas fa-bomb"
 - text: "Ignoring edge cases. They’re where the real bugs hide."
   icon: "fas fa-bug"

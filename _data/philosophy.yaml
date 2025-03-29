@@ -16,10 +16,10 @@
 
 - heading: "Anyone can code ≠ Everyone should"
   text: >-
-    Quick scripts are fine for personal use, but in shared systems, hacky code 
-    creates technical debt that impacts everyone, including our users. 
-    Code, like a design system, is a collaborative artifact requiring 
-    shared understanding and maintainability for a cohesive product.
+    Quick scripts are fine for personal use. In shared systems, hacky code 
+    becomes a tax on everyone — including users. Code, like a design system, 
+    is a collaborative artifact. It thrives on shared understanding, 
+    not isolated epxeriments.
 
 - heading: "Redesign for needs, not trends"
   text: >-
@@ -38,19 +38,13 @@
 
 - heading: "Tests prevent silent failures"
   text: >-
-    Tests add to lines of code, but they drastically simplify debugging and 
-    ensure a stable product. They break loudly when edge cases emerge, 
-    preventing silent failures that erode user trust. 
-    Investing in testing is investing in a reliable and positive user experience.
+    Tests mean more code, but ensures stability, silently guarding user trust 
+    and product integrity. It’s where engineering rigor meets user-centric 
+    design — catching failures before they erode experiences.
 
 - heading: "Universal programming"
   text: >-
-    Programming's underlying logic and design share a universal grammar
-    beyond specific tech stacks. This shared foundation
-
-    - enables developers to adapt to new technologies easily
-  
-    - enhances communication and collaboration across teams
-  
-    - fosters shared understanding through fundamental patterns
+    Programming’s universal grammar — logic, structure, constraints — transcends stacks. 
+    This foundation enables developers to adapt faster, teams to collaborate clearer, 
+    and systems to outlive trends."
   icon: "fas fa-globe"

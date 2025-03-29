@@ -32,8 +32,8 @@ layout: default
 
 <!-- Avoid Section -->
 <section class="section" id="avoid">
-  <h1 class="section-title section-title--right" data-section="avoid">
-    404: Mistakes Not Found (Anymore) / "Breaking the Loop of Bad Habits" 
+  <h1 class="section-title section-title--left" data-section="avoid">
+    Breakdown complex things 
   </h1>
   <div class="content">
     {% include carousel.html items=site.data.avoid %}
