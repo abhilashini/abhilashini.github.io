@@ -1,8 +1,31 @@
-- heading: "Respect the running code"
+- heading: "Refactor with intent, not haste"
   text: >-
-    
-  icon: "fas fa-bomb"
-- text: "Ignoring edge cases. They’re where the real bugs hide."
-  icon: "fas fa-bug"
-- text: "Testing with perfect data. Real users are messy."
-  icon: "fas fa-users"
+    Rewriting code on impulse risks breaking what users rely on. 
+    Even flawed systems have hidden purpose. Refactor only 
+    after tests safeguard needs and plans ensure continuity.
+  icon: "fas fa-sync-alt"
+- heading: "Code with vision, not velocity"
+  text: >-
+    Clarity on requirements builds reusability, not just deliverables. 
+    Prioritize “plug and play” systems over “patch and pray” fixes.
+  icon: "fas fa-binoculars"
+- heading: "Code Follows the User, Not the Reverse [TK]"
+  text: >|
+    If a code change doesn’t trace to a user flow or data-driven need, 
+    it’s noise. Codebases thrive when they document **why** they exist,
+    not just **how** they work. Code should be a map, not a maze.
+  icon: "fas fa-map"
+- heading: "Tools should blend, not dictate [TK]"
+  text: >|
+    Frameworks and algorithms solve narrow problems. When they warp a 
+    product’s design, users inherit their quirks. Bend tools to user 
+    needs, never the reverse.
+  icon: "fas fa-tools"
+- heading: "Maintainability isn’t optional"
+  text: >|
+    If a system’s errors confuses developers, they’ll confuse users too. 
+    Maintainability begins with empathy — for our future selves, users 
+    and inheriting developers. Include self-diagnosing loggers, 
+    actionable alerts, structured errors and tests to turn debugging 
+    from scavenger hunts into guided fixes. 
+  icon: "fas fa-cogs"
