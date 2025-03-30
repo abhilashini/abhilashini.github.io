@@ -8,10 +8,7 @@
         <div class="book-details">
           <h3 class="book-title">{{ book.title }}</h3>
           <p class="book-author">{{ book.author }}</p>
-          <p class="book-takeaway">
-            <i class="fas fa-pencil-alt" style="font-size: 0.7em; color: var(--color-icon);"></i>
-            {{ book.takeaway }}
-          </p>
+          <p class="book-takeaway">{{ book.takeaway }}</p>
         </div>
       </div>
       {% endfor %}
