@@ -43,12 +43,12 @@ layout: default
 
 <hr class="section-divider">
 
-<section class="section" id="rightTest2">
-  <h1 class="section-title section-title--right" data-section="philosophy">
+<section class="section" id="books">
+  <h1 class="section-title section-title--left" data-section="books">
     Turning Pages, Churning Ideas
   </h1>
   <div class="content">
-    {% include carousel.html items=site.data.philosophy %}
+    {% include books.html items=site.data.books %}
   </div>
 </section>
 
