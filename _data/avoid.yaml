@@ -9,11 +9,15 @@
     Clarity on requirements builds reusability, not just deliverables. 
     Prioritize “plug and play” systems over “patch and pray” fixes.
   icon: "fas fa-binoculars"
-- heading: "Code Traces User Journeys"
+  comparison_table: |
+    | ✅ **Plug and Play**  | ❌ **Patch and Pray**  |
+    | ![Plug and Play ✅](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHdjZWZhZnZ4ZzR5cHp2dHg2d2U5aGxmdzlmd2J6dDdoa29rNTNpZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yGDDWr1tjEO3fdhxo7/giphy.gif) | ![Patch and Pray ❌](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmZpbWtsaTllejBjNHBnaTNqeHRjd3I5em82YjVoMmNwdHF6ZmlhbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/n1yKbqB7PCHHoJ45aU/giphy.gif) |
+- heading: "System design is a map, not a maze"
   text: >-
-    If a code change doesn’t trace to a user flow or data-driven need, 
-    it’s noise. Codebases thrive when they document **why** they exist,
-    not just **how** they work. Code should be a map, not a maze.
+    If a code block doesn’t trace to a user flow or data-driven need, 
+    it’s noise. Codebases thrive when they reflect **why** they exist,
+    not just **how** they work. Good products are anchored in code 
+    charted by users purpose and needs.
   icon: "fas fa-map"
 - heading: "Code to Context, Not Frameworks"
   text: >-
@@ -29,11 +33,10 @@
           return f"{user_input.first_name} {user_input.last_name}"
   language: "python"
   icon: "fas fa-tools"
-- heading: "Maintainability isn’t optional"
+- heading: "Maintainabile systems speak human"
   text: >-
-    When a system’s errors confuses developers, they confuse users too. 
+    When errors leave developers guessing, users suffer too. 
     Maintainability begins with empathy — for our future selves, users 
-    and inheriting developers. Include self-diagnosing loggers, 
-    actionable alerts, structured errors and tests to turn debugging 
-    from scavenger hunts into guided fixes.
+    and inheriting developers. Self-diagnosing logs, actionable alerts, 
+    and structured errors turn debugging from scavenger hunts into guided fixes.
   icon: "fas fa-stethoscope"
