@@ -10,8 +10,8 @@
     Prioritize “plug and play” systems over “patch and pray” fixes.
   icon: "fas fa-binoculars"
   comparison_table: |
-    | ✅ **Plug and Play**  | ❌ **Patch and Pray**  |
-    | ![Plug and Play ✅](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHdjZWZhZnZ4ZzR5cHp2dHg2d2U5aGxmdzlmd2J6dDdoa29rNTNpZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yGDDWr1tjEO3fdhxo7/giphy.gif) | ![Patch and Pray ❌](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmZpbWtsaTllejBjNHBnaTNqeHRjd3I5em82YjVoMmNwdHF6ZmlhbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/n1yKbqB7PCHHoJ45aU/giphy.gif) |
+    | ✅ **Plug and Play**  | | ❌ **Patch and Pray**  |
+    | ![Plug and Play ✅](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHdjZWZhZnZ4ZzR5cHp2dHg2d2U5aGxmdzlmd2J6dDdoa29rNTNpZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yGDDWr1tjEO3fdhxo7/giphy.gif =192x*) | | ![Patch and Pray ❌](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmZpbWtsaTllejBjNHBnaTNqeHRjd3I5em82YjVoMmNwdHF6ZmlhbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/n1yKbqB7PCHHoJ45aU/giphy.gif =192x*) |
 - heading: "System design is a map, not a maze"
   text: >-
     If a code block doesn’t trace to a user flow or data-driven need, 
