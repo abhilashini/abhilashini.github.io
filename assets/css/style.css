@@ -306,12 +306,6 @@ body {
 }
 
 /* ===== AI SECTION ===== */
-.ai-section {
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
-}
-
 .ai-section h2 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
