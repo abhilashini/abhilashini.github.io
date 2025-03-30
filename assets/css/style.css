@@ -251,6 +251,81 @@ body {
   outline: 2px solid var(--color-primary); 
 }
 
+/* Books Section */
+.books {
+  padding: 2rem 0;
+}
+
+.books h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.book-entry {
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.book-entry:hover {
+  background-color: var(--color-accent);
+}
+
+.book-icon {
+  font-size: 1.2rem;
+  color: var(--color-icon);
+  padding-top: 0.3rem;
+}
+
+.book-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.book-author {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-text);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.book-takeaway {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin: 0.5rem 0 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .books h2 {
+    font-size: 1.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   /* Increase specificity and use initial/unset */
   .section .section-title--left,

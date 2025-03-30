@@ -1,0 +1,39 @@
+- title: "The Design of Everyday Things"
+  author: "Don Norman"
+  takeaway: "Good design is invisible; bad design shouts."
+  icon: "fas fa-pencil-alt"  # Represents "design"
+
+- title: "Programming Pearls"
+  author: "Jon Bentley"
+  takeaway: "Simplicity beats brute-force complexity."
+  icon: "far fa-gem"  # Represents "pearls"
+
+- title: "The Creative Programmer"
+  author: "Wouter Groeneveld"
+  takeaway: "Creativity thrives under constraints."
+  icon: "fas fa-code" 
+
+- title: "Clean Code"
+  author: "Robert Martin"
+  takeaway: "Code is read far more than written."
+  icon: "fas fa-broom" 
+
+- title: "The Nature of Software Development"
+  author: "Ron Jeffries"
+  takeaway: "Value flows from working software."
+  icon: "fas fa-leaf"  # Represents "nature"
+
+- title: "How to Solve It"
+  author: "George Pólya"
+  takeaway: "Break problems into smaller, testable chunks."
+  icon: "fas fa-puzzle-piece"
+
+- title: "How to Make Things Faster"
+  author: "Cary Millsap"
+  takeaway: "Measure before optimizing; bottlenecks hide."
+  icon: "fas fa-tachometer-alt"
+
+- title: "A Common-Sense Guide to Data Structures and Algorithms"
+  author: "Jay Wengrow"
+  takeaway: "Understand tradeoffs, not just implementations."
+  icon: "fas fa-sitemap"

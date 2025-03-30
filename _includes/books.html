@@ -1,0 +1,17 @@
+<section class="books">
+    <h2>Books That Rewired My Thinking</h2>
+    <div class="book-grid">
+      {% for book in site.data.books %}
+      <div class="book-entry">
+        <div class="book-icon">
+          <i class="{{ book.icon }}"></i>
+        </div>
+        <div class="book-details">
+          <h3 class="book-title">{{ book.title }}</h3>
+          <p class="book-author">{{ book.author }}</p>
+          <p class="book-takeaway">{{ book.takeaway }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
