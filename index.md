@@ -45,7 +45,7 @@ layout: default
 
 <section class="section" id="books">
   <h1 class="section-title section-title--left" data-section="books">
-    Turning Pages, Churning Ideas
+    Pages of influence
   </h1>
   <div class="content">
     {% include books.html items=site.data.books %}
