@@ -15,9 +15,9 @@
 - heading: "System design is a map, not a maze"
   text: >-
     If a code block doesn’t trace to a user flow or data-driven need, 
-    it’s noise. Codebases thrive when they reflect **why** they exist,
-    not just **how** they work. Good products are anchored in code 
-    charted by users purpose and needs.
+    it’s noise. Codebases thrive when they reflect __**why**__ they exist,
+    not just __**how**__ they work. Good products are anchored in code 
+    charted by user purpose and needs.
   icon: "fas fa-map"
 - heading: "Code to Context, Not Frameworks"
   text: >-
@@ -26,14 +26,14 @@
     needs, never the reverse.
   code: |
     def format_name(user_input, user_locale):  
-      # Let users define their own rules, not frameworks  
+      # User locale dictates format, not framework rules.
       if user_locale == "jp":  
           return f"{user_input.last_name} {user_input.first_name}"  
       else:  
           return f"{user_input.first_name} {user_input.last_name}"
   language: "python"
   icon: "fas fa-tools"
-- heading: "Maintainabile systems speak human"
+- heading: "Maintainable systems speak human"
   text: >-
     When errors leave developers guessing, users suffer too. 
     Maintainability begins with empathy — for our future selves, users 
