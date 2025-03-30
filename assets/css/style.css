@@ -305,6 +305,60 @@ body {
   font-weight: 600;
 }
 
+/* ===== AI SECTION ===== */
+.ai-section {
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.ai-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.ai-point {
+  padding: 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ai-point:hover {
+  background-color: var(--color-accent);
+}
+
+.ai-point h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin: 0 0 0.4rem 0;
+}
+
+.ai-point h3::before {
+  content: "// ";
+  color: var(--color-icon);
+  font-weight: 700;
+}
+
+.ai-point p {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.9;
+}
+
 @media (max-width: 768px) {
   /* Increase specificity and use initial/unset */
   .section .section-title--left,
@@ -369,6 +423,14 @@ body {
   }
   
   .books h2 {
+    font-size: 1.3rem;
+  }
+
+  .ai-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ai-section h2 {
     font-size: 1.3rem;
   }
 }
