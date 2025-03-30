@@ -54,11 +54,11 @@ layout: default
 
 <hr class="section-divider">
 
-<section class="section" id="leftTest2">
-  <h1 class="section-title section-title--left" data-section="philosophy">
+<section class="section" id="ai">
+  <h1 class="section-title section-title--left" data-section="ai">
     AI & I: My Learning Loop
   </h1>
   <div class="content">
-    {% include carousel.html items=site.data.philosophy %}
+    {% include ai.html items=site.data.ai %}
   </div>
 </section>

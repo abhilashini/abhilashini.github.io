@@ -1,8 +1,8 @@
 - title: "Query-able Encyclopedia"
   text: "AI collapses research time — but only if I ask the *right* questions. The better my inputs, the sharper its outputs."
 
-- title: "Invisible Learning Curves"
-  text: "Debugging CSS/JS with AI feels like untangling knotted shoelaces in the dark. It can’t see everything — still learning when to trust it."
+- title: "Invisible Learning Curves"  
+  text: "Coding with AI feels like untangling knots in the dark — it lacks the context humans intuit. Constraints and unspoken needs slip through prompts, leaving gaps only experience fills."  
 
 - title: "Pinpoint Tutoring"
   text: "No more forum deep dives. Now I ask, *'Explain X like I’m a novice,'* and iterate until it clicks."
