@@ -3,8 +3,9 @@
     Servers tolerate inefficient code today, but developers shouldn't. 
     Verbose code might run faster with modern hardware, 
     but slows down the humans maintaining it and evolving the product.
-    Good code communicates intent unambiguously; succinctly and 
-    steadily powering a well-designed user experience.
+    Thoughtful engineering prioritises code that communicates intent 
+    clearly and concisely, ensuring it's as easy for humans to work 
+    with as it is for machines to run
   icon: "fas fa-feather-alt"
 
 - heading: "SOS from SOS (Shiny Object Syndrome)"
