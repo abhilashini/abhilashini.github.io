@@ -62,44 +62,49 @@ body {
   padding: 1rem 0rem 0rem 1rem
 }
 
-/* Section titles */
 .section-title {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
-  position: absolute;
-  top: 0;
-  width: 20rem;
   color: var(--color-primary);
 }
 
 .section-title--left {
-  left: -22rem; /* Position to the left of the column */
+  left: -15rem;
   text-align: right;
+  position: absolute;
 }
 
 .section-title--right {
-  right: -22rem; /* Position to the right of the column */
+  right: -15rem;
   text-align: left;
+  position: absolute;
 }
 
-/* Active Section Highlight */
-.section.active .section-title {
-  animation: scaleUp 0.5s ease forwards;
-  transform: scale(1.1); /* Keep scaled-up state */
+.section-title--center {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: auto; /* Override 20rem */
+  position: relative; /* Change to relative if in flow */
+  margin: 0 auto 2.5rem; /* Center in parent */
 }
 
-@keyframes scaleUp {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.1);
-  }
+/* Squiggle Positioning Adjustments */
+.section-title--left::after {
+  right: 0;
 }
 
-/* Hand-drawn Squiggle */
+.section-title--right::after {
+  left: 0;
+}
+
+.section-title--center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .section.active .section-title::after {
   content: '';
   display: block;
@@ -111,12 +116,9 @@ body {
   bottom: -10px; /* Position below the title */
 }
 
-.section-title--right::after {
-  left: 0;
-}
-
-.section-title--left::after {
-  right: 0;
+/* Animation Fix */
+.section.active .section-title {
+  animation: scaleUp 0.5s ease forwards;
 }
 
 /* Doodles */
