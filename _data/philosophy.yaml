@@ -4,43 +4,45 @@
     Verbosity, even if performant, often creates friction for those maintaining and 
     evolving the product. Engineering with empathy prioritises clarity and conciseness, 
     building the unseen yet essential foundation for a truly well-designed user experience.
-  icon: "fas fa-feather-alt"
+  icon: "fas fa-weight-hanging"
+
+- heading: "Design for structure, not content"
+  text: >-
+    Whether it's a grid of fruits or financials, the underlying structure benefits from 
+    consistency. Good design and robust code avoid coupling to specific content; they 
+    focus on adaptable systems that embody shared intent. This structural thinking is 
+    a bridge between user needs and scalable solutions.
+  icon: "fas fa-sitemap"
 
 - heading: "SOS from SOS (Shiny Object Syndrome)"
   text: >-
     A 10-line script often outlives 500 lines of "modern" boilerplate. 
-    New tools are valuable when they demonstrably improve the 
-    experience for our users or streamline the team's ability to deliver value.
+    New tools are valuable when they demonstrably improve the experience for our 
+    users or streamline the team's ability to deliver value.
   image: "/assets/images/cat-laser.gif"
-  icon: "fas fa-gem-alt"
+  icon: "fas fa-exclamation-triangle"
 
 - heading: "Anyone can code ≠ Everyone should"
   text: >-
-    Quick scripts are fine for personal use. In shared systems, hacky code 
-    becomes a tax on everyone — including users. Code, like a design system, 
-    is a collaborative artifact. It thrives on shared understanding, 
-    not isolated epxeriments.
+    Quick scripts are fine for personal use. In collaborative systems, hacky code 
+    becomes a tax on everyone — including users. Code, like design systems, is a 
+    collective artifact. It thrives on shared understanding, not isolated experiments.
+  icon: "fas fa-users-slash"
 
 - heading: "Redesign for needs, not trends"
   text: >-
     UX should be user-centric, not aesthetic. If users don’t struggle with 
     the existing UI, 'modernizing' it is often just theater, consuming valuable 
-    engineering resources. Redesign when user feedback and data prove 
-    the current design fails. Otherwise, focus on incremental tweaks, 
-    not costly overhauls.
-
-- heading: "Design for structure, not content"
-  text: >-
-    Whether it's a grid of fruits or financials, the underlying structure 
-    benefits from consistency. Good design and robust code doesn't tightly couple
-    with specific content; rather it focuses on adaptable meta-structures. 
-    This structural thinking is key to building simple and scalable products.
+    engineering resources. Redesign when user feedback and data prove the current design 
+    fails. Otherwise, focus on incremental tweaks, not costly overhauls.
+  icon: "fas fa-user-check"
 
 - heading: "Tests prevent silent failures"
   text: >-
     Tests mean more code, but ensure reliability, silently guarding user trust and 
     the product’s promised behavior. They’re systems designed to break when changes 
     stray from the agreed intent — exposing gaps before they become fractures.
+  icon: "fas fa-shield-alt"
 
 - heading: "Universal programming"
   text: >-
@@ -48,5 +50,5 @@
     Beyond the nuances of languages and frameworks, these principles form a shared 
     foundation: a common language for diverse teams to align intent, adapt tools to 
     problems (not trends), and build systems that outlast their initial code. 
-    Complexity dissolves when we focus on why systems hold, not how they’re built.
+    Complexity dissolves when we focus on ***why*** systems hold, not ***how*** they’re built.
   icon: "fas fa-globe"
