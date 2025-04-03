@@ -4,7 +4,7 @@
     Verbosity, even if performant, often creates friction for those maintaining and 
     evolving the product. Engineering with empathy prioritises clarity and conciseness, 
     building the unseen yet essential foundation for a truly well-designed user experience.
-  icon: "fas fa-weight-hanging"
+  icon: "fas fa-scale-unbalanced"
 
 - heading: "Design for structure, not content"
   text: >-
