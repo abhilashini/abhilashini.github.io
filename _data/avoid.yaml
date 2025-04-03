@@ -2,28 +2,28 @@
   text: >-
     Rewriting code on impulse risks breaking what users rely on. 
     Even flawed systems have hidden purpose. Refactor only 
-    after tests safeguard needs and plans ensure continuity.
+    after tests safeguard agreed needs and plans ensure continuity for users.
   icon: "fas fa-sync-alt"
 - heading: "Code with vision, not velocity"
   text: >-
     Clarity on requirements builds reusability, not just deliverables. 
-    Prioritize “plug and play” systems over “patch and pray” fixes.
+    Prioritise “plug and play” systems over “patch and pray” fixes.
   icon: "fas fa-binoculars"
   comparison_table: |
     | ✅ **Plug and Play**  | | ❌ **Patch and Pray**  |
-    | <img src="/assets/images/plug_n_play.gif" style="height:12rem; width:auto;" alt="Modular growth"> |   | <img src="/assets/images/patch_n_pray.gif" style="height:12rem; width:auto;" alt="Fragile foundation"> |
+    | <img src="/assets/images/plug_n_play.gif" style="height:12rem; width:auto;" alt="Modular growth"> |   | <img src="/assets/images/patch_n_pray.gif" style="height:12rem; width:auto;" alt="Code patches multiplying like chaotic clones"> |
 - heading: "System design is a map, not a maze"
   text: >-
     If a code block doesn’t trace to a user flow or data-driven need, 
-    it’s noise. Codebases thrive when they reflect __**why**__ they exist,
-    not just __**how**__ they work. Good products are anchored in code 
-    charted by user purpose and needs.
+    it’s noise. Codebases thrive when they embody user purpose,
+    not just ***how*** they work. Good products are anchored in code 
+    charted by what users seek, not just what engineers ship.
   icon: "fas fa-map"
 - heading: "Code to Context, Not Frameworks"
   text: >-
     Frameworks and algorithms solve narrow problems. When they warp a 
-    product’s design, users inherit their quirks. Bend tools to user 
-    needs, never the reverse.
+    product’s design, users inherit quirks that compound into design debt. 
+    Bend tools to user needs, never the reverse.
   code: |
     def format_name(user_input, user_locale):  
       # User locale dictates format, not framework rules.
@@ -37,6 +37,6 @@
   text: >-
     When errors leave developers guessing, users suffer too. 
     Maintainability begins with empathy — for our future selves, users 
-    and inheriting developers. Self-diagnosing logs, actionable alerts, 
-    and structured errors turn debugging from scavenger hunts into guided fixes.
+    and inheriting developers. Self-diagnosing logs and user-readable 
+    errors turn debugging from scavenger hunts into guided fixes.
   icon: "fas fa-stethoscope"
