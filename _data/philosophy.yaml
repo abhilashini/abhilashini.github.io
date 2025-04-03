@@ -1,11 +1,9 @@
 - heading: "The hidden price of powerful hardware"
   text: >-
-    Servers tolerate inefficient code today, but developers shouldn't. 
-    Verbose code might run faster with modern hardware, 
-    but slows down the humans maintaining it and evolving the product.
-    Thoughtful engineering prioritises code that communicates intent 
-    clearly and concisely, ensuring it's as easy for humans to work 
-    with as it is for machines to run
+    Today's hardware readily handles complex code, but at a human cost down the line. 
+    Verbosity, even if performant, often creates friction for those maintaining and 
+    evolving the product. Engineering with empathy prioritises clarity and conciseness, 
+    building the unseen yet essential foundation for a truly well-designed user experience.
   icon: "fas fa-feather-alt"
 
 - heading: "SOS from SOS (Shiny Object Syndrome)"
@@ -13,7 +11,8 @@
     A 10-line script often outlives 500 lines of "modern" boilerplate. 
     New tools are valuable when they demonstrably improve the 
     experience for our users or streamline the team's ability to deliver value.
-  icon: "fas fa-shiny-alt"
+  image: "/assets/images/cat-laser.gif"
+  icon: "fas fa-gem-alt"
 
 - heading: "Anyone can code ≠ Everyone should"
   text: >-
@@ -25,7 +24,7 @@
 - heading: "Redesign for needs, not trends"
   text: >-
     UX should be user-centric, not aesthetic. If users don’t struggle with 
-    the old UI, 'modernizing' it is often just theater, consuming valuable 
+    the existing UI, 'modernizing' it is often just theater, consuming valuable 
     engineering resources. Redesign when user feedback and data prove 
     the current design fails. Otherwise, focus on incremental tweaks, 
     not costly overhauls.
@@ -39,13 +38,15 @@
 
 - heading: "Tests prevent silent failures"
   text: >-
-    Tests mean more code, but ensures stability, silently guarding user trust 
-    and product integrity. It’s where engineering rigor meets user-centric 
-    design — catching failures before they erode experiences.
+    Tests mean more code, but ensure reliability, silently guarding user trust and 
+    the product’s promised behavior. They’re systems designed to break when changes 
+    stray from the agreed intent — exposing gaps before they become fractures.
 
 - heading: "Universal programming"
   text: >-
     Programming’s universal grammar — logic, structure, constraints — transcends stacks. 
-    This foundation enables developers to adapt faster, teams to collaborate clearer, 
-    and systems to outlive trends."
+    Beyond the nuances of languages and frameworks, these principles form a shared 
+    foundation: a common language for diverse teams to align intent, adapt tools to 
+    problems (not trends), and build systems that outlast their initial code. 
+    Complexity dissolves when we focus on why systems hold, not how they’re built.
   icon: "fas fa-globe"

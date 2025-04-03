@@ -7,7 +7,7 @@ layout: default
   <section class="section" id="intro">
     <h3 class="sub-heading">Hi there!</h3>
     <br/>
-    <p>I'm Abhilashini. Over the past 11 years, my work has revolved around three core areas: building for the web, automating manual processes, data analysis and visualisation. While these areas seem distinct, they share a common thread: solving real-world problems with thoughtful design and engineering.</p>
+    <p>I'm Abhilashini. Over the past 11 years, my work has revolved around three core areas: building for the web, automating manual processes, data analysis and visualisation. While these areas seem distinct, they share a common thread: <br/> solving real-world problems through thoughtful design and engineering.</p>
     <br/>
     <p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. Here, I share reflections on simplifying the complex, adapting to new constraints, and the continuous learning that shapes my perspective.</p>
     <br/>
