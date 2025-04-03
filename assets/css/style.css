@@ -9,15 +9,17 @@
 :root {
   --font-heading: 'Merriweather', serif; /* Elegant serif for headings */
   --font-body: 'Noto Sans', sans-serif; /* Crisp sans-serif for body text */
+  --font-section-body: 'Merriweather', serif;
+  --font-section-heading: 'Noto Sans', sans-serif;
   --font-code: 'Source Code Pro', Courier, monospace; /* Monospace for code */
   --font-size-base: 1rem;
   --line-height-base: 1.6;
-  --color-text: #212529; 
+  --color-text: #2E3440; 
   --color-background: #FFFFFF;
-  --color-primary: #9775FA;
-  --color-secondary: #63E6BE; 
-  --color-icon: #4DABF7; 
-  --color-accent: #B2F2BB;
+  --color-primary: #88B04B;
+  --color-secondary: #FFD700; 
+  --color-icon: #A8DADC; 
+  --color-accent: #FFB6A9;
 }
 
 body {
