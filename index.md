@@ -20,7 +20,7 @@ layout: default
 
 <!-- Philosophy Section -->
 <section class="section" id="philosophy">
-  <h1 class="section-title section-title--left" data-section="philosophy">
+  <h1 class="section-title section-title--center" data-section="philosophy">
     Make things simple
   </h1>
   <div class="content">
@@ -32,7 +32,7 @@ layout: default
 
 <!-- Avoid Section -->
 <section class="section" id="avoid">
-  <h1 class="section-title section-title--left" data-section="avoid">
+  <h1 class="section-title section-title--center" data-section="avoid">
     Breakdown complex things 
   </h1>
   <div class="content">
@@ -44,7 +44,7 @@ layout: default
 <hr class="section-divider">
 
 <section class="section" id="books">
-  <h1 class="section-title section-title--left" data-section="books">
+  <h1 class="section-title section-title--center" data-section="books">
     Pages of influence
   </h1>
   <div class="content">
@@ -55,7 +55,7 @@ layout: default
 <hr class="section-divider">
 
 <section class="section" id="ai">
-  <h1 class="section-title section-title--left" data-section="ai">
+  <h1 class="section-title section-title--center" data-section="ai">
     AI & I: My Learning Loop
   </h1>
   <div class="content">
