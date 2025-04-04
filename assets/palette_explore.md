@@ -8,13 +8,15 @@ permalink: /palette-exploration-journey/
 
 | Option | Visualizer | Preference |
 | :--- | :--- | :--- |
+| Monochrome with highlights | <https://coolors.co/visualizer/000000-ffffff-ec1d26-707070-feea00-004fff> | Goes back to sandstone look I had in mind to begin with; fixing this for now |
+| ~~Finalised~~ | <https://coolors.co/visualizer/3a506b-d9594c-6b9080-e8c547-ffffff-2e3440> | like this much better; subtle yet peppy |
 | | <https://coolors.co/visualizer/2a4e6b-ff7f50-8fbc8f-f0e7d8-6b5b95> | |
 | Pastel Pops | <https://coolors.co/visualizer/a8dadc-ffb6a9-88b04b-ffd700-ffffff> | Might work if sparingly used; Giving this a try |
-| Pastel Pops + Black | <https://coolors.co/visualizer/a8dadc-ffb6a9-88b04b-ffd700-ffffff-2e3440> | Above with Gunmetal for text|
+| ~~Pastel Pops + Black~~ | <https://coolors.co/visualizer/a8dadc-ffb6a9-88b04b-ffd700-ffffff-2e3440> | Above with Gunmetal for text|
 | | <https://coolors.co/visualizer/00ced1-ff6b6b-fffacd-2d2d2d-ffffff> | |
 | | <https://coolors.co/visualizer/5f9ea0-d4a798-d4af37-f4f4f4-333333> | |
 | | <https://coolors.co/visualizer/2d4263-d4af37-3a8e8e-ffb6a9-ffffff | |
-| ~Finalised~ | <https://coolors.co/visualizer/2e3440-4dabf7-ffd166-63e6be-9775fa-000000> | Good mix of warm and cool colors. Going ahead for now |
+| ~~Finalised~~ | <https://coolors.co/visualizer/2e3440-4dabf7-ffd166-63e6be-9775fa-000000> | Good mix of warm and cool colors. Going ahead for now |
 | Frosted Citrus | <https://coolors.co/visualizer/d4f1f4-a8dadc-ffd166-ff6b6b-4ecdc4> | Kind of; colorful |
 | Mystic Lagoon | <https://coolors.co/visualizer/b2f2bb-63e6be-4dabf7-9775fa-212529> | Interesting! Liking this |
 | Deep Sea Glow | <https://coolors.co/visualizer/003459-007ea7-00a8e8-ff9f1c-f4f4f4> | Could work; Interesting combo |
