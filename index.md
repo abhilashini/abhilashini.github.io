@@ -16,7 +16,7 @@ layout: default
     <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right flip" alt="">
   </section>
 
-  <hr class="section-divider">
+  <div class="section-divider"></div>
 
 <!-- Philosophy Section -->
 <section class="section" id="philosophy">
@@ -28,7 +28,7 @@ layout: default
   </div>
 </section>
 
-  <hr class="section-divider">
+  <div class="section-divider"></div>
 
 <!-- Avoid Section -->
 <section class="section" id="avoid">
@@ -41,7 +41,7 @@ layout: default
   <img src="/assets/doodle2.svg" class="doodle doodle--left flip" alt="">
 </section>
 
-<hr class="section-divider">
+<div class="section-divider"></div>
 
 <section class="section" id="books">
   <h1 class="section-title section-title--center" data-section="books">
@@ -52,7 +52,7 @@ layout: default
   </div>
 </section>
 
-<hr class="section-divider">
+<div class="section-divider"></div>
 
 <section class="section" id="ai">
   <h1 class="section-title section-title--center" data-section="ai">

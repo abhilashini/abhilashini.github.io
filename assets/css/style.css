@@ -7,8 +7,8 @@
 
 /* Typography */
 :root {
-  --font-heading: 'Merriweather', serif; /* Elegant serif for headings */
-  --font-body: 'Noto Sans', sans-serif; /* Crisp sans-serif for body text */
+  --font-heading: 'Noto Sans', sans-serif; /* Elegant serif for headings */
+  --font-body: 'Merriweather', serif; /* Crisp sans-serif for body text */
   --font-section-body: 'Merriweather', serif;
   --font-section-heading: 'Noto Sans', sans-serif;
   --font-code: 'Source Code Pro', Courier, monospace; /* Monospace for code */
@@ -42,21 +42,45 @@ body {
 }
 
 .sub-heading {
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-style: oblique;
+  /*! font-weight: bolder; */
 }
 
+/* Understated divider matching your site's texture */
 .section-divider {
-  width: 50%;
-  height: 8px;
-  margin: 2rem auto;
-  background: linear-gradient( to right, transparent, #b2f2bb 20%, #63e6be 40%, #4dabf7 50%, #63e6be 60%, #b2f2bb 80%, transparent );
-  border: none;
-  outline: none;
-  mask: radial-gradient(circle, black 50%, transparent 50%);
-  mask-size: 10px 10px;
+  border: 0;
+  height: 3px;
+  margin: 3rem auto;
+  max-width: 280px;
+  background-image: linear-gradient(
+    to right,
+    transparent 20%,
+    var(--color-icon) 50%,
+    transparent 80%
+  );
+  position: relative;
 }
 
+/* Minimal "stitch marks" using your accent color */
+.section-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-background);
+  border: 2px solid var(--color-accent);
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 0 0 0 4px var(--color-background);
+}
+
+/* Hover interaction for subtle discovery */
+.section-divider:hover::after {
+  transform: translateX(-50%) rotate(135deg);
+  transition: transform 0.4s ease;
+}
 /* Section container */
 .section {
   position: relative; /* Anchor for absolute positioning */
@@ -65,11 +89,12 @@ body {
 }
 
 .section-title {
-  font-family: var(--font-body);
-  font-size: 1rem;
+  font-family: var(--font-section-heading);
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--color-primary);
+  color: var(--color-secondary);
+  text-transform: capitalize;
 }
 
 .section-title--left {
@@ -173,21 +198,20 @@ body {
   margin-bottom: 1rem;
   position: relative;
   display: none;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-text);
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card.active {
   display: block; /* Show only the active card */
   transform: translateY(-3px);
-  border-color: #4dabf7;
-  border-color: rgba(77, 171, 247, 0.5); /* Soft blue border on hover */
+  border-color: var(--color-secondary);
 }
 
 .card.active .icon {
-  background-color: var(--color-icon);
+  background-color: var(--color-accent);
   color: var(--color-background);
-  border-color: var(--color-icon);
+  border-color: var(--color-accent);
 }
 
 .card .icon {
@@ -208,8 +232,8 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.card h4 {
-  font-family: var(--font-heading);
+.card h4, .card h4 p {
+  font-family: var(--font-section-heading);
 }
 
 .card p {
@@ -217,6 +241,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   padding-right: 4rem; /* Prevent text from clashing with icon */
+  font-family: var(--font-section-body);
 }
 
 .card pre {
