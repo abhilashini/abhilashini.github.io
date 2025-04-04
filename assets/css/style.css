@@ -282,106 +282,87 @@ body {
   outline: 2px solid var(--color-primary); 
 }
 
-/* ===== BOOKS SECTION ===== */
-.books {
-  padding: 1.5rem 0;
-}
-
-.books h2 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--color-text);
-  margin-bottom: 1.2rem;
-}
-
+/* === Slim Two-Column Books === */
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
 .book-entry {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem; /* Reduced from 1.5rem */
+  align-items: start;
+}
+
+.book-icon {
+  width: 2rem; /* Smaller icon container */
+  height: 2rem;
+  font-size: 1rem; /* Smaller icon */
+  color: var(--color-primary);
+}
+
+.book-details {
+  gap: 0.2rem; /* Tighter vertical spacing */
 }
 
 .book-title {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--color-text);
-  margin: 0;
-  line-height: 1.25;
+  font-size: 1rem; /* Slightly smaller */
+  line-height: 1.2;
+  font-family: var(--font-heading);
 }
 
 .book-author {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--color-text);
-  opacity: 0.7;
-  margin: 0.1rem 0;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
 }
 
 .book-takeaway {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--color-text);
-  margin: 0.3rem 0 0;
-  opacity: 0.9;
+  font-size: 0.9rem;
+  margin-top: 0.3rem; /* Reduced from 0.5rem */
+  line-height: 1.3;
 }
 
-.book-takeaway::before {
-  content: "// ";
-  color: var(--color-icon);
-  font-weight: 600;
+@media (max-width: 768px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
-/* ===== AI SECTION ===== */
-.ai-section h2 {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: var(--color-text);
-  margin-bottom: 1.5rem;
-}
-
+/* AI Grid */
 .ai-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
 }
 
 .ai-point {
-  padding: 0.8rem;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  position: relative;
 }
 
-.ai-point:hover {
-  background-color: var(--color-accent);
+/* Subtle Dot Divider */
+.ai-point::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -1rem;
+  width: 5px;
+  height: 5px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
 }
 
 .ai-point h3 {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--color-text);
-  margin: 0 0 0.4rem 0;
-}
-
-.ai-point h3::before {
-  content: "// ";
-  color: var(--color-icon);
-  font-weight: 700;
-}
-
-.ai-point p {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  color: var(--color-text);
-  line-height: 1.4;
-  margin: 0;
-  opacity: 0.9;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -392,6 +373,8 @@ body {
   .section .doodle--right {
     position: static;
     width: 100%;
+    
+    
     text-align: center;
     margin: 1rem auto;
     left: initial;
