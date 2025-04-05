@@ -11,7 +11,7 @@ layout: default
     <br/>
     <p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. Here, I share reflections on simplifying the complex, adapting to new constraints, and the continuous learning that shapes my perspective.</p>
     <br/>
-    <a href="https://www.linkedin.com/in/abhilashini" class="contact">Find me on LinkedIn <i class="fas fa-external-link-alt"></i></a>
+    <a href="https://www.linkedin.com/in/abhilashini" class="contact" target="_blank">Find me on LinkedIn <i class="fas fa-external-link-alt"></i></a>
     <br/>
     <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right flip" alt="">
   </section>
