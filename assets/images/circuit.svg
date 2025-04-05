@@ -1,63 +1,54 @@
-<svg width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .trace {
-      stroke: #707070;
-      stroke-width: 1;
-      opacity: 0.35;
-      fill: none;
-    }
-    .pad {
-      stroke: #707070;
-      stroke-width: 1;
-      fill: none;
-      opacity: 0.6;
-    }
-    .signal {
-      fill: #EC1D26;
-      opacity: 0.3;
-    }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="main-circuit" viewBox="0 0 220 120">
+    <!-- Trace lines (inlined styling) -->
+    <path id="trace1" d="M0 30 H60 L78 12 L110 12"
+          stroke="#707070" stroke-width="1" fill="none" opacity="0.35" />
+    <path id="trace2" d="M0 40 H60 L78 22 L110 22"
+          stroke="#707070" stroke-width="1" fill="none" opacity="0.35" />
+    <path id="trace3" d="M0 50 H110"
+          stroke="#707070" stroke-width="1" fill="none" opacity="0.35" />
+    <path id="trace4" d="M0 60 H60 L78 78 L110 78"
+          stroke="#707070" stroke-width="1" fill="none" opacity="0.35" />
+    <path id="trace5" d="M0 70 H60 L78 88 L110 88"
+          stroke="#707070" stroke-width="1" fill="none" opacity="0.35" />
 
-  <g transform="rotate(180, 110, 60)">
-    <!-- Parallel bus lines with angled, parallel branches -->
-    <path id="trace1" class="trace" d="M0 30 H60 L78 12 L110 12" />
-    <path id="trace2" class="trace" d="M0 40 H60 L78 22 L110 22" />
-    <path id="trace3" class="trace" d="M0 50 H110" />
-    <path id="trace4" class="trace" d="M0 60 H60 L78 78 L110 78" />
-    <path id="trace5" class="trace" d="M0 70 H60 L78 88 L110 88" />
+    <!-- Outline pads at end points -->
+    <circle cx="110" cy="12" r="2.5"
+            stroke="#707070" stroke-width="1" fill="none" opacity="0.6" />
+    <circle cx="110" cy="22" r="2.5"
+            stroke="#707070" stroke-width="1" fill="none" opacity="0.6" />
+    <circle cx="110" cy="50" r="2.5"
+            stroke="#707070" stroke-width="1" fill="none" opacity="0.6" />
+    <circle cx="110" cy="78" r="2.5"
+            stroke="#707070" stroke-width="1" fill="none" opacity="0.6" />
+    <circle cx="110" cy="88" r="2.5"
+            stroke="#707070" stroke-width="1" fill="none" opacity="0.6" />
 
-    <!-- Outline pads at ends -->
-    <circle class="pad" cx="110" cy="12" r="2.5" />
-    <circle class="pad" cx="110" cy="22" r="2.5" />
-    <circle class="pad" cx="110" cy="50" r="2.5" />
-    <circle class="pad" cx="110" cy="78" r="2.5" />
-    <circle class="pad" cx="110" cy="88" r="2.5" />
-
-    <!-- Red signal dots moving in sync -->
-    <circle r="2" class="signal">
+    <!-- Animated red signal dots -->
+    <circle r="2" fill="#EC1D26" opacity="0.3">
       <animateMotion dur="3s" repeatCount="indefinite">
-        <mpath href="#trace1"/>
+        <mpath href="#trace1" />
       </animateMotion>
     </circle>
-    <circle r="2" class="signal">
+    <circle r="2" fill="#EC1D26" opacity="0.3">
       <animateMotion dur="3s" repeatCount="indefinite">
-        <mpath href="#trace2"/>
+        <mpath href="#trace2" />
       </animateMotion>
     </circle>
-    <circle r="2" class="signal">
+    <circle r="2" fill="#EC1D26" opacity="0.3">
       <animateMotion dur="3s" repeatCount="indefinite">
-        <mpath href="#trace3"/>
+        <mpath href="#trace3" />
       </animateMotion>
     </circle>
-    <circle r="2" class="signal">
+    <circle r="2" fill="#EC1D26" opacity="0.3">
       <animateMotion dur="3s" repeatCount="indefinite">
-        <mpath href="#trace4"/>
+        <mpath href="#trace4" />
       </animateMotion>
     </circle>
-    <circle r="2" class="signal">
+    <circle r="2" fill="#EC1D26" opacity="0.3">
       <animateMotion dur="3s" repeatCount="indefinite">
-        <mpath href="#trace5"/>
+        <mpath href="#trace5" />
       </animateMotion>
     </circle>
-  </g>
+  </symbol>
 </svg>
