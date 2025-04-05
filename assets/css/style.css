@@ -423,7 +423,6 @@ body {
   line-height: 1.5;
   opacity: 0.8;
 }
-
 .footer-license {
   font-size: 0.8rem;
   color: var(--color-icon);
@@ -432,6 +431,29 @@ body {
   margin-top: 3rem;
 }
 
+/* Minimal bottom-right Credits link */
+.credits-link {
+  position: fixed;
+  bottom: 12px;
+  right: 16px;
+  z-index: 999;
+  font-size: 0.8rem;
+  font-family: 'Noto Sans', sans-serif;
+  opacity: 0.6;
+}
+
+.credits-link a {
+  color: var(--color-icon);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: all 0.3s ease;
+}
+
+.credits-link a:hover {
+  color: var(--color-text); /* Assuming you have a primary text color var */
+  border-bottom-color: var(--color-text);
+  opacity: 0.85;
+}
 
 @media (max-width: 768px) {
   /* Increase specificity and use initial/unset */
