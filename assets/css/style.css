@@ -424,6 +424,15 @@ body {
   opacity: 0.8;
 }
 
+.footer-license {
+  font-size: 0.8rem;
+  color: var(--color-icon);
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 3rem;
+}
+
+
 @media (max-width: 768px) {
   /* Increase specificity and use initial/unset */
   .section .section-title--left,
