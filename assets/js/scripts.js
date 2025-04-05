@@ -97,5 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
               activeSectionIndex = currentSectionIndex;
           }
       });
+
+        // Hover-based section activation
+        carousel.addEventListener('mouseenter', () => {
+            const currentSection = carousel.closest('.section');
+            const currentSectionIndex = sections.indexOf(currentSection);
+            if (currentSectionIndex !== -1 && currentSectionIndex !== activeSectionIndex) {
+                showSection(currentSectionIndex);
+                activeSectionIndex = currentSectionIndex;
+            }
+        });
+
   });
 });

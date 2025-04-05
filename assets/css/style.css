@@ -139,20 +139,27 @@ body {
   transform: translateX(-50%);
 }
 
-.section.active .section-title::after {
-  content: '';
-  display: block;
-  width: 100px; /* Adjust as needed */
-  height: 10px; /* Adjust as needed */
-  background: url('/assets/images/squiggle-blue.svg') no-repeat; /* Blue squiggle SVG */
-  background-size: contain;
-  position: absolute;
-  bottom: -10px; /* Position below the title */
+.section-title::before,
+.section-title::after {
+  color: var(--color-primary);
+  font-family: var(--font-code);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Animation Fix */
-.section.active .section-title {
-  animation: scaleUp 0.5s ease forwards;
+.section-title::before {
+  content: '[ ';
+  margin-right: 0.25rem;
+}
+
+.section-title::after {
+  content: ' ]';
+  margin-left: 0.25rem;
+}
+
+.section.active .section-title::before,
+.section.active .section-title::after {
+  opacity: 1;
 }
 
 /* Doodles */
