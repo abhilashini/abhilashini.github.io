@@ -48,6 +48,12 @@ body {
   /*! font-weight: bolder; */
 }
 
+.contact {
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
+  font-weight: bolder;
+}
+
 .section-divider {
   border: 0;
   height: 1px;
@@ -164,6 +170,16 @@ body {
   right: -16rem; /* Position to the right of the column */
 }
 
+/* New centered modifier */
+.doodle--center {
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto; /* Reset right position */
+  z-index: -1; /* Optional: keep behind content */
+  top: 100%;
+  margin-top: 3rem;
+}
+
 .flip {
   transform: scaleX(-1);
 }
@@ -275,7 +291,7 @@ body {
 }
 
 .carousel-nav button:hover {
-  color: var(--color-secondary); 
+  color: var(--color-text); 
 }
 
 .carousel-nav button:focus {
@@ -362,13 +378,14 @@ body {
 .ai-point h3::after {
   content: attr(data-pattern);
   font-family: var(--font-code);
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   color: var(--color-primary);
   opacity: 0.3;
   position: absolute;
   top: 0;
-  right: 0;
   transition: opacity 0.3s ease;
+  padding-left: 1rem;
+  transform: translateY(-5%);
 }
 
 .ai-point:hover h3::after {
