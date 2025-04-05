@@ -423,36 +423,46 @@ body {
   line-height: 1.5;
   opacity: 0.8;
 }
-.footer-license {
-  font-size: 0.8rem;
-  color: var(--color-icon);
-  text-align: center;
-  opacity: 0.6;
-  margin-top: 3rem;
-}
 
-/* Minimal bottom-right Credits link */
-.credits-link {
+.site-footer-meta {
   position: fixed;
   bottom: 12px;
   right: 16px;
-  z-index: 999;
-  font-size: 0.8rem;
-  font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-icon);
   opacity: 0.6;
+  z-index: 1000;
+  font-family: var(--font-sans);
 }
 
-.credits-link a {
+.footer-divider {
+  color: var(--color-icon);
+  opacity: 0.4;
+}
+
+.footer-link {
   color: var(--color-icon);
   text-decoration: none;
-  border-bottom: 1px dashed transparent;
-  transition: all 0.3s ease;
+  border-bottom: 1px dotted var(--color-icon);
 }
 
-.credits-link a:hover {
-  color: var(--color-text); /* Assuming you have a primary text color var */
-  border-bottom-color: var(--color-text);
-  opacity: 0.85;
+.footer-link:hover {
+  opacity: 0.9;
+  border-bottom: 1px solid var(--color-icon);
+}
+
+.cc-badge {
+  height: 1rem;
+  vertical-align: middle;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.cc-badge:hover {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
