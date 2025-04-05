@@ -339,22 +339,37 @@ body {
   padding: 1.5rem;
 }
 
-/* Circuit Styling */
-.ai-circuit {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  top: -10px;
-  left: -10px;
-  color: var(--color-accent); /* Gray color */
-  opacity: 0.3;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+/* Add to existing AI section CSS */
+.ai-point {
+  position: relative;
 }
 
-.ai-point:hover .ai-circuit {
-  opacity: 0.5;
-  color: var(--color-primary); /* Red color on hover */
+/* Circuit SVG Positioning */
+.ai-point .circuit {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: auto;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  transform: scale(0.8);
+  transform-origin: bottom right;
+}
+
+/* Color Sync with Theme */
+.ai-point .circuit .trace {
+  stroke: var(--color-accent); /* Gray lines */
+}
+
+.ai-point .circuit .signal {
+  fill: var(--color-primary); /* Red dots */
+}
+
+/* Hover Effect */
+.ai-point:hover .circuit {
+  opacity: 0.4;
 }
 
 /* Existing Title/Pattern Styles (Unchanged) */
@@ -390,17 +405,7 @@ body {
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-  .ai-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
   
-  .ai-point svg.circuit {
-    width: 80px;
-    height: 80px;
-    top: -5px;
-    left: -5px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -468,12 +473,20 @@ body {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-
-  .ai-grid {
-    grid-template-columns: 1fr;
-  }
   
   .ai-point::after {
     display: none;
+  }
+
+  .ai-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .ai-point svg.circuit {
+    width: 80px;
+    height: 80px;
+    top: -5px;
+    left: -5px;
   }
 }
