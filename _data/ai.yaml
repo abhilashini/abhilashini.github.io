@@ -1,9 +1,3 @@
-defaults:
-  - scope:
-      path: "_data/ai_points.yml"
-    values:
-      pattern-style: "letter-spacing: 0.1em; opacity: 0.3;"
-
 - title: "Query-able Encyclopedia"
   pattern: "1110"  # Represents on/off states in queries
   pattern-style: "spacing: 0.1em; opacity: 0.3;"
@@ -16,7 +10,7 @@ defaults:
 
 - title: "Pinpoint Tutoring"
   pattern: "->->"  # Directional iteration
-  text: "No more forum deep dives. Now I ask, __'Explain X like I’m a novice'__, and iterate until it clicks."
+  text: "No more forum deep dives. Now I ask, _'Explain X like I’m a novice'_, and iterate until it clicks."
 
 - title: "Code with Guardrails"
   pattern: "✓✗✓✗"  # Check/X pattern

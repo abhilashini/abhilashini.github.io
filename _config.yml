@@ -3,3 +3,9 @@ description: "Scrapbook of Thoughts"
 baseurl: /
 url: "https://abhilashini.github.io"
 markdown: kramdown
+defaults:
+  - scope:
+      path: "_data/ai_points.yml"
+      type: ai-points
+    values:
+      pattern-style: "letter-spacing: 0.1em; opacity: 0.3;"
