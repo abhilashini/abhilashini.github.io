@@ -10,7 +10,7 @@
 
 - title: "Pinpoint Tutoring"
   pattern: "->->"  # Directional iteration
-  text: "No more forum deep dives. Now I ask, _'Explain X like I’m a novice'_, and iterate until it clicks."
+  text: "No more forum deep dives. Now I ask, _\"Explain X like I’m a novice\"_, and iterate until it clicks."
 
 - title: "Code with Guardrails"
   pattern: "✓✗✓✗"  # Check/X pattern

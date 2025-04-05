@@ -233,9 +233,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.card h4, .card h4 p {
+.card h4 {
   font-family: var(--font-section-heading);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .card p {

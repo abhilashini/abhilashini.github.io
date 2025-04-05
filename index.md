@@ -38,7 +38,6 @@ layout: default
   <div class="content">
     {% include carousel.html items=site.data.avoid %}
   </div>
-  <img src="/assets/doodle2.svg" class="doodle doodle--left flip" alt="">
 </section>
 
 <div class="section-divider"></div>
@@ -50,6 +49,7 @@ layout: default
   <div class="content">
     {% include books.html items=site.data.books %}
   </div>
+  <img src="/assets/images/ReadingDoodle.svg" class="doodle doodle--left" alt="">
 </section>
 
 <div class="section-divider"></div>
