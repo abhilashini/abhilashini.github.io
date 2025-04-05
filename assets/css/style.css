@@ -203,79 +203,94 @@ body {
 /* Cards/Panels */
 .carousel {
   position: relative;
-  max-width: 600px; /* Adjust as needed */
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .card {
-  background-color: #ffffff; /* White background for openness */
+  background-color: #ffffff;
   color: var(--color-text);
-  padding: 1.5rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+  padding: 2rem 1.75rem;
+  margin-bottom: 2.5rem;
   position: relative;
   display: none;
-  border: 1px solid var(--color-accent);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+
+  border: 1px solid #e1e1e1;
+  border-left: 4px solid transparent;
+  border-radius: 0;
+
+  transition:
+    border-left-color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .card.active {
-  display: block; /* Show only the active card */
-  transform: translateY(-3px);
-  border-color: var(--color-accent);
+  display: block;
+  border-left-color: var(--color-primary);
+  background-color: #ffffff;
 }
 
-.card.active .icon {
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  border-color: var(--color-primary);
-}
-
+/* Font Awesome icon placement */
 .card .icon {
-  font-size: 1.5rem;
-  color: var(--color-icon);
-  border: 2px solid var(--color-icon);
-  border-radius: 50%;
-  padding: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: none;
+
   position: absolute;
-  right: 1rem;
-  top: 1rem;
-  width: 2.5rem; /* Fixed width */
-  height: 2.5rem; /* Fixed height */
+  top: 1.25rem;
+  right: 1.25rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-primary); 
-  transition: background-color 0.3s ease, color 0.3s ease;
+
+  width: auto;
+  height: auto;
+  padding: 0;
+  font-family: "Font Awesome 6 Free", var(--font-code);
+  font-weight: 900; /* Ensure solid style if needed */
 }
 
+/* Headings */
 .card h4 {
-  font-family: var(--font-section-heading);
+  font-family: var(--font-section-heading); /* Noto Sans */
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--color-primary);
+  margin-bottom: 0.75rem;
 }
 
+/* Paragraphs / Body */
 .card p {
-  margin: 0;
+  font-family: var(--font-section-body); /* Merriweather */
   font-size: 1rem;
-  line-height: 1.6;
-  padding-right: 4rem; /* Prevent text from clashing with icon */
-  font-family: var(--font-section-body);
+  line-height: 1.7;
+  padding-right: 3.5rem;
+  margin: 0;
+  color: var(--color-text);
 }
 
+/* Code blocks */
 .card pre {
   font-family: var(--font-code);
-  background-color: #f8f9fa !important; /* Light gray background for code */
+  background-color: #f8f9fa !important;
   color: var(--color-text);
   padding: 1rem;
   border-radius: 4px;
-  margin: 3rem 0 0 0 !important;
+  margin: 2.5rem 0 0 0 !important;
   white-space: pre-wrap !important;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 1.5rem;
 }
 
 /* Carousel Navigation */
 .carousel-nav {
   position: absolute;
-  bottom: -2rem; /* Position below the card */
+  bottom: -2rem;
   right: 0;
   display: flex;
   gap: 0.5rem;
@@ -284,19 +299,23 @@ body {
 .carousel-nav button {
   background: none;
   border: none;
-  color: var(--color-icon); /* Bright blue for arrows */
-  font-size: 1.2rem; /* Thin line icons */
+  color: var(--color-icon);
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: color 0.3s ease;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.3s ease;
 }
 
 .carousel-nav button:hover {
-  color: var(--color-text); 
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-text);
 }
 
 .carousel-nav button:focus {
-  outline: 2px solid var(--color-primary); 
+  outline: 2px solid var(--color-primary);
 }
+
 
 /* === Slim Two-Column Books === */
 .book-grid {

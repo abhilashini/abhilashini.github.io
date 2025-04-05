@@ -14,7 +14,7 @@
         <pre class="line-numbers"><code class="language-{{ item.language }}">{{ item.code | markdownify }}</code></pre>
       {% endif %}
       {% if item.image %}
-        <img src="{{ item.image }}" alt="Card Image"> 
+        <img src="{{ item.image }}" alt="Card Image" height="120px"> 
       {% endif %}
       {% if item.comparison_table %}
         <div>{{ item.comparison_table | markdownify }}</div>
