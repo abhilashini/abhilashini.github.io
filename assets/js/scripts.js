@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
             activeSectionIndex = index;
         }
         });
+        section.addEventListener('touchstart', () => {
+            if (index !== activeSectionIndex) {
+              showSection(index);
+              activeSectionIndex = index;
+            }
+          });
     });
   
 
