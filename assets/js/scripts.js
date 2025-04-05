@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   };
 
+  // Hover-based section activation (applies to all sections, not just carousel ones)
+    sections.forEach((section, index) => {
+        section.addEventListener('mouseenter', () => {
+        if (index !== activeSectionIndex) {
+            showSection(index);
+            activeSectionIndex = index;
+        }
+        });
+    });
+  
+
   const showCard = (carousel, index) => {
       if (!carousel) return;
       const cards = Array.from(carousel.querySelectorAll('.card'));
