@@ -17,7 +17,7 @@
   --color-text: #000000;
   --color-background: #FFFFFF;
   --color-primary: #EC1D26;   
-  --color-secondary: #EC1D26; 
+  --color-secondary: #004FFF; 
   --color-icon: #EC1D26;      
   --color-accent: #707070;
 
@@ -326,7 +326,7 @@ body {
   line-height: 1.3;
 }
 
-/* ===== AI Section - Modular Flow Concept ==== */
+/* ===== AI Section Styles ===== */
 .ai-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -337,71 +337,47 @@ body {
 .ai-point {
   position: relative;
   padding: 1.5rem;
-  transition: all 0.3s ease;
 }
 
-/* Neural Connection Lines */
-.ai-point::before,
-.ai-point::after {
-  content: '';
+/* Circuit Styling */
+.ai-circuit {
   position: absolute;
-  background: var(--color-accent);
-  opacity: 0.1;
+  width: 120px;
+  height: 120px;
+  top: -10px;
+  left: -10px;
+  color: var(--color-accent); /* Gray color */
+  opacity: 0.3;
+  pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
-/* Horizontal Connector */
-.ai-point::before {
-  width: 100%;
-  height: 1px;
-  top: 0;
-  left: 0;
+.ai-point:hover .ai-circuit {
+  opacity: 0.5;
+  color: var(--color-primary); /* Red color on hover */
 }
 
-/* Vertical Processor Line */
-.ai-point::after {
-  width: 1px;
-  height: 100%;
-  top: 0;
-  left: -1rem;
-}
-
-.ai-point:hover {
-  &::before, &::after {
-    opacity: 0.3;
-  }
-}
-
+/* Existing Title/Pattern Styles (Unchanged) */
 .ai-point h3 {
   font-family: var(--font-heading);
   font-size: 1rem;
   margin-bottom: 0.8rem;
   position: relative;
-  padding-right: 4em; /* Space for pattern */
+  padding-right: 4em;
 }
 
-/* Corrected Pattern Styles */
 .ai-point h3::after {
   content: attr(data-pattern);
   font-family: var(--font-code);
-  font-size: 0.8em;
-  font-style: var(--pattern-font-style, normal);
+  font-size: 0.7rem;
   color: var(--color-primary);
-  opacity: var(--pattern-opacity, 0.3);
+  opacity: 0.3;
   position: absolute;
   top: 0;
   right: 0;
-  letter-spacing: var(--pattern-spacing, 0.1em);
-  transform: translateY(-50%); /* Half above the line */
-  background: var(--color-background); /* Prevent text overlap */
+  transition: opacity 0.3s ease;
 }
 
-/* Fix empty pattern handling */
-.ai-point h3[data-pattern=""]::after {
-  content: "–";
-}
-
-/* Hover Enhancement */
 .ai-point:hover h3::after {
   opacity: 0.6;
 }
@@ -410,6 +386,21 @@ body {
   font-size: 0.95rem;
   line-height: 1.5;
   opacity: 0.8;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .ai-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .ai-point svg.circuit {
+    width: 80px;
+    height: 80px;
+    top: -5px;
+    left: -5px;
+  }
 }
 
 @media (max-width: 768px) {

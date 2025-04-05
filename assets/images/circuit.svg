@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Gray Circuit Path -->
+  <path id="circuit-path" fill="none" stroke="currentColor" stroke-width="1" 
+        d="M20 20 L50 20 Q65 20 65 35 L65 65" 
+        stroke-dasharray="2 3" opacity="0.2"/>
+  
+  <!-- Animated Dot (SMIL animation) -->
+  <circle fill="currentColor" r="1.5" opacity="0">
+    <animateMotion 
+      dur="3s"
+      repeatCount="indefinite"
+      path="M20 20 L50 20 Q65 20 65 35 L65 65"/>
+    <animate 
+      attributeName="opacity"
+      values="0;1;0"
+      dur="1.5s"
+      repeatCount="indefinite"/>
+  </circle>
+</svg>

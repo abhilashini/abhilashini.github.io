@@ -2,6 +2,9 @@
     <div class="ai-grid">
         {% for point in site.data.ai %}
             <div class="ai-point">
+                <svg class="ai-circuit" aria-hidden="true">
+                    <use href="/assets/svg/circuit.svg#circuit-path"></use>
+                </svg>
                 <h3 data-pattern="{{ point.pattern }}" style="{{ point.pattern-style | default: '' }}">{{ point.title }}</h3>
                 <p>{{ point.text | markdownify  }}</p>
             </div>
