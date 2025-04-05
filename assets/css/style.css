@@ -379,31 +379,21 @@ body {
   position: relative;
 }
 
-/* Base Pattern Style */
-.ai-point h3 {
-  position: relative;
-  &::after {
-    content: attr(data-pattern);
-    font-family: var(--font-code);
-    font-size: 0.7rem;
-    color: var(--color-primary);
-    margin-left: 0.8rem;
-    /* Inherit inline styles from YAML */
-    letter-spacing: var(--pattern-spacing, 0.1em);
-    opacity: var(--pattern-opacity, 0.3);
-    font-style: var(--pattern-font-style, normal);
-  }
+/* Corrected Pattern Styles */
+.ai-point h3::after {
+  content: attr(data-pattern);
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  margin-left: 0.8rem;
+  letter-spacing: var(--pattern-spacing, 0.1em);
+  opacity: var(--pattern-opacity, 0.3);
+  font-style: var(--pattern-font-style, normal);
 }
 
-/* Base styles act as fallbacks */
-.ai-point h3::after {
-  letter-spacing: 0.1em;   /* --pattern-spacing fallback */
-  opacity: 0.3;            /* --pattern-opacity fallback */
-  font-style: normal;      /* --pattern-font-style fallback */
-  /* Force empty pattern to show as dash */
-  &:empty::before {
-    content: "–";
-  }
+/* Fix empty pattern handling */
+.ai-point h3[data-pattern=""]::after {
+  content: "–";
 }
 
 /* Hover Enhancement */
