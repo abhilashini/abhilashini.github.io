@@ -379,16 +379,21 @@ body {
   position: relative;
 }
 
-/* Binary Pattern Decoration */
+/* Pattern Display */
 .ai-point h3::after {
-  content: "0101";
-  position: absolute;
-  right: 0;
-  top: 0;
+  content: attr(data-pattern);
   font-family: var(--font-code);
   font-size: 0.7rem;
   color: var(--color-primary);
   opacity: 0.3;
+  margin-left: 0.8rem;
+  letter-spacing: 0.1em;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover Enhancement */
+.ai-point:hover h3::after {
+  opacity: 0.6;
 }
 
 .ai-point p {

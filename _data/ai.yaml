@@ -1,17 +1,23 @@
 - title: "Query-able Encyclopedia"
-  text: "AI collapses research time — but only if I ask the *right* questions. The better my inputs, the sharper its outputs."
+  pattern: "1110"  # Represents on/off states in queries
+  text: "AI collapses research time — but only when I ask the _**right**_ questions. The better my inputs, the sharper its outputs."
 
-- title: "Invisible Learning Curves"  
+- title: "Invisible Learning Curves"
+  pattern: "????"  # Unknown variables metaphor
   text: "Coding with AI feels like untangling knots in the dark — it lacks the context humans intuit. Constraints and unspoken needs slip through prompts, leaving gaps only experience fills."  
 
 - title: "Pinpoint Tutoring"
-  text: "No more forum deep dives. Now I ask, *'Explain X like I’m a novice,'* and iterate until it clicks."
+  pattern: "->->"  # Directional iteration
+  text: "No more forum deep dives. Now I ask, __'Explain X like I’m a novice'__, and iterate until it clicks."
 
 - title: "Code with Guardrails"
+  pattern: "✓✗✓✗"  # Check/X pattern
   text: "AI accelerates grunt work (Codeium/Copilot), but I review every suggestion. It writes code; I write the checks."
 
 - title: "Chain of Thought"
+  pattern: "Σ→"  # Summation symbol flow
   text: "Can GPT refine DeepSeek’s output, then Gemini critique GPT’s? Sometimes. Coherence erodes with each hop."
 
-- title: "Voice Isn’t a Preset"  
-  text: "AI rephrases and polishes, but it can’t replicate *our* quirks. Style is a template; voice is human — messy, inconsistent, and uncopyable."  
+- title: "Voice Isn’t a Preset"
+  pattern: "{ }"    # Empty set symbol
+  text: "AI rephrases and polishes, but it can’t replicate _**our**_ quirks. Style is a template; voice is human — messy, inconsistent, and uncopyable."  

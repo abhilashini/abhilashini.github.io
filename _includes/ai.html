@@ -1,9 +1,9 @@
 <section class="ai-section">
     <div class="ai-grid">
         {% for point in site.data.ai %}
-            <div class="ai-point">
+            <div class="ai-point" data-pattern="{{ point.pattern }}">
                 <h3>{{ point.title }}</h3>
-                <p>{{ point.text }}</p>
+                <p>{{ point.text | markdownify  }}</p>
             </div>
         {% endfor %}
     </div>
