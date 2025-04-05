@@ -33,3 +33,5 @@ All GIFs remain the property of their respective creators as listed on GIPHY.
 
 I gratefully acknowledge the open-source and creative communities that made these assets available.  
 This site would not be the same without their generosity.
+
+Ideas evolve in dialogue. Some design and development insights were co-explored using AI tools (such as ChatGPT), serving as a thinking partner in crafting human-centered, engineering-aware experiences.
