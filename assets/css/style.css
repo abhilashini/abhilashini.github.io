@@ -345,7 +345,7 @@ body {
 .ai-point::after {
   content: '';
   position: absolute;
-  background: var(--color-primary);
+  background: var(--color-accent);
   opacity: 0.1;
   transition: opacity 0.3s ease;
 }
@@ -377,18 +377,23 @@ body {
   font-size: 1rem;
   margin-bottom: 0.8rem;
   position: relative;
+  padding-right: 4em; /* Space for pattern */
 }
 
 /* Corrected Pattern Styles */
 .ai-point h3::after {
   content: attr(data-pattern);
   font-family: var(--font-code);
-  font-size: 0.7rem;
-  color: var(--color-primary);
-  margin-left: 0.8rem;
-  letter-spacing: var(--pattern-spacing, 0.1em);
-  opacity: var(--pattern-opacity, 0.3);
+  font-size: 0.8em;
   font-style: var(--pattern-font-style, normal);
+  color: var(--color-primary);
+  opacity: var(--pattern-opacity, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  letter-spacing: var(--pattern-spacing, 0.1em);
+  transform: translateY(-50%); /* Half above the line */
+  background: var(--color-background); /* Prevent text overlap */
 }
 
 /* Fix empty pattern handling */
