@@ -580,7 +580,22 @@ body {
     font-size: 1.8rem;
     padding: 0;
   }
-  
+
+  .comparison-table {
+    table-layout: auto;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+  }
+
+
+  .comparison-table img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+
   /* Footer still small and non-intrusive */
   .site-footer-meta {
     font-size: 0.65rem;
