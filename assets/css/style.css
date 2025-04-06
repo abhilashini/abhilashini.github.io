@@ -7,18 +7,21 @@
 
 /* Typography */
 :root {
-  --font-heading: 'Noto Sans', sans-serif; /* Elegant serif for headings */
-  --font-body: 'Merriweather', serif; /* Crisp sans-serif for body text */
+  --font-heading: 'Noto Sans', sans-serif;
+  /* Elegant serif for headings */
+  --font-body: 'Merriweather', serif;
+  /* Crisp sans-serif for body text */
   --font-section-body: 'Merriweather', serif;
   --font-section-heading: 'Noto Sans', sans-serif;
-  --font-code: 'Source Code Pro', Courier, monospace; /* Monospace for code */
+  --font-code: 'Source Code Pro', Courier, monospace;
+  /* Monospace for code */
   --font-size-base: 1rem;
   --line-height-base: 1.6;
   --color-text: #000000;
   --color-background: #FFFFFF;
-  --color-primary: #EC1D26;   
-  --color-secondary: #004FFF; 
-  --color-icon: #EC1D26;      
+  --color-primary: #EC1D26;
+  --color-secondary: #004FFF;
+  --color-icon: #EC1D26;
   --color-accent: #707070;
 
 }
@@ -59,12 +62,10 @@ body {
   height: 1px;
   margin: 3rem auto;
   max-width: 280px;
-  background-image: linear-gradient(
-    to right,
-    transparent 20%,
-    var(--color-accent) 50%,  
-    transparent 80%
-  );
+  background-image: linear-gradient(to right,
+      transparent 20%,
+      var(--color-accent) 50%,
+      transparent 80%);
   position: relative;
 }
 
@@ -74,23 +75,27 @@ body {
   position: absolute;
   left: 50%;
   top: -3px;
-  width: 8px;          /* Reduced size */
-  height: 8px;         /* Reduced size */
-  background: var(--color-icon);  
+  width: 8px;
+  /* Reduced size */
+  height: 8px;
+  /* Reduced size */
+  background: var(--color-icon);
   transform: translateX(-50%) rotate(45deg);
-  box-shadow: 0 0 0 2px var(--color-background); /* Slimmer outline */
+  box-shadow: 0 0 0 2px var(--color-background);
+  /* Slimmer outline */
 }
 
 /* Hover: Gentle color shift + rotation */
 .section-divider:hover::after {
   transform: translateX(-50%) rotate(135deg);
-  background: var(--color-secondary); 
+  background: var(--color-secondary);
   transition: all 0.4s ease;
 }
 
 /* Section container */
 .section {
-  position: relative; /* Anchor for absolute positioning */
+  position: relative;
+  /* Anchor for absolute positioning */
   margin-bottom: 4rem;
   padding: 1rem 0rem 0rem 1rem
 }
@@ -120,9 +125,12 @@ body {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  width: auto; /* Override 20rem */
-  position: relative; /* Change to relative if in flow */
-  margin: 0 auto 2.5rem; /* Center in parent */
+  width: auto;
+  /* Override 20rem */
+  position: relative;
+  /* Change to relative if in flow */
+  margin: 0 auto 2.5rem;
+  /* Center in parent */
 }
 
 /* Squiggle Positioning Adjustments */
@@ -170,19 +178,23 @@ body {
 }
 
 .doodle--left {
-  left: -16rem; /* Position to the left of the column */
+  left: -16rem;
+  /* Position to the left of the column */
 }
 
 .doodle--right {
-  right: -16rem; /* Position to the right of the column */
+  right: -16rem;
+  /* Position to the right of the column */
 }
 
 /* New centered modifier */
 .doodle--center {
   left: 50%;
   transform: translateX(-50%);
-  right: auto; /* Reset right position */
-  z-index: -1; /* Optional: keep behind content */
+  right: auto;
+  /* Reset right position */
+  z-index: -1;
+  /* Optional: keep behind content */
   top: 100%;
   margin-top: 3rem;
 }
@@ -201,6 +213,7 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -257,12 +270,14 @@ body {
   height: auto;
   padding: 0;
   font-family: "Font Awesome 6 Free", var(--font-code);
-  font-weight: 900; /* Ensure solid style if needed */
+  font-weight: 900;
+  /* Ensure solid style if needed */
 }
 
 /* Headings */
 .card h4 {
-  font-family: var(--font-section-heading); /* Noto Sans */
+  font-family: var(--font-section-heading);
+  /* Noto Sans */
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -273,7 +288,8 @@ body {
 
 /* Paragraphs / Body */
 .card p {
-  font-family: var(--font-section-body); /* Merriweather */
+  font-family: var(--font-section-body);
+  /* Merriweather */
   font-size: 1rem;
   line-height: 1.7;
   padding-right: 3.5rem;
@@ -335,23 +351,28 @@ body {
 .book-entry {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1rem; /* Reduced from 1.5rem */
+  gap: 1rem;
+  /* Reduced from 1.5rem */
   align-items: start;
 }
 
 .book-icon {
-  width: 2rem; /* Smaller icon container */
+  width: 2rem;
+  /* Smaller icon container */
   height: 2rem;
-  font-size: 1rem; /* Smaller icon */
+  font-size: 1rem;
+  /* Smaller icon */
   color: var(--color-primary);
 }
 
 .book-details {
-  gap: 0.2rem; /* Tighter vertical spacing */
+  gap: 0.2rem;
+  /* Tighter vertical spacing */
 }
 
 .book-title {
-  font-size: 1rem; /* Slightly smaller */
+  font-size: 1rem;
+  /* Slightly smaller */
   line-height: 1.2;
   font-family: var(--font-heading);
 }
@@ -364,7 +385,8 @@ body {
 
 .book-takeaway {
   font-size: 0.9rem;
-  margin-top: 0.3rem; /* Reduced from 0.5rem */
+  margin-top: 0.3rem;
+  /* Reduced from 0.5rem */
   line-height: 1.3;
 }
 
@@ -378,17 +400,21 @@ body {
 
 /* Add these 6 lines to your existing CSS */
 .ai-point {
-  position: relative; /* Required for absolute positioning */
-  overflow: hidden; /* Contain SVG within card bounds */
+  position: relative;
+  /* Required for absolute positioning */
+  overflow: hidden;
+  /* Contain SVG within card bounds */
 }
 
 .ai-point svg.circuit {
   position: absolute;
   bottom: -10px;
   right: -15px;
-  width: 120px; /* Control visible size */
+  width: 120px;
+  /* Control visible size */
   height: auto;
-  pointer-events: none; /* Make SVG non-interactive */
+  pointer-events: none;
+  /* Make SVG non-interactive */
   transition: opacity 0.3s ease;
 }
 
@@ -466,83 +492,112 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Increase specificity and use initial/unset */
+
+  /* Tweak doodle and section titles — retain structure, don't center everything */
   .section .section-title--left,
-  .section .section-title--right,
+  .section .section-title--right {
+    position: static;
+    margin: 1rem 0;
+    text-align: left;
+  }
+
   .section .doodle--left,
   .section .doodle--right {
     position: static;
-    width: 100%;
-    
-    
-    text-align: center;
-    margin: 1rem auto;
-    left: initial;
-    right: initial;
-  }
-
-  /* Center titles and doodles within their sections */
-  .section .section-title--left,
-  .section .section-title--right {
-    text-align: center;
-  }
-
-  .section .doodle--left,
-  .section .doodle--right {
+    margin: 1rem auto 2rem;
     display: block;
-    margin: 0 auto 2rem; /* Center doodles */
   }
 
-  /* Ensure sections stack properly */
+  /* Prevent centering of everything by default */
   .section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 1.5rem 1rem;
   }
 
-  /* Horizontal scrolling for carousels */
+  .section-title--center {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    line-height: 1.3;
+    word-break: break-word;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+
+  /* Maintain layout for ai-grid and book-grid if already good */
+  /* Just ensure no forced stacking unless needed */
+  .ai-grid,
+  .book-grid {
+    gap: 1.5rem;
+  }
+
+  /* Fix card layout */
   .carousel {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 1rem;
+    padding: 0 0 2rem;
+    position: relative;
   }
 
   .carousel .card {
-    flex: 0 0 90%; /* 90% width for mobile cards */
+    flex: 0 0 90%;
     scroll-snap-align: start;
     margin-right: 1rem;
+    padding: 1.5rem 1.25rem;
+    overflow: visible;
+    /* prevent scrollbars from showing inside */
   }
 
-  .section.active .section-title::after {
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
+  .card h4 {
+    margin-top: 0.5rem;
   }
 
-  .section-title--right::after,
-  .section-title--left::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .card {
+    display: flex;
+    flex-direction: column;
   }
 
-  .book-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .ai-point::after {
-    display: none;
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
   }
 
-  .ai-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .card-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
   }
-  
-  .ai-point svg.circuit {
-    width: 90px; /* Smaller on mobile */
-    bottom: -15px;
-    right: -15px;
-  }}
+
+
+  .card p {
+    padding-right: 0;
+  }
+
+  /* Ensure nav arrows are visible */
+  .carousel-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 2;
+  }
+
+  .carousel-nav button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Footer still small and non-intrusive */
+  .site-footer-meta {
+    font-size: 0.65rem;
+    right: 8px;
+    bottom: 8px;
+  }
 }

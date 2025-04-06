@@ -1,25 +1,27 @@
 <div class="carousel">
   {% for item in include.items %}
-    <div class="card {% if forloop.first %}active{% endif %}">
+  <div class="card {% if forloop.first %}active{% endif %}">
+    <div class="card-header">
       {% if item.icon %}
-        <i class="{{ item.icon }} icon"></i>
+      <i class="{{ item.icon }} icon"></i>
       {% endif %}
       {% if item.heading %}
-        <h4>{{ item.heading }}</h4>
-      {% endif %}
-      {% if item.text %}
-        <p>{{ item.text | markdownify }}</p>
-      {% endif %}
-      {% if item.code %}
-        <pre class="line-numbers"><code class="language-{{ item.language }}">{{ item.code | markdownify }}</code></pre>
-      {% endif %}
-      {% if item.image %}
-        <img src="{{ item.image }}" alt="Card Image" height="120px"> 
-      {% endif %}
-      {% if item.comparison_table %}
-        <div>{{ item.comparison_table | markdownify }}</div>
+      <h4>{{ item.heading }}</h4>
       {% endif %}
     </div>
+    {% if item.text %}
+    <p>{{ item.text | markdownify }}</p>
+    {% endif %}
+    {% if item.code %}
+    <pre class="line-numbers"><code class="language-{{ item.language }}">{{ item.code | markdownify }}</code></pre>
+    {% endif %}
+    {% if item.image %}
+    <img src="{{ item.image }}" alt="Card Image" height="120px">
+    {% endif %}
+    {% if item.comparison_table %}
+    <div>{{ item.comparison_table | markdownify }}</div>
+    {% endif %}
+  </div>
   {% endfor %}
   <div class="carousel-nav">
     <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
