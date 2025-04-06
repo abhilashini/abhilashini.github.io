@@ -46,9 +46,9 @@
 
 - heading: "Universal programming"
   text: >-
-    Programming’s universal grammar — logic, structure, constraints — transcends stacks. 
-    Beyond the nuances of languages and frameworks, these principles form a shared 
-    foundation: a common language for diverse teams to align intent, adapt tools to 
-    problems (not trends), and build systems that outlast their initial code. 
-    Complexity dissolves when we focus on ***why*** systems hold, not ***how*** they’re built.
+    Programming’s universal grammar — logic, structure, constraints — transcends stacks.
+    These principles form a lingua franca beyond languages and frameworks: a shared 
+    foundation for aligning intent, adapting tools to problems (not trends), and 
+    building systems that outlast their code.Complexity dissolves when we focus on 
+    _**why**_ systems hold, not _**how**_ they’re built.
   icon: "fas fa-globe"

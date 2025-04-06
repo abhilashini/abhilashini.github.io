@@ -13,7 +13,7 @@ layout: default
     <br/>
     <a href="https://www.linkedin.com/in/abhilashini" class="contact" target="_blank">Find me on LinkedIn <i class="fas fa-external-link-alt"></i></a>
     <br/>
-    <img src="/assets/images/SittingDoodle.svg" class="doodle doodle--right flip" alt="">
+    <img src="/assets/images/SittingDoodleRedBlue.svg" class="doodle doodle--right flip" alt="">
   </section>
 
   <div class="section-divider"></div>

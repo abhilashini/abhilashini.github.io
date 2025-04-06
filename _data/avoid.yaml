@@ -25,12 +25,10 @@
     product’s design, users inherit quirks that compound into design debt. 
     Bend tools to user needs, never the reverse.
   code: |
-    def format_name(user_input, user_locale):  
-      # User locale dictates format, not framework rules.
-      if user_locale == "jp":  
-          return f"{user_input.last_name} {user_input.first_name}"  
-      else:  
-          return f"{user_input.first_name} {user_input.last_name}"
+    def button_label(action, device):
+      if device == "screen_reader":
+          return f"Press to {action}"
+      return action.capitalize()
   language: "python"
   icon: "fas fa-tools"
 - heading: "Maintainable systems speak human"
@@ -40,3 +38,10 @@
     and inheriting developers. Self-diagnosing logs and user-readable 
     errors turn debugging from scavenger hunts into guided fixes.
   icon: "fas fa-stethoscope"
+- heading: "Understanding the unseen: Gestalt of knowledge"
+  text: >-
+    We often settle for surface-level understanding—what’s visible feels sufficient. 
+    But like an iceberg, what we see is rarely the full picture. True comprehension 
+    asks more: What’s beneath this? What shaped it? Without that pause, rushed 
+    judgments multiply complexity instead of solving it.
+  icon: "fas fa-mountain"
