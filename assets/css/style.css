@@ -529,75 +529,63 @@ body {
     gap: 1.5rem;
   }
 
-  /* Fix card layout */
+  /* Card Mobile Layout */
   .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 0 2rem;
-    position: relative;
-  }
-
-  .carousel .card {
-    flex: 0 0 90%;
-    scroll-snap-align: start;
-    margin-right: 1rem;
-    padding: 1.5rem 1.25rem;
-    overflow: visible;
-    /* prevent scrollbars from showing inside */
-  }
-
-  .card h4 {
-    margin-top: 0.5rem;
+    padding: 0 1rem 4rem;
+    margin: 0 auto;
   }
 
   .card {
-    display: flex;
-    flex-direction: column;
+    width: 100% !important;
+    margin: 0;
+    padding: 1.5rem;
   }
 
+  /* Icon & Heading Alignment Fix */
   .card-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    position: relative;
     margin-bottom: 1rem;
   }
 
-  .card-icon {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
+  .card .icon {
+    order: -1 !important;
+    position: static !important;
+    float: none !important;
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1.8rem;
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
   }
 
-
-  .card p {
-    padding-right: 0;
-  }
-
-  /* Ensure nav arrows are visible */
-  .carousel-nav {
-    position: absolute;
-    bottom: 0;
+  .card h4 {
+    order: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-    z-index: 2;
+  }
+
+  /* Navigation Positioning */
+  .carousel-nav {
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 2rem;
   }
 
   .carousel-nav button {
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 0.5rem;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.8rem;
+    padding: 0;
   }
-
+  
   /* Footer still small and non-intrusive */
   .site-footer-meta {
     font-size: 0.65rem;
     right: 8px;
     bottom: 8px;
   }
+
 }
