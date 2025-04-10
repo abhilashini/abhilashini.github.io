@@ -18,20 +18,20 @@
   takeaway: "Code is read far more than written."
   icon: "fas fa-broom" 
 
-- title: "The Nature of Software Development"
-  author: "Ron Jeffries"
-  takeaway: "Value flows from working software."
-  icon: "fas fa-leaf"  # Represents "nature"
+- title: "How to Make Things Faster"
+  author: "Cary Millsap"
+  takeaway: "Measure before optimizing; bottlenecks hide."
+  icon: "fas fa-tachometer-alt"
 
 - title: "How to Solve It"
   author: "George Pólya"
   takeaway: "Break problems into smaller, testable chunks."
   icon: "fas fa-puzzle-piece"
 
-- title: "How to Make Things Faster"
-  author: "Cary Millsap"
-  takeaway: "Measure before optimizing; bottlenecks hide."
-  icon: "fas fa-tachometer-alt"
+- title: "The Nature of Software Development"
+  author: "Ron Jeffries"
+  takeaway: "Value flows from working software."
+  icon: "fas fa-leaf"
 
 - title: "A Common-Sense Guide to Data Structures and Algorithms"
   author: "Jay Wengrow"
