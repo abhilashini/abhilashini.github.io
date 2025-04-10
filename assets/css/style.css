@@ -456,16 +456,28 @@ body {
 
 .site-footer-meta {
   position: fixed;
+  justify-content: space-between;
   bottom: 12px;
   right: 16px;
   display: flex;
+  flex-wrap: wrap; /* handles small screens */
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 1rem;
   font-size: 0.75rem;
   color: var(--color-icon);
   opacity: 0.6;
   z-index: 1000;
   font-family: var(--font-sans);
+}
+
+.footer-badge {
+  display: flex;
+  align-items: center;
+}
+
+.visitor-badge {
+  height: 20px;
 }
 
 .footer-divider {
@@ -599,12 +611,17 @@ body {
     object-fit: contain;
   }
 
-
-  /* Footer still small and non-intrusive */
   .site-footer-meta {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     font-size: 0.65rem;
     right: 8px;
     bottom: 8px;
+  }
+
+  .footer-right {
+    justify-content: center;
   }
 
 }
