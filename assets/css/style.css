@@ -310,6 +310,10 @@ body {
   padding-top: 1.5rem;
 }
 
+.card-image {
+  height: 150px;
+}
+
 /* Carousel Navigation */
 .carousel-nav {
   position: absolute;
