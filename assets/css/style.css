@@ -474,10 +474,18 @@ body {
 .footer-badge {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Avoid accidental hover interactions */
 }
 
 .visitor-badge {
   height: 20px;
+}
+
+.site-footer-meta:hover .footer-badge {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .footer-divider {
