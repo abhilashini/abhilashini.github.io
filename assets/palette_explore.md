@@ -1,5 +1,5 @@
 ---
-title: My Page
+title: Color Schemes Explored
 permalink: /palette-exploration-journey/
 ---
 # Palette Evaluation
