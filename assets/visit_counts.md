@@ -7,6 +7,7 @@ permalink: /visits/
 
 | Observed Date | Count | Notes |
 | :--- | :--- | :--- |
+| May 8, 2025 | 275 |  |
 | Apr 28, 2025 | 226 |  |
 | Apr 22, 2025 | 85 | Resume & LinkedIn |
 | Apr 19, 2025 | 25 | Self |
