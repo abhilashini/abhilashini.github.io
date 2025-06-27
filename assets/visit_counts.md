@@ -7,6 +7,7 @@ permalink: /visits/
 
 | Observed Date | Count | Notes |
 | :--- | :--- | :--- |
+| Jun 27, 2025 | 342 |  |
 | May 27, 2025 | 332 |  |
 | May 8, 2025 | 275 |  |
 | Apr 28, 2025 | 226 |  |
