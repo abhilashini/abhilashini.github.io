@@ -5,13 +5,12 @@ layout: default
 <div class="centered-column">
   <!-- Intro Section -->
   <section class="section" id="intro">
-    <h3 class="sub-heading">Hi there!</h3>
+    <p>Hi there! I'm Abhilashini. I like the juxtaposition of structured mess. It lets me handle and experience variety in various forms. Of the things that shape my thoughts, the central ones are centered around deep thinking, practicality, good food, and food for thought. Since my introduction to communicating with machines in the late 90s, it has become an integral lens through which I understand the world. </p>
     <br/>
-    <p>I'm Abhilashini. Over the past 11 years, my work has revolved around three core areas: building for the web, automating manual processes, data analysis and visualisation. While these areas seem distinct, they share a common thread: <br/> solving real-world problems through thoughtful design and engineering.</p>
+    <p>I am actively working on breathing life into certain ideas I have been nursing for some time. Here are a collection of few chosen ones. </p>
+    <p>Over the past 11 years, my work has revolved around three core areas: building for the web, automating manual processes, data analysis and visualisation. While these areas seem distinct, they share a common thread: <br/> solving real-world problems through thoughtful design and engineering. In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. Here, I share reflections on simplifying the complex, adapting to new constraints, and the continuous learning that shapes my perspective.</p>
     <br/>
-    <p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. Here, I share reflections on simplifying the complex, adapting to new constraints, and the continuous learning that shapes my perspective.</p>
-    <br/>
-    <a href="https://www.linkedin.com/in/abhilashini" class="contact" target="_blank">Find me on LinkedIn <i class="fas fa-external-link-alt"></i></a>
+    <a href="https://www.linkedin.com/in/abhilashini" class="contact" target="_blank">Find me on LinkedIn and GitHub and Medium.<i class="fas fa-external-link-alt"></i></a>
     <br/>
     <img src="/assets/images/SittingDoodleRedBlack.svg" class="doodle doodle--right flip" alt="">
   </section>
