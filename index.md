@@ -28,11 +28,11 @@ layout: default
 <p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
 <section class="section" id="shared-systems">
   <div class="content">
-    <img src="/assets/images/foundational_principles.png" width="120" height="120" alt-text="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles.">
+    <img src="/assets/images/foundational_principles.png" height="250" alt-text="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles.">
     <p>{% include carousel.html items=site.data.foundational-principles %}</p>
-    <img src="/assets/images/strategic_design.png" width="120" height="120" alt-text="A four-quadrant image shows scattered tangram shapes, then a person, a tree, and a house, all made from tangrams. This abstractly represents strategic design.">
+    <img src="/assets/images/strategic_design.png" height="230" alt-text="A four-quadrant image shows scattered tangram shapes, then a person, a tree, and a house, all made from tangrams. This abstractly represents strategic design.">
     <p>{% include carousel.html items=site.data.strategic-design %}</p>
-    <img src="/assets/images/maintainable_systems.png" width="120" height="120" alt-text="A doodle-style image contrasting two control boards: one with tangled, messy wires and a confused technician, the other neatly organized with schematics and a calm technician. This abstractly represents maintainable systems.">
+    <img src="/assets/images/maintainable_systems.png" height="300" alt-text="A doodle-style image contrasting two control boards: one with tangled, messy wires and a confused technician, the other neatly organized with schematics and a calm technician. This abstractly represents maintainable systems.">
     <p>{% include carousel.html items=site.data.maintainable-systems %}</p>
   </div>
 </section>
