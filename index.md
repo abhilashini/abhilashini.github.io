@@ -13,22 +13,27 @@ layout: default
     <p>Play and Progress: A simple interface to save notes on a topic and later learn from mini games. Currently a work in progress, it is an exploration of interactive learning.</p>
     <img src="https://s2.svgbox.net/illlustrations.svg?ic=dotted-notebook&color=000000" width="90" height="90">
     <p>
-    <a href="#" target="_blank">Learning Kotlin</a><br/>
-    <a href="#" target="_blank">(Re)Introducing asymptotic analysis</a>
+    <ul>
+      <li><a href="#" target="_blank">Learning Kotlin</a></li>
+      <li><a href="#" target="_blank">(Re)Introducing asymptotic analysis</a></li>
+    </ul>
     </p>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-<!-- Philosophy Section -->
-<p>Over the past 11 years, my work has revolved around three core areas: building for the web, automating manual processes, data analysis and visualisation. While these areas seem distinct, they share a common thread: <br/> solving real-world problems through thoughtful design and engineering. In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. Here, I share reflections on simplifying the complex, adapting to new constraints, and the continuous learning that shapes my perspective.</p>
-<section class="section" id="philosophy">
-  <h1 class="section-title section-title--center" data-section="philosophy">
-    Make things simple
-  </h1>
+<!-- Shared-systems Section -->
+<h2>Simplifying the complex</h2>
+<p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
+<section class="section" id="shared-systems">
   <div class="content">
-    {% include carousel.html items=site.data.philosophy %}
+    <img src="/assets/images/foundational_principles.png" width="120" height="120" alt-text="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles.">
+    <p>{% include carousel.html items=site.data.foundational-principles %}</p>
+    <img src="/assets/images/strategic_design.png" width="120" height="120" alt-text="A four-quadrant image shows scattered tangram shapes, then a person, a tree, and a house, all made from tangrams. This abstractly represents strategic design.">
+    <p>{% include carousel.html items=site.data.strategic-design %}</p>
+    <img src="/assets/images/maintainable_systems.png" width="120" height="120" alt-text="A doodle-style image contrasting two control boards: one with tangled, messy wires and a confused technician, the other neatly organized with schematics and a calm technician. This abstractly represents maintainable systems.">
+    <p>{% include carousel.html items=site.data.maintainable-systems %}</p>
   </div>
 </section>
 
