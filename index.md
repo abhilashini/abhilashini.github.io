@@ -29,11 +29,14 @@ layout: default
 <section class="section" id="shared-systems">
   <div class="content">
     <img src="/assets/images/foundational_principles.png" height="250" alt-text="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles.">
-    <p>{% include carousel.html items=site.data.foundational-principles %}</p>
-    <img src="/assets/images/strategic_design.png" height="230" alt-text="A four-quadrant image shows scattered tangram shapes, then a person, a tree, and a house, all made from tangrams. This abstractly represents strategic design.">
-    <p>{% include carousel.html items=site.data.strategic-design %}</p>
-    <img src="/assets/images/maintainable_systems.png" height="300" alt-text="A doodle-style image contrasting two control boards: one with tangled, messy wires and a confused technician, the other neatly organized with schematics and a calm technician. This abstractly represents maintainable systems.">
-    <p>{% include carousel.html items=site.data.maintainable-systems %}</p>
+    <h3>Foundational Principles</h3>
+    <p>{% include carousel.html items=site.data.philosophy %}</p>
+    <img src="/assets/images/strategic_design.png" height="250" alt-text="A four-quadrant image shows scattered tangram shapes, then a person, a tree, and a house, all made from tangrams. This abstractly represents strategic design.">
+    <h3>Strategic Design</h3>
+    <p>{% include carousel.html items=site.data.philosophy %}</p>
+    <img src="/assets/images/maintainable_systems.png" height="350" alt-text="A doodle-style image contrasting two control boards: one with tangled, messy wires and a confused technician, the other neatly organized with schematics and a calm technician. This abstractly represents maintainable systems.">
+    <h3>Maintainble Systems</h3>
+    <p>{% include carousel.html items=site.data.philosophy %}</p>
   </div>
 </section>
 
