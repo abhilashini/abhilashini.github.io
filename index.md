@@ -23,55 +23,40 @@ layout: default
 
   <div class="section-divider"></div>
 
-<!-- Shared-systems Section -->
 <h2>Simplifying the complex</h2>
 <p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
 <section class="section" id="shared-systems">
   <div class="content">
     <img src="/assets/images/foundational_principles.png" height="250" alt-text="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles.">
-    <h3>Foundational Principles</h3>
-    <p>{% include carousel.html items=site.data.philosophy %}</p>
-    <img src="/assets/images/strategic_design.png" height="250" alt-text="A four-quadrant image shows scattered tangram shapes, then a person, a tree, and a house, all made from tangrams. This abstractly represents strategic design.">
-    <h3>Strategic Design</h3>
-    <p>{% include carousel.html items=site.data.philosophy %}</p>
-    <img src="/assets/images/maintainable_systems.png" height="350" alt-text="A doodle-style image contrasting two control boards: one with tangled, messy wires and a confused technician, the other neatly organized with schematics and a calm technician. This abstractly represents maintainable systems.">
-    <h3>Maintainble Systems</h3>
-    <p>{% include carousel.html items=site.data.philosophy %}</p>
+    {% assign foundational_principles_items = site.data.philosophy | where: "section", "Foundational Principles" %}
+    <p>{% include carousel.html items=foundational_principles_items %}</p>
+    <img src="/assets/images/strategic_design.png" height="250" alt-text="A four-quadrant color pencil sketch shows scattered tangram shapes, then a house, a tree, and a boat, all made from tangrams. This abstractly represents strategic design.">
+    {% assign strategic_design_items = site.data.philosophy | where: "section", "Strategic Design" %}
+    <p>{% include carousel.html items=strategic_design_items %}</p>
+    <img src="/assets/images/maintainable_systems.png" height="350" alt-text="A colored pencil sketch of contrast between messy desk and neatly organised desk. This abstractly represents maintainable systems.">
+    {% assign maintainable_systems_items = site.data.philosophy | where: "section", "Maintainable Systems" %}
+    <p>{% include carousel.html items=maintainable_systems_items %}</p>
   </div>
 </section>
 
   <div class="section-divider"></div>
 
-<!-- Avoid Section -->
-<section class="section" id="avoid">
-  <h1 class="section-title section-title--center" data-section="avoid">
-    Breakdown complex things 
-  </h1>
-  <div class="content">
-    {% include carousel.html items=site.data.avoid %}
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="section" id="books">
-  <h1 class="section-title section-title--center" data-section="books">
-    Pages of influence
-  </h1>
-  <div class="content">
-    {% include books.html items=site.data.books %}
-  </div>
-  <img src="/assets/images/ReadingDoodle.svg" class="doodle doodle--left" alt="">
-</section>
-
-<div class="section-divider"></div>
-
+<h2>AI & I: My Learning Loop</h2>
+<p>Engaging on both sides of a coin offers unique perspectives. My own journey, from the wonky days of extracting features like bag-of-words and n-grams using Stanford CoreNLP, to now prompting an AI agent for specific image generation, reveals an astonishing pace of change in AI. As rapid as the boom in generative AI capabilities has been, fine-tuning remains the current focus. Below are my observations on where we currently stand in this effort.</p>
 <section class="section" id="ai">
-  <h1 class="section-title section-title--center" data-section="ai">
-    AI & I: My Learning Loop
-  </h1>
   <div class="content">
     {% include ai.html items=site.data.ai %}
   </div>
   <img src="/assets/images/LayingDoodle.svg" class="doodle doodle--center" alt="">
+</section>
+
+<div class="section-divider"></div>
+
+<h2>Pages of Influence</h2>
+<p>These are my takeaways from the books that left a mark.</p>
+<section class="section" id="books">
+  <div class="content">
+    {% include books.html items=site.data.books %}
+  </div>
+  <img src="/assets/images/ReadingDoodle.svg" class="doodle doodle--left" alt="">
 </section>

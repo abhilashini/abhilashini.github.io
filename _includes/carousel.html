@@ -1,6 +1,7 @@
 <div class="carousel">
   {% for item in include.items %}
   <div class="card {% if forloop.first %}active{% endif %}">
+    <h3> {{ item.section }} </h3>
     <div class="card-header">
       {% if item.icon %}
       <i class="{{ item.icon }} icon"></i>
