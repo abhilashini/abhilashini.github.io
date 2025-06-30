@@ -43,6 +43,7 @@ layout: default
 
 <h2>AI & I: My Learning Loop</h2>
 <p>Engaging on both sides of a coin offers unique perspectives. My own journey, from the wonky days of extracting features like bag-of-words and n-grams using Stanford CoreNLP, to now prompting an AI agent for specific image generation, reveals an astonishing pace of change in AI. As rapid as the boom in generative AI capabilities has been, fine-tuning remains the current focus. Below are my observations on where we currently stand in this effort.</p>
+<img src="/assets/images/ai_and_i.png" height="250" alt-text="An image showing brain and circuit board and connections between them with signals getting exchanged. Representative of human and artificial intelligence interaction.">
 <section class="section" id="ai">
   <div class="content">
     {% include ai.html items=site.data.ai %}
