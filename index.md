@@ -4,10 +4,19 @@ layout: default
 
 <div class="centered-column">
   <!-- Intro Section -->
-  <section class="section" id="intro">
-    <p>Hi there! <strong>I'm Abhilashini</strong>. I like the juxtaposition of structured mess. It lets me handle and experience variety in various forms. Of the things that shape my thoughts, the central ones are centered around deep thinking, practicality, good food, and food for thought. Since my introduction to communicating with machines in the late 90s, it has remained integral to both my work and curiosities.</p>
-    <p>This space brings together a <a href="#">snapshot of my current focus</a> and what I'm building toward. Having engineered over 80 diverse products at work, I've come to prioritize <a href="#">simplifying complexity in shared systems</a> — the bedrock of lasting, user-centric solutions. My dev journey has also taken me from building natural language systems to leveraging Generative AI in everyday tools and <a href="#">inspecting how we engage with it</a>. I do a fair bit of reading and <a href="#">curate the sparks that stayed</a> with me.</p>
-    <p>My ideas take form in products on <a href="#" target="_blank">Github</a> and insights at <a href="#" target="_blank">Ctrl+Think</a>. Travel logs are at <a href="#" target="_blank">Vihaara</a>. More of my work background is on  <a href="#" target="_blank">LinkedIn</a>. Some highlights are shared below.</p>
+  <section class="max-w-5xl mx-auto px-2 py-4 md:py-8 space-y-6" id="intro">
+    <p class="text-md leading-relaxed text-gray-800 mb-6">Hi there! <strong class="font-semibold text-gray-900">I'm Abhilashini</strong>. I like the juxtaposition of structured mess. It lets me handle and experience variety in various forms. Of the things that shape my thoughts, the central ones are centered around deep thinking, practicality, good food, and food for thought. Since my introduction to communicating with machines in the late 90s, it has remained integral to both my work and curiosities.</p>
+    <p class="text-md leading-relaxed text-gray-800">This space brings together a <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">snapshot of my current focus</a> and what I'm building toward. Having engineered over 80 diverse products at work, I've come to prioritize <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">simplifying complexity in shared systems</a> — the bedrock of lasting, user-centric solutions. My dev journey has also taken me from building natural language systems to leveraging Generative AI in everyday tools and <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">inspecting how we engage with it</a>. I do a fair bit of reading and <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">curate the sparks that stayed</a> with me.</p>
+  </section>
+
+  <div class="flex justify-center">
+    <div class="w-32 h-px bg-gray-300 my-8"></div>
+  </div>
+  
+  <div class="section-divider"></div>
+
+<section class="max-w-2xl mx-auto px-2 py-4 md:py-8 space-y-6" id="about">
+  <p>My ideas take form in products on <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">Github</a> and insights at <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">Ctrl+Think</a>. Travel logs are at <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">Vihaara</a>. More of my work background is on  <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">LinkedIn</a>. Some highlights are shared below.</p>
     <div>
     <img src="https://s2.svgbox.net/illlustrations.svg?ic=programing&color=000000" width="120" height="120">
     <p>Play and Progress: A simple interface to save notes on a topic and later learn from mini games. Currently a work in progress, it is an exploration of interactive learning.</p>
@@ -19,9 +28,7 @@ layout: default
     </ul>
     </p>
     </div>
-  </section>
-
-  <div class="section-divider"></div>
+</section>
 
 <h2>Simplifying the complex</h2>
 <p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
