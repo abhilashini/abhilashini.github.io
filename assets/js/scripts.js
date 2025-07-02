@@ -147,3 +147,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 });
+
+// ADDED FOR TAILWIND CSS
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[id^="carousel-"]').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const counter = carousel.querySelector('.carousel-counter');
+    const totalSlides = track.children.length;
+    let currentIndex = 0;
+    let isCarouselActive = false;
+    let hoverTimeout;
+
+    // Expand the interactive area (add 100px padding around carousel)
+    const interactiveArea = document.createElement('div');
+    interactiveArea.className = 'carousel-interactive-area';
+    Object.assign(interactiveArea.style, {
+      position: 'absolute',
+      top: '-50px',
+      bottom: '-50px',
+      left: '-50px',
+      right: '-50px',
+      zIndex: '1'
+    });
+    carousel.style.position = 'relative';
+    carousel.prepend(interactiveArea);
+
+    // Update counter and button states
+    const updateCounter = () => {
+      counter.textContent = `${currentIndex + 1}/${totalSlides}`;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === totalSlides - 1;
+    };
+
+    // Navigate to specific slide
+    const goToSlide = (index) => {
+      currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+      track.scrollTo({
+        left: track.children[currentIndex].offsetLeft,
+        behavior: 'smooth'
+      });
+      updateCounter();
+    };
+
+    // Keyboard navigation handler
+    const handleKeyDown = (e) => {
+      if (!isCarouselActive) return;
+      
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+      }
+    };
+
+    // Activate carousel with delay to prevent flickering
+    const activateCarousel = () => {
+      clearTimeout(hoverTimeout);
+      if (!isCarouselActive) {
+        hoverTimeout = setTimeout(() => {
+          isCarouselActive = true;
+          carousel.classList.add('carousel-active');
+        }, 50);
+      }
+    };
+
+    // Deactivate carousel with delay
+    const deactivateCarousel = () => {
+      clearTimeout(hoverTimeout);
+      hoverTimeout = setTimeout(() => {
+        if (!carousel.matches(':hover') && 
+            !carousel.contains(document.activeElement)) {
+          isCarouselActive = false;
+          carousel.classList.remove('carousel-active');
+        }
+      }, 300);
+    };
+
+    // Event listeners for expanded area
+    interactiveArea.addEventListener('mouseenter', activateCarousel);
+    interactiveArea.addEventListener('mouseleave', deactivateCarousel);
+    carousel.addEventListener('focusin', activateCarousel);
+    carousel.addEventListener('focusout', deactivateCarousel);
+
+    // Button event listeners
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Keyboard event listener
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Initialize
+    updateCounter();
+
+    // Handle scroll events
+    track.addEventListener('scroll', () => {
+      const newIndex = Math.round(track.scrollLeft / track.offsetWidth);
+      if (newIndex !== currentIndex) {
+        currentIndex = newIndex;
+        updateCounter();
+      }
+    });
+  });
+});

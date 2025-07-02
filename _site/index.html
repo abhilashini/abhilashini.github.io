@@ -14,46 +14,50 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/prism.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/style-temp.css">
   <script src="/assets/js/prism.js"></script>
   <script defer src="/assets/js/scripts.js"></script>
 </head>
   <body>
     <main class="page-content" aria-label="Content">
-      <div class="centered-column">
-  <!-- Intro Section -->
-  <section class="max-w-5xl mx-auto px-2 py-4 md:py-8 space-y-6" id="intro">
+      <section class="max-w-5xl mx-auto px-2 py-4 md:py-8 space-y-6" id="intro">
     <p class="text-md leading-relaxed text-gray-800 mb-6">Hi there! <strong class="font-semibold text-gray-900">I'm Abhilashini</strong>. I like the juxtaposition of structured mess. It lets me handle and experience variety in various forms. Of the things that shape my thoughts, the central ones are centered around deep thinking, practicality, good food, and food for thought. Since my introduction to communicating with machines in the late 90s, it has remained integral to both my work and curiosities.</p>
     <p class="text-md leading-relaxed text-gray-800">This space brings together a <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">snapshot of my current focus</a> and what I'm building toward. Having engineered over 80 diverse products at work, I've come to prioritize <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">simplifying complexity in shared systems</a> — the bedrock of lasting, user-centric solutions. My dev journey has also taken me from building natural language systems to leveraging Generative AI in everyday tools and <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">inspecting how we engage with it</a>. I do a fair bit of reading and <a href="#" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">curate the sparks that stayed</a> with me.</p>
   </section>
 
-  <div class="flex justify-center">
+<div class="flex justify-center">
     <div class="w-32 h-px bg-gray-300 my-8"></div>
   </div>
-  
-  <div class="section-divider"></div>
 
 <section class="max-w-2xl mx-auto px-2 py-4 md:py-8 space-y-6" id="about">
   <p>My ideas take form in products on <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">Github</a> and insights at <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">Ctrl+Think</a>. Travel logs are at <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">Vihaara</a>. More of my work background is on  <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 underline underline-offset-4">LinkedIn</a>. Some highlights are shared below.</p>
-    <div>
-    <img src="https://s2.svgbox.net/illlustrations.svg?ic=programing&amp;color=000000" width="120" height="120" />
-    <p>Play and Progress: A simple interface to save notes on a topic and later learn from mini games. Currently a work in progress, it is an exploration of interactive learning.</p>
-    <img src="https://s2.svgbox.net/illlustrations.svg?ic=dotted-notebook&amp;color=000000" width="90" height="90" />
-    <p>
-    <ul>
-      <li><a href="#" target="_blank">Learning Kotlin</a></li>
-      <li><a href="#" target="_blank">(Re)Introducing asymptotic analysis</a></li>
-    </ul>
-    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        <img src="https://s2.svgbox.net/illlustrations.svg?ic=programing&amp;color=000000" width="120" height="120" />
+        <p>Play and Progress: A simple interface to save notes on a topic and later learn from mini games. Currently a work in progress, it is an exploration of interactive learning.</p>
+      </div>
+      <div class="space-y-4">
+        <img src="https://s2.svgbox.net/illlustrations.svg?ic=dotted-notebook&amp;color=000000" width="90" height="90" />
+        <p>
+        <ul class="list-outside list-disc space-y-2 pl-5 marker:text-blue-600">
+          <li><a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">Learning Kotlin</a></li>
+          <li><a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 hover:underline">(Re)Introducing asymptotic analysis</a></li>
+        </ul>
+        </p>
+      </div>
     </div>
 </section>
 
-<h2>Simplifying the complex</h2>
-<p>In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
-<section class="section" id="shared-systems">
-  <div class="content">
-    <img src="/assets/images/foundational_principles.png" height="250" alt-text="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles." />
-    
-    <p><div class="carousel">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-12 mb-6">Simplifying the complex</h2>
+<p class="text-gray-700 max-w-2xl mx-auto text-center px-4 mb-8">In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
+<section class="max-w-7xl mx-auto px-4 space-y-16" id="shared-systems">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="order-1">
+      <img src="/assets/images/foundational_principles.png" class="w-full max-h-[350px] object-contain" alt="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles." />
+    </div>
+    <div class="order-2">
+      
+      <!-- <div class="carousel">
   
   <div class="card active">
     <h3> Foundational Principles </h3>
@@ -97,7 +101,7 @@
     
 
     
-    <img src="/assets/images/cat-laser.gif" alt="Card Image" class="card-image" />
+    <img src="/assets/images/cat-laser.gif" alt="Card Image" class="card-image">
     
 
     
@@ -154,10 +158,142 @@
     <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
     <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
   </div>
-</div></p>
-    <img src="/assets/images/strategic_design.png" height="250" alt-text="A four-quadrant color pencil sketch shows scattered tangram shapes, then a house, a tree, and a boat, all made from tangrams. This abstractly represents strategic design." />
+</div> -->
+<div class="relative group" id="carousel-foundational-principles">
+  <!-- Carousel Track -->
+  <div class="carousel-track flex overflow-hidden snap-x snap-mandatory scroll-smooth">
     
-    <p><div class="carousel">
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Foundational Principles</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-scale-unbalanced text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">The hidden price of powerful hardware</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Today’s hardware readily handles complex code, but at a human cost down the line.  Verbosity, even if performant, often creates friction for those maintaining and  evolving the product. Engineering with empathy prioritises clarity and conciseness,  building the unseen yet essential foundation for a truly well-designed user experience.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Foundational Principles</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-exclamation-triangle text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">SOS from SOS (Shiny Object Syndrome)</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>A 10-line script often outlives 500 lines of “modern” boilerplate.  New tools are valuable when they demonstrably improve the experience for our  users or streamline the team’s ability to deliver value.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Foundational Principles</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-users-slash text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Anyone can code ≠ Everyone should</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Quick scripts are fine for personal use. In collaborative systems, hacky code  becomes a tax on everyone — including users. Code, like design systems, is a  collective artifact. It thrives on shared understanding, not isolated experiments.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Foundational Principles</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-globe text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Universal programming</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Programming’s universal grammar — logic, structure, constraints — transcends stacks. These principles form a lingua franca beyond languages and frameworks: a shared  foundation for aligning intent, adapting tools to problems (not trends), and  building systems that outlast their code.Complexity dissolves when we focus on  <em><strong>why</strong></em> systems hold, not <em><strong>how</strong></em> they’re built.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="flex items-center justify-center gap-2 mt-6 text-sm font-medium text-gray-600">
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <span class="carousel-counter">1/4</span>
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="order-2 md:order-1">
+      
+      <!-- <div class="carousel">
   
   <div class="card active">
     <h3> Strategic Design </h3>
@@ -303,10 +439,176 @@
     <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
     <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
   </div>
-</div></p>
-    <img src="/assets/images/maintainable_systems.png" height="350" alt-text="A colored pencil sketch of contrast between messy desk and neatly organised desk. This abstractly represents maintainable systems." />
+</div> -->
+<div class="relative group" id="carousel-strategic-design">
+  <!-- Carousel Track -->
+  <div class="carousel-track flex overflow-hidden snap-x snap-mandatory scroll-smooth">
     
-    <p><div class="carousel">
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Strategic Design</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-sitemap text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Design for structure, not content</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Whether it’s a grid of fruits or financials, the underlying structure benefits from  consistency. Good design and robust code avoid coupling to specific content; they  focus on adaptable systems that embody shared intent. This structural thinking is  a bridge between user needs and scalable solutions.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Strategic Design</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-binoculars text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Code with vision, not velocity</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Clarity on requirements builds reusability, not just deliverables.  Prioritise “plug and play” systems over “patch and pray” fixes.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Strategic Design</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-map text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">System design is a map, not a maze</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>If a code block doesn’t trace to a user flow or data-driven need,  it’s noise. Codebases thrive when they embody user purpose, not just <strong><em>how</em></strong> they work. Good products are anchored in code  charted by what users seek, not just what engineers ship.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Strategic Design</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-tools text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Code to Context, Not Frameworks</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Frameworks and algorithms solve narrow problems. When they warp a  product’s design, users inherit quirks that compound into design debt.  Bend tools to user needs, never the reverse.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Strategic Design</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-mountain text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Understanding the unseen: Gestalt of knowledge</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>We often settle for surface-level understanding—what’s visible feels sufficient.  But like an iceberg, what we see is rarely the full picture. True comprehension  asks more: What’s beneath this? What shaped it? Without that pause, rushed  judgments multiply complexity instead of solving it.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="flex items-center justify-center gap-2 mt-6 text-sm font-medium text-gray-600">
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <span class="carousel-counter">1/5</span>
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+    </div>
+    <div class="order-1 md:order-2">
+      <img src="/assets/images/strategic_design.png" class="w-full max-h-[350px] object-contain" alt="A color pencil sketch shows scattered tangram shapes, then a house, a tree, and a boat, all made from tangrams. This abstractly represents strategic design." />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div class="order-1">
+      <img src="/assets/images/maintainable_systems.png" class="w-full max-h-[350px] object-contain" alt="A colored pencil sketch of contrast between messy desk and neatly organised desk. This abstractly represents maintainable systems." />
+    </div>
+    <div class="order-2">
+      
+      <!-- <div class="carousel">
   
   <div class="card active">
     <h3> Maintainable Systems </h3>
@@ -405,447 +707,292 @@
     <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
     <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
   </div>
-</div></p>
+</div> -->
+<div class="relative group" id="carousel-maintainable-systems">
+  <!-- Carousel Track -->
+  <div class="carousel-track flex overflow-hidden snap-x snap-mandatory scroll-smooth">
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Maintainable Systems</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-user-check text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Redesign for needs, not trends</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>UX should be user-centric, not aesthetic. If users don’t struggle with  the existing UI, ‘modernizing’ it is often just theater, consuming valuable  engineering resources. Redesign when user feedback and data prove the current design  fails. Otherwise, focus on incremental tweaks, not costly overhauls.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Maintainable Systems</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-shield-alt text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Tests prevent silent failures</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Tests mean more code, but ensure reliability, silently guarding user trust and  the product’s promised behavior. They’re systems designed to break when changes  stray from the agreed intent — exposing gaps before they become fractures.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Maintainable Systems</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-sync-alt text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Refactor with intent, not haste</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>Rewriting code on impulse risks breaking what users rely on.  Even flawed systems have hidden purpose. Refactor only  after tests safeguard agreed needs and plans ensure continuity for users.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">Maintainable Systems</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="fas fa-stethoscope text-lg"></i>
+          </div>
+          
+          
+          
+          <h4 class="text-lg font-semibold text-gray-800">Maintainable systems speak human</h4>
+          
+        </div>
+
+        <!-- Content -->
+        
+        <div class="prose prose-sm text-gray-700">
+          <p>When errors leave developers guessing, users suffer too.  Maintainability begins with empathy — for our future selves, users  and inheriting developers. Self-diagnosing logs and user-readable  errors turn debugging from scavenger hunts into guided fixes.</p>
+
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="flex items-center justify-center gap-2 mt-6 text-sm font-medium text-gray-600">
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <span class="carousel-counter">1/4</span>
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+    </div>
   </div>
 </section>
 
-  <div class="section-divider"></div>
+<div class="max-w-5xl mx-auto px-4 relative min-h-[300px] mb-16">
+  <!-- Image anchored to bottom-left -->
+  <div class="absolute top-0 left-5 w-2/5 max-w-[350px] z-0">
+    <img src="/assets/images/ai_and_i.png" class="w-full translate-y-[30%]" alt="An image showing brain and circuit board and connections between them with signals getting exchanged. Representative of human and artificial intelligence interaction." />
+  </div>
 
-<h2>AI &amp; I: My Learning Loop</h2>
-<p>Engaging on both sides of a coin offers unique perspectives. My own journey, from the wonky days of extracting features like bag-of-words and n-grams using Stanford CoreNLP, to now prompting an AI agent for specific image generation, reveals an astonishing pace of change in AI. As rapid as the boom in generative AI capabilities has been, fine-tuning remains the current focus. Below are my observations on where we currently stand in this effort.</p>
-<img src="/assets/images/ai_and_i.png" height="250" alt-text="An image showing brain and circuit board and connections between them with signals getting exchanged. Representative of human and artificial intelligence interaction." />
+  <!-- Centered Text Content -->
+  <div class="relative z-10 h-full flex flex-col items-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-12 mb-6">
+      AI &amp; I: My Learning Loop
+    </h2>
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <p class="text-gray-700 mb-8">
+        Engaging on both sides of a coin offers unique perspectives. My own journey, from the wonky days of extracting features like bag-of-words and n-grams using Stanford CoreNLP, to now prompting an AI agent for specific image generation, reveals an astonishing pace of change in AI. As rapid as the boom in generative AI capabilities has been, fine-tuning remains the current focus. Below are my observations on where we currently stand in this effort.
+      </p>
+    </div>
+  </div>
+</div>
+
 <section class="section" id="ai">
   <div class="content">
-    <section class="ai-section">
+    <!-- <section class="ai-section">
     <div class="ai-grid">
         
             <div class="ai-point">
                 <h3 data-pattern="1110" style="--pattern-spacing: 0.1em; --pattern-opacity: 0.3;">Query-able Encyclopedia</h3>
                 <p><p>AI collapses research time — but only when I ask the <em><strong>right</strong></em> questions. The better my inputs, the sharper its outputs.</p>
-</p>
-                <svg class="circuit" width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-                    <style>
-                      .trace {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        opacity: 0.35;
-                        fill: none;
-                      }
-                      .pad {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        fill: none;
-                        opacity: 0.6;
-                      }
-                      .signal {
-                        fill: #EC1D26;
-                        opacity: 0.3;
-                      }
-                    </style>
-                  
-                    <g transform="rotate(180, 110, 60)">
-                      <!-- Parallel bus lines with angled, parallel branches -->
-                      <path id="trace1" class="trace" d="M0 30 H60 L78 12 L110 12" />
-                      <path id="trace2" class="trace" d="M0 40 H60 L78 22 L110 22" />
-                      <path id="trace3" class="trace" d="M0 50 H110" />
-                      <path id="trace4" class="trace" d="M0 60 H60 L78 78 L110 78" />
-                      <path id="trace5" class="trace" d="M0 70 H60 L78 88 L110 88" />
-                  
-                      <!-- Outline pads at ends -->
-                      <circle class="pad" cx="110" cy="12" r="2.5" />
-                      <circle class="pad" cx="110" cy="22" r="2.5" />
-                      <circle class="pad" cx="110" cy="50" r="2.5" />
-                      <circle class="pad" cx="110" cy="78" r="2.5" />
-                      <circle class="pad" cx="110" cy="88" r="2.5" />
-                  
-                      <!-- Red signal dots moving in sync -->
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace1" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace2" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace3" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace4" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace5" />
-                        </animateMotion>
-                      </circle>
-                    </g>
-                  </svg>                  
+</p>                
             </div>
         
             <div class="ai-point">
                 <h3 data-pattern="????" style="--pattern-font-style: italic;">Invisible Learning Curves</h3>
                 <p><p>Coding with AI feels like untangling knots in the dark — it lacks the context humans intuit. Constraints and unspoken needs slip through prompts, leaving gaps only experience fills.</p>
-</p>
-                <svg class="circuit" width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-                    <style>
-                      .trace {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        opacity: 0.35;
-                        fill: none;
-                      }
-                      .pad {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        fill: none;
-                        opacity: 0.6;
-                      }
-                      .signal {
-                        fill: #EC1D26;
-                        opacity: 0.3;
-                      }
-                    </style>
-                  
-                    <g transform="rotate(180, 110, 60)">
-                      <!-- Parallel bus lines with angled, parallel branches -->
-                      <path id="trace1" class="trace" d="M0 30 H60 L78 12 L110 12" />
-                      <path id="trace2" class="trace" d="M0 40 H60 L78 22 L110 22" />
-                      <path id="trace3" class="trace" d="M0 50 H110" />
-                      <path id="trace4" class="trace" d="M0 60 H60 L78 78 L110 78" />
-                      <path id="trace5" class="trace" d="M0 70 H60 L78 88 L110 88" />
-                  
-                      <!-- Outline pads at ends -->
-                      <circle class="pad" cx="110" cy="12" r="2.5" />
-                      <circle class="pad" cx="110" cy="22" r="2.5" />
-                      <circle class="pad" cx="110" cy="50" r="2.5" />
-                      <circle class="pad" cx="110" cy="78" r="2.5" />
-                      <circle class="pad" cx="110" cy="88" r="2.5" />
-                  
-                      <!-- Red signal dots moving in sync -->
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace1" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace2" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace3" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace4" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace5" />
-                        </animateMotion>
-                      </circle>
-                    </g>
-                  </svg>                  
+</p>                
             </div>
         
             <div class="ai-point">
-                <h3 data-pattern="-&gt;-&gt;" style="">Pinpoint Tutoring</h3>
+                <h3 data-pattern="->->" style="">Pinpoint Tutoring</h3>
                 <p><p>No more forum deep dives. Now I ask, <em>“Explain X like I’m a novice”</em>, and iterate until it clicks.</p>
-</p>
-                <svg class="circuit" width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-                    <style>
-                      .trace {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        opacity: 0.35;
-                        fill: none;
-                      }
-                      .pad {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        fill: none;
-                        opacity: 0.6;
-                      }
-                      .signal {
-                        fill: #EC1D26;
-                        opacity: 0.3;
-                      }
-                    </style>
-                  
-                    <g transform="rotate(180, 110, 60)">
-                      <!-- Parallel bus lines with angled, parallel branches -->
-                      <path id="trace1" class="trace" d="M0 30 H60 L78 12 L110 12" />
-                      <path id="trace2" class="trace" d="M0 40 H60 L78 22 L110 22" />
-                      <path id="trace3" class="trace" d="M0 50 H110" />
-                      <path id="trace4" class="trace" d="M0 60 H60 L78 78 L110 78" />
-                      <path id="trace5" class="trace" d="M0 70 H60 L78 88 L110 88" />
-                  
-                      <!-- Outline pads at ends -->
-                      <circle class="pad" cx="110" cy="12" r="2.5" />
-                      <circle class="pad" cx="110" cy="22" r="2.5" />
-                      <circle class="pad" cx="110" cy="50" r="2.5" />
-                      <circle class="pad" cx="110" cy="78" r="2.5" />
-                      <circle class="pad" cx="110" cy="88" r="2.5" />
-                  
-                      <!-- Red signal dots moving in sync -->
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace1" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace2" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace3" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace4" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace5" />
-                        </animateMotion>
-                      </circle>
-                    </g>
-                  </svg>                  
+</p>                
             </div>
         
             <div class="ai-point">
                 <h3 data-pattern="✓✗✓✗" style="">Code with Guardrails</h3>
                 <p><p>AI accelerates grunt work (Codeium/Copilot), but I review every suggestion. It writes code; I write the checks.</p>
-</p>
-                <svg class="circuit" width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-                    <style>
-                      .trace {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        opacity: 0.35;
-                        fill: none;
-                      }
-                      .pad {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        fill: none;
-                        opacity: 0.6;
-                      }
-                      .signal {
-                        fill: #EC1D26;
-                        opacity: 0.3;
-                      }
-                    </style>
-                  
-                    <g transform="rotate(180, 110, 60)">
-                      <!-- Parallel bus lines with angled, parallel branches -->
-                      <path id="trace1" class="trace" d="M0 30 H60 L78 12 L110 12" />
-                      <path id="trace2" class="trace" d="M0 40 H60 L78 22 L110 22" />
-                      <path id="trace3" class="trace" d="M0 50 H110" />
-                      <path id="trace4" class="trace" d="M0 60 H60 L78 78 L110 78" />
-                      <path id="trace5" class="trace" d="M0 70 H60 L78 88 L110 88" />
-                  
-                      <!-- Outline pads at ends -->
-                      <circle class="pad" cx="110" cy="12" r="2.5" />
-                      <circle class="pad" cx="110" cy="22" r="2.5" />
-                      <circle class="pad" cx="110" cy="50" r="2.5" />
-                      <circle class="pad" cx="110" cy="78" r="2.5" />
-                      <circle class="pad" cx="110" cy="88" r="2.5" />
-                  
-                      <!-- Red signal dots moving in sync -->
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace1" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace2" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace3" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace4" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace5" />
-                        </animateMotion>
-                      </circle>
-                    </g>
-                  </svg>                  
+</p>                
             </div>
         
             <div class="ai-point">
                 <h3 data-pattern="Σ→" style="">Chain of Thought</h3>
                 <p><p>Can GPT refine DeepSeek’s output, then Gemini critique GPT’s? Sometimes. Coherence erodes with each hop.</p>
-</p>
-                <svg class="circuit" width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-                    <style>
-                      .trace {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        opacity: 0.35;
-                        fill: none;
-                      }
-                      .pad {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        fill: none;
-                        opacity: 0.6;
-                      }
-                      .signal {
-                        fill: #EC1D26;
-                        opacity: 0.3;
-                      }
-                    </style>
-                  
-                    <g transform="rotate(180, 110, 60)">
-                      <!-- Parallel bus lines with angled, parallel branches -->
-                      <path id="trace1" class="trace" d="M0 30 H60 L78 12 L110 12" />
-                      <path id="trace2" class="trace" d="M0 40 H60 L78 22 L110 22" />
-                      <path id="trace3" class="trace" d="M0 50 H110" />
-                      <path id="trace4" class="trace" d="M0 60 H60 L78 78 L110 78" />
-                      <path id="trace5" class="trace" d="M0 70 H60 L78 88 L110 88" />
-                  
-                      <!-- Outline pads at ends -->
-                      <circle class="pad" cx="110" cy="12" r="2.5" />
-                      <circle class="pad" cx="110" cy="22" r="2.5" />
-                      <circle class="pad" cx="110" cy="50" r="2.5" />
-                      <circle class="pad" cx="110" cy="78" r="2.5" />
-                      <circle class="pad" cx="110" cy="88" r="2.5" />
-                  
-                      <!-- Red signal dots moving in sync -->
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace1" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace2" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace3" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace4" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace5" />
-                        </animateMotion>
-                      </circle>
-                    </g>
-                  </svg>                  
+</p>                
             </div>
         
             <div class="ai-point">
                 <h3 data-pattern="{ }" style="">Voice Isn’t a Preset</h3>
                 <p><p>AI rephrases and polishes, but it can’t replicate <em><strong>our</strong></em> quirks. Style is a template; voice is human — messy, inconsistent, and uncopyable.</p>
-</p>
-                <svg class="circuit" width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-                    <style>
-                      .trace {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        opacity: 0.35;
-                        fill: none;
-                      }
-                      .pad {
-                        stroke: #707070;
-                        stroke-width: 1;
-                        fill: none;
-                        opacity: 0.6;
-                      }
-                      .signal {
-                        fill: #EC1D26;
-                        opacity: 0.3;
-                      }
-                    </style>
-                  
-                    <g transform="rotate(180, 110, 60)">
-                      <!-- Parallel bus lines with angled, parallel branches -->
-                      <path id="trace1" class="trace" d="M0 30 H60 L78 12 L110 12" />
-                      <path id="trace2" class="trace" d="M0 40 H60 L78 22 L110 22" />
-                      <path id="trace3" class="trace" d="M0 50 H110" />
-                      <path id="trace4" class="trace" d="M0 60 H60 L78 78 L110 78" />
-                      <path id="trace5" class="trace" d="M0 70 H60 L78 88 L110 88" />
-                  
-                      <!-- Outline pads at ends -->
-                      <circle class="pad" cx="110" cy="12" r="2.5" />
-                      <circle class="pad" cx="110" cy="22" r="2.5" />
-                      <circle class="pad" cx="110" cy="50" r="2.5" />
-                      <circle class="pad" cx="110" cy="78" r="2.5" />
-                      <circle class="pad" cx="110" cy="88" r="2.5" />
-                  
-                      <!-- Red signal dots moving in sync -->
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace1" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace2" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace3" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace4" />
-                        </animateMotion>
-                      </circle>
-                      <circle r="2" class="signal">
-                        <animateMotion dur="3s" repeatCount="indefinite">
-                          <mpath href="#trace5" />
-                        </animateMotion>
-                      </circle>
-                    </g>
-                  </svg>                  
+</p>                
             </div>
         
     </div>
+</section> -->
+<section id="ai" class="max-w-5xl mx-auto px-4 mb-16 pt-[5%]">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <div class="ai-point bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+      <h3 class="flex items-center gap-3 text-lg font-semibold text-gray-900 mb-3">
+        <span class="pattern text-blue-400 font-mono" style="--pattern-spacing: 0.1em; --pattern-opacity: 0.3;" data-pattern="1110">
+          1110
+        </span>
+        Query-able Encyclopedia
+      </h3>
+      <div class="prose prose-sm text-gray-700">
+        <p>AI collapses research time — but only when I ask the <em><strong>right</strong></em> questions. The better my inputs, the sharper its outputs.</p>
+
+      </div>
+    </div>
+    
+    <div class="ai-point bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+      <h3 class="flex items-center gap-3 text-lg font-semibold text-gray-900 mb-3">
+        <span class="pattern text-blue-400 font-mono" style="--pattern-font-style: italic;" data-pattern="????">
+          ????
+        </span>
+        Invisible Learning Curves
+      </h3>
+      <div class="prose prose-sm text-gray-700">
+        <p>Coding with AI feels like untangling knots in the dark — it lacks the context humans intuit. Constraints and unspoken needs slip through prompts, leaving gaps only experience fills.</p>
+
+      </div>
+    </div>
+    
+    <div class="ai-point bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+      <h3 class="flex items-center gap-3 text-lg font-semibold text-gray-900 mb-3">
+        <span class="pattern text-blue-400 font-mono" style="" data-pattern="-&gt;-&gt;">
+          -&gt;-&gt;
+        </span>
+        Pinpoint Tutoring
+      </h3>
+      <div class="prose prose-sm text-gray-700">
+        <p>No more forum deep dives. Now I ask, <em>“Explain X like I’m a novice”</em>, and iterate until it clicks.</p>
+
+      </div>
+    </div>
+    
+    <div class="ai-point bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+      <h3 class="flex items-center gap-3 text-lg font-semibold text-gray-900 mb-3">
+        <span class="pattern text-blue-400 font-mono" style="" data-pattern="✓✗✓✗">
+          ✓✗✓✗
+        </span>
+        Code with Guardrails
+      </h3>
+      <div class="prose prose-sm text-gray-700">
+        <p>AI accelerates grunt work (Codeium/Copilot), but I review every suggestion. It writes code; I write the checks.</p>
+
+      </div>
+    </div>
+    
+    <div class="ai-point bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+      <h3 class="flex items-center gap-3 text-lg font-semibold text-gray-900 mb-3">
+        <span class="pattern text-blue-400 font-mono" style="" data-pattern="Σ→">
+          Σ→
+        </span>
+        Chain of Thought
+      </h3>
+      <div class="prose prose-sm text-gray-700">
+        <p>Can GPT refine DeepSeek’s output, then Gemini critique GPT’s? Sometimes. Coherence erodes with each hop.</p>
+
+      </div>
+    </div>
+    
+    <div class="ai-point bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+      <h3 class="flex items-center gap-3 text-lg font-semibold text-gray-900 mb-3">
+        <span class="pattern text-blue-400 font-mono" style="" data-pattern="{ }">
+          { }
+        </span>
+        Voice Isn’t a Preset
+      </h3>
+      <div class="prose prose-sm text-gray-700">
+        <p>AI rephrases and polishes, but it can’t replicate <em><strong>our</strong></em> quirks. Style is a template; voice is human — messy, inconsistent, and uncopyable.</p>
+
+      </div>
+    </div>
+    
+  </div>
 </section>
   </div>
-  <img src="/assets/images/LayingDoodle.svg" class="doodle doodle--center" alt="" />
 </section>
 
-<div class="section-divider"></div>
-
-<h2>Pages of Influence</h2>
-<p>These are my takeaways from the books that left a mark.</p>
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-12 mb-6">Pages of Influence</h2>
+<p class="text-gray-700 max-w-2xl mx-auto text-center px-4 mb-8">These are my takeaways from the books that left a mark.</p>
 <section class="section" id="books">
   <div class="content">
-    <section class="books">
+    <!-- <section class="books">
     <div class="book-grid">
       
       <div class="book-entry">
@@ -929,11 +1076,132 @@
       </div>
       
     </div>
-  </section>
+  </section> -->
+<div class="flex flex-wrap justify-center gap-5"> <!-- Tighter gap -->
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Good design is invisible; bad design shouts.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">The Design of Everyday Things</span>
+        <span class="italic"> by Don Norman</span>
+      </div>
+    </div>
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Simplicity beats brute-force complexity.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">Programming Pearls</span>
+        <span class="italic"> by Jon Bentley</span>
+      </div>
+    </div>
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Creativity thrives under constraints.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">The Creative Programmer</span>
+        <span class="italic"> by Wouter Groeneveld</span>
+      </div>
+    </div>
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Code is read far more than written.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">Clean Code</span>
+        <span class="italic"> by Robert Martin</span>
+      </div>
+    </div>
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Measure before optimizing; bottlenecks hide.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">How to Make Things Faster</span>
+        <span class="italic"> by Cary Millsap</span>
+      </div>
+    </div>
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Break problems into smaller, testable chunks.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">How to Solve It</span>
+        <span class="italic"> by George Pólya</span>
+      </div>
+    </div>
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Value flows from working software.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">The Nature of Software Development</span>
+        <span class="italic"> by Ron Jeffries</span>
+      </div>
+    </div>
+    
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md" style="transform: rotate(deg);
+                margin-top: ;">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “Understand tradeoffs, not just implementations.”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">A Common-Sense Guide to Data Structures and Algorithms</span>
+        <span class="italic"> by Jay Wengrow</span>
+      </div>
+    </div>
+    
   </div>
-  <img src="/assets/images/ReadingDoodle.svg" class="doodle doodle--left" alt="" />
+  </div>
 </section>
-</div>
 
     </main>
     <div class="site-footer-meta">

@@ -1,4 +1,4 @@
-<div class="carousel">
+<!-- <div class="carousel">
   {% for item in include.items %}
   <div class="card {% if forloop.first %}active{% endif %}">
     <h3> {{ item.section }} </h3>
@@ -34,5 +34,48 @@
   <div class="carousel-nav">
     <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
     <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</div> -->
+<div class="relative group" id="carousel-{{ include.items[0].section | slugify }}">
+  <!-- Carousel Track -->
+  <div class="carousel-track flex overflow-hidden snap-x snap-mandatory scroll-smooth">
+    {% for item in include.items %}
+    <div class="carousel-slide w-full flex-shrink-0 snap-start px-4">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <!-- Section Title -->
+        <h3 class="text-lg font-bold text-gray-900 mb-4">{{ item.section }}</h3>
+        
+        <!-- Card Header with better icon alignment -->
+        <div class="flex items-center gap-3 mb-4">
+          {% if item.icon %}
+          <div class="shrink-0 p-2 rounded-lg bg-blue-50 text-blue-600">
+            <i class="{{ item.icon }} text-lg"></i>
+          </div>
+          {% endif %}
+          
+          {% if item.heading %}
+          <h4 class="text-lg font-semibold text-gray-800">{{ item.heading }}</h4>
+          {% endif %}
+        </div>
+
+        <!-- Content -->
+        {% if item.text %}
+        <div class="prose prose-sm text-gray-700">
+          {{ item.text | markdownify }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="flex items-center justify-center gap-2 mt-6 text-sm font-medium text-gray-600">
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <span class="carousel-counter">1/{{ include.items.size }}</span>
+    <button class="p-1 text-blue-600 disabled:text-gray-400 carousel-next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
   </div>
 </div>

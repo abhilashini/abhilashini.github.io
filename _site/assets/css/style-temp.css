@@ -1,0 +1,45 @@
+/* Smooth scrolling */
+.carousel-track {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar */
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Futuristic pattern styling */
+.pattern {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+  position: relative;
+  padding-right: 0.5rem;
+}
+
+.pattern::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  opacity: 0.5;
+}
+
+.book-entry {
+    background: white;
+    will-change: transform, background;
+  }
+  /* Solid color cycle on hover */
+  .book-entry:nth-child(8n+1):hover { background: #f0f9ff; } /* Light blue */
+  .book-entry:nth-child(8n+2):hover { background: #f5f0ff; } /* Lavender */
+  .book-entry:nth-child(8n+3):hover { background: #f0fff4; } /* Mint */
+  .book-entry:nth-child(8n+4):hover { background: #fff7f0; } /* Peach */
+  .book-entry:nth-child(8n+5):hover { background: #f0faff; } /* Sky */
+  .book-entry:nth-child(8n+6):hover { background: #fff0f3; } /* Blush */
+  .book-entry:nth-child(8n+7):hover { background: #f9f0ff; } /* Lilac */
+  .book-entry:nth-child(8n+8):hover { background: #f0fffa; } /* Seafoam */        0 0 5px rgba(103, 232, 249, 0.2);
+}

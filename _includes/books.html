@@ -1,4 +1,4 @@
-<section class="books">
+<!-- <section class="books">
     <div class="book-grid">
       {% for book in site.data.books %}
       <div class="book-entry">
@@ -12,4 +12,23 @@
       </div>
       {% endfor %}
     </div>
-  </section>
+  </section> -->
+<div class="flex flex-wrap justify-center gap-5"> <!-- Tighter gap -->
+    {% for book in site.data.books %}
+    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md"
+         style="transform: rotate({{ cycle '-1.5', '1', '-0.5', '0.5', '-1', '0.75', '-0.25', '1.25' }}deg);
+                margin-top: {{ cycle '0', '0.5rem', '0', '0.75rem', '0.25rem', '0', '0.5rem', '0.25rem' }};">
+      
+      <!-- Takeaway -->
+      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
+        “{{ book.takeaway }}”
+      </blockquote>
+      
+      <!-- Attribution -->
+      <div class="text-sm text-gray-500">
+        <span class="font-medium">{{ book.title }}</span>
+        <span class="italic"> by {{ book.author }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
