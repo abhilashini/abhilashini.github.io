@@ -13,22 +13,26 @@
       {% endfor %}
     </div>
   </section> -->
-<div class="flex flex-wrap justify-center gap-5"> <!-- Tighter gap -->
+<div class="flex flex-wrap justify-center gap-5" style="justify-content: space-evenly;">
+    {% assign rotations = "-1deg,0.7deg,-0.5deg,1.2deg,-0.8deg,0.3deg,-1.5deg,0.5deg" | split: "," %}
+    {% assign margins = "0,3rem,1rem,2.5rem,0.5rem,2rem,1.5rem,0.8rem" | split: "," %}
+    
     {% for book in site.data.books %}
-    <div class="book-entry p-5 transition-all duration-200 hover:shadow-md"
-         style="transform: rotate({{ cycle '-1.5', '1', '-0.5', '0.5', '-1', '0.75', '-0.25', '1.25' }}deg);
-                margin-top: {{ cycle '0', '0.5rem', '0', '0.75rem', '0.25rem', '0', '0.5rem', '0.25rem' }};">
+      {% assign rot_index = forloop.index0 | modulo: rotations.size %}
+      {% assign margin_index = forloop.index0 | modulo: margins.size %}
       
-      <!-- Takeaway -->
-      <blockquote class="text-lg italic text-gray-800 mb-2 max-w-[260px]">
-        “{{ book.takeaway }}”
-      </blockquote>
-      
-      <!-- Attribution -->
-      <div class="text-sm text-gray-500">
-        <span class="font-medium">{{ book.title }}</span>
-        <span class="italic"> by {{ book.author }}</span>
+      <div class="book-entry p-5 transition-all duration-200 shadow-md bg-white self-start"
+           style="transform: rotate({{ rotations[rot_index] }});
+                  margin-top: {{ margins[margin_index] }};">
+        
+        <blockquote class="text-md italic text-gray-800 mb-2 max-w-[260px]">
+          “{{ book.takeaway }}”
+        </blockquote>
+        
+        <div class="text-sm text-gray-500 text-right -mb-1"> <!-- Reduced bottom margin -->
+          <div class="font-medium">{{ book.title }}</div>
+          <div class="italic">by {{ book.author }}</div>
+        </div>
       </div>
-    </div>
     {% endfor %}
   </div>

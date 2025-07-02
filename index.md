@@ -97,10 +97,8 @@ layout: default
   </div>
 </section>
 
-<h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-12 mb-6">Pages of Influence</h2>
-<p class="text-gray-700 max-w-2xl mx-auto text-center px-4 mb-8">These are my takeaways from the books that left a mark.</p>
-<section class="section" id="books">
-  <div class="content">
-    {% include books.html items=site.data.books %}
-  </div>
+<section id="books" class="max-w-5xl mx-auto px-4 py-12">
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-6">Pages of Influence</h2>
+  <p class="text-gray-700 max-w-2xl mx-auto text-center mb-12">These are my takeaways from the books that left a mark.</p>
+  {% include books.html items=site.data.books %}
 </section>
