@@ -8,22 +8,47 @@
         {% endfor %}
     </div>
 </section> -->
-<section id="ai" class="max-w-5xl mx-auto px-4 mb-16 pt-[5%]">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<section id="ai" class="max-w-5xl mx-auto px-4 py-8 pl-[20%] -mt-[6%]">
+  <div class="ai-masonry-grid">
+    {% assign colors = "#980027,#14A0A9,#ECD1AA,#929CA4,#72BC9F,#E3893D" | split: "," %}
     {% for point in site.data.ai %}
-    <div class="ai-point bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-      <h3 class="flex items-center gap-3 text-lg font-semibold text-gray-900 mb-3">
-        <span class="pattern text-blue-400 font-mono" 
-              style="{{ point.pattern-style }}"
-              data-pattern="{{ point.pattern }}">
-          {{ point.pattern }}
-        </span>
+    {% assign color_index = forloop.index0 | modulo: colors.size %}
+    <div class="ai-masonry-item">
+      <h3 data-pattern="{{ point.pattern }}" 
+          style="color: {{ colors[color_index] }}; {{ point.pattern-style | default: '' }};">
         {{ point.title }}
       </h3>
-      <div class="prose prose-sm text-gray-700">
+      <div class="prose text-md text-gray-800"> 
         {{ point.text | markdownify }}
       </div>
     </div>
     {% endfor %}
+  </div>
+
+  {# Animated SVG to the left of the grid #}
+  <div class="ai-animated-svg-container">
+    <svg width="100%" height="100%" viewBox="0 0 100 300" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <filter id="faintGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"></feGaussianBlur>
+          <feMerge>
+            <feMergeNode in="blur"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
+
+      {# Faint background lines #}
+      <path d="M 30 300 C 40 200, 20 100, 30 0" stroke="#888888" stroke-width="0.5" fill="none" opacity="0.1"/>
+      <path d="M 70 300 C 80 200, 60 100, 70 0" stroke="#888888" stroke-width="0.5" fill="none" opacity="0.1"/>
+
+      {# Animated particles #}
+      <g class="ai-particles-stream" filter="url(#faintGlow)">
+        <circle cx="30" cy="300" r="1.5" fill="#14A0A9" />
+        <circle cx="70" cy="200" r="1.5" fill="#E3893D" />
+        <circle cx="30" cy="100" r="1.5" fill="#72BC9F" />
+        <circle cx="70" cy="0" r="1.5" fill="#980027" />
+      </g>
+    </svg>
   </div>
 </section>
