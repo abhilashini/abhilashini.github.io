@@ -43,27 +43,14 @@
 .book-entry:nth-child(8n+7) { background: #f9f0ff; } /* Lilac */
 .book-entry:nth-child(8n+8) { background: #f0fffa; } /* Seafoam */ 
 
-/* Keyframes for the pulsing pattern effect */
+/* Keyframes for the pulsing effect */
 @keyframes pulsePattern {
   0% { opacity: 0.8; }
   50% { opacity: 1; }
   100% { opacity: 0.8; }
 }
 
-/* Keyframes for the data stream animation (SVG particles) */
-@keyframes dataFlow {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-350px); } /* Adjust based on SVG height */
-}
-
-/* --- Section and Grid Layout --- */
-/* IMPORTANT: 'relative' and 'overflow-hidden' are crucial for SVG positioning */
-section#ai {
-  position: relative; 
-  overflow: hidden; 
-  /* The rest of your Tailwind classes will go here, e.g., max-w-6xl mx-auto px-4 py-8 pl-[13%] -mt-[6%] */
-}
-
+/* Base Grid Styles */
 .ai-masonry-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -71,7 +58,7 @@ section#ai {
   align-items: start;
 }
 
-/* --- Individual Item Styling --- */
+/* Individual Item Styling */
 .ai-masonry-item {
   box-sizing: border-box;
   max-width: 18rem; /* Controls the narrowness of the text block */
@@ -116,6 +103,7 @@ section#ai {
 .ai-masonry-item h3::after {
   content: attr(data-pattern);
   font-family: var(--font-mono);
+  color: var(--pattern-color);
   font-size: 1.25rem;
   opacity: 0.7; /* Base opacity */
   padding-left: 0.5rem;
@@ -142,20 +130,15 @@ section#ai {
     margin-top: 0;
 }
 
-/* --- Animated SVG Container Styling --- */
+/* Update the existing .ai-animated-svg-container rule */
 .ai-animated-svg-container {
-    position: absolute; /* Positions it relative to the nearest positioned parent (our <section>) */
-    bottom: 0; /* Aligns to the bottom of the section */
-    left: 0; /* Aligns to the far left of the section */
-    width: 100px; /* Adjust width as needed for the SVG's visible area */
-    height: 300px; /* Adjust height as needed to extend upwards */
-    pointer-events: none; /* Allows clicks to pass through to content behind it */
-    z-index: 0; /* Ensures it's in the background, behind your text content */
-    /* This transforms it to the left, outside the 13% padding, and then some more */
-    transform: translateX(calc( -1 * 13% - 50px )); /* Adjust 50px for exact positioning */
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Changed from left: 0 */
+    width: 100px;
+    height: 300px;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateX(10px) translateY(-5px); /* Adjusted for better visibility */
 }
 
-/* Apply animation to the particles group within the SVG */
-.ai-particles-stream {
-  animation: dataFlow 5s linear infinite; /* Controls speed and loop */
-}
