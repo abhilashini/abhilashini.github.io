@@ -86,7 +86,7 @@
   bottom: 0;
   width: 100%;
   height: 0.75px; /* Line thickness */
-  background-color: currentColor; /* Inherits the h3's text color */
+  background-color: var(--pattern-color); /* Inherits the h3's pattern color */
   opacity: 0.6; /* Line opacity - slightly less opaque */
   transform: scaleX(0); /* Starts invisible */
   transform-origin: center; /* Fan out from center */
@@ -142,3 +142,9 @@
     transform: translateX(10px) translateY(-5px); /* Adjusted for better visibility */
 }
 
+@media (min-width: 768px) {
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}

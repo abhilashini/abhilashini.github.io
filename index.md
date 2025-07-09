@@ -31,43 +31,49 @@ layout: default
 </section>
 
 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-12 mb-6">Simplifying the complex</h2>
-<p class="text-gray-700 max-w-2xl mx-auto text-center px-4 mb-8">In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
-<section class="section" id="shared-systems" class="max-w-7xl mx-auto px-4 space-y-16">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="order-1">
-      <img src="/assets/images/foundational_principles.png" 
-           class="w-full max-h-[350px] object-contain" 
-           alt="A pencil sketch of an apple: one with basic strokes, next to a fully colored version. This abstractly represents foundational principles.">
+<p class="text-gray-700 max-w-2xl mx-auto text-center px-4 mb-12">In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.</p>
+
+<section class="space-y-12 max-w-5xl mx-auto px-4" id="shared-systems">
+
+  <!-- Row 1: Foundational Principles -->
+  <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+    <div class="w-full md:w-64 flex-shrink-0 self-center">
+      <img src="/assets/images/foundational_principles.png"
+           class="h-[200px] md:h-[250px] object-contain mx-auto"
+           alt="Foundational principles sketch">
     </div>
-    <div class="order-2">
+    <div class="w-full md:flex-1 md:max-w-prose">
       {% assign foundational_principles_items = site.data.philosophy | where: "section", "Foundational Principles" %}
-      {% include carousel.html items=foundational_principles_items %}
+      {% include carousel.html items=foundational_principles_items sectionColor="#BF1F3C" %}
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="order-2 md:order-1">
+  <!-- Row 2: Strategic Design -->
+  <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+    <div class="w-full md:flex-1 md:max-w-prose order-2 md:order-1">
       {% assign strategic_design_items = site.data.philosophy | where: "section", "Strategic Design" %}
-      {% include carousel.html items=strategic_design_items %}
+      {% include carousel.html items=strategic_design_items sectionColor="#136EBE" %}
     </div>
-    <div class="order-1 md:order-2">
-      <img src="/assets/images/strategic_design.png" 
-           class="w-full max-h-[350px] object-contain" 
-           alt="A color pencil sketch shows scattered tangram shapes, then a house, a tree, and a boat, all made from tangrams. This abstractly represents strategic design.">
+    <div class="w-full md:w-64 flex-shrink-0 self-center order-1 md:order-2">
+      <img src="/assets/images/strategic_design.png"
+           class="h-[200px] md:h-[250px] object-contain mx-auto"
+           alt="Strategic design sketch">
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-    <div class="order-1">
-      <img src="/assets/images/maintainable_systems.png" 
-           class="w-full max-h-[350px] object-contain" 
-           alt="A colored pencil sketch of contrast between messy desk and neatly organised desk. This abstractly represents maintainable systems.">
+  <!-- Row 3: Maintainable Systems -->
+  <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+    <div class="w-full md:w-64 flex-shrink-0 self-center">
+      <img src="/assets/images/maintainable_systems.png"
+           class="h-[200px] md:h-[250px] object-contain mx-auto"
+           alt="Maintainable systems sketch">
     </div>
-    <div class="order-2">
+    <div class="w-full md:flex-1 md:max-w-prose">
       {% assign maintainable_systems_items = site.data.philosophy | where: "section", "Maintainable Systems" %}
-      {% include carousel.html items=maintainable_systems_items %}
+      {% include carousel.html items=maintainable_systems_items sectionColor="#5A7C39" %}
     </div>
   </div>
+
 </section>
 
 <div class="max-w-5xl mx-auto px-4 relative min-h-[300px] mb-16">
