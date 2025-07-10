@@ -238,3 +238,47 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCounter();
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.section-toggle-link');
+  const sections = document.querySelectorAll('.section-block');
+  const headings = document.querySelectorAll('h2.section-heading');
+
+  function showSection(sectionId, clickedLink) {
+    sections.forEach(section => {
+      const isTarget = section.dataset.section === sectionId;
+      section.classList.toggle('hidden', !isTarget);
+      section.classList.toggle('section-visible', isTarget); // NEW: triggers fade-in
+    });
+
+    links.forEach(link => {
+      link.classList.remove('active');
+      const mark = link.querySelector('mark.highlight');
+      mark?.classList.remove('active');
+    });
+
+    clickedLink.classList.add('active');
+    const clickedMark = clickedLink.querySelector('mark.highlight');
+    clickedMark?.classList.add('active');
+
+    const linkColor = clickedLink.getAttribute('data-color');
+    headings.forEach(h => {
+      h.classList.toggle('highlight-active', h.getAttribute('data-color') === linkColor);
+    });
+  }
+
+  // Set up click handlers
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').replace('#', '');
+      showSection(targetId, link);
+    });
+  });
+
+  // Initial load
+  const defaultLink = document.querySelector('.section-toggle-link[href="#focus"]');
+  if (defaultLink) {
+    showSection('focus', defaultLink);
+  }
+});
