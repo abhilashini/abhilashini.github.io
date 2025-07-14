@@ -150,92 +150,106 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ADDED FOR TAILWIND CSS
 document.addEventListener('DOMContentLoaded', () => {
-  let activeCarousel = null;
+  // Initialize all carousels
+  document.querySelectorAll('.carousel-container').forEach(carousel => {
+    const carouselId = carousel.id;
+    const contentEl = carousel.querySelector('.carousel-content');
+    const dots = carousel.querySelectorAll('.dot');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const sectionColor = carousel.dataset.sectionColor;
+    const originalContent = contentEl.innerHTML;
 
-  // Handle global keydown
-  document.addEventListener('keydown', (e) => {
-    if (!activeCarousel) return;
+    let currentIndex = 0;
+    let isAnimating = false;
 
-    const track = activeCarousel.querySelector('.carousel-track');
-    const counter = activeCarousel.querySelector('.carousel-counter');
-    const prevBtn = activeCarousel.querySelector('.carousel-prev');
-    const nextBtn = activeCarousel.querySelector('.carousel-next');
-    const totalSlides = track.children.length;
+    // Navigation function
+    function navigateTo(newIndex) {
+      if (isAnimating) return;
 
-    let currentIndex = Math.round(track.scrollLeft / track.offsetWidth);
+      // Handle infinite loop
+      const totalItems = dots.length;
+      if (newIndex >= totalItems) newIndex = 0;
+      if (newIndex < 0) newIndex = totalItems - 1;
 
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      currentIndex = Math.max(0, currentIndex - 1);
-    } else if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      currentIndex = Math.min(totalSlides - 1, currentIndex + 1);
-    } else {
-      return;
+      isAnimating = true;
+
+      // Parallax exit animation
+      contentEl.style.transform = 'translateY(10px)';
+      contentEl.style.opacity = '0';
+
+      setTimeout(() => {
+        // Update content
+        if (newIndex === 0) {
+          contentEl.innerHTML = originalContent;
+        } else {
+          const itemIndex = newIndex - 1;
+          if (items[itemIndex]) {
+            contentEl.innerHTML = items[itemIndex].innerHTML;
+          }
+        }
+
+        // Parallax enter animation (before making visible)
+        contentEl.style.transform = 'translateY(-10px)';
+        contentEl.style.opacity = '0';
+
+        // Force reflow to enable transition
+        void contentEl.offsetHeight;
+
+        // Animate in
+        contentEl.style.transform = 'translateY(0)';
+        contentEl.style.opacity = '1';
+
+        // Update dots
+        dots.forEach((dot, i) => {
+          dot.style.backgroundColor = i === newIndex ? sectionColor : 'rgba(209,213,219,0.5)';
+          dot.style.transform = i === newIndex ? 'scale(1.5)' : 'scale(1)';
+        });
+
+        currentIndex = newIndex;
+        isAnimating = false;
+      }, 150);
     }
 
-    track.scrollTo({
-      left: track.children[currentIndex].offsetLeft,
-      behavior: 'smooth'
-    });
-    counter.textContent = `${currentIndex + 1}/${totalSlides}`;
-  });
-
-  // Setup each carousel
-  document.querySelectorAll('[id^="carousel-"]').forEach(carousel => {
-    const track = carousel.querySelector('.carousel-track');
-    const prevBtn = carousel.querySelector('.carousel-prev');
-    const nextBtn = carousel.querySelector('.carousel-next');
-    const counter = carousel.querySelector('.carousel-counter');
-    const totalSlides = track.children.length;
-    let currentIndex = 0;
-
-    const updateCounter = () => {
-      counter.textContent = `${currentIndex + 1}/${totalSlides}`;
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex === totalSlides - 1;
-    };
-
-    const goToSlide = (index) => {
-      currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
-      track.scrollTo({
-        left: track.children[currentIndex].offsetLeft,
-        behavior: 'smooth'
+    // Dot click handlers
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const index = parseInt(dot.dataset.index);
+        navigateTo(index);
       });
-      updateCounter();
-    };
+    });
 
-    // Activate this carousel
-    const activate = () => {
-      activeCarousel = carousel;
-    };
-
-    const deactivate = () => {
-      if (activeCarousel === carousel) {
-        activeCarousel = null;
-      }
-    };
-
-    // Track hover and focus
-    carousel.addEventListener('mouseenter', activate);
-    carousel.addEventListener('mouseleave', deactivate);
-    carousel.addEventListener('focusin', activate);
-    carousel.addEventListener('focusout', deactivate);
-
-    // Nav buttons
-    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-    // Scroll tracking
-    track.addEventListener('scroll', () => {
-      const newIndex = Math.round(track.scrollLeft / track.offsetWidth);
-      if (newIndex !== currentIndex) {
-        currentIndex = newIndex;
-        updateCounter();
+    // Keyboard navigation
+    carousel.addEventListener('keydown', (e) => {
+      if (['ArrowDown', 'ArrowUp'].includes(e.key)) {
+        e.preventDefault();
+        navigateTo(currentIndex + (e.key === 'ArrowDown' ? 1 : -1));
       }
     });
 
-    updateCounter();
+    // Wheel navigation
+    carousel.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      navigateTo(currentIndex + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: false });
+
+    // Touch navigation
+    let touchStartY = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    carousel.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      const touchEndY = e.touches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+      if (Math.abs(deltaY) > 10) {
+        navigateTo(currentIndex + (deltaY > 10 ? 1 : -1));
+      }
+    }, { passive: false });
+
+    // Make carousel focusable
+    carousel.tabIndex = 0;
   });
 });
 

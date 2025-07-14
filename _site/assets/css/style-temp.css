@@ -311,3 +311,16 @@
     opacity: 0;
   }
 }
+
+.dots-container {
+  margin-left: 1rem; /* 16px */
+  padding-right: 0.5rem; /* 8px */
+}
+
+.carousel-content {
+  transition: 
+    opacity 0.3s ease-in-out,
+    transform 0.4s cubic-bezier(0.16, 0.84, 0.44, 1);
+  will-change: transform, opacity;
+}
+

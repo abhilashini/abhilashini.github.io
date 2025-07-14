@@ -63,9 +63,9 @@
 </section>
 
 <!-- Section: Shared Systems -->
-<section class="max-w-5xl mx-auto px-4 py-10 section-block hidden" data-section="shared-systems">
+<section class="max-w-3xl mx-auto px-4 py-10 section-block hidden" data-section="shared-systems">
   <div class="flex justify-center">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4 section-heading" data-color="1">Simplifying the complex</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-50 text-center mb-4 section-heading" data-color="1">Simplifying the complex</h2>
   </div>
   <p class="text-gray-700 max-w-2xl mx-auto text-center mb-12">
     In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.
@@ -73,616 +73,142 @@
 
   <!-- Carousel Rows -->
   <div class="flex flex-col md:flex-row md:items-start gap-8 mb-12">
-    <div class="w-full md:w-64 flex-shrink-0 self-center">
-      <img src="/assets/images/foundational_principles.png" class="h-[200px] md:h-[250px] object-contain mx-auto" alt="Foundational principles sketch" />
-    </div>
+    <!-- <div class="w-full md:w-64 flex-shrink-0 self-center">
+      <img src="/assets/images/foundational_principles.png" class="h-[200px] md:h-[250px] object-contain mx-auto" alt="Foundational principles sketch">
+    </div> -->
     <div class="w-full md:flex-1 md:max-w-prose">
       
-      <!-- <div class="carousel">
-  
-  <div class="card active">
-    <h3> Foundational Principles </h3>
-    <div class="card-header">
-      
-      
+      <div class="relative flex flex-col md:flex-row justify-center items-start gap-4 px-4 max-w-6xl mx-auto carousel-container" id="carousel-foundational-principles" data-section-color="#BF1F3C">
+
+  <!-- Left image column -->
+  <div class="hidden md:flex md:w-1/3 justify-center items-start sticky top-24 self-start pt-2">
+    <img src="/assets/images/foundational-principles.png" alt="Foundational Principles illustration" class="h-56 w-auto object-contain" />
+  </div>
+
+  <!-- Main content area - added right padding -->
+  <div class="relative w-full md:w-2/3 flex flex-col justify-start pr-10"> <!-- Added pr-10 -->
+    <div class="w-full transition-opacity duration-300 ease-in-out text-left space-y-4 carousel-content" id="content-foundational-principles">
+      <h3 class="text-2xl font-bold" style="color: #BF1F3C">
+        Foundational Principles
+      </h3>
+      <div class="text-gray-700 leading-relaxed">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
     </div>
+  </div>
 
+  <!-- Dots navigation - moved further right with more spacing -->
+  <div class="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col justify-center items-center z-10 space-y-3 ml-8">
     
-    <p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</p>
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="0" aria-label="Go to slide 1" style="background-color: #BF1F3C;
+                 transform: scale(1.5);
+                 border: 0.5px solid rgba(0,0,0,0.1);">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="1" aria-label="Go to slide 2" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="2" aria-label="Go to slide 3" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="3" aria-label="Go to slide 4" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
+    
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="4" aria-label="Go to slide 5" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
   </div>
-  
-  <div class="card ">
-    <h3> Foundational Principles </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-scale-unbalanced icon"></i>
-      
-      
-      <h4>The hidden price of powerful hardware</h4>
-      
-    </div>
 
+  <!-- Hidden carousel items -->
+  <div class="hidden carousel-items">
     
-    <p><p>Today’s hardware readily handles complex code, but at a human cost down the line.  Verbosity, even if performant, often creates friction for those maintaining and  evolving the product. Engineering with empathy prioritises clarity and conciseness,  building the unseen yet essential foundation for a truly well-designed user experience.</p>
-</p>
     
+    
+    
+    <div class="carousel-item" data-index="1">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Foundational Principles</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">The hidden price of powerful hardware</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>Today’s hardware readily handles complex code, but at a human cost down the line.  Verbosity, even if performant, often creates friction for those maintaining and  evolving the product. Engineering with empathy prioritises clarity and conciseness,  building the unseen yet essential foundation for a truly well-designed user experience.</p>
 
-    
-
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Foundational Principles </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-exclamation-triangle icon"></i>
-      
-      
-      <h4>SOS from SOS (Shiny Object Syndrome)</h4>
-      
-    </div>
-
-    
-    <p><p>A 10-line script often outlives 500 lines of “modern” boilerplate.  New tools are valuable when they demonstrably improve the experience for our  users or streamline the team’s ability to deliver value.</p>
-</p>
-    
-
-    
-
-    
-    <img src="/assets/images/cat-laser.gif" alt="Card Image" class="card-image">
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Foundational Principles </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-users-slash icon"></i>
-      
-      
-      <h4>Anyone can code ≠ Everyone should</h4>
-      
-    </div>
-
-    
-    <p><p>Quick scripts are fine for personal use. In collaborative systems, hacky code  becomes a tax on everyone — including users. Code, like design systems, is a  collective artifact. It thrives on shared understanding, not isolated experiments.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Foundational Principles </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-globe icon"></i>
-      
-      
-      <h4>Universal programming</h4>
-      
-    </div>
-
-    
-    <p><p>Programming’s universal grammar — logic, structure, constraints — transcends stacks. These principles form a lingua franca beyond languages and frameworks: a shared  foundation for aligning intent, adapting tools to problems (not trends), and  building systems that outlast their code.Complexity dissolves when we focus on  <em><strong>why</strong></em> systems hold, not <em><strong>how</strong></em> they’re built.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-
-  <div class="carousel-nav">
-    <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-    <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-  </div>
-</div> -->
-<div class="relative group" id="carousel-foundational-principles">
-  <div class="flex flex-col h-full">
-
-    <!-- Carousel slides -->
-    <div class="carousel-track flex overflow-hidden snap-x snap-mandatory scroll-smooth flex-grow">
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#BF1F3C]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block absolute top-0 left-0 w-full h-6 bg-[#BF1F3C]/10 flex items-center border-b border-[#BF1F3C]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#BF1F3C] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              FOUNDATIONAL PRINCIPLES
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
           
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <div class="prose prose-sm text-gray-700 mb-2 mt-10">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-              </div>
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
           
-
+          
         </div>
       </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#BF1F3C]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#BF1F3C]/10 flex items-center border-b border-[#BF1F3C]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#BF1F3C] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              FOUNDATIONAL PRINCIPLES
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#BF1F3C]/10 hidden md:flex items-center justify-center border-r border-[#BF1F3C]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#BF1F3C] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">F</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">U</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">L</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">C</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">The hidden price of powerful hardware</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Today’s hardware readily handles complex code, but at a human cost down the line.  Verbosity, even if performant, often creates friction for those maintaining and  evolving the product. Engineering with empathy prioritises clarity and conciseness,  building the unseen yet essential foundation for a truly well-designed user experience.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#BF1F3C] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-scale-unbalanced"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#BF1F3C]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#BF1F3C]/10 flex items-center border-b border-[#BF1F3C]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#BF1F3C] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              FOUNDATIONAL PRINCIPLES
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#BF1F3C]/10 hidden md:flex items-center justify-center border-r border-[#BF1F3C]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#BF1F3C] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">F</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">U</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">L</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">C</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">SOS from SOS (Shiny Object Syndrome)</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>A 10-line script often outlives 500 lines of “modern” boilerplate.  New tools are valuable when they demonstrably improve the experience for our  users or streamline the team’s ability to deliver value.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-              <div class="mt-4">
-                <img src="/assets/images/cat-laser.gif" alt="Visual" class="max-w-full max-h-[12rem] object-contain rounded-md" />
-              </div>
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#BF1F3C] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-exclamation-triangle"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#BF1F3C]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#BF1F3C]/10 flex items-center border-b border-[#BF1F3C]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#BF1F3C] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              FOUNDATIONAL PRINCIPLES
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#BF1F3C]/10 hidden md:flex items-center justify-center border-r border-[#BF1F3C]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#BF1F3C] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">F</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">U</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">L</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">C</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Anyone can code ≠ Everyone should</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Quick scripts are fine for personal use. In collaborative systems, hacky code  becomes a tax on everyone — including users. Code, like design systems, is a  collective artifact. It thrives on shared understanding, not isolated experiments.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#BF1F3C] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-users-slash"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#BF1F3C]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#BF1F3C]/10 flex items-center border-b border-[#BF1F3C]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#BF1F3C] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              FOUNDATIONAL PRINCIPLES
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#BF1F3C]/10 hidden md:flex items-center justify-center border-r border-[#BF1F3C]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#BF1F3C] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">F</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">U</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">O</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">L</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">C</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">P</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Universal programming</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Programming’s universal grammar — logic, structure, constraints — transcends stacks. These principles form a lingua franca beyond languages and frameworks: a shared  foundation for aligning intent, adapting tools to problems (not trends), and  building systems that outlast their code.Complexity dissolves when we focus on  <em><strong>why</strong></em> systems hold, not <em><strong>how</strong></em> they’re built.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#BF1F3C] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-globe"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
     </div>
+    
+    
+    
+    <div class="carousel-item" data-index="2">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Foundational Principles</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">SOS from SOS (Shiny Object Syndrome)</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>A 10-line script often outlives 500 lines of “modern” boilerplate.  New tools are valuable when they demonstrably improve the experience for our  users or streamline the team’s ability to deliver value.</p>
 
-    <!-- Carousel nav buttons: bottom-aligned -->
-    <div class="flex justify-center items-center gap-4 mt-4 text-sm font-medium text-gray-600">
-      <button class="carousel-prev w-10 h-10 rounded-full bg-white shadow hover:bg-gray-100 text-gray-600">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <span class="carousel-counter">1/5</span>
-      <button class="carousel-next w-10 h-10 rounded-full bg-white shadow hover:bg-gray-100 text-gray-600">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+          
+          
+          
+          <div class="my-3">
+            <img src="/assets/images/cat-laser.gif" alt="SOS from SOS (Shiny Object Syndrome)" class="max-w-full h-auto mx-auto" />
+          </div>
+          
+        </div>
+      </div>
     </div>
+    
+    
+    
+    <div class="carousel-item" data-index="3">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Foundational Principles</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Anyone can code ≠ Everyone should</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>Quick scripts are fine for personal use. In collaborative systems, hacky code  becomes a tax on everyone — including users. Code, like design systems, is a  collective artifact. It thrives on shared understanding, not isolated experiments.</p>
+
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="carousel-item" data-index="4">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Foundational Principles</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Universal programming</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>Programming’s universal grammar — logic, structure, constraints — transcends stacks. These principles form a lingua franca beyond languages and frameworks: a shared  foundation for aligning intent, adapting tools to problems (not trends), and  building systems that outlast their code.Complexity dissolves when we focus on  <em><strong>why</strong></em> systems hold, not <em><strong>how</strong></em> they’re built.</p>
+
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    
   </div>
 </div>
     </div>
@@ -691,73 +217,97 @@
   <div class="flex flex-col md:flex-row md:items-start gap-8 mb-12">
     <div class="w-full md:flex-1 md:max-w-prose order-2 md:order-1">
       
-      <!-- <div class="carousel">
-  
-  <div class="card active">
-    <h3> Strategic Design </h3>
-    <div class="card-header">
-      
-      
+      <div class="relative flex flex-col md:flex-row justify-center items-start gap-4 px-4 max-w-6xl mx-auto carousel-container" id="carousel-strategic-design" data-section-color="#136EBE">
+
+  <!-- Left image column -->
+  <div class="hidden md:flex md:w-1/3 justify-center items-start sticky top-24 self-start pt-2">
+    <img src="/assets/images/strategic-design.png" alt="Strategic Design illustration" class="h-56 w-auto object-contain" />
+  </div>
+
+  <!-- Main content area - added right padding -->
+  <div class="relative w-full md:w-2/3 flex flex-col justify-start pr-10"> <!-- Added pr-10 -->
+    <div class="w-full transition-opacity duration-300 ease-in-out text-left space-y-4 carousel-content" id="content-strategic-design">
+      <h3 class="text-2xl font-bold" style="color: #136EBE">
+        Strategic Design
+      </h3>
+      <div class="text-gray-700 leading-relaxed">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
     </div>
+  </div>
 
+  <!-- Dots navigation - moved further right with more spacing -->
+  <div class="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col justify-center items-center z-10 space-y-3 ml-8">
     
-    <p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</p>
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="0" aria-label="Go to slide 1" style="background-color: #136EBE;
+                 transform: scale(1.5);
+                 border: 0.5px solid rgba(0,0,0,0.1);">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="1" aria-label="Go to slide 2" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="2" aria-label="Go to slide 3" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="3" aria-label="Go to slide 4" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
+    
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="4" aria-label="Go to slide 5" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
+    
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="5" aria-label="Go to slide 6" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
   </div>
-  
-  <div class="card ">
-    <h3> Strategic Design </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-sitemap icon"></i>
-      
-      
-      <h4>Design for structure, not content</h4>
-      
+
+  <!-- Hidden carousel items -->
+  <div class="hidden carousel-items">
+    
+    
+    
+    
+    <div class="carousel-item" data-index="1">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Strategic Design</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Design for structure, not content</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>Whether it’s a grid of fruits or financials, the underlying structure benefits from  consistency. Good design and robust code avoid coupling to specific content; they  focus on adaptable systems that embody shared intent. This structural thinking is  a bridge between user needs and scalable solutions.</p>
+
+          
+          
+          
+        </div>
+      </div>
     </div>
+    
+    
+    
+    <div class="carousel-item" data-index="2">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Strategic Design</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Code with vision, not velocity</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>Clarity on requirements builds reusability, not just deliverables.  Prioritise “plug and play” systems over “patch and pray” fixes.</p>
 
-    
-    <p><p>Whether it’s a grid of fruits or financials, the underlying structure benefits from  consistency. Good design and robust code avoid coupling to specific content; they  focus on adaptable systems that embody shared intent. This structural thinking is  a bridge between user needs and scalable solutions.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Strategic Design </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-binoculars icon"></i>
-      
-      
-      <h4>Code with vision, not velocity</h4>
-      
-    </div>
-
-    
-    <p><p>Clarity on requirements builds reusability, not just deliverables.  Prioritise “plug and play” systems over “patch and pray” fixes.</p>
-</p>
-    
-
-    
-
-    
-
-    
-    <div class="comparison-table">
-      <table>
+          
+          <div class="my-3 overflow-x-auto">
+            <table>
   <tbody>
     <tr>
       <td>✅ <strong>Plug and Play</strong></td>
@@ -772,1223 +322,218 @@
   </tbody>
 </table>
 
-    </div>
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Strategic Design </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-map icon"></i>
-      
-      
-      <h4>System design is a map, not a maze</h4>
-      
-    </div>
-
-    
-    <p><p>If a code block doesn’t trace to a user flow or data-driven need,  it’s noise. Codebases thrive when they embody user purpose, not just <strong><em>how</em></strong> they work. Good products are anchored in code  charted by what users seek, not just what engineers ship.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Strategic Design </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-tools icon"></i>
-      
-      
-      <h4>Code to Context, Not Frameworks</h4>
-      
-    </div>
-
-    
-    <p><p>Frameworks and algorithms solve narrow problems. When they warp a  product’s design, users inherit quirks that compound into design debt.  Bend tools to user needs, never the reverse.</p>
-</p>
-    
-
-    
-    <pre class="line-numbers"><code class="language-python"><p>def button_label(action, device):
-  if device == “screen_reader”:
-      return f”Press to {action}”
-  return action.capitalize()</p>
-</code></pre>
-    
-
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Strategic Design </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-mountain icon"></i>
-      
-      
-      <h4>Understanding the unseen: Gestalt of knowledge</h4>
-      
-    </div>
-
-    
-    <p><p>We often settle for surface-level understanding—what’s visible feels sufficient.  But like an iceberg, what we see is rarely the full picture. True comprehension  asks more: What’s beneath this? What shaped it? Without that pause, rushed  judgments multiply complexity instead of solving it.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-
-  <div class="carousel-nav">
-    <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-    <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-  </div>
-</div> -->
-<div class="relative group" id="carousel-strategic-design">
-  <div class="flex flex-col h-full">
-
-    <!-- Carousel slides -->
-    <div class="carousel-track flex overflow-hidden snap-x snap-mandatory scroll-smooth flex-grow">
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#136EBE]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block absolute top-0 left-0 w-full h-6 bg-[#136EBE]/10 flex items-center border-b border-[#136EBE]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#136EBE] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              STRATEGIC DESIGN
-            </div>
           </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
           
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <div class="prose prose-sm text-gray-700 mb-2 mt-10">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-              </div>
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
           
-
+          
         </div>
       </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
+    </div>
+    
+    
+    
+    <div class="carousel-item" data-index="3">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Strategic Design</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">System design is a map, not a maze</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>If a code block doesn’t trace to a user flow or data-driven need,  it’s noise. Codebases thrive when they embody user purpose, not just <strong><em>how</em></strong> they work. Good products are anchored in code  charted by what users seek, not just what engineers ship.</p>
 
-        <!-- Card container -->
-        <div class="relative bg-[#136EBE]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#136EBE]/10 flex items-center border-b border-[#136EBE]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#136EBE] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              STRATEGIC DESIGN
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
           
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#136EBE]/10 hidden md:flex items-center justify-center border-r border-[#136EBE]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#136EBE] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">C</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">N</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
           
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Design for structure, not content</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Whether it’s a grid of fruits or financials, the underlying structure benefits from  consistency. Good design and robust code avoid coupling to specific content; they  focus on adaptable systems that embody shared intent. This structural thinking is  a bridge between user needs and scalable solutions.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
           
-          <div class="absolute bottom-4 right-4 text-[#136EBE] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-sitemap"></i>
-          </div>
-          
-
         </div>
       </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#136EBE]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#136EBE]/10 flex items-center border-b border-[#136EBE]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#136EBE] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              STRATEGIC DESIGN
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#136EBE]/10 hidden md:flex items-center justify-center border-r border-[#136EBE]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#136EBE] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">C</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">N</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Code with vision, not velocity</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Clarity on requirements builds reusability, not just deliverables.  Prioritise “plug and play” systems over “patch and pray” fixes.</p>
-
-              </div>
-              
-
-              
-              <div class="overflow-x-auto text-sm mt-3">
-                <table>
-  <tbody>
-    <tr>
-      <td>✅ <strong>Plug and Play</strong></td>
-      <td> </td>
-      <td>❌ <strong>Patch and Pray</strong></td>
-    </tr>
-    <tr>
-      <td><img src="/assets/images/plug_n_play.gif" style="height:12rem; width:auto;" alt="Modular growth" /></td>
-      <td> </td>
-      <td><img src="/assets/images/patch_n_pray.gif" style="height:12rem; width:auto;" alt="Code patches multiplying like chaotic clones" /></td>
-    </tr>
-  </tbody>
-</table>
-
-              </div>
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#136EBE] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-binoculars"></i>
-          </div>
-          
-
+    </div>
+    
+    
+    
+    <div class="carousel-item" data-index="4">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Strategic Design</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Code to Context, Not Frameworks</h4>
         </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
+        <div class="prose prose-sm text-gray-700">
+          <p>Frameworks and algorithms solve narrow problems. When they warp a  product’s design, users inherit quirks that compound into design debt.  Bend tools to user needs, never the reverse.</p>
 
-        <!-- Card container -->
-        <div class="relative bg-[#136EBE]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#136EBE]/10 flex items-center border-b border-[#136EBE]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#136EBE] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              STRATEGIC DESIGN
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
           
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#136EBE]/10 hidden md:flex items-center justify-center border-r border-[#136EBE]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#136EBE] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">C</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">N</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
           
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">System design is a map, not a maze</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>If a code block doesn’t trace to a user flow or data-driven need,  it’s noise. Codebases thrive when they embody user purpose, not just <strong><em>how</em></strong> they work. Good products are anchored in code  charted by what users seek, not just what engineers ship.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#136EBE] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-map"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#136EBE]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#136EBE]/10 flex items-center border-b border-[#136EBE]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#136EBE] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              STRATEGIC DESIGN
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#136EBE]/10 hidden md:flex items-center justify-center border-r border-[#136EBE]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#136EBE] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">C</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">N</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Code to Context, Not Frameworks</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Frameworks and algorithms solve narrow problems. When they warp a  product’s design, users inherit quirks that compound into design debt.  Bend tools to user needs, never the reverse.</p>
-
-              </div>
-              
-
-              
-
-              
-              <pre class="bg-gray-100 p-2 rounded mt-3">
-                <code class="language-python">def button_label(action, device):
-  if device == "screen_reader":
-      return f"Press to {action}"
+          <pre class="bg-gray-100 p-2 rounded-md text-sm overflow-x-auto my-3">
+              <code class="language-python">def button_label(action, device):
+  if device == &quot;screen_reader&quot;:
+      return f&quot;Press to {action}&quot;
   return action.capitalize()
 </code>
-              </pre>
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
+            </pre>
           
-          <div class="absolute bottom-4 right-4 text-[#136EBE] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-tools"></i>
-          </div>
           
-
         </div>
       </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
+    </div>
+    
+    
+    
+    <div class="carousel-item" data-index="5">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Strategic Design</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Understanding the unseen: Gestalt of knowledge</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>We often settle for surface-level understanding—what’s visible feels sufficient.  But like an iceberg, what we see is rarely the full picture. True comprehension  asks more: What’s beneath this? What shaped it? Without that pause, rushed  judgments multiply complexity instead of solving it.</p>
 
-        <!-- Card container -->
-        <div class="relative bg-[#136EBE]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#136EBE]/10 flex items-center border-b border-[#136EBE]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#136EBE] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              STRATEGIC DESIGN
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
           
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#136EBE]/10 hidden md:flex items-center justify-center border-r border-[#136EBE]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#136EBE] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">R</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">C</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">D</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">G</span>
-                
-                  <span class="leading-none">N</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
           
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Understanding the unseen: Gestalt of knowledge</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>We often settle for surface-level understanding—what’s visible feels sufficient.  But like an iceberg, what we see is rarely the full picture. True comprehension  asks more: What’s beneath this? What shaped it? Without that pause, rushed  judgments multiply complexity instead of solving it.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
           
-          <div class="absolute bottom-4 right-4 text-[#136EBE] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-mountain"></i>
-          </div>
-          
-
         </div>
       </div>
-      
     </div>
-
-    <!-- Carousel nav buttons: bottom-aligned -->
-    <div class="flex justify-center items-center gap-4 mt-4 text-sm font-medium text-gray-600">
-      <button class="carousel-prev w-10 h-10 rounded-full bg-white shadow hover:bg-gray-100 text-gray-600">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <span class="carousel-counter">1/6</span>
-      <button class="carousel-next w-10 h-10 rounded-full bg-white shadow hover:bg-gray-100 text-gray-600">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
+    
+    
   </div>
 </div>
     </div>
-    <div class="w-full md:w-64 flex-shrink-0 self-center order-1 md:order-2">
-      <img src="/assets/images/strategic_design.png" class="h-[200px] md:h-[250px] object-contain mx-auto" alt="Strategic design sketch" />
-    </div>
+    <!-- <div class="w-full md:w-64 flex-shrink-0 self-center order-1 md:order-2">
+      <img src="/assets/images/strategic_design.png" class="h-[200px] md:h-[250px] object-contain mx-auto" alt="Strategic design sketch">
+    </div> -->
   </div>
 
   <div class="flex flex-col md:flex-row md:items-start gap-8">
-    <div class="w-full md:w-64 flex-shrink-0 self-center">
-      <img src="/assets/images/maintainable_systems.png" class="h-[200px] md:h-[250px] object-contain mx-auto" alt="Maintainable systems sketch" />
-    </div>
+    <!-- <div class="w-full md:w-64 flex-shrink-0 self-center">
+      <img src="/assets/images/maintainable_systems.png" class="h-[200px] md:h-[250px] object-contain mx-auto" alt="Maintainable systems sketch">
+    </div> -->
     <div class="w-full md:flex-1 md:max-w-prose">
       
-      <!-- <div class="carousel">
-  
-  <div class="card active">
-    <h3> Maintainable Systems </h3>
-    <div class="card-header">
-      
-      
+      <div class="relative flex flex-col md:flex-row justify-center items-start gap-4 px-4 max-w-6xl mx-auto carousel-container" id="carousel-maintainable-systems" data-section-color="#5A7C39">
+
+  <!-- Left image column -->
+  <div class="hidden md:flex md:w-1/3 justify-center items-start sticky top-24 self-start pt-2">
+    <img src="/assets/images/maintainable-systems.png" alt="Maintainable Systems illustration" class="h-56 w-auto object-contain" />
+  </div>
+
+  <!-- Main content area - added right padding -->
+  <div class="relative w-full md:w-2/3 flex flex-col justify-start pr-10"> <!-- Added pr-10 -->
+    <div class="w-full transition-opacity duration-300 ease-in-out text-left space-y-4 carousel-content" id="content-maintainable-systems">
+      <h3 class="text-2xl font-bold" style="color: #5A7C39">
+        Maintainable Systems
+      </h3>
+      <div class="text-gray-700 leading-relaxed">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
     </div>
+  </div>
 
+  <!-- Dots navigation - moved further right with more spacing -->
+  <div class="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col justify-center items-center z-10 space-y-3 ml-8">
     
-    <p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</p>
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="0" aria-label="Go to slide 1" style="background-color: #5A7C39;
+                 transform: scale(1.5);
+                 border: 0.5px solid rgba(0,0,0,0.1);">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="1" aria-label="Go to slide 2" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="2" aria-label="Go to slide 3" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
-
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="3" aria-label="Go to slide 4" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
+    
+    <button class="dot w-1.5 h-1.5 rounded-full transition-all duration-200 focus:outline-none" data-index="4" aria-label="Go to slide 5" style="background-color: rgba(209,213,219,0.5);
+                 transform: scale(1);
+                 border: 0.5px solid transparent;">
+    </button>
     
   </div>
-  
-  <div class="card ">
-    <h3> Maintainable Systems </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-user-check icon"></i>
-      
-      
-      <h4>Redesign for needs, not trends</h4>
-      
-    </div>
 
+  <!-- Hidden carousel items -->
+  <div class="hidden carousel-items">
     
-    <p><p>UX should be user-centric, not aesthetic. If users don’t struggle with  the existing UI, ‘modernizing’ it is often just theater, consuming valuable  engineering resources. Redesign when user feedback and data prove the current design  fails. Otherwise, focus on incremental tweaks, not costly overhauls.</p>
-</p>
     
-
     
-
     
+    <div class="carousel-item" data-index="1">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Maintainable Systems</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Redesign for needs, not trends</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>UX should be user-centric, not aesthetic. If users don’t struggle with  the existing UI, ‘modernizing’ it is often just theater, consuming valuable  engineering resources. Redesign when user feedback and data prove the current design  fails. Otherwise, focus on incremental tweaks, not costly overhauls.</p>
 
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Maintainable Systems </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-shield-alt icon"></i>
-      
-      
-      <h4>Tests prevent silent failures</h4>
-      
-    </div>
-
-    
-    <p><p>Tests mean more code, but ensure reliability, silently guarding user trust and  the product’s promised behavior. They’re systems designed to break when changes  stray from the agreed intent — exposing gaps before they become fractures.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Maintainable Systems </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-sync-alt icon"></i>
-      
-      
-      <h4>Refactor with intent, not haste</h4>
-      
-    </div>
-
-    
-    <p><p>Rewriting code on impulse risks breaking what users rely on.  Even flawed systems have hidden purpose. Refactor only  after tests safeguard agreed needs and plans ensure continuity for users.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-  <div class="card ">
-    <h3> Maintainable Systems </h3>
-    <div class="card-header">
-      
-      <i class="fas fa-stethoscope icon"></i>
-      
-      
-      <h4>Maintainable systems speak human</h4>
-      
-    </div>
-
-    
-    <p><p>When errors leave developers guessing, users suffer too.  Maintainability begins with empathy — for our future selves, users  and inheriting developers. Self-diagnosing logs and user-readable  errors turn debugging from scavenger hunts into guided fixes.</p>
-</p>
-    
-
-    
-
-    
-
-    
-  </div>
-  
-
-  <div class="carousel-nav">
-    <button aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
-    <button aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-  </div>
-</div> -->
-<div class="relative group" id="carousel-maintainable-systems">
-  <div class="flex flex-col h-full">
-
-    <!-- Carousel slides -->
-    <div class="carousel-track flex overflow-hidden snap-x snap-mandatory scroll-smooth flex-grow">
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#5A7C39]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block absolute top-0 left-0 w-full h-6 bg-[#5A7C39]/10 flex items-center border-b border-[#5A7C39]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#5A7C39] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              MAINTAINABLE SYSTEMS
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
           
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <div class="prose prose-sm text-gray-700 mb-2 mt-10">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-              </div>
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
           
-
+          
         </div>
       </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#5A7C39]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#5A7C39]/10 flex items-center border-b border-[#5A7C39]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#5A7C39] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              MAINTAINABLE SYSTEMS
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#5A7C39]/10 hidden md:flex items-center justify-center border-r border-[#5A7C39]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#5A7C39] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">B</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">Y</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Redesign for needs, not trends</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>UX should be user-centric, not aesthetic. If users don’t struggle with  the existing UI, ‘modernizing’ it is often just theater, consuming valuable  engineering resources. Redesign when user feedback and data prove the current design  fails. Otherwise, focus on incremental tweaks, not costly overhauls.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#5A7C39] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-user-check"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#5A7C39]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#5A7C39]/10 flex items-center border-b border-[#5A7C39]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#5A7C39] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              MAINTAINABLE SYSTEMS
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#5A7C39]/10 hidden md:flex items-center justify-center border-r border-[#5A7C39]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#5A7C39] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">B</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">Y</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Tests prevent silent failures</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Tests mean more code, but ensure reliability, silently guarding user trust and  the product’s promised behavior. They’re systems designed to break when changes  stray from the agreed intent — exposing gaps before they become fractures.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#5A7C39] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#5A7C39]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#5A7C39]/10 flex items-center border-b border-[#5A7C39]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#5A7C39] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              MAINTAINABLE SYSTEMS
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#5A7C39]/10 hidden md:flex items-center justify-center border-r border-[#5A7C39]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#5A7C39] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">B</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">Y</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Refactor with intent, not haste</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>Rewriting code on impulse risks breaking what users rely on.  Even flawed systems have hidden purpose. Refactor only  after tests safeguard agreed needs and plans ensure continuity for users.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#5A7C39] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-sync-alt"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
-      
-      <div class="carousel-slide w-full flex-shrink-0 snap-start px-4 relative">
-
-        <!-- Card container -->
-        <div class="relative bg-[#5A7C39]/5 pt-14 md:pt-6 md:pl-16 pl-4 pb-6 pr-6 rounded-xl shadow-sm border border-gray-100 min-h-[320px] flex flex-col justify-between">
-
-          <!-- Horizontal label: always shown for intro cards; also shown for non-intro cards on mobile -->
-          <div class="block md:hidden absolute top-0 left-0 w-full h-6 bg-[#5A7C39]/10 flex items-center border-b border-[#5A7C39]/20 rounded-t-md z-10">
-            <div class="px-3 text-[#5A7C39] font-extrabold text-[10px] tracking-widest leading-tight whitespace-nowrap">
-              MAINTAINABLE SYSTEMS
-            </div>
-          </div>
-
-          <!-- Vertical label: only shown on desktop and only for non-intro cards -->
-          
-          <div class="absolute left-0 top-0 h-full w-6 bg-[#5A7C39]/10 hidden md:flex items-center justify-center border-r border-[#5A7C39]/20 rounded-l-md">
-            <div class="flex flex-col justify-center items-center h-full text-[#5A7C39] font-extrabold text-[10px] tracking-wider leading-tight space-y-0.5">
-              
-              
-                
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">I</span>
-                
-                  <span class="leading-none">N</span>
-                
-                  <span class="leading-none">A</span>
-                
-                  <span class="leading-none">B</span>
-                
-                  <span class="leading-none">L</span>
-                
-                  <span class="leading-none">E</span>
-                
-                <span class="h-1"></span>
-              
-                
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">Y</span>
-                
-                  <span class="leading-none">S</span>
-                
-                  <span class="leading-none">T</span>
-                
-                  <span class="leading-none">E</span>
-                
-                  <span class="leading-none">M</span>
-                
-                  <span class="leading-none">S</span>
-                
-                <span class="h-1"></span>
-              
-            </div>
-          </div>
-          
-
-          <!-- Card content -->
-          <div class="z-10 relative mt-2">
-            
-              
-              <h4 class="text-lg font-semibold text-gray-900 mb-3">Maintainable systems speak human</h4>
-              
-
-              
-              <div class="prose prose-sm text-gray-700 mb-3">
-                <p>When errors leave developers guessing, users suffer too.  Maintainability begins with empathy — for our future selves, users  and inheriting developers. Self-diagnosing logs and user-readable  errors turn debugging from scavenger hunts into guided fixes.</p>
-
-              </div>
-              
-
-              
-
-              
-
-              
-            
-          </div>
-
-          <!-- Icon bottom right -->
-          
-          <div class="absolute bottom-4 right-4 text-[#5A7C39] opacity-15 text-[2rem] pointer-events-none select-none z-0">
-            <i class="fas fa-stethoscope"></i>
-          </div>
-          
-
-        </div>
-      </div>
-      
     </div>
+    
+    
+    
+    <div class="carousel-item" data-index="2">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Maintainable Systems</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Tests prevent silent failures</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>Tests mean more code, but ensure reliability, silently guarding user trust and  the product’s promised behavior. They’re systems designed to break when changes  stray from the agreed intent — exposing gaps before they become fractures.</p>
 
-    <!-- Carousel nav buttons: bottom-aligned -->
-    <div class="flex justify-center items-center gap-4 mt-4 text-sm font-medium text-gray-600">
-      <button class="carousel-prev w-10 h-10 rounded-full bg-white shadow hover:bg-gray-100 text-gray-600">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <span class="carousel-counter">1/5</span>
-      <button class="carousel-next w-10 h-10 rounded-full bg-white shadow hover:bg-gray-100 text-gray-600">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+          
+          
+          
+        </div>
+      </div>
     </div>
+    
+    
+    
+    <div class="carousel-item" data-index="3">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Maintainable Systems</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Refactor with intent, not haste</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>Rewriting code on impulse risks breaking what users rely on.  Even flawed systems have hidden purpose. Refactor only  after tests safeguard agreed needs and plans ensure continuity for users.</p>
+
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <div class="carousel-item" data-index="4">
+      <div class="space-y-3">
+        <div>
+          <p class="text-xs uppercase tracking-wider text-gray-400">Maintainable Systems</p>
+          <h4 class="text-lg font-semibold text-gray-900 mt-1">Maintainable systems speak human</h4>
+        </div>
+        <div class="prose prose-sm text-gray-700">
+          <p>When errors leave developers guessing, users suffer too.  Maintainability begins with empathy — for our future selves, users  and inheriting developers. Self-diagnosing logs and user-readable  errors turn debugging from scavenger hunts into guided fixes.</p>
+
+          
+          
+          
+        </div>
+      </div>
+    </div>
+    
+    
   </div>
 </div>
     </div>
@@ -2003,7 +548,7 @@
     </div>
 
     <div class="relative z-10 h-full flex flex-col items-center">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-12 mb-4 section-heading" data-color="2">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-50 text-center mt-12 mb-4 section-heading" data-color="2">
         AI &amp; I: My Learning Loop
       </h2>
       <div class="max-w-2xl mx-auto px-4 text-center">
@@ -2187,7 +732,7 @@
 <!-- Section: Books -->
 <section class="max-w-5xl mx-auto px-4 py-10 section-block hidden" data-section="books">
   <div class="flex justify-center">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4 section-heading" data-color="3">Pages of Influence</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-50 text-center mb-4 section-heading" data-color="3">Pages of Influence</h2>
   </div>
   <p class="text-gray-700 max-w-2xl mx-auto text-center mb-12">These are my takeaways from the books that left a mark.</p>
   <!-- <section class="books">
