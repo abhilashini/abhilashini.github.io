@@ -1,3 +1,14 @@
+/* Set Inter as base font */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure Tailwind components use Inter */
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+}
+
 /* Smooth scrolling */
 .carousel-track {
   scroll-behavior: smooth;
@@ -323,4 +334,3 @@
     transform 0.4s cubic-bezier(0.16, 0.84, 0.44, 1);
   will-change: transform, opacity;
 }
-

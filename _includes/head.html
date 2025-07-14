@@ -8,11 +8,21 @@
   <meta property="og:url" content="https://abhilashini.github.io/">
   <title>{{ site.title }}</title>
   <!-- <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Merriweather:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/prism.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  tailwind.config = {
+    theme: {
+      fontFamily: {
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      },
+    }
+  }
+</script>
   <link rel="stylesheet" href="{{ '/assets/css/style-temp.css' | relative_url }}">
   <script src="/assets/js/prism.js"></script>
   <script defer src="{{ '/assets/js/scripts.js' | relative_url }}"></script>
