@@ -10,7 +10,7 @@ layout: default
   <p class="text-md leading-relaxed text-gray-800">
     This space brings together a
     <a href="#focus" class="section-toggle-link" data-color="0"><mark class="highlight relative pulse-once">snapshot of my current focus</mark></a>
-    and what I'm building toward. Having engineered 80+ products at work, I've come to prioritize
+    and what I'm building toward. Across 80+ projects and initiatives, I've come to prioritize
     <a href="#shared-systems" class="section-toggle-link" data-color="1"><mark class="highlight">simplifying complexity in shared systems</mark></a>
     — the bedrock of lasting, user-centric solutions. My dev journey also involves
     <a href="#ai" class="section-toggle-link" data-color="2"><mark class="highlight">leveraging AI in everyday tools</mark></a>.
@@ -46,7 +46,7 @@ layout: default
 <!-- Section: Shared Systems -->
 <section class="max-w-3xl mx-auto px-4 py-10 section-block hidden" data-section="shared-systems">
   <div class="flex justify-center">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4 section-heading" data-color="1">Simplifying the complex</h2>
+    <h2 class="text-2xl md:text-2xl font-medium text-gray-900 text-center mb-4 section-heading" data-color="1">Simplifying the complex</h2>
   </div>
   <p class="text-gray-700 max-w-2xl mx-auto text-center mb-12">
     In solving problems, plans often deviate as complexity creeps in, assumptions falter, and past lessons fall short. These manifest multi-fold while building enterprise-wide distributed systems. I expand upon a few concepts which are good to be equipped with while adapting to new constraints and aid continuous learning.
@@ -83,7 +83,7 @@ layout: default
     </div>
 
     <div class="relative z-10 h-full flex flex-col items-center">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mt-12 mb-4 section-heading" data-color="2">
+      <h2 class="text-2xl md:text-2xl font-medium text-gray-900 text-center mt-12 mb-4 section-heading" data-color="2">
         AI & I: My Learning Loop
       </h2>
       <div class="max-w-2xl mx-auto px-4 text-center">
@@ -101,7 +101,7 @@ layout: default
 <!-- Section: Books -->
 <section class="max-w-5xl mx-auto px-4 py-10 section-block hidden" data-section="books">
   <div class="flex justify-center">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-4 section-heading" data-color="3">Pages of Influence</h2>
+    <h2 class="text-2xl md:text-2xl font-medium text-gray-900 text-center mb-4 section-heading" data-color="3">Pages of Influence</h2>
   </div>
   <p class="text-gray-700 max-w-2xl mx-auto text-center mb-12">These are my takeaways from the books that left a mark.</p>
   {% include books.html items=site.data.books %}
