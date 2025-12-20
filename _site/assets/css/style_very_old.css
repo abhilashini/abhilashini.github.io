@@ -1,0 +1,635 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+:root {
+  --font-heading: 'Noto Sans', sans-serif;
+  /* Elegant serif for headings */
+  --font-body: 'Merriweather', serif;
+  /* Crisp sans-serif for body text */
+  --font-section-body: 'Merriweather', serif;
+  --font-section-heading: 'Noto Sans', sans-serif;
+  --font-code: 'Source Code Pro', Courier, monospace;
+  /* Monospace for code */
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+  --color-text: #000000;
+  --color-background: #FFFFFF;
+  --color-primary: #EC1D26;
+  --color-secondary: #004FFF;
+  --color-icon: #EC1D26;
+  --color-accent: #707070;
+
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Centered content column */
+.centered-column {
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+#intro {
+  text-align: center;
+}
+
+.sub-heading {
+  color: var(--color-secondary);
+  font-style: oblique;
+  /*! font-weight: bolder; */
+}
+
+.contact {
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
+  font-weight: bolder;
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  margin: 3rem auto;
+  max-width: 280px;
+  background-image: linear-gradient(to right,
+      transparent 20%,
+      var(--color-accent) 50%,
+      transparent 80%);
+  position: relative;
+}
+
+/* Filled diamond with subtle shadow */
+.section-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  width: 8px;
+  /* Reduced size */
+  height: 8px;
+  /* Reduced size */
+  background: var(--color-icon);
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 0 0 0 2px var(--color-background);
+  /* Slimmer outline */
+}
+
+/* Hover: Gentle color shift + rotation */
+.section-divider:hover::after {
+  transform: translateX(-50%) rotate(135deg);
+  background: var(--color-secondary);
+  transition: all 0.4s ease;
+}
+
+/* Section container */
+.section {
+  position: relative;
+  /* Anchor for absolute positioning */
+  margin-bottom: 4rem;
+  padding: 1rem 0rem 0rem 1rem
+}
+
+.section-title {
+  font-family: var(--font-section-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  text-transform: full-size-kana;
+}
+
+.section-title--left {
+  left: -15rem;
+  text-align: right;
+  position: absolute;
+}
+
+.section-title--right {
+  right: -15rem;
+  text-align: left;
+  position: absolute;
+}
+
+.section-title--center {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: auto;
+  /* Override 20rem */
+  position: relative;
+  /* Change to relative if in flow */
+  margin: 0 auto 2.5rem;
+  /* Center in parent */
+}
+
+/* Squiggle Positioning Adjustments */
+.section-title--left::after {
+  right: 0;
+}
+
+.section-title--right::after {
+  left: 0;
+}
+
+.section-title--center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title::before,
+.section-title::after {
+  color: var(--color-primary);
+  font-family: var(--font-code);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.section-title::before {
+  content: '[ ';
+  margin-right: 0.25rem;
+}
+
+.section-title::after {
+  content: ' ]';
+  margin-left: 0.25rem;
+}
+
+.section.active .section-title::before,
+.section.active .section-title::after {
+  opacity: 1;
+}
+
+/* Doodles */
+.doodle {
+  width: 15rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.doodle--left {
+  left: -16rem;
+  /* Position to the left of the column */
+}
+
+.doodle--right {
+  right: -16rem;
+  /* Position to the right of the column */
+}
+
+/* New centered modifier */
+.doodle--center {
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  /* Reset right position */
+  z-index: -1;
+  /* Optional: keep behind content */
+  top: 100%;
+  margin-top: 3rem;
+}
+
+.flip {
+  transform: scaleX(-1);
+}
+
+/* Doodle Transition */
+.section.active .doodle {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cards/Panels */
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #ffffff;
+  color: var(--color-text);
+  padding: 2rem 1.75rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: none;
+
+  border: 1px solid #e1e1e1;
+  border-left: 4px solid transparent;
+  border-radius: 0;
+
+  transition:
+    border-left-color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.card.active {
+  display: block;
+  border-left-color: var(--color-primary);
+  background-color: #ffffff;
+}
+
+/* Font Awesome icon placement */
+.card .icon {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: none;
+
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  height: auto;
+  padding: 0;
+  font-family: "Font Awesome 6 Free", var(--font-code);
+  font-weight: 900;
+  /* Ensure solid style if needed */
+}
+
+/* Headings */
+.card h4 {
+  font-family: var(--font-section-heading);
+  /* Noto Sans */
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraphs / Body */
+.card p {
+  font-family: var(--font-section-body);
+  /* Merriweather */
+  font-size: 1rem;
+  line-height: 1.7;
+  padding-right: 3.5rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* Code blocks */
+.card pre {
+  font-family: var(--font-code);
+  background-color: #f8f9fa !important;
+  color: var(--color-text);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 2.5rem 0 0 0 !important;
+  white-space: pre-wrap !important;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 1.5rem;
+}
+
+.card-image {
+  height: 150px;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-nav button {
+  background: none;
+  border: none;
+  color: var(--color-icon);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.3s ease;
+}
+
+.carousel-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-text);
+}
+
+.carousel-nav button:focus {
+  outline: 2px solid var(--color-primary);
+}
+
+
+/* === Slim Two-Column Books === */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.book-entry {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  /* Reduced from 1.5rem */
+  align-items: start;
+}
+
+.book-icon {
+  width: 2rem;
+  /* Smaller icon container */
+  height: 2rem;
+  font-size: 1rem;
+  /* Smaller icon */
+  color: var(--color-primary);
+}
+
+.book-details {
+  gap: 0.2rem;
+  /* Tighter vertical spacing */
+}
+
+.book-title {
+  font-size: 1rem;
+  /* Slightly smaller */
+  line-height: 1.2;
+  font-family: var(--font-heading);
+}
+
+.book-author {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+}
+
+.book-takeaway {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  /* Reduced from 0.5rem */
+  line-height: 1.3;
+}
+
+/* ===== AI Section Styles ===== */
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Add these 6 lines to your existing CSS */
+.ai-point {
+  position: relative;
+  /* Required for absolute positioning */
+  overflow: hidden;
+  /* Contain SVG within card bounds */
+}
+
+.ai-point svg.circuit {
+  position: absolute;
+  bottom: -10px;
+  right: -15px;
+  width: 120px;
+  /* Control visible size */
+  height: auto;
+  pointer-events: none;
+  /* Make SVG non-interactive */
+  transition: opacity 0.3s ease;
+}
+
+/* Existing Title/Pattern Styles (Unchanged) */
+.ai-point h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-right: 4em;
+}
+
+.ai-point h3::after {
+  content: attr(data-pattern);
+  font-family: var(--font-code);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s ease;
+  padding-left: 1rem;
+  transform: translateY(-5%);
+}
+
+.ai-point:hover h3::after {
+  opacity: 0.6;
+}
+
+.ai-point p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.site-footer-meta {
+  position: fixed;
+  justify-content: space-between;
+  bottom: 12px;
+  right: 16px;
+  display: flex;
+  flex-wrap: wrap; /* handles small screens */
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: var(--color-icon);
+  opacity: 0.6;
+  z-index: 1000;
+  font-family: var(--font-sans);
+}
+
+.footer-badge {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Avoid accidental hover interactions */
+}
+
+.visitor-badge {
+  height: 20px;
+}
+
+.site-footer-meta:hover .footer-badge {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.footer-divider {
+  color: var(--color-icon);
+  opacity: 0.4;
+}
+
+.footer-link {
+  color: var(--color-icon);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--color-icon);
+}
+
+.footer-link:hover {
+  opacity: 0.9;
+  border-bottom: 1px solid var(--color-icon);
+}
+
+.cc-badge {
+  height: 1rem;
+  vertical-align: middle;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.cc-badge:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+
+  /* Tweak doodle and section titles — retain structure, don't center everything */
+  .section .section-title--left,
+  .section .section-title--right {
+    position: static;
+    margin: 1rem 0;
+    text-align: left;
+  }
+
+  .section .doodle--left,
+  .section .doodle--right {
+    position: static;
+    margin: 1rem auto 2rem;
+    display: block;
+  }
+
+  /* Prevent centering of everything by default */
+  .section {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title--center {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    line-height: 1.3;
+    word-break: break-word;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+
+  /* Maintain layout for ai-grid and book-grid if already good */
+  /* Just ensure no forced stacking unless needed */
+  .ai-grid,
+  .book-grid {
+    gap: 1.5rem;
+  }
+
+  /* Card Mobile Layout */
+  .carousel {
+    padding: 0 1rem 4rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100% !important;
+    margin: 0;
+    padding: 1.5rem;
+  }
+
+  /* Icon & Heading Alignment Fix */
+  .card-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .card .icon {
+    order: -1 !important;
+    position: static !important;
+    float: none !important;
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1.8rem;
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
+  }
+
+  .card h4 {
+    order: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+  }
+
+  /* Navigation Positioning */
+  .carousel-nav {
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 2rem;
+  }
+
+  .carousel-nav button {
+    font-size: 1.8rem;
+    padding: 0;
+  }
+
+  .comparison-table {
+    table-layout: auto;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+  }
+
+
+  .comparison-table img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .site-footer-meta {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.65rem;
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .footer-right {
+    justify-content: center;
+  }
+
+}
