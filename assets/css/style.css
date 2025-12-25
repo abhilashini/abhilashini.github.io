@@ -187,17 +187,17 @@ body {
 ----------------------------- */
 
 #persistent-nav {
-  display: none;
   position: sticky;
   top: 0;
   background-color: var(--bg-primary);
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 3px solid var(--accent-primary);
 }
 
 #persistent-nav .nav-inner {
   padding: 0.75rem 1.25rem;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .home-link {
@@ -212,24 +212,13 @@ body {
   color: var(--text-primary);
 }
 
-/* -----------------------------
-   Page states
------------------------------ */
-
-.page-home #persistent-nav {
-  display: none;
-}
-
-.page-home #content {
-  display: none;
-}
-
-.page-section #front-matter {
-  display: none;
-}
-
-.page-section #persistent-nav {
-  display: block;
+.corner-anchor {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  mix-blend-mode: darken;
+  z-index: 1000;
 }
 
 /* -----------------------------
@@ -243,5 +232,299 @@ body {
 
   .intro-line {
     font-size: 0.85rem;
+  }
+}
+
+/* ============================
+   Persistent navigation (sections)
+============================ */
+
+#persistent-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  padding: 1.35rem 0 1.5rem;
+  background-color: var(--bg-primary);
+  border-bottom: 3px solid var(--accent-primary);
+}
+
+#persistent-nav .conceptual-nav {
+  max-width: 96ch;
+  margin: 0 auto;
+}
+
+#persistent-nav .conceptual-nav p {
+  line-height: 1.45;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.persistent-nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Home button */
+
+.home-button {
+  position: absolute;
+  left: 1.25rem;
+
+  width: 2rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+
+  text-decoration: none;
+}
+
+.home-text {
+  position: absolute;
+  left: 2.4rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.home-button:hover .home-text {
+  opacity: 0.85;
+}
+
+.home-icon {
+  display: block;
+  width: 10px;
+  height: 10px;
+
+  border-left: 3px solid var(--bg-primary);
+  border-bottom: 3px solid var(--bg-primary);
+
+  transform: rotate(45deg);
+}
+
+/* ============================
+   System design section
+============================ */
+
+.section.system-design {
+  padding: 4rem 2.5rem 6rem;
+}
+
+.system-design-inner {
+  width: 100%;
+}
+
+.system-design-columns {
+  column-count: 3;
+  column-gap: 3rem;
+}
+
+.system-essay {
+  break-inside: avoid;
+  margin-bottom: 3rem;
+}
+
+.system-essay.column-break {
+  break-before: column;
+}
+
+.essay-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.essay-body {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ============================
+   Responsive adjustments
+============================ */
+
+@media (max-width: 1024px) {
+  .system-design-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .system-design-columns {
+    column-count: 1;
+  }
+
+  #persistent-nav {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+}
+
+/* ============================
+   Structured consolidation
+============================ */
+
+.section.structured-consolidation {
+  padding: 4rem 2.5rem 6rem;
+}
+
+.structured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 340px));
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ============================
+   Tiles
+============================ */
+
+.consolidation-tile {
+  padding: 1.5rem 1.5rem 1.75rem;
+  border: 1px solid var(--text-primary);
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* PDF variant */
+
+.consolidation-tile.type-pdf {
+  background-color: color-mix(
+    in srgb,
+    var(--accent-primary) 6%,
+    var(--bg-primary)
+  );
+}
+
+/* Header */
+
+.tile-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tile-icon {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.tile-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Body */
+
+.tile-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Link */
+
+.tile-link {
+  align-self: flex-start;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.tile-link:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+/* ============================
+   Cross-domain heuristics
+============================ */
+
+.section.cross-domain-heuristics {
+  padding: 4rem 3rem 6rem;
+}
+
+/* List */
+
+.heuristics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Row */
+
+.heuristic-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+  align-items: start;
+  column-gap: 3rem;
+}
+
+/* Text */
+
+.heuristic-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.heuristic-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 58ch;
+  position: relative;
+}
+
+/* End glyph */
+
+.heuristic-end {
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  background-color: var(--accent-primary);
+  margin-left: 0.1rem;
+  vertical-align: baseline;
+}
+
+/* Visual */
+
+.heuristic-visual {
+  justify-self: end;
+  max-width: 220px;
+  opacity: 0.85;
+}
+
+.heuristic-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .heuristic-row {
+    grid-template-columns: 1fr;
+  }
+
+  .heuristic-visual {
+    margin-top: 1.5rem;
+    justify-self: start;
   }
 }

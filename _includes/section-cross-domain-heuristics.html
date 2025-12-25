@@ -1,0 +1,25 @@
+<section class="section cross-domain-heuristics">
+
+  <div class="heuristics-list">
+    {% for item in site.data.cross_domain_heuristics %}
+      <article class="heuristic-row">
+
+        <div class="heuristic-text">
+          <h2 class="heuristic-title">{{ item.title }}</h2>
+          <p class="heuristic-body">
+            {{ item.body }}
+            <span class="heuristic-end"></span>
+          </p>
+        </div>
+
+        {% if item.image %}
+          <div class="heuristic-visual">
+            <img src="{{ item.image }}" alt="" />
+          </div>
+        {% endif %}
+
+      </article>
+    {% endfor %}
+  </div>
+
+</section>

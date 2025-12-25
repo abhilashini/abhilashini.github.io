@@ -1,0 +1,15 @@
+<section class="section system-design">
+  <div class="system-design-inner">
+    <div class="system-design-columns">
+      {% for essay in site.data.system_design %}
+        <article class="system-essay {% if essay.break %}column-break{% endif %}">
+          <h2 class="essay-title">{{ essay.title }}</h2>
+          <div class="essay-body">
+            {{ essay.body | markdownify }}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,23 @@
+- title: "Scalable Architecture Patterns"
+  body: "Understanding how to design systems that scale efficiently is crucial for modern applications."
+  break: false
+
+- title: "Microservices vs Monoliths"
+  body: "Comparing microservices architecture with traditional monolithic design, pros and cons."
+  break: false
+
+- title: "Caching Strategies"
+  body: "A guide to caching strategies to improve performance and reduce server load."
+  break: false
+
+- title: "Scalable Microservices Architecture"
+  body: "This essay discusses how to design scalable microservices with proper API contracts and database partitioning."
+  break: false
+
+- title: "Event-Driven Design Patterns"
+  body: "Exploring the use of message queues, event streams, and pub-sub patterns to decouple services and improve responsiveness."
+  break: true
+
+- title: "Caching Strategies"
+  body: "A guide to implementing caching layers using Redis or Memcached to reduce database load and latency."
+  break: false

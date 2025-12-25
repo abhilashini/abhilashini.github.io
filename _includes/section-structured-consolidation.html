@@ -1,0 +1,28 @@
+<section class="section structured-consolidation">
+  <div class="structured-grid">
+
+    {% for item in site.data.structured_consolidation %}
+      <article class="consolidation-tile type-{{ item.type }}">
+
+        <header class="tile-header">
+          {% if item.type == "github" %}
+            <span class="tile-icon">⌂</span>
+          {% elsif item.type == "pdf" %}
+            <span class="tile-icon">⧉</span>
+          {% endif %}
+          <h2 class="tile-title">{{ item.title }}</h2>
+        </header>
+
+        <p class="tile-description">
+          {{ item.description }}
+        </p>
+
+        <a class="tile-link" href="{{ item.url }}">
+          View →
+        </a>
+
+      </article>
+    {% endfor %}
+
+  </div>
+</section>

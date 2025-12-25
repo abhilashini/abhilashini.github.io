@@ -1,0 +1,23 @@
+- title: "Loose Coupling"
+  body: "Design systems so that changes in one area do not cascade unpredictably."
+  image: "/assets/images/heuristic1.jpg"
+
+- title: "Fail Fast"
+  body: "Detect errors quickly and recover gracefully to prevent large-scale failures."
+  image: "/assets/images/heuristic2.jpg"
+
+- title: "Modular Design"
+  body: "Use modular components that can be tested, replaced, or scaled independently."
+  image: "/assets/images/heuristic3.jpg"
+
+- title: "Heuristic 1: KISS Principle"
+  body: "Keep designs simple. Avoid over-engineering by focusing on essential functionality first."
+  image: "/assets/images/kiss.png"
+
+- title: "Heuristic 2: DRY Principle"
+  body: "Don't repeat yourself. Reuse code and patterns wherever possible."
+  image: "/assets/images/dry.png"
+
+- title: "Heuristic 3: Fail Fast"
+  body: "Detect errors early in the system lifecycle to prevent cascading failures."
+  image: ""

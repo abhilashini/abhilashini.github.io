@@ -1,0 +1,29 @@
+- type: github
+  title: "System Patterns Repo"
+  description: "A curated repository of reusable system design patterns."
+  url: "https://github.com/yourprofile/system-patterns"
+
+- type: pdf
+  title: "Consolidation Whitepaper"
+  description: "A PDF summarizing the structured consolidation of design principles."
+  url: "/assets/docs/consolidation.pdf"
+
+- type: github
+  title: "Resilient Systems Examples"
+  description: "Practical examples of resilient system architectures."
+  url: "https://github.com/yourprofile/resilient-systems"
+
+- type: github
+  title: "System Design Examples Repo"
+  description: "A GitHub repository containing example diagrams and notes for system design problems."
+  url: "https://github.com/example/system-design"
+
+- type: pdf
+  title: "System Design PDF Notes"
+  description: "Downloadable PDF containing detailed system design notes."
+  url: "/assets/pdf/system_design_notes.pdf"
+
+- type: github
+  title: "Microservices Templates"
+  description: "Repository with starter templates for microservices projects."
+  url: "https://github.com/example/microservices-templates"
