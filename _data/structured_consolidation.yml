@@ -1,29 +1,48 @@
-- type: github
-  title: "System Patterns Repo"
-  description: "A curated repository of reusable system design patterns."
-  url: "https://github.com/yourprofile/system-patterns"
+- type: article
+  title: "System Patterns Atlas"
+  description: >
+    An opinionated collection of system design patterns observed across
+    large-scale platforms, annotated with trade-offs, failure modes,
+    and real deployment constraints. Includes diagrams, notes, and
+    evolving commentary rather than polished templates.
+  url: "medium.com/@abhilashini/system-patterns-atlas-7f4b3d4e5c2f"
 
 - type: pdf
-  title: "Consolidation Whitepaper"
-  description: "A PDF summarizing the structured consolidation of design principles."
-  url: "/assets/docs/consolidation.pdf"
+  title: "Structured Consolidation: A Working Paper"
+  description: >
+    A long-form working paper that documents how disparate system design
+    ideas were progressively consolidated into a smaller, reusable set
+    of principles. Focuses on synthesis, not prescription.
+  url: "/assets/docs/structured-consolidation-working-paper.pdf"
 
 - type: github
-  title: "Resilient Systems Examples"
-  description: "Practical examples of resilient system architectures."
-  url: "https://github.com/yourprofile/resilient-systems"
+  title: "Resilient Systems Case Notes"
+  description: >
+    A set of loosely structured case notes drawn from production systems
+    that experienced partial failure. Each entry focuses on what broke,
+    what held, and which assumptions turned out to be incorrect.
+  url: "https://github.com/abhilashini/resilient-systems-case-notes"
 
 - type: github
-  title: "System Design Examples Repo"
-  description: "A GitHub repository containing example diagrams and notes for system design problems."
-  url: "https://github.com/example/system-design"
+  title: "System Design Interview Artifacts"
+  description: >
+    Diagrams, sketches, and written walkthroughs created while reasoning
+    through open-ended system design problems. Not optimized for
+    interviews, but for clarity of thought and constraint discovery.
+  url: "https://github.com/abhilashini/system-design-artifacts"
 
 - type: pdf
-  title: "System Design PDF Notes"
-  description: "Downloadable PDF containing detailed system design notes."
-  url: "/assets/pdf/system_design_notes.pdf"
+  title: "Notes on System Boundaries and Interfaces"
+  description: >
+    A concise PDF exploring how system boundaries emerge over time,
+    how interfaces harden or erode, and why many scalability problems
+    are boundary problems in disguise.
+  url: "/assets/docs/system-boundaries-and-interfaces.pdf"
 
 - type: github
-  title: "Microservices Templates"
-  description: "Repository with starter templates for microservices projects."
-  url: "https://github.com/example/microservices-templates"
+  title: "Microservices Skeletons and Anti-Patterns"
+  description: >
+    Starter project skeletons paired with explicit anti-patterns.
+    Each template includes a corresponding example of how the same
+    structure fails when misapplied or scaled without care.
+  url: "https://github.com/abhilashini/microservices-skeletons"

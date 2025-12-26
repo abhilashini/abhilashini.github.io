@@ -33,6 +33,37 @@ body {
 }
 
 /* -----------------------------
+   Global link interaction
+----------------------------- */
+
+a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.15em;
+
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.18s ease;
+}
+
+a:hover::after,
+a:focus-visible::after,
+a:active::after {
+  transform: scaleX(1);
+}
+
+/* -----------------------------
    Layout
 ----------------------------- */
 
@@ -55,7 +86,8 @@ body {
 
 .intro-banner {
   background-color: var(--accent-primary);
-  padding: 2rem 0; /* reduced height */
+  padding: 2rem 0;
+  /* reduced height */
 }
 
 .intro-line {
@@ -118,16 +150,7 @@ body {
 
 .conceptual-nav a {
   color: var(--accent-primary);
-  text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px solid currentColor;
-  padding: 0.05em 0.15em;
-  margin: 0 -0.15em;
-}
-
-.conceptual-nav a:hover,
-.conceptual-nav a:focus {
-  background-color: rgba(15, 167, 74, 0.12);
 }
 
 .terminal-mark::after {
@@ -178,8 +201,7 @@ body {
 }
 
 .profile-links a:hover {
-  color: var(--text-primary);
-  text-decoration: underline;
+  color: var(--text-muted);
 }
 
 /* -----------------------------
@@ -376,14 +398,15 @@ body {
 ============================ */
 
 .section.structured-consolidation {
-  padding: 4rem 2.5rem 6rem;
+  padding: 4rem 1.5rem 6rem;
 }
 
 .structured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 340px));
-  gap: 2.5rem;
-  align-items: start;
+  column-width: 240px;
+  column-gap: 2rem;
+
+  max-width: calc(240px * 3 + 2rem * 2);
+  margin: 0 auto;
 }
 
 /* ============================
@@ -391,22 +414,21 @@ body {
 ============================ */
 
 .consolidation-tile {
-  padding: 1.5rem 1.5rem 1.75rem;
-  border: 1px solid var(--text-primary);
-  background-color: var(--bg-primary);
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
-/* PDF variant */
+.consolidation-tile.type-pdf .tile-title {
+  box-shadow: inset 0 -0.4em 0 rgba(15, 167, 74, 0.18);
+}
 
-.consolidation-tile.type-pdf {
-  background-color: color-mix(
-    in srgb,
-    var(--accent-primary) 6%,
-    var(--bg-primary)
-  );
+
+.consolidation-tile.type-pdf .tile-header {
+  margin-bottom: 0.6rem;
 }
 
 /* Header */
@@ -414,42 +436,42 @@ body {
 .tile-header {
   display: flex;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-bottom: 0.75rem;
-}
-
-.tile-icon {
-  font-size: 0.85rem;
-  opacity: 0.7;
 }
 
 .tile-title {
   font-size: 0.95rem;
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 /* Body */
 
 .tile-description {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
   font-size: 0.9rem;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
 }
 
 /* Link */
 
 .tile-link {
-  align-self: flex-start;
-  font-size: 0.85rem;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  margin-top: 0.75rem;
+  padding-top: 0.4rem;
+
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+
+  color: var(--text-muted);
 }
 
-.tile-link:hover {
-  color: var(--accent-primary);
-  border-color: var(--accent-primary);
+.consolidation-tile:hover .tile-link {
+  color: var(--text-muted);
 }
+
 
 /* ============================
    Cross-domain heuristics
