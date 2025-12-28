@@ -4,7 +4,7 @@
 
 :root {
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
+  --font-serif: Georgia, "Times New Roman", serif;
   --bg-primary: #fbfbf9;
   --text-primary: #1a1a1a;
   --text-muted: #4a4a4a;
@@ -472,81 +472,236 @@ a:active::after {
   color: var(--text-muted);
 }
 
-
 /* ============================
    Cross-domain heuristics
 ============================ */
 
 .section.cross-domain-heuristics {
-  padding: 4rem 3rem 6rem;
+  padding: 4rem 2rem 6rem;
 }
 
-/* List */
+/* Bento grid system */
+.heuristics-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  grid-auto-flow: dense;
 
-.heuristics-list {
+  max-width: calc(4 * 260px + 3 * 2rem);
+  margin: 0 auto;
+}
+
+/* Block base */
+.heuristic-block {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background-color: var(--bg-primary);
 }
 
-/* Row */
-
-.heuristic-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
-  align-items: start;
-  column-gap: 3rem;
+/* Layout variants */
+.layout-1x1 {
+  aspect-ratio: 1 / 1;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
-/* Text */
+.layout-2x1 {
+  grid-column: span 2;
+  grid-row: span 1;
+  min-height: 260px;
+}
 
-.heuristic-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+.layout-1x2 {
+  grid-column: span 1;
+  grid-row: span 2;
+  min-height: 520px;
+}
+
+.layout-2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Media */
+.heuristic-media img {
+  width: 100%;
+  height: auto;
+  display: block;
   margin-bottom: 0.75rem;
+}
+
+/* Content */
+.heuristic-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Gravity behavior */
+.layout-2x2,
+.layout-1x2 {
+  justify-content: flex-end;
+}
+
+.layout-2x2 .heuristic-content,
+.layout-1x2 .heuristic-content {
+  padding-top: 1.5rem;
+}
+
+.layout-2x2,
+.layout-2x1,
+.layout-1x2 {
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.045);
+}
+
+/* Typography */
+.heuristic-lead {
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  margin: 0;
 }
 
 .heuristic-body {
   font-size: 0.95rem;
   line-height: 1.7;
-  max-width: 58ch;
-  position: relative;
-}
-
-/* End glyph */
-
-.heuristic-end {
-  display: inline-block;
-  width: 0.45rem;
-  height: 0.45rem;
-  background-color: var(--accent-primary);
-  margin-left: 0.1rem;
-  vertical-align: baseline;
-}
-
-/* Visual */
-
-.heuristic-visual {
-  justify-self: end;
-  max-width: 220px;
-  opacity: 0.85;
-}
-
-.heuristic-visual img {
-  width: 100%;
-  height: auto;
-  display: block;
+  letter-spacing: -0.005em;
+  margin: 0;
 }
 
 /* Responsive */
+@media (max-width: 1100px) {
+  .heuristics-bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-@media (max-width: 900px) {
-  .heuristic-row {
+@media (max-width: 800px) {
+  .heuristics-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .heuristics-bento {
     grid-template-columns: 1fr;
   }
+}
 
-  .heuristic-visual {
-    margin-top: 1.5rem;
-    justify-self: start;
-  }
+/* ============================
+   Reading intent: typography
+============================ */
+
+/* Base reset: keep everything calm */
+.heuristic-block {
+  font-family: inherit;
+}
+
+/* All non-title-only blocks stay sans-serif */
+.heuristic-block:not(.type-title-only) .heuristic-lead {
+  font-family: var(--font-sans);
+}
+
+/* --------------------------------
+   TITLE-ONLY BLOCKS
+   Editorial pause / anchor
+-------------------------------- */
+
+.heuristic-block.type-title-only {
+  justify-content: flex-end;
+}
+
+.heuristic-block.type-title-only .heuristic-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+
+  font-size: 2.5rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+
+  color: var(--text-primary);
+}
+
+.heuristic-block.type-title-only .heuristic-body {
+  display: none;
+}
+
+/* --------------------------------
+   TITLE + TEXT (no image)
+   Reflective, explanatory
+-------------------------------- */
+
+.heuristic-block.type-title-text .heuristic-lead {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.95rem;
+
+  color: var(--text-muted);
+}
+
+.heuristic-block.type-title-text .heuristic-body {
+  font-size: 0.95rem;
+}
+
+/* --------------------------------
+   IMAGE + TITLE (+ optional text)
+   Caption-like hierarchy
+-------------------------------- */
+
+.heuristic-block.type-image-title .heuristic-lead,
+.heuristic-block.type-image-title-text .heuristic-lead {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  color: var(--text-muted);
+}
+
+.heuristic-block.type-image-title .heuristic-body {
+  display: none;
+}
+
+/* --------------------------------
+   IMAGE + TEXT (no title)
+   Observational / documentary
+-------------------------------- */
+
+.heuristic-block.type-image-text .heuristic-body {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------
+   TEXT-ONLY (no title)
+   Pure thought
+-------------------------------- */
+
+.heuristic-block.type-text-only .heuristic-lead {
+  display: none;
+}
+
+.heuristic-block.type-text-only .heuristic-body {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* --------------------------------
+   IMAGE-ONLY
+   Pure visual
+-------------------------------- */
+
+.heuristic-block.type-image-only {
+  padding: 0;
+}
+
+.heuristic-block.type-image-only .heuristic-content {
+  display: none;
+}
+
+.heuristic-block.type-image-only .heuristic-media img {
+  margin-bottom: 0;
 }

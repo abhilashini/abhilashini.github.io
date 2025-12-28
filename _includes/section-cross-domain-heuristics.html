@@ -1,25 +1,40 @@
 <section class="section cross-domain-heuristics">
+  <div class="heuristics-bento">
 
-  <div class="heuristics-list">
     {% for item in site.data.cross_domain_heuristics %}
-      <article class="heuristic-row">
-
-        <div class="heuristic-text">
-          <h2 class="heuristic-title">{{ item.title }}</h2>
-          <p class="heuristic-body">
-            {{ item.body }}
-            <span class="heuristic-end"></span>
-          </p>
-        </div>
+      <article
+        class="
+          heuristic-block
+          type-{{ item.type }}
+          {% case item.layout %}
+            {% when 'wide' %}layout-2x1
+            {% when 'tall' %}layout-1x2
+            {% when 'large' %}layout-2x2
+            {% else %}layout-1x1
+          {% endcase %}
+          {% if item.image %}has-image{% else %}text-only{% endif %}
+        "
+      >
 
         {% if item.image %}
-          <div class="heuristic-visual">
+          <div class="heuristic-media">
             <img src="{{ item.image }}" alt="" />
+          </div>
+        {% endif %}
+
+        {% if item.title or item.body %}
+          <div class="heuristic-content">
+            {% if item.title %}
+              <p class="heuristic-lead">{{ item.title }}</p>
+            {% endif %}
+            {% if item.body %}
+              <p class="heuristic-body">{{ item.body }}</p>
+            {% endif %}
           </div>
         {% endif %}
 
       </article>
     {% endfor %}
-  </div>
 
+  </div>
 </section>
