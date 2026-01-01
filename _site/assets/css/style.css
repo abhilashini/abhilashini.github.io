@@ -144,7 +144,7 @@ a:active::after {
   margin-top: 3rem;
 }
 
-.conceptual-nav p {
+.conceptual-nav .nav-full p {
   margin: 0;
   font-size: 1rem;
 }
@@ -354,7 +354,7 @@ a:active::after {
   display: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 693px) {
   .conceptual-nav .nav-full {
     display: none;
   }
@@ -366,7 +366,19 @@ a:active::after {
   #persistent-nav .conceptual-nav .nav-compact {
     font-size: 0.9rem;
     line-height: 1.4;
-    text-align: center;
+    text-align: left;
+  }
+}
+
+@media (min-width: 694px) and (max-width: 899px) {
+  #persistent-nav .conceptual-nav .nav-full{
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1106px) {
+  #persistent-nav .conceptual-nav .nav-full{
+    font-size: 0.8rem;
   }
 }
 
