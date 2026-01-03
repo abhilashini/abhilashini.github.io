@@ -58,56 +58,125 @@
   <div class="system-design-inner">
     <div class="system-design-columns">
       
-        <article class="system-essay ">
-          <h2 class="essay-title">Scalable Architecture Patterns</h2>
-          <div class="essay-body">
-            <p>Understanding how to design systems that scale efficiently is crucial for modern applications.</p>
+        <article class="system-essay">
+
+          
+            <h2 class="essay-title">System Design as Constraint Negotiation</h2>
+          
+
+          <div class="essay-body prose">
+            <p>System design is less about selecting the right tools and more about understanding the <strong>shape of constraints</strong> that surround a problem. Every architectural decision is a negotiation between latency, cost, correctness, operability, and human comprehension.</p>
+
+<p>What often appears as complexity is simply <strong>misaligned constraints surfacing late</strong>. Systems fail not because they are large, but because they encode assumptions that stop holding.</p>
+
+<blockquote>
+  <p>A well-designed system is one where constraints are made explicit early, not optimized away.</p>
+</blockquote>
 
           </div>
+
         </article>
       
-        <article class="system-essay ">
-          <h2 class="essay-title">Microservices vs Monoliths</h2>
-          <div class="essay-body">
-            <p>Comparing microservices architecture with traditional monolithic design, pros and cons.</p>
+        <article class="system-essay">
+
+          
+            <h2 class="essay-title">Decomposition and Scalability</h2>
+          
+
+          <div class="essay-body prose">
+            <p>There is a persistent temptation to treat scalability as a property that can be bolted on. In reality, scalability is an emergent behavior of how work is decomposed and coordinated.</p>
+
+<p><strong>Decomposition without clarity creates more surface area for failure.</strong> Splitting a system into services does not reduce complexity unless the boundaries are meaningful and stable.</p>
+
+<blockquote>
+  <p>Scalability is not about handling more load. It is about failing in predictable ways.</p>
+</blockquote>
+
+<p>This is why many distributed systems appear elegant in diagrams but behave poorly under real operational pressure.</p>
 
           </div>
+
         </article>
       
-        <article class="system-essay ">
-          <h2 class="essay-title">Caching Strategies</h2>
-          <div class="essay-body">
-            <p>A guide to caching strategies to improve performance and reduce server load.</p>
+        <article class="system-essay">
+
+          
+            <h2 class="essay-title">Events, Time, and Causality</h2>
+          
+
+          <div class="essay-body prose">
+            <p>Event-driven systems force designers to confront time explicitly. Ordering, duplication, and delay are not edge cases; they are the default state of the world.</p>
+
+<p>When time is ignored, systems drift into accidental coupling. <strong>Causality becomes implicit, and debugging becomes archaeology.</strong></p>
+
+<pre><code class="language-formula">eventual_consistency = acceptance_of_delay + tolerance_for_reordering
+</code></pre>
+
+<p>Treating events as immutable facts rather than triggers leads to architectures that are easier to reason about and evolve.</p>
 
           </div>
+
         </article>
       
-        <article class="system-essay ">
-          <h2 class="essay-title">Scalable Microservices Architecture</h2>
-          <div class="essay-body">
-            <p>This essay discusses how to design scalable microservices with proper API contracts and database partitioning.</p>
+        <article class="system-essay">
+
+          
+            <h2 class="essay-title">Caching as a Statement of Trust</h2>
+          
+
+          <div class="essay-body prose">
+            <blockquote>
+  <p>The hardest bugs are not caused by stale data, but by forgotten assumptions about freshness.</p>
+</blockquote>
+
+<p>Caching is often described as a performance optimization, but its deeper impact is on correctness and trust. A cache is a statement about how stale you are willing to be.</p>
+
+<p><strong>Every cache encodes a lie you have agreed to tolerate.</strong> The danger lies not in the lie itself, but in forgetting that it exists.</p>
+
+<p>Effective caching strategies surface these assumptions instead of hiding them behind abstraction layers.</p>
 
           </div>
+
         </article>
       
-        <article class="system-essay column-break">
-          <h2 class="essay-title">Event-Driven Design Patterns</h2>
-          <div class="essay-body">
-            <p>Exploring the use of message queues, event streams, and pub-sub patterns to decouple services and improve responsiveness.</p>
+        <article class="system-essay">
+
+          
+            <h2 class="essay-title">Operational Documentation and System Clarity</h2>
+          
+
+          <div class="essay-body prose">
+            <p>Documentation is often treated as an afterthought, yet it is one of the strongest signals of system health. Clear documentation indicates clear thinking.</p>
+
+<p><strong>A system that cannot be explained cannot be safely changed.</strong> This is not a communication problem; it is a design problem. Design clarity precedes operational stability.</p>
+
+<p>Over time, systems decay not because they are modified, but because their rationale is lost.</p>
 
           </div>
+
         </article>
       
-        <article class="system-essay ">
-          <h2 class="essay-title">Caching Strategies</h2>
-          <div class="essay-body">
-            <p>A guide to implementing caching layers using Redis or Memcached to reduce database load and latency.</p>
+        <article class="system-essay">
+
+          
+            <h2 class="essay-title">Failure as a First-Class Input</h2>
+          
+
+          <div class="essay-body prose">
+            <p>Designing for failure is not pessimism; it is realism. Distributed systems fail in partial, asymmetric, and non-repeatable ways.</p>
+
+<p><strong>If failure handling is not visible in the design, it is merely deferred to runtime.</strong> This is where operational toil is born.</p>
+
+<pre><code class="language-formula">system_resilience ≈ recovery_time × blast_radius
+</code></pre>
+
+<p>Systems that recover quickly from small failures outperform systems that attempt to prevent all failure.</p>
 
           </div>
+
         </article>
       
     </div>
-
   </div>
 </section>
   </main>

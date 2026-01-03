@@ -386,57 +386,211 @@ a:active::after {
    System design section
 ============================ */
 
-.section.system-design {
-  padding: 4rem 2.5rem 6rem;
+.system-design {
+  padding: 4rem 3.5rem 0;
 }
 
-.system-design-inner {
-  width: 100%;
+@media (max-width: 900px) {
+  .system-design { padding: 3rem 2rem 0; }
 }
 
 .system-design-columns {
-  column-count: 3;
-  column-gap: 3rem;
+  column-count: 2;
+  column-gap: 4rem;
+  column-fill: balance;
+}
+
+@media (min-width: 1300px) {
+  .system-design-columns { column-count: 3; column-gap: 5rem; }
+}
+
+@media (max-width: 640px) {
+  .system-design-columns { column-count: 1; column-gap: 0; }
 }
 
 .system-essay {
   break-inside: avoid;
-  margin-bottom: 3rem;
-}
-
-.system-essay.column-break {
-  break-before: column;
+  margin-bottom: 5rem;
+  position: relative;
 }
 
 .essay-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 0 0 1.15rem 0;
+  text-wrap: balance;
+  position: relative;
 }
 
-.essay-body {
+.system-design .prose {
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   line-height: 1.65;
+  color: var(--text-primary);
 }
 
-/* ============================
-   Responsive adjustments
-============================ */
+.system-design .prose p { margin: 0 0 0.85rem 0; }
 
-@media (max-width: 1024px) {
-  .system-design-columns {
-    column-count: 2;
-  }
+.system-design .prose blockquote {
+  margin: 2rem 0;
+  padding: 0 1.5rem;
+  border: none;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-muted);
 }
 
-@media (max-width: 640px) {
-  .system-design-columns {
-    column-count: 1;
-  }
+.system-design .prose pre > code.language-formula {
+  display: block;
+  width: 100%; 
+  padding: 0.2rem; 
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--accent-primary);
+  text-align: center;
+  white-space: pre-wrap;
+  border: 3px solid var(--accent-primary);
+  border-radius: 0; 
+  box-sizing: border-box;
+}
 
-  #persistent-nav {
-    height: auto;
-    padding: 0.5rem 0;
+.system-essay::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--accent-primary);
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
+   EDITORIAL INTERVENTIONS (DECORATIVE ONLY)
+   Focus: Structural Drama & Gutter Utility
+   ============================================================ */
+
+/* 1. THE GUTTER SPINE: Every 2nd Essay
+   A vertical "ruler" that lives in the gutter.
+   It creates an architectural anchor for the column.
+*/
+.system-essay:nth-of-type(2n)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2.5rem; /* Dead center of the 5rem gutter */
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    var(--accent-primary) 0%, 
+    var(--accent-primary) 20%, 
+    transparent 20%, 
+    transparent 100%);
+  background-size: 1px 10px; /* Creates a dashed 'ruler' effect */
+  opacity: 0.3;
+}
+
+/* 2. THE FLOATING APERTURE: Every 3rd Essay
+   A large, thin-stroked circle that is offset and cropped.
+   It breaks the rigid verticality of the columns.
+*/
+.system-essay:nth-of-type(3n)::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -10%;
+  right: -5rem; /* Bleeds deep into the next column or margin */
+  width: 280px;
+  height: 280px;
+  border: 1px solid var(--accent-primary);
+  border-radius: 50%;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* 3. THE TEXTURE BLOCK: Behind Blockquotes
+   Adds a diagonal "etching" behind quotes to make them feel 
+   like a 'draft' or 'technical note'.
+*/
+.system-design .prose blockquote::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--accent-primary) 0,
+    var(--accent-primary) 0.5px,
+    transparent 0.5px,
+    transparent 8px
+  );
+  opacity: 0.07;
+}
+
+/* 4. THE MARGINAL COORDINATE: Every 4th Essay
+   A small 'degree' or 'coordinate' mark that sits 
+   high above the title in the margin.
+*/
+.system-essay:nth-of-type(4n) .essay-title::before {
+  content: "0" + attr(data-index); /* If you add data-index, or just use a fixed char */
+  content: "°";
+  position: absolute;
+  top: -3rem;
+  left: -1rem;
+  font-family: ui-monospace, monospace;
+  font-size: 2rem;
+  font-weight: 200;
+  color: var(--accent-primary);
+  opacity: 0.4;
+}
+
+/* 5. THE STRUCTURAL BRIDGE: Every 5th Essay
+   A 1px line that shoots out from the title into the gutter.
+*/
+.system-essay:nth-of-type(5n) .essay-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5rem; /* Shoots across the gutter */
+  width: 4rem;
+  height: 1px;
+  background: var(--accent-primary);
+  opacity: 0.8;
+}
+
+/* 6. THE ANGULAR BRACKET: Bottom Right of specific essays
+   Frames the 'exit' of the thought.
+*/
+.system-essay:nth-of-type(6n)::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  width: 2rem;
+  height: 2rem;
+  border-right: 2px solid var(--accent-primary);
+  border-bottom: 2px solid var(--accent-primary);
+  opacity: 0.4;
+}
+
+/* Mobile: Clean the canvas to prioritize the single column flow */
+@media (max-width: 800px) {
+  .system-essay::before,
+  .system-essay::after,
+  .essay-title::before,
+  .essay-title::after,
+  .system-design .prose blockquote::before {
+    display: none !important;
   }
 }
 
@@ -637,9 +791,10 @@ a:active::after {
 
 @media (max-width: 500px) {
   .heuristic-block {
-    padding-bottom: 1.25rem; /* down from 1.5rem */
+    padding-bottom: 1.25rem;
+    /* down from 1.5rem */
   }
-  
+
   .heuristics-bento {
     grid-template-columns: 1fr;
     grid-auto-flow: row;

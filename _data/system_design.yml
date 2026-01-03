@@ -1,23 +1,59 @@
-- title: "Scalable Architecture Patterns"
-  body: "Understanding how to design systems that scale efficiently is crucial for modern applications."
-  break: false
+- title: "System Design as Constraint Negotiation"
+  body: |
+    System design is less about selecting the right tools and more about understanding the **shape of constraints** that surround a problem. Every architectural decision is a negotiation between latency, cost, correctness, operability, and human comprehension.
 
-- title: "Microservices vs Monoliths"
-  body: "Comparing microservices architecture with traditional monolithic design, pros and cons."
-  break: false
+    What often appears as complexity is simply **misaligned constraints surfacing late**. Systems fail not because they are large, but because they encode assumptions that stop holding.
 
-- title: "Caching Strategies"
-  body: "A guide to caching strategies to improve performance and reduce server load."
-  break: false
+    > A well-designed system is one where constraints are made explicit early, not optimized away.
 
-- title: "Scalable Microservices Architecture"
-  body: "This essay discusses how to design scalable microservices with proper API contracts and database partitioning."
-  break: false
+- title: "Decomposition and Scalability"
+  body: |
+    There is a persistent temptation to treat scalability as a property that can be bolted on. In reality, scalability is an emergent behavior of how work is decomposed and coordinated.
 
-- title: "Event-Driven Design Patterns"
-  body: "Exploring the use of message queues, event streams, and pub-sub patterns to decouple services and improve responsiveness."
-  break: true
+    **Decomposition without clarity creates more surface area for failure.** Splitting a system into services does not reduce complexity unless the boundaries are meaningful and stable.
 
-- title: "Caching Strategies"
-  body: "A guide to implementing caching layers using Redis or Memcached to reduce database load and latency."
-  break: false
+    > Scalability is not about handling more load. It is about failing in predictable ways.
+
+    This is why many distributed systems appear elegant in diagrams but behave poorly under real operational pressure.
+
+- title: "Events, Time, and Causality"
+  body: |
+    Event-driven systems force designers to confront time explicitly. Ordering, duplication, and delay are not edge cases; they are the default state of the world.
+
+    When time is ignored, systems drift into accidental coupling. **Causality becomes implicit, and debugging becomes archaeology.**
+
+    ```formula
+    eventual_consistency = acceptance_of_delay + tolerance_for_reordering
+    ```
+
+    Treating events as immutable facts rather than triggers leads to architectures that are easier to reason about and evolve.
+
+- title: "Caching as a Statement of Trust"
+  body: |
+    > The hardest bugs are not caused by stale data, but by forgotten assumptions about freshness.
+
+    Caching is often described as a performance optimization, but its deeper impact is on correctness and trust. A cache is a statement about how stale you are willing to be.
+
+    **Every cache encodes a lie you have agreed to tolerate.** The danger lies not in the lie itself, but in forgetting that it exists.
+
+    Effective caching strategies surface these assumptions instead of hiding them behind abstraction layers.
+
+- title: "Operational Documentation and System Clarity"
+  body: |
+    Documentation is often treated as an afterthought, yet it is one of the strongest signals of system health. Clear documentation indicates clear thinking.
+
+    **A system that cannot be explained cannot be safely changed.** This is not a communication problem; it is a design problem. Design clarity precedes operational stability.
+
+    Over time, systems decay not because they are modified, but because their rationale is lost.
+
+- title: "Failure as a First-Class Input"
+  body: |
+    Designing for failure is not pessimism; it is realism. Distributed systems fail in partial, asymmetric, and non-repeatable ways.
+
+    **If failure handling is not visible in the design, it is merely deferred to runtime.** This is where operational toil is born.
+
+    ```formula
+    system_resilience ≈ recovery_time × blast_radius
+    ```
+
+    Systems that recover quickly from small failures outperform systems that attempt to prevent all failure.
