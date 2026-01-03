@@ -57,3 +57,59 @@
     ```
 
     Systems that recover quickly from small failures outperform systems that attempt to prevent all failure.
+
+- title: "The Fallacy of the Infinite Buffer"
+  body: |
+    In high-throughput systems, buffers are often viewed as a safety net against spikes. However, an unmanaged buffer is simply a **latency debt waiting to be collected**. 
+
+    When buffers grow without bounds, the system stops being responsive and starts being "zombie-like"—consuming resources while providing stale outputs. **Backpressure is a communication protocol**, not a failure state.
+
+    > A system that says 'no' under load is more reliable than a system that says 'maybe' forever.
+
+- title: "State as a Liability"
+  body: |
+    Every bit of state a system maintains is a bit that must be synchronized, backed up, and eventually recovered during a failure. Statelessness is the ultimate architectural luxury.
+
+    **State is the gravity of software architecture.** It pulls services together, limits mobility, and complicates scaling. Moving state to the edges or externalizing it to specialized stores is often the first step toward system clarity.
+
+    ```formula
+    operational_complexity ∝ (amount_of_state × synchronization_frequency)
+    ```
+
+    The goal of agnostic design is to minimize the surface area of state so the logic remains portable.
+
+- title: "Observability as Conversation"
+  body: |
+    Monitoring tells you if a system is healthy; observability tells you why it is behaving the way it is. It is the difference between a pulse check and a conversation.
+
+    **Systems do not speak in dashboards; they speak in traces and high-cardinality events.** Designing for observability means ensuring that the system emits enough context to reconstruct a request's journey through time.
+
+    > If you cannot ask new questions of your system without shipping new code, you do not have observability.
+
+- title: "The Principle of Least Surprise"
+  body: |
+    Human-centered system design prioritizes predictability over cleverness. A clever architecture often hides "magic" that becomes a nightmare during a 3:00 AM incident.
+
+    **The cognitive load of a system is its most hidden cost.** When components behave in non-obvious ways—due to hidden defaults or complex inheritance—the humans maintaining it lose their mental model of the system.
+
+    ```formula
+    system_safety ≈ predictability / cognitive_friction
+    ```
+
+    Architecture should be boring. The excitement should be in the value the system provides, not in how it works.
+
+- title: "Interface Stability and Evolutionary Design"
+  body: |
+    The strength of a system is measured by how much it can change internally without breaking its external promises. Interfaces should be **wide on what they accept and narrow on what they emit**.
+
+    **A rigid interface is a design tombstone.** It prevents evolution and forces downstream consumers to build "adapter layers" that eventually become their own source of technical debt.
+
+    > Design your interfaces for the version of the system you haven't built yet.
+
+- title: "Redundancy vs. Diversity"
+  body: |
+    Running two copies of the same buggy software is not redundancy; it is a synchronized failure waiting to happen. True resilience requires **architectural diversity**.
+
+    **Redundancy handles hardware failure; diversity handles logic failure.** This means varying execution paths, different data stores, or even heterogeneous deployment environments to avoid "common-mode" failures.
+
+    > A system that is redundant but identical is merely twice as expensive and equally fragile.
