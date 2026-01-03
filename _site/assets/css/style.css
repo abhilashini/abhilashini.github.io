@@ -451,20 +451,79 @@ a:active::after {
   color: var(--text-muted);
 }
 
-.system-design .prose pre > code.language-formula {
+.system-design .prose pre {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  position: relative;
   display: block;
-  width: 100%; 
-  padding: 0.2rem; 
-  font-family: ui-monospace, Menlo, monospace;
-  font-size: 0.85rem;
-  font-weight: 700;
-  line-height: 1.4;
+  
+  /* 1. LIGHT BACKGROUND TINT 
+     Alpha adjusted to 0.04 as requested.
+  */
+  background: rgba(15, 167, 74, 0.04) !important;
+  
+  border: none !important;
+  border-radius: 0;
+  overflow: visible; 
+}
+
+.system-design .prose pre > code.language-formula,
+.system-design .prose pre > code.language-code {
+  display: block;
+  /* Reduced padding to keep the block 'snug' and dense */
+  padding: 0.75rem 1.5rem;
+  
+  /* Typography */
+  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  font-size: 0.9rem;
+  font-weight: 450;
+  line-height: 1.5;
   color: var(--accent-primary);
-  text-align: center;
+  text-align: left;
   white-space: pre-wrap;
-  border: 2px solid var(--accent-primary);
-  border-radius: 0; 
-  box-sizing: border-box;
+
+  /* Resetting all inherited styles */
+  border: none !important;
+  background: transparent !important;
+}
+
+/* 2. THE HAIRLINE CROP MARKS (Corner Trim)
+   Precision 1px L-brackets in accent primary color.
+*/
+.system-design .prose pre::before,
+.system-design .prose pre::after {
+  content: "";
+  position: absolute;
+  width: 8px;   
+  height: 8px;  
+  border: 1px solid var(--accent-primary);
+  background: transparent !important;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Top Left Crop Mark */
+.system-design .prose pre::before {
+  top: 4px;    
+  left: 4px;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+}
+
+/* Bottom Right Crop Mark */
+.system-design .prose pre::after {
+  bottom: 4px;
+  right: 4px;
+  border-left: 0 !important;
+  border-top: 0 !important;
+}
+
+/* 3. RESPONSIVE OPTIMIZATION */
+@media (max-width: 640px) {
+  .system-design .prose pre > code.language-formula {
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+  }
 }
 
 .system-essay::after {
