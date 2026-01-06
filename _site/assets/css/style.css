@@ -2,19 +2,13 @@
    Design tokens
 ----------------------------- */
 
-:root {
+/* :root {
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: Georgia, "Times New Roman", serif;
-  --bg-primary: #fbfbf9;
-  --text-primary: #1a1a1a;
-  --text-muted: #4a4a4a;
-
-  --accent-primary: #0FA74A;
-}
-
-/* -----------------------------
-   Reset
------------------------------ */
+  --bg-primary: #F9F7F2;
+  --text-primary: #1A1816;
+  --text-secondary: #6B6560;
+  --accent-primary: #D35400;
+} */
 
 * {
   box-sizing: border-box;
@@ -30,11 +24,90 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* -----------------------------
-   Global link interaction
------------------------------ */
+#page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.intro-banner {
+  height: 5rem;
+  background-color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+}
+
+.centered-column {
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* --- Master Layout Wrapper --- */
+#front-matter {
+  padding-top: 14vh;
+  padding-bottom: 10vh;
+  overflow-x: hidden;
+  /* Prevents stray line-bleeds from causing scroll */
+}
+
+.main-layout-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; 
+  gap: 4rem;
+  max-width: 1300px; /* Slightly wider to let the image breathe */
+  margin: 0 auto;
+  padding: 0 2rem;
+  align-items: start;
+}
+
+.content-side {
+  max-width: 60ch;
+  justify-self: end;
+}
+
+.visual-side {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.corner-anchor {
+  display: block;
+  width: 100%; 
+  height: auto;
+}
+
+/* --- Typography & Interaction --- */
+.intro-line {
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  color: var(--bg-primary);
+}
+
+.dropcap {
+  float: left;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.3rem 0.55rem;
+  margin: 0.15rem 0.5rem 0 0;
+  color: var(--bg-primary);
+  background-color: var(--accent-primary);
+}
+
+.intro-paragraph {
+  margin-top: 3rem;
+}
+
+.conceptual-nav {
+  margin-top: 3rem;
+}
 
 a {
   text-decoration: none;
@@ -47,11 +120,9 @@ a::after {
   position: absolute;
   left: 0;
   bottom: -0.15em;
-
   width: 100%;
   height: 1px;
   background-color: currentColor;
-
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.18s ease;
@@ -62,83 +133,6 @@ a:focus-visible::after,
 a:active::after {
   transform: scaleX(1);
 }
-
-/* -----------------------------
-   Layout
------------------------------ */
-
-#page {
-  width: 100%;
-  min-height: 100vh;
-}
-
-.reading-column {
-  max-width: 65ch;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-/* -----------------------------
-   Intro banner
------------------------------ */
-
-.intro-banner {
-  height: 5rem;
-  background-color: var(--accent-primary);
-  display: flex;
-  align-items: center;
-}
-
-.intro-line {
-  margin: 0;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
-  color: var(--bg-primary);
-}
-
-/* -----------------------------
-   Front matter
------------------------------ */
-
-#front-matter {
-  padding-top: 14vh;
-  padding-bottom: 10vh;
-}
-
-.intro-paragraph {
-  margin-top: 3rem;
-  font-size: 1rem;
-  color: var(--text-primary);
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 65ch;
-}
-
-.intro-paragraph::first-line {
-  font-weight: 500;
-}
-
-/* Drop cap – restored alignment + accent color */
-
-/* .dropcap {
-  float: left;
-  font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 1;
-  padding: 0.3rem 0.55rem;
-  margin-right: 0.5rem;
-  margin-top: 0.15rem;
-  color: var(--bg-primary);
-  background-color: var(--accent-primary);
-} */
-
-/* -----------------------------
-   Conceptual navigation
------------------------------ */
 
 .conceptual-nav {
   margin-top: 3rem;
@@ -159,8 +153,7 @@ a:active::after {
   display: inline-block;
   width: 0.45em;
   height: 0.45em;
-  margin-left: 0.2em;
-  vertical-align: middle;
+  margin-left: 0.4rem;
   background-color: var(--accent-primary);
   border-radius: 0.05em;
 }
@@ -173,19 +166,15 @@ a:active::after {
   margin-top: 3rem;
 }
 
-/* Capsule divider – final version */
-
 .footer-rule {
-  --h: 10px;
+  --h:7px;
   height: var(--h);
   width: 100%;
   border-radius: 999em;
-  background-color: var(--text-primary);
+  background-color: var(--accent-primary);
   transform: scaleY(0.4);
   transform-origin: center;
 }
-
-/* Profile links – lowercase restored */
 
 .profile-links {
   margin-top: 0;
@@ -198,11 +187,11 @@ a:active::after {
   letter-spacing: 0.04em;
   text-transform: lowercase;
   text-decoration: none;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .profile-links a:hover {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 /* -----------------------------
@@ -239,20 +228,11 @@ a:active::after {
   left: 1.25rem;
   font-size: 0.85rem;
   text-decoration: none;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .home-link:hover {
   color: var(--text-primary);
-}
-
-.corner-anchor {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 35%;
-  mix-blend-mode: darken;
-  z-index: 1000;
 }
 
 /* -----------------------------
@@ -274,7 +254,7 @@ a:active::after {
 ============================ */
 
 /* Anchor reset */
-.home-button {
+/* .home-button {
   position: absolute;
   left: 1.25rem;
   top: 50%;
@@ -289,7 +269,7 @@ a:active::after {
   text-decoration: none;
 }
 
-/* Kill underline artefact definitively */
+/* Kill underline artefact definitively 
 .home-button::after {
   display: none !important;
 }
@@ -305,7 +285,7 @@ a:active::after {
   transition: border-radius 0.25s ease, transform 0.25s ease;
 }
 
-/* Inner mark */
+/* Inner mark 
 .home-icon {
   position: absolute;
   top: 50%;
@@ -333,7 +313,7 @@ a:active::after {
 
 /* -----------------------------
    Hover interaction (desktop only)
------------------------------ */
+----------------------------- 
 
 @media (hover: hover) {
   .home-button:hover .home-shape {
@@ -380,7 +360,7 @@ a:active::after {
   #persistent-nav .conceptual-nav .nav-full {
     font-size: 0.8rem;
   }
-}
+}*/ 
 
 /* ============================
    System design section
@@ -391,7 +371,9 @@ a:active::after {
 }
 
 @media (max-width: 900px) {
-  .system-design { padding: 3rem 2rem 0; }
+  .system-design {
+    padding: 3rem 2rem 0;
+  }
 }
 
 .system-design-columns {
@@ -399,15 +381,22 @@ a:active::after {
   column-gap: 4rem;
   column-fill: balance;
 
-  counter-reset: system-ref; /* Initializes the counter */
+  counter-reset: system-ref;
+  /* Initializes the counter */
 }
 
 @media (min-width: 1300px) {
-  .system-design-columns { column-count: 3; column-gap: 5rem; }
+  .system-design-columns {
+    column-count: 3;
+    column-gap: 5rem;
+  }
 }
 
 @media (max-width: 640px) {
-  .system-design-columns { column-count: 1; column-gap: 0; }
+  .system-design-columns {
+    column-count: 1;
+    column-gap: 0;
+  }
 }
 
 .system-essay {
@@ -415,7 +404,8 @@ a:active::after {
   margin-bottom: 6rem;
   position: relative;
 
-  counter-increment: system-ref; /* Increments for every essay */
+  counter-increment: system-ref;
+  /* Increments for every essay */
 }
 
 .essay-title {
@@ -438,7 +428,9 @@ a:active::after {
   color: var(--text-primary);
 }
 
-.system-design .prose p { margin: 0 0 0.85rem 0; }
+.system-design .prose p {
+  margin: 0 0 0.85rem 0;
+}
 
 .system-design .prose blockquote {
   margin: 2rem 0;
@@ -448,7 +440,7 @@ a:active::after {
   font-style: italic;
   font-size: 1.05rem;
   line-height: 1.55;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .system-design .prose pre {
@@ -456,23 +448,23 @@ a:active::after {
   padding: 0;
   position: relative;
   display: block;
-  
+
   /* 1. LIGHT BACKGROUND TINT 
      Alpha adjusted to 0.04 as requested.
   */
-  background: rgba(15, 167, 74, 0.04) !important;
-  
+  background: rgba(var(--accent-primary-rgb), 0.04) !important;
+
   border: none !important;
   border-radius: 0;
-  overflow: visible; 
+  overflow: visible;
 }
 
-.system-design .prose pre > code.language-formula,
-.system-design .prose pre > code.language-code {
+.system-design .prose pre>code.language-formula,
+.system-design .prose pre>code.language-code {
   display: block;
   /* Reduced padding to keep the block 'snug' and dense */
   padding: 0.75rem 1.5rem;
-  
+
   /* Typography */
   font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
   font-size: 0.9rem;
@@ -494,8 +486,8 @@ a:active::after {
 .system-design .prose pre::after {
   content: "";
   position: absolute;
-  width: 8px;   
-  height: 8px;  
+  width: 8px;
+  height: 8px;
   border: 1px solid var(--accent-primary);
   background: transparent !important;
   z-index: 2;
@@ -504,7 +496,7 @@ a:active::after {
 
 /* Top Left Crop Mark */
 .system-design .prose pre::before {
-  top: 4px;    
+  top: 4px;
   left: 4px;
   border-right: 0 !important;
   border-bottom: 0 !important;
@@ -520,7 +512,7 @@ a:active::after {
 
 /* 3. RESPONSIVE OPTIMIZATION */
 @media (max-width: 640px) {
-  .system-design .prose pre > code.language-formula {
+  .system-design .prose pre>code.language-formula {
     padding: 1rem 1.25rem;
     font-size: 0.8rem;
   }
@@ -547,14 +539,14 @@ a:active::after {
   position: absolute;
   top: -2rem;
   bottom: -4rem;
-  left: -2.55rem; 
+  left: -2.55rem;
   width: 1px;
-  background: 
-    linear-gradient(to bottom, 
-      var(--accent-primary) 0px, var(--accent-primary) 1px, 
+  background:
+    linear-gradient(to bottom,
+      var(--accent-primary) 0px, var(--accent-primary) 1px,
       transparent 1px, transparent 12px),
-    linear-gradient(to bottom, 
-      var(--accent-primary) 0px, var(--accent-primary) 1px, 
+    linear-gradient(to bottom,
+      var(--accent-primary) 0px, var(--accent-primary) 1px,
       transparent 1px, transparent 4px);
   background-size: 1px 12px, 1px 4px;
   opacity: 0.25;
@@ -570,7 +562,7 @@ a:active::after {
   top: 0.1rem;
   font-family: ui-monospace, Menlo, Monaco, monospace;
   font-size: 0.5rem;
-  font-weight: 400; 
+  font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--accent-primary);
@@ -586,7 +578,7 @@ a:active::after {
   position: absolute;
   inset: -1rem;
   z-index: -1;
-  background-image: 
+  background-image:
     linear-gradient(to right, var(--accent-primary) 1px, transparent 1px),
     linear-gradient(to bottom, var(--accent-primary) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -611,7 +603,8 @@ a:active::after {
   content: "";
   position: absolute;
   bottom: 0.1rem;
-  left: -2.68rem; /* Aligned to spine */
+  left: -2.68rem;
+  /* Aligned to spine */
   width: 5px;
   height: 5px;
   background: var(--accent-primary);
@@ -642,17 +635,19 @@ a:active::after {
   content: "";
   position: absolute;
   top: 20%;
-  left: -2.75rem; 
+  left: -2.75rem;
   width: 6px;
   height: 6px;
   border: 1px solid var(--accent-primary);
   border-radius: 50%;
-  background: white; /* Replace with var(--bg-primary) if needed */
+  background: white;
+  /* Replace with var(--bg-primary) if needed */
   z-index: 1;
 }
 
 /* Responsive: Safeguard */
 @media (max-width: 800px) {
+
   .system-essay::before,
   .system-essay::after,
   .essay-title::before,
@@ -692,7 +687,7 @@ a:active::after {
 }
 
 .consolidation-tile.type-pdf .tile-title {
-  box-shadow: inset 0 -0.4em 0 rgba(15, 167, 74, 0.18);
+  box-shadow: inset 0 -0.4em 0 rgba(var(--accent-primary-rgb), 0.18);
 }
 
 
@@ -734,11 +729,11 @@ a:active::after {
   letter-spacing: 0.04em;
   text-transform: lowercase;
 
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .consolidation-tile:hover .tile-link {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 /* ============================
@@ -931,7 +926,7 @@ a:active::after {
   font-weight: 500;
   font-size: 0.95rem;
 
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .heuristic-block.type-title-text .heuristic-body {
@@ -949,7 +944,7 @@ a:active::after {
   font-weight: 500;
   font-size: 0.9rem;
 
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .heuristic-block.type-image-title .heuristic-body {
@@ -963,7 +958,7 @@ a:active::after {
 
 .heuristic-block.type-image-text .heuristic-body {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 /* --------------------------------
@@ -995,4 +990,398 @@ a:active::after {
 
 .heuristic-block.type-image-only .heuristic-media img {
   margin-bottom: 0;
+}
+
+/* ============================
+   De Stijl
+============================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+:root {
+  --m-red: #FF3B30;
+  --m-blue: #0055AA;
+  --m-yellow: #FFD700;
+  --m-black: #000000;
+  --m-white: #FFFFFF;
+  --line: 8px;
+  --font-main: 'Inter', sans-serif;
+}
+
+body { margin: 0; background: var(--m-black); height: 100vh; overflow: hidden; }
+.mondrian-canvas { display: flex; flex-direction: column; height: 100vh; padding: var(--line); gap: var(--line); box-sizing: border-box; }
+.cell { background: #FFF; position: relative; }
+.cell-red { background: var(--m-red); }
+.cell-blue { background: var(--m-blue); }
+.cell-yellow { background: var(--m-yellow); }
+.cell-black { background: var(--m-black); }
+
+/* Layout Logic */
+.header { height: 10vh; display: flex; align-items: center; padding-left: 2.5rem; }
+.header-title { font-family: var(--font-main); color: white; letter-spacing: 0.5em; font-size: 0.95rem; font-weight: 900; }
+.main-layout { flex: 1; display: grid; grid-template-columns: 1.25fr 45px 1fr; gap: var(--line); }
+.col-right { display: flex; flex-direction: column; gap: var(--line); }
+.blue-top { flex: 1; }
+.nav-bottom { flex: 1.5; }
+.col-left { display: flex; flex-direction: column; gap: var(--line); }
+.intro-block { flex: 1; }
+
+/* Geometry: Height is 50% of the Blue-Top cell */
+.assembly-row { height: calc(40vh * 0.5); display: grid; grid-template-columns: 1fr 1fr; gap: var(--line); }
+.squares-container { display: flex; gap: var(--line); }
+.squares-container .cell { flex: 1; aspect-ratio: 1/1; }
+
+.content-pad { padding: 3rem; }
+.flex-center { display: flex; align-items: center; height: 100%; }
+.flex-bottom { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+
+/* UNIFIED TYPOGRAPHY (INTER) */
+.body-text { 
+  font-family: var(--font-main); 
+  font-size: 1.15rem; 
+  font-weight: 500; /* Medium weight makes it feel stronger */
+  line-height: 1.6; 
+  color: #000; 
+  letter-spacing: -0.01em;
+  margin: 0; 
+}
+
+/* Red Sans-Serif Drop Cap */
+.body-text::first-letter {
+  font-weight: 900;
+  font-size: 3.8rem;
+  float: left;
+  line-height: 0.8; 
+  margin-right: 0.5rem;
+  color: var(--m-red);
+  padding-top: 7px; /* Precision alignment to cap-height */
+}
+
+.nav-text { 
+  font-family: var(--font-main); 
+  font-size: 1.3rem; 
+  font-weight: 700; 
+  line-height: 1.4; 
+}
+
+.art-link { color: var(--m-blue); text-decoration: underline; text-underline-offset: 4px; }
+.end-glyph { display: inline-block; width: 8px; height: 8px; background: var(--m-red); margin-left: 6px; }
+
+/* Footer */
+.footer-row { height: 10vh; display: flex; gap: var(--line); }
+.footer-link { 
+  flex: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  font-family: var(--font-main); 
+  font-weight: 700; 
+  text-transform: lowercase;
+}
+.anchor-square { height: 100%; aspect-ratio: 1/1; }
+
+@media (max-width: 800px) {
+  body {
+    overflow-y: auto; /* Allow natural scrolling */
+    background: var(--m-black);
+  }
+
+  .mondrian-canvas {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: var(--line); /* This creates all horizontal lines automatically */
+    padding: var(--line);
+  }
+
+  /* 1. HEADER: Remove 10vh fixed height to prevent clipping */
+  .header {
+    height: auto;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--line);
+  }
+
+  /* 2. INTRO BLOCK: Ensure it takes natural height */
+  .intro-block {
+    height: auto;
+  }
+
+  /* 3. YELLOW SPINE: Fixed thickness, no bleeding */
+  .spine {
+    height: 40px; /* Stronger presence, but capped */
+    width: 100%;
+    order: 2; /* Keeps it between text blocks */
+  }
+
+  .col-left { order: 1; }
+  .col-right { order: 3; }
+
+  /* 4. FOOTER: Restore airy white blocks */
+  .footer-row {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--line);
+  }
+
+  .footer-link {
+    height: 100px; /* Restores the 'airy' feel you liked */
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  /* Hide the anchor square to prevent layout shifts */
+  .anchor-square { display: none; }
+
+  /* Adjust drop cap for mobile scale */
+  .body-text::first-letter {
+    font-size: 3.5rem;
+    line-height: 0.8;
+    padding-top: 7px; /* Matches your desktop precision */
+  }
+}
+
+/* Landscape Specific: Prevent clipping when screen is short */
+@media (max-width: 950px) and (orientation: landscape) {
+  .header, .footer-link {
+    height: auto;
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+/* TARGETS MOBILE LANDSCAPE SPECIFICALLY */
+@media (max-width: 950px) and (orientation: landscape) {
+  body {
+    overflow-y: auto; /* Restore scrolling so nothing is trapped */
+    height: auto;
+  }
+
+  .mondrian-canvas {
+    height: auto;
+    min-height: 100vh; /* Takes full screen but grows if needed */
+    display: flex;
+    flex-direction: column;
+    gap: var(--line);
+    padding: var(--line);
+  }
+
+  /* 1. HEADER: Flex-basis prevents it from shrinking or clipping */
+  .header {
+    height: auto;
+    flex: 0 0 auto;
+    padding: 1.5rem;
+  }
+
+  /* 2. MAIN LAYOUT: Split into two columns even in landscape */
+  .main-layout {
+    display: grid;
+    grid-template-columns: 1.2fr var(--line) 1fr; /* Maintain the vertical spine line */
+    gap: 0; /* Gap is handled by the 'spine' column */
+    flex: 1 0 auto;
+  }
+
+  /* The Spine remains as a thin black/yellow line separator */
+  .spine {
+    display: block;
+    width: var(--line);
+    height: 100%;
+    background: var(--m-yellow);
+  }
+
+  /* 3. TEXT ADJUSTMENTS: Scale down slightly for horizontal screens */
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 1.5rem;
+  }
+
+  .nav-text {
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
+
+  /* Adjust drop cap for the tighter landscape grid */
+  .body-text::first-letter {
+    font-size: 3rem;
+    padding-top: 4px;
+  }
+
+  /* 4. FOOTER: Keep as a single row to save vertical space */
+  .footer-row {
+    height: auto;
+    min-height: 60px;
+    flex-direction: row;
+    display: flex;
+    gap: var(--line);
+  }
+
+  .footer-link {
+    flex: 1;
+    height: 60px;
+    font-size: 0.9rem;
+  }
+
+  /* Keep non-essential decorative blocks hidden to save vertical room */
+  .assembly-row, .blue-top {
+    display: none;
+  }
+}
+
+/* =============================================================
+   DE STIJL THEMATIC UPDATE: PERSISTENT NAV 
+   ============================================================= */
+
+#persistent-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  /* height: 5rem; Removed fixed height to allow vertical breathing room */
+  padding: 1rem 0; 
+  background-color: var(--m-white);
+  /* Standardized to the Mondrian black line thickness */
+  border-bottom: var(--line) solid var(--m-black); 
+}
+
+#persistent-nav .conceptual-nav {
+  max-width: min(152ch, 92vw);
+  margin: 0 auto;
+  padding-left: 4.25rem;
+}
+
+.persistent-nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* -----------------------------
+   Home Button (Conceptual)
+----------------------------- */
+
+.home-button {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem; /* Slight increase for clarity */
+
+  text-decoration: none;
+}
+
+.home-button::after {
+  display: none !important;
+}
+
+.home-shape {
+  position: relative;
+  width: 2.25rem;
+  height: 2.25rem;
+
+  background-color: var(--m-red); /* Mondrian Red */
+  border-radius: 0.35rem;
+
+  transition: border-radius 0.25s ease, transform 0.25s ease;
+}
+
+.home-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: var(--m-white); /* Mondrian White */
+  border-radius: 2px;
+
+  transform: translate(-50%, -50%);
+  transition: border-radius 0.25s ease, transform 0.25s ease;
+}
+
+.home-text {
+  font-family: var(--font-main); /* Standardized to Inter */
+  font-size: 0.72rem;
+  font-weight: 700; /* Bolder for authority */
+  letter-spacing: 0.06em;
+  line-height: 1;
+
+  color: var(--m-black); /* Changed to Black for standard UI hierarchy */
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* Hover interaction */
+@media (hover: hover) {
+  .home-button:hover .home-shape {
+    border-radius: 50%;
+  }
+
+  .home-button:hover .home-icon {
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+/* -----------------------------
+   Navigation Links
+----------------------------- */
+
+.conceptual-nav p {
+  font-family: var(--font-main);
+  color: var(--m-black);
+  margin: 0;
+}
+
+.conceptual-nav a {
+  color: var(--m-blue); /* Mondrian Blue */
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.conceptual-nav .end-glyph {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--m-red);
+  margin-left: 4px;
+  vertical-align: baseline;
+}
+
+.conceptual-nav .nav-full { display: block; }
+.conceptual-nav .nav-compact { display: none; }
+
+@media (max-width: 693px) {
+  .conceptual-nav .nav-full { display: none; }
+  .conceptual-nav .nav-compact { display: block; }
+
+  #persistent-nav .conceptual-nav .nav-compact {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+}
+
+@media (min-width: 694px) and (max-width: 899px) {
+  #persistent-nav .conceptual-nav .nav-full { font-size: 0.75rem; }
+}
+
+@media (min-width: 900px) and (max-width: 1106px) {
+  #persistent-nav .conceptual-nav .nav-full { font-size: 0.85rem; }
 }
