@@ -742,6 +742,7 @@ a:active::after {
 
 .section.cross-domain-heuristics {
   padding: 4rem 2rem 6rem;
+  background-color: var(--m-white);
 }
 
 /* Bento grid system */
@@ -997,6 +998,7 @@ a:active::after {
 ============================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,800;1,900&family=Inter:wght@400;500;700;900&display=swap');
 
 :root {
   --m-red: #FF3B30;
@@ -1004,11 +1006,15 @@ a:active::after {
   --m-yellow: #FFD700;
   --m-black: #000000;
   --m-white: #FFFFFF;
+  --m-red-rgb: 221, 1, 0;
+  --m-yellow-rgb: 255, 215, 0; 
+  --m-blue-rgb: 0, 85, 170;
   --line: 8px;
   --font-main: 'Inter', sans-serif;
+  --font-serif: 'EB Garamond', serif;
 }
 
-body { margin: 0; background: var(--m-black); height: 100vh; overflow: hidden; }
+body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto; }
 .mondrian-canvas { display: flex; flex-direction: column; height: 100vh; padding: var(--line); gap: var(--line); box-sizing: border-box; }
 .cell { background: #FFF; position: relative; }
 .cell-red { background: var(--m-red); }
@@ -1293,7 +1299,7 @@ body { margin: 0; background: var(--m-black); height: 100vh; overflow: hidden; }
   width: 2.25rem;
   height: 2.25rem;
 
-  background-color: var(--m-red); /* Mondrian Red */
+  background-color: var(--m-yellow); /* Mondrian Yellow */
   border-radius: 0.35rem;
 
   transition: border-radius 0.25s ease, transform 0.25s ease;
@@ -1349,7 +1355,7 @@ body { margin: 0; background: var(--m-black); height: 100vh; overflow: hidden; }
 }
 
 .conceptual-nav a {
-  color: var(--m-blue); /* Mondrian Blue */
+  color: var(--m-red); /* Mondrian Red */
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -1384,4 +1390,261 @@ body { margin: 0; background: var(--m-black); height: 100vh; overflow: hidden; }
 
 @media (min-width: 900px) and (max-width: 1106px) {
   #persistent-nav .conceptual-nav .nav-full { font-size: 0.85rem; }
+}
+
+/* ============================
+   Cross-domain heuristics
+============================ */
+
+.section.cross-domain-heuristics {
+  padding: 4rem 2rem 6rem;
+  background-color: var(--m-white);
+}
+
+/* Bento grid system */
+.heuristics-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  grid-auto-flow: dense;
+
+  max-width: calc(4 * 260px + 3 * 2rem);
+  margin: 0 auto;
+}
+
+/* Block base */
+.heuristic-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background-color: var(--m-white); /* Updated to Mondrian White */
+}
+
+/* Layout variants */
+.layout-1x1 {
+  aspect-ratio: 1 / 1;
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.layout-2x1 {
+  grid-column: span 2;
+  grid-row: span 1;
+  min-height: 260px;
+}
+
+.layout-1x2 {
+  grid-column: span 1;
+  grid-row: span 2;
+  min-height: 520px;
+}
+
+.layout-2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Media */
+.heuristic-media img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* Content */
+.heuristic-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Gravity behavior */
+.layout-2x2,
+.layout-1x2 {
+  justify-content: flex-end;
+}
+
+.layout-2x2 .heuristic-content,
+.layout-1x2 .heuristic-content {
+  padding-top: 1.5rem;
+}
+
+.layout-2x2,
+.layout-2x1,
+.layout-1x2 {
+  box-shadow: inset 0 0 0 0.25px rgba(var(--m-red-rgb), 0.1); 
+}
+
+/* Typography */
+.heuristic-lead {
+  font-family: var(--font-main); /* Explicitly Sans-Serif */
+  font-size: 1rem;
+  font-weight: 700; /* Bold for technical authority */
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  margin: 0;
+  color: var(--m-blue); 
+}
+
+.heuristic-body {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  letter-spacing: -0.005em;
+  margin: 0;
+  color: var(--m-black);
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .heuristics-bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .heuristics-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .heuristic-block {
+    padding-bottom: 1.25rem;
+  }
+
+  .heuristics-bento {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 1.5rem;
+  }
+
+  .layout-1x1,
+  .layout-2x1,
+  .layout-1x2,
+  .layout-2x2 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .layout-2x1,
+  .layout-1x2 {
+    min-height: unset;
+  }
+}
+
+/* ============================
+   Reading intent: typography
+============================ */
+
+/* Base reset: keep everything calm */
+.heuristic-block {
+  font-family: var(--font-main);
+}
+
+/* All non-title-only blocks stay sans-serif */
+.heuristic-block:not(.type-title-only) .heuristic-lead {
+  font-family: var(--font-main);
+}
+
+/* --------------------------------
+   TITLE-ONLY BLOCKS
+   Editorial pause / anchor
+-------------------------------- */
+
+.heuristic-block.type-title-only {
+  justify-content: flex-end; /* Preserved gravity */
+}
+
+.heuristic-block.type-title-only .heuristic-lead {
+  font-family: var(--font-serif) !important; /* Retained Serif for editorial pause */
+  font-style: italic;
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+
+  color: var(--m-black); /* Updated to Mondrian Red */
+}
+
+.heuristic-block.type-title-only .heuristic-body {
+  display: none;
+}
+
+/* --------------------------------
+   TITLE + TEXT (no image)
+-------------------------------- */
+
+.heuristic-block.type-title-text .heuristic-lead {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--m-blue);
+}
+
+.heuristic-block.type-title-text .heuristic-body {
+  font-size: 0.95rem;
+  color: var(--m-black);
+}
+
+/* --------------------------------
+   IMAGE + TITLE (+ optional text)
+-------------------------------- */
+
+.heuristic-block.type-image-title .heuristic-lead,
+.heuristic-block.type-image-title-text .heuristic-lead {
+  font-family: var(--font-main);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--m-blue);
+}
+
+.heuristic-block.type-image-title .heuristic-body {
+  display: none;
+}
+
+/* --------------------------------
+   IMAGE + TEXT (no title)
+-------------------------------- */
+
+.heuristic-block.type-image-text .heuristic-body {
+  font-size: 0.9rem;
+  color: var(--m-black);
+}
+
+/* --------------------------------
+   TEXT-ONLY (no title)
+-------------------------------- */
+
+.heuristic-block.type-text-only .heuristic-lead {
+  display: none;
+}
+
+.heuristic-block.type-text-only .heuristic-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--m-black);
+}
+
+/* --------------------------------
+   IMAGE-ONLY
+-------------------------------- */
+
+.heuristic-block.type-image-only {
+  padding: 0;
+}
+
+.heuristic-block.type-image-only .heuristic-content {
+  display: none;
+}
+
+.heuristic-block.type-image-only .heuristic-media img {
+  margin-bottom: 0;
 }
