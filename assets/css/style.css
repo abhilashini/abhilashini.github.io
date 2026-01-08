@@ -56,10 +56,16 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .conceptual-nav a:hover, .art-link:hover { color: var(--m-white) !important; background-size: 100% 88%; }
 .conceptual-nav a:hover + .end-glyph { background-color: var(--m-black); transition: background-color 0.8s ease; }
 
-/* Footer */
-.footer-row { height: 10vh; display: flex; gap: var(--line); }
-.footer-link { flex: 1; display: flex; justify-content: center; align-items: center; font-family: var(--font-main); font-weight: 700; text-transform: lowercase; }
-.anchor-square { height: 100%; aspect-ratio: 1/1; }
+/* --- SEMANTIC TRIAD FOOTER --- */
+.footer-row { height: 10vh; display: flex; gap: var(--line); background: transparent; }
+.footer-link { flex: 1; display: flex; justify-content: center; align-items: center; background: var(--m-white); text-transform: uppercase; font-family: var(--font-main) !important; font-size: 0.75rem; letter-spacing: 0.4em; font-weight: 900; color: var(--m-black); text-decoration: none !important; position: relative; z-index: 1; overflow: hidden; }
+.footer-link[href*="linkedin"] { box-shadow: inset 0 8px 0 0 var(--m-blue); --flood: var(--m-blue); --text-hover: var(--m-white); }
+.footer-link[href*="github"] { box-shadow: inset 0 8px 0 0 var(--m-yellow); --flood: var(--m-yellow); --text-hover: var(--m-black); }
+.footer-link[href*="medium"] { box-shadow: inset 0 8px 0 0 var(--m-red); --flood: var(--m-red); --text-hover: var(--m-white); }
+.footer-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 0; background: var(--flood); z-index: -1; transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.footer-link:hover { color: var(--text-hover) !important; }
+.footer-link:hover::after { height: 100%; }
+.anchor-square { height: 100%; aspect-ratio: 1/1; background: var(--m-red); flex-shrink: 0; }
 
 @media (max-width: 800px) {
   body { overflow-y: auto; background: var(--m-black); }
