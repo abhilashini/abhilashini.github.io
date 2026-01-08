@@ -1,3 +1,4 @@
+/* --- GLOBAL RESET & FONTS --- */
 * { box-sizing: border-box; }
 html { font-size: 16px; }
 
@@ -16,19 +17,51 @@ html { font-size: 16px; }
   --line: 8px;
   --font-main: 'Inter', sans-serif;
   --font-serif: 'EB Garamond', serif;
+  /* THE "MELTING BUTTER" CURVE */
+  --fluid-ease: cubic-bezier(0.3, 0, 0, 1);
 }
 
+/* --- BASE ARCHITECTURE --- */
 body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto; }
 .mondrian-canvas { display: flex; flex-direction: column; height: 100vh; padding: var(--line); gap: var(--line); }
-.cell { background: #FFF; position: relative; }
-.cell-red { background: var(--m-red); }
-.cell-blue { background: var(--m-blue); }
-.cell-yellow { background: var(--m-yellow); }
-.cell-black { background: var(--m-black); }
+.cell { background: var(--m-white); position: relative; z-index: 1; overflow: hidden; }
 
-/* Layout */
-.header { height: 10vh; display: flex; align-items: center; padding-left: 2.5rem; }
-.header-title { font-family: var(--font-main); color: white; letter-spacing: 0.5em; font-size: 0.95rem; font-weight: 900; }
+/* --- FLUID ANIMATION KEYFRAMES --- */
+@keyframes fluidSwipeRight { 
+  0% { width: 0; opacity: 0; } 
+  30% { opacity: 1; }
+  100% { width: 100%; opacity: 1; } 
+}
+@keyframes fluidDropDown { 
+  0% { height: 0; opacity: 0; } 
+  30% { opacity: 1; }
+  100% { height: 100%; opacity: 1; } 
+}
+@keyframes textColorShift { 
+  0% { color: var(--m-black); } 
+  100% { color: var(--m-white); } 
+}
+
+/* --- CHOREOGRAPHED REVEAL (MELTING BUTTER STYLE) --- */
+/* Phase 1: Red Header (Starts at 0.8s for a slow burn) */
+.header::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-red); z-index: -1; animation: fluidSwipeRight 1.4s var(--fluid-ease) 0.8s forwards; }
+.header-title { color: var(--m-black); animation: textColorShift 0.8s var(--fluid-ease) 1.6s forwards; }
+
+/* Phase 2: Blue Block & Assembly Row (Staggered Flow) */
+.blue-top::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-blue); z-index: -1; animation: fluidSwipeRight 1.4s var(--fluid-ease) 1.8s forwards; }
+.squares-container .cell:nth-child(1)::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-blue); animation: fluidSwipeRight 1s var(--fluid-ease) 2.2s forwards; }
+.squares-container .cell:nth-child(2)::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-yellow); animation: fluidSwipeRight 1s var(--fluid-ease) 2.4s forwards; }
+.squares-container .cell:nth-child(3)::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-black); animation: fluidSwipeRight 1s var(--fluid-ease) 2.6s forwards; }
+
+/* Phase 3: Vertical Yellow Spine (The Drip) */
+.spine::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0; background: var(--m-yellow); animation: fluidDropDown 1.8s var(--fluid-ease) 3.0s forwards; }
+
+/* Phase 4: Footer Anchor Square (The Final Drop) */
+.anchor-square::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0; background: var(--m-red); animation: fluidDropDown 0.9s var(--fluid-ease) 4.2s forwards; }
+
+/* --- LAYOUT STRUCTURE --- */
+.header { height: 10vh; display: flex; align-items: center; padding-left: 2.5rem; position: relative; z-index: 2; }
+.header-title { font-family: var(--font-main); letter-spacing: 0.5em; font-size: 0.95rem; font-weight: 900; position: relative; z-index: 3; }
 .main-layout { flex: 1; display: grid; grid-template-columns: 1.25fr 45px 1fr; gap: var(--line); }
 .col-right { display: flex; flex-direction: column; gap: var(--line); }
 .blue-top { flex: 1; }
@@ -42,30 +75,44 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .flex-center { display: flex; align-items: center; height: 100%; }
 .flex-bottom { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
 
-/* Typography */
+/* --- TYPOGRAPHY --- */
 .body-text { font-family: var(--font-main); font-size: 1.15rem; font-weight: 500; line-height: 1.6; color: #000; letter-spacing: -0.01em; margin: 0; }
 .body-text::first-letter { font-weight: 900; font-size: 3.8rem; float: left; line-height: 0.8; margin-right: 0.5rem; color: var(--m-red); padding-top: 7px; }
 .nav-text { font-family: var(--font-main); font-size: 1.3rem; font-weight: 700; line-height: 1.4; }
 .art-link { color: var(--m-blue); text-decoration: underline; text-underline-offset: 4px; }
-.end-glyph { display: inline-block; width: 8px; height: 8px; background: var(--m-red); margin-left: 6px; }
 
-/* --- VELVET GEOMETRIC HOVER --- */
-.conceptual-nav a, .art-link { position: relative; display: inline; text-decoration: none !important; z-index: 1; padding: 1px 3px; margin: 0 -3px; background-image: linear-gradient(var(--fill-col), var(--fill-col)); background-repeat: no-repeat; background-position: bottom; background-size: 100% 0%; transition: background-size 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s ease; }
-.conceptual-nav a { --fill-col: var(--m-red); }
-.art-link { --fill-col: var(--m-blue); }
-.conceptual-nav a:hover, .art-link:hover { color: var(--m-white) !important; background-size: 100% 88%; }
-.conceptual-nav a:hover + .end-glyph { background-color: var(--m-black); transition: background-color 0.8s ease; }
-
-/* --- SEMANTIC TRIAD FOOTER --- */
+/* --- FOOTER & TRIAD HOVER --- */
 .footer-row { height: 10vh; display: flex; gap: var(--line); background: transparent; }
 .footer-link { flex: 1; display: flex; justify-content: center; align-items: center; background: var(--m-white); text-transform: uppercase; font-family: var(--font-main) !important; font-size: 0.75rem; letter-spacing: 0.4em; font-weight: 900; color: var(--m-black); text-decoration: none !important; position: relative; z-index: 1; overflow: hidden; }
 .footer-link[href*="linkedin"] { box-shadow: inset 0 8px 0 0 var(--m-blue); --flood: var(--m-blue); --text-hover: var(--m-white); }
 .footer-link[href*="github"] { box-shadow: inset 0 8px 0 0 var(--m-yellow); --flood: var(--m-yellow); --text-hover: var(--m-black); }
 .footer-link[href*="medium"] { box-shadow: inset 0 8px 0 0 var(--m-red); --flood: var(--m-red); --text-hover: var(--m-white); }
-.footer-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 0; background: var(--flood); z-index: -1; transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.footer-link::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 0; background: var(--flood); z-index: -1; transition: height 0.6s var(--fluid-ease); }
 .footer-link:hover { color: var(--text-hover) !important; }
 .footer-link:hover::after { height: 100%; }
-.anchor-square { height: 100%; aspect-ratio: 1/1; background: var(--m-red); flex-shrink: 0; }
+.anchor-square { height: 100%; aspect-ratio: 1/1; position: relative; flex-shrink: 0; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 800px) {
+  .mondrian-canvas { height: auto; }
+  .main-layout { display: flex; flex-direction: column; }
+  .footer-row { height: auto; flex-direction: column; }
+  .anchor-square { display: none; }
+}
+
+/* --- PERSISTENT NAV --- */
+#persistent-nav { position: sticky; top: 0; z-index: 100; padding: 1rem 0; background-color: var(--m-white); border-bottom: var(--line) solid var(--m-black); }
+.home-button { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem; text-decoration: none; }
+.home-shape { position: relative; width: 2.25rem; height: 2.25rem; background-color: var(--m-yellow); border-radius: 0.35rem; transition: border-radius 0.25s ease; }
+.home-icon { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; background-color: var(--m-white); border-radius: 2px; transform: translate(-50%, -50%); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 800px) {
+  .mondrian-canvas { height: auto; }
+  .main-layout { display: flex; flex-direction: column; }
+  .footer-row { height: auto; flex-direction: column; }
+  .anchor-square { display: none; }
+}
 
 @media (max-width: 800px) {
   body { overflow-y: auto; background: var(--m-black); }
