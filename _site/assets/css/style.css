@@ -45,7 +45,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 /* --- CHOREOGRAPHED REVEAL OVERLAYS --- */
 .header::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-red); z-index: 1; animation: fluidSwipeRight 1.4s var(--fluid-ease) 0.8s forwards; }
 .header-title { font-family: var(--font-main) !important; font-size: 0.95rem !important; font-weight: 900 !important; letter-spacing: 0.5em; text-transform: uppercase; color: var(--m-black); position: relative; z-index: 2; animation: textColorShift 0.8s var(--fluid-ease) 1.6s forwards; }gut
-
+.blue-top { position: relative; background: var(--m-white); overflow: hidden; }
 .blue-top::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-blue); z-index: 1; animation: fluidSwipeRight 1.4s var(--fluid-ease) 1.8s forwards; }
 
 .squares-container .cell:nth-child(1)::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-blue); animation: fluidSwipeRight 1s var(--fluid-ease) 2.2s forwards; }
