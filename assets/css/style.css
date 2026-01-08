@@ -663,6 +663,7 @@ a:active::after {
 
 .section.structured-consolidation {
   padding: 4rem 1.5rem 6rem;
+  background-color: var(--m-white);
 }
 
 .structured-grid {
@@ -1647,4 +1648,375 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 
 .heuristic-block.type-image-only .heuristic-media img {
   margin-bottom: 0;
+}
+
+/* ============================
+   Structured consolidation
+============================ */
+
+.section.structured-consolidation {
+  padding: 4rem 1.5rem 6rem;
+  background-color: var(--m-white);
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.structured-grid {
+  column-width: 240px;
+  column-gap: 2rem;
+  max-width: calc(240px * 3 + 2rem * 2);
+  margin-bottom: 0;
+}
+
+/* ============================
+   Tiles: Silent Framework
+============================ */
+
+.consolidation-tile {
+  break-inside: avoid;
+  margin-bottom: 3.5rem; /* Increased for better airiness */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tile-header::before {
+  content: "";
+  display: block;
+  width: 24px;   
+  height: 8px;   
+  margin-bottom: 0.75rem; /* Precise gap between bar and text */
+  flex-shrink: 0;
+}
+
+/* Mapping Types to the Triad */
+.type-pdf .tile-header::before { background-color: var(--m-blue); }
+.type-pdf .tile-link { color: var(--m-blue); }
+
+.type-github .tile-header::before { background-color: var(--m-yellow); }
+.type-github .tile-link { 
+  color: var(--m-black); 
+  text-decoration: underline;
+  text-decoration-color: var(--m-yellow);
+  text-decoration-thickness: 2px;
+}
+
+.type-article .tile-header::before { background-color: var(--m-red); }
+.type-article .tile-link { color: var(--m-red); }
+
+/* Header */
+
+.tile-header {
+  display: flex;
+  flex-direction: column; /* Stacked: Lintel top, Title bottom */
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 0.5rem;
+}
+
+.tile-title {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--m-black);
+  margin: 0;
+}
+
+/* Body */
+
+.tile-description {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--m-black);
+}
+
+/* Link: The Action Signal */
+
+.tile-link {
+  margin-top: 0.8rem;
+  padding-left: 0; /* REMOVED the calc() to align perfectly left */
+  
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  text-decoration: none;
+  
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  display: inline-block;
+}
+
+.tile-link:hover {
+  opacity: 0.7;
+  transform: translateX(4px); /* Subtle "push" interaction on hover */
+}
+
+/* =============================================================
+   SYSTEM DESIGN SECTION: COLOR SYNC ONLY (LAYOUT PROTECTED)
+   ============================================================= */
+
+.system-design {
+  padding: 4rem 3.5rem 0;
+  background-color: var(--m-white);
+  min-height: 100vh;
+}
+
+@media (max-width: 900px) {
+  .system-design {
+    padding: 3rem 2rem 0;
+  }
+}
+
+.system-design-columns {
+  column-count: 2;
+  column-gap: 4rem;
+  column-fill: balance;
+  counter-reset: system-ref;
+}
+
+@media (min-width: 1300px) {
+  .system-design-columns {
+    column-count: 3;
+    column-gap: 5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .system-design-columns {
+    column-count: 1;
+    column-gap: 0;
+  }
+}
+
+.system-essay {
+  break-inside: avoid;
+  margin-bottom: 6rem;
+  position: relative;
+  counter-increment: system-ref;
+}
+
+.essay-title {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 0 0 1.15rem 0;
+  text-wrap: balance;
+  position: relative;
+}
+
+.system-design .prose {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.system-design .prose p {
+  margin: 0 0 0.85rem 0;
+}
+
+/* --- THE GHOST GRID (YELLOW) --- */
+.system-design .prose blockquote {
+  margin: 2rem 0;
+  padding: 0 1.5rem; /* Restored to your original exact value */
+  border: none;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 1;
+}
+
+.system-design .prose blockquote::before {
+  content: "";
+  position: absolute;
+  inset: -1rem; /* Maintains original boundary */
+  z-index: -1;
+  /* 1.5px lines for visibility without layout shift */
+  background-image:
+    linear-gradient(to right, var(--m-yellow) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, var(--m-yellow) 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+  opacity: 0.15; /* Discernible yellow */
+  pointer-events: none;
+}
+
+/* --- CODE BLOCKS (BLUE) --- */
+.system-design .prose pre {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  position: relative;
+  display: block;
+  /* Using m-blue for the tint */
+  background: rgba(var(--m-blue-rgb), 0.04) !important;
+  border: none !important;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.system-design .prose pre>code.language-formula,
+.system-design .prose pre>code.language-code {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  font-size: 0.9rem;
+  font-weight: 450;
+  line-height: 1.5;
+  color: var(--m-blue);
+  text-align: left;
+  white-space: pre-wrap;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* L-Brackets (Blue) */
+.system-design .prose pre::before,
+.system-design .prose pre::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--m-blue);
+  background: transparent !important;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.system-design .prose pre::before {
+  top: 4px; left: 4px;
+  border-right: 0 !important; border-bottom: 0 !important;
+}
+
+.system-design .prose pre::after {
+  bottom: 4px; right: 4px;
+  border-left: 0 !important; border-top: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .system-design .prose pre>code.language-formula {
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+  }
+}
+
+.system-essay::after {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--m-blue);
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
+   EDITORIAL INTERVENTIONS: THE SCHEMATIC GUTTER
+   ============================================================ */
+
+/* 1. THE RULER SPINE (Blue) */
+.system-essay:nth-of-type(2n)::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  bottom: -4rem;
+  left: -2.55rem;
+  width: 1px;
+  background:
+    linear-gradient(to bottom,
+      var(--m-blue) 0px, var(--m-blue) 1px,
+      transparent 1px, transparent 12px),
+    linear-gradient(to bottom,
+      var(--m-blue) 0px, var(--m-blue) 1px,
+      transparent 1px, transparent 4px);
+  background-size: 1px 12px, 1px 4px;
+  opacity: 0.25;
+}
+
+/* 2. THE SYSTEM LABEL (Red) */
+.system-essay:nth-of-type(2n) .essay-title::before {
+  content: "REF.0" counter(system-ref);
+  position: absolute;
+  left: -4.6rem;
+  top: 0.1rem;
+  font-family: ui-monospace, Menlo, Monaco, monospace;
+  font-size: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--m-red);
+  transform: rotate(-90deg);
+  opacity: 1;
+}
+
+/* 3. THE HORIZONTAL DATUM (Red Diamond) */
+.system-essay:nth-of-type(4n) .essay-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -4rem;
+  width: 2rem;
+  height: 1px;
+  background: var(--m-red);
+  opacity: 0.4;
+}
+
+.system-essay:nth-of-type(4n)::after {
+  content: "";
+  position: absolute;
+  bottom: 0.1rem;
+  left: -2.68rem;
+  width: 5px;
+  height: 5px;
+  background: var(--m-red);
+  transform: rotate(45deg);
+  opacity: 0.6;
+}
+
+/* 4. THE SCHEMATIC TRIANGLE (Red) */
+.system-essay:nth-of-type(5n)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 12px 0 0;
+  border-color: var(--m-red) transparent transparent transparent;
+  opacity: 0.2;
+}
+
+/* 5. THE HOLLOW POINT PLOT (Blue) */
+.system-essay:nth-of-type(6n)::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: -2.75rem;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--m-blue);
+  border-radius: 50%;
+  background: white;
+  z-index: 1;
+}
+
+@media (max-width: 800px) {
+  .system-essay::before,
+  .system-essay::after,
+  .essay-title::before,
+  .essay-title::after,
+  .system-design .prose blockquote::before {
+    display: none !important;
+  }
 }
