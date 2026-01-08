@@ -1,18 +1,5 @@
-/* -----------------------------
-   Design tokens
------------------------------ */
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-}
-
-/* ============================
-   De Stijl
-============================ */
+* { box-sizing: border-box; }
+html { font-size: 16px; }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,800;1,900&family=Inter:wght@400;500;700;900&display=swap');
@@ -32,14 +19,14 @@ html {
 }
 
 body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto; }
-.mondrian-canvas { display: flex; flex-direction: column; height: 100vh; padding: var(--line); gap: var(--line); box-sizing: border-box; }
+.mondrian-canvas { display: flex; flex-direction: column; height: 100vh; padding: var(--line); gap: var(--line); }
 .cell { background: #FFF; position: relative; }
 .cell-red { background: var(--m-red); }
 .cell-blue { background: var(--m-blue); }
 .cell-yellow { background: var(--m-yellow); }
 .cell-black { background: var(--m-black); }
 
-/* Layout Logic */
+/* Layout */
 .header { height: 10vh; display: flex; align-items: center; padding-left: 2.5rem; }
 .header-title { font-family: var(--font-main); color: white; letter-spacing: 0.5em; font-size: 0.95rem; font-weight: 900; }
 .main-layout { flex: 1; display: grid; grid-template-columns: 1.25fr 45px 1fr; gap: var(--line); }
@@ -48,992 +35,169 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .nav-bottom { flex: 1.5; }
 .col-left { display: flex; flex-direction: column; gap: var(--line); }
 .intro-block { flex: 1; }
-
-/* Geometry: Height is 50% of the Blue-Top cell */
 .assembly-row { height: calc(40vh * 0.5); display: grid; grid-template-columns: 1fr 1fr; gap: var(--line); }
 .squares-container { display: flex; gap: var(--line); }
 .squares-container .cell { flex: 1; aspect-ratio: 1/1; }
-
 .content-pad { padding: 3rem; }
 .flex-center { display: flex; align-items: center; height: 100%; }
 .flex-bottom { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
 
-/* UNIFIED TYPOGRAPHY (INTER) */
-.body-text { 
-  font-family: var(--font-main); 
-  font-size: 1.15rem; 
-  font-weight: 500; /* Medium weight makes it feel stronger */
-  line-height: 1.6; 
-  color: #000; 
-  letter-spacing: -0.01em;
-  margin: 0; 
-}
-
-/* Red Sans-Serif Drop Cap */
-.body-text::first-letter {
-  font-weight: 900;
-  font-size: 3.8rem;
-  float: left;
-  line-height: 0.8; 
-  margin-right: 0.5rem;
-  color: var(--m-red);
-  padding-top: 7px; /* Precision alignment to cap-height */
-}
-
-.nav-text { 
-  font-family: var(--font-main); 
-  font-size: 1.3rem; 
-  font-weight: 700; 
-  line-height: 1.4; 
-}
-
+/* Typography */
+.body-text { font-family: var(--font-main); font-size: 1.15rem; font-weight: 500; line-height: 1.6; color: #000; letter-spacing: -0.01em; margin: 0; }
+.body-text::first-letter { font-weight: 900; font-size: 3.8rem; float: left; line-height: 0.8; margin-right: 0.5rem; color: var(--m-red); padding-top: 7px; }
+.nav-text { font-family: var(--font-main); font-size: 1.3rem; font-weight: 700; line-height: 1.4; }
 .art-link { color: var(--m-blue); text-decoration: underline; text-underline-offset: 4px; }
 .end-glyph { display: inline-block; width: 8px; height: 8px; background: var(--m-red); margin-left: 6px; }
 
 /* Footer */
 .footer-row { height: 10vh; display: flex; gap: var(--line); }
-.footer-link { 
-  flex: 1; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  font-family: var(--font-main); 
-  font-weight: 700; 
-  text-transform: lowercase;
-}
+.footer-link { flex: 1; display: flex; justify-content: center; align-items: center; font-family: var(--font-main); font-weight: 700; text-transform: lowercase; }
 .anchor-square { height: 100%; aspect-ratio: 1/1; }
 
 @media (max-width: 800px) {
-  body {
-    overflow-y: auto; /* Allow natural scrolling */
-    background: var(--m-black);
-  }
-
-  .mondrian-canvas {
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: var(--line); /* This creates all horizontal lines automatically */
-    padding: var(--line);
-  }
-
-  /* 1. HEADER: Remove 10vh fixed height to prevent clipping */
-  .header {
-    height: auto;
-    padding: 2.5rem 1.5rem;
-  }
-
-  .main-layout {
-    display: flex;
-    flex-direction: column;
-    gap: var(--line);
-  }
-
-  /* 2. INTRO BLOCK: Ensure it takes natural height */
-  .intro-block {
-    height: auto;
-  }
-
-  /* 3. YELLOW SPINE: Fixed thickness, no bleeding */
-  .spine {
-    height: 40px; /* Stronger presence, but capped */
-    width: 100%;
-    order: 2; /* Keeps it between text blocks */
-  }
-
+  body { overflow-y: auto; background: var(--m-black); }
+  .mondrian-canvas { height: auto; min-height: 100vh; display: flex; flex-direction: column; gap: var(--line); padding: var(--line); }
+  .header { height: auto; padding: 2.5rem 1.5rem; }
+  .main-layout { display: flex; flex-direction: column; gap: var(--line); }
+  .intro-block { height: auto; }
+  .spine { height: 40px; width: 100%; order: 2; }
   .col-left { order: 1; }
   .col-right { order: 3; }
-
-  /* 4. FOOTER: Restore airy white blocks */
-  .footer-row {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: var(--line);
-  }
-
-  .footer-link {
-    height: 100px; /* Restores the 'airy' feel you liked */
-    width: 100%;
-    justify-content: flex-start;
-    padding-left: 1.5rem;
-    font-size: 1.2rem;
-  }
-
-  /* Hide the anchor square to prevent layout shifts */
+  .footer-row { height: auto; display: flex; flex-direction: column; gap: var(--line); }
+  .footer-link { height: 100px; width: 100%; justify-content: flex-start; padding-left: 1.5rem; font-size: 1.2rem; }
   .anchor-square { display: none; }
-
-  /* Adjust drop cap for mobile scale */
-  .body-text::first-letter {
-    font-size: 3.5rem;
-    line-height: 0.8;
-    padding-top: 7px; /* Matches your desktop precision */
-  }
+  .body-text::first-letter { font-size: 3.5rem; line-height: 0.8; padding-top: 7px; }
 }
 
-/* Landscape Specific: Prevent clipping when screen is short */
 @media (max-width: 950px) and (orientation: landscape) {
-  .header, .footer-link {
-    height: auto;
-    padding: 1.2rem 1.5rem;
-  }
+  body { overflow-y: auto; height: auto; }
+  .mondrian-canvas { height: auto; min-height: 100vh; display: flex; flex-direction: column; gap: var(--line); padding: var(--line); }
+  .header { height: auto; flex: 0 0 auto; padding: 1.5rem; }
+  .main-layout { display: grid; grid-template-columns: 1.2fr var(--line) 1fr; gap: 0; flex: 1 0 auto; }
+  .spine { display: block; width: var(--line); height: 100%; background: var(--m-yellow); }
+  .body-text { font-size: 1rem; line-height: 1.4; padding: 1.5rem; }
+  .nav-text { font-size: 1.1rem; padding: 1.5rem; }
+  .body-text::first-letter { font-size: 3rem; padding-top: 4px; }
+  .footer-row { height: auto; min-height: 60px; flex-direction: row; display: flex; gap: var(--line); }
+  .footer-link { flex: 1; height: 60px; font-size: 0.9rem; }
+  .assembly-row, .blue-top { display: none; }
 }
 
-/* TARGETS MOBILE LANDSCAPE SPECIFICALLY */
-@media (max-width: 950px) and (orientation: landscape) {
-  body {
-    overflow-y: auto; /* Restore scrolling so nothing is trapped */
-    height: auto;
-  }
+/* Persistent Nav */
+#persistent-nav { position: sticky; top: 0; z-index: 100; padding: 1rem 0; background-color: var(--m-white); border-bottom: var(--line) solid var(--m-black); }
+#persistent-nav .conceptual-nav { max-width: min(152ch, 92vw); margin: 0 auto; padding-left: 4.25rem; }
+.persistent-nav-inner { height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
+.home-button { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem; text-decoration: none; }
+.home-button::after { display: none !important; }
+.home-shape { position: relative; width: 2.25rem; height: 2.25rem; background-color: var(--m-yellow); border-radius: 0.35rem; transition: border-radius 0.25s ease, transform 0.25s ease; }
+.home-icon { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; background-color: var(--m-white); border-radius: 2px; transform: translate(-50%, -50%); transition: border-radius 0.25s ease, transform 0.25s ease; }
+.home-text { font-family: var(--font-main); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; line-height: 1; color: var(--m-black); white-space: nowrap; text-transform: uppercase; }
 
-  .mondrian-canvas {
-    height: auto;
-    min-height: 100vh; /* Takes full screen but grows if needed */
-    display: flex;
-    flex-direction: column;
-    gap: var(--line);
-    padding: var(--line);
-  }
-
-  /* 1. HEADER: Flex-basis prevents it from shrinking or clipping */
-  .header {
-    height: auto;
-    flex: 0 0 auto;
-    padding: 1.5rem;
-  }
-
-  /* 2. MAIN LAYOUT: Split into two columns even in landscape */
-  .main-layout {
-    display: grid;
-    grid-template-columns: 1.2fr var(--line) 1fr; /* Maintain the vertical spine line */
-    gap: 0; /* Gap is handled by the 'spine' column */
-    flex: 1 0 auto;
-  }
-
-  /* The Spine remains as a thin black/yellow line separator */
-  .spine {
-    display: block;
-    width: var(--line);
-    height: 100%;
-    background: var(--m-yellow);
-  }
-
-  /* 3. TEXT ADJUSTMENTS: Scale down slightly for horizontal screens */
-  .body-text {
-    font-size: 1rem;
-    line-height: 1.4;
-    padding: 1.5rem;
-  }
-
-  .nav-text {
-    font-size: 1.1rem;
-    padding: 1.5rem;
-  }
-
-  /* Adjust drop cap for the tighter landscape grid */
-  .body-text::first-letter {
-    font-size: 3rem;
-    padding-top: 4px;
-  }
-
-  /* 4. FOOTER: Keep as a single row to save vertical space */
-  .footer-row {
-    height: auto;
-    min-height: 60px;
-    flex-direction: row;
-    display: flex;
-    gap: var(--line);
-  }
-
-  .footer-link {
-    flex: 1;
-    height: 60px;
-    font-size: 0.9rem;
-  }
-
-  /* Keep non-essential decorative blocks hidden to save vertical room */
-  .assembly-row, .blue-top {
-    display: none;
-  }
-}
-
-/* =============================================================
-   DE STIJL THEMATIC UPDATE: PERSISTENT NAV 
-   ============================================================= */
-
-#persistent-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
-  /* height: 5rem; Removed fixed height to allow vertical breathing room */
-  padding: 1rem 0; 
-  background-color: var(--m-white);
-  /* Standardized to the Mondrian black line thickness */
-  border-bottom: var(--line) solid var(--m-black); 
-}
-
-#persistent-nav .conceptual-nav {
-  max-width: min(152ch, 92vw);
-  margin: 0 auto;
-  padding-left: 4.25rem;
-}
-
-.persistent-nav-inner {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-/* -----------------------------
-   Home Button (Conceptual)
------------------------------ */
-
-.home-button {
-  position: absolute;
-  left: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem; /* Slight increase for clarity */
-
-  text-decoration: none;
-}
-
-.home-button::after {
-  display: none !important;
-}
-
-.home-shape {
-  position: relative;
-  width: 2.25rem;
-  height: 2.25rem;
-
-  background-color: var(--m-yellow); /* Mondrian Yellow */
-  border-radius: 0.35rem;
-
-  transition: border-radius 0.25s ease, transform 0.25s ease;
-}
-
-.home-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  width: 10px;
-  height: 10px;
-
-  background-color: var(--m-white); /* Mondrian White */
-  border-radius: 2px;
-
-  transform: translate(-50%, -50%);
-  transition: border-radius 0.25s ease, transform 0.25s ease;
-}
-
-.home-text {
-  font-family: var(--font-main); /* Standardized to Inter */
-  font-size: 0.72rem;
-  font-weight: 700; /* Bolder for authority */
-  letter-spacing: 0.06em;
-  line-height: 1;
-
-  color: var(--m-black); /* Changed to Black for standard UI hierarchy */
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-
-/* Hover interaction */
 @media (hover: hover) {
-  .home-button:hover .home-shape {
-    border-radius: 50%;
-  }
-
-  .home-button:hover .home-icon {
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1.15);
-  }
+  .home-button:hover .home-shape { border-radius: 50%; }
+  .home-button:hover .home-icon { border-radius: 50%; transform: translate(-50%, -50%) scale(1.15); }
 }
 
-/* -----------------------------
-   Navigation Links
------------------------------ */
-
-.conceptual-nav p {
-  font-family: var(--font-main);
-  color: var(--m-black);
-  margin: 0;
-}
-
-.conceptual-nav a {
-  color: var(--m-red); /* Mondrian Red */
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.conceptual-nav .end-glyph {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  background-color: var(--m-red);
-  margin-left: 4px;
-  vertical-align: baseline;
-}
-
+.conceptual-nav p { font-family: var(--font-main); color: var(--m-black); margin: 0; }
+.conceptual-nav a { color: var(--m-red); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.conceptual-nav .end-glyph { display: inline-block; width: 6px; height: 6px; background-color: var(--m-red); margin-left: 4px; vertical-align: baseline; }
 .conceptual-nav .nav-full { display: block; }
 .conceptual-nav .nav-compact { display: none; }
 
 @media (max-width: 693px) {
   .conceptual-nav .nav-full { display: none; }
   .conceptual-nav .nav-compact { display: block; }
-
-  #persistent-nav .conceptual-nav .nav-compact {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    text-align: left;
-  }
+  #persistent-nav .conceptual-nav .nav-compact { font-size: 0.9rem; line-height: 1.4; text-align: left; }
 }
 
-@media (min-width: 694px) and (max-width: 899px) {
-  #persistent-nav .conceptual-nav .nav-full { font-size: 0.75rem; }
-}
+@media (min-width: 694px) and (max-width: 899px) { #persistent-nav .conceptual-nav .nav-full { font-size: 0.75rem; } }
+@media (min-width: 900px) and (max-width: 1106px) { #persistent-nav .conceptual-nav .nav-full { font-size: 0.85rem; } }
 
-@media (min-width: 900px) and (max-width: 1106px) {
-  #persistent-nav .conceptual-nav .nav-full { font-size: 0.85rem; }
-}
+/* System Design */
+.system-design { padding: 4rem 3.5rem 0; background-color: var(--m-white); min-height: 100vh; }
+@media (max-width: 900px) { .system-design { padding: 3rem 2rem 0; } }
+.system-design-columns { column-count: 2; column-gap: 4rem; column-fill: balance; counter-reset: system-ref; }
+@media (min-width: 1300px) { .system-design-columns { column-count: 3; column-gap: 5rem; } }
+@media (max-width: 640px) { .system-design-columns { column-count: 1; column-gap: 0; } }
+.system-essay { break-inside: avoid; margin-bottom: 6rem; position: relative; counter-increment: system-ref; }
+.essay-title { display: block; font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; color: var(--text-primary); margin: 0 0 1.15rem 0; text-wrap: balance; position: relative; }
+.system-design .prose { font-family: var(--font-sans); font-size: 0.95rem; line-height: 1.65; color: var(--text-primary); }
+.system-design .prose p { margin: 0 0 0.85rem 0; }
 
-/* ============================
-   Cross-domain heuristics
-============================ */
+.system-design .prose blockquote { margin: 2rem 0; padding: 0 1.5rem; border: none; font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; line-height: 1.55; color: var(--text-secondary); position: relative; z-index: 1; }
+.system-design .prose blockquote::before { content: ""; position: absolute; inset: -1rem; z-index: -1; background-image: linear-gradient(to right, var(--m-yellow) 1.5px, transparent 1.5px), linear-gradient(to bottom, var(--m-yellow) 1.5px, transparent 1.5px); background-size: 40px 40px; opacity: 0.15; pointer-events: none; }
 
-.section.cross-domain-heuristics {
-  padding: 4rem 2rem 6rem;
-  background-color: var(--m-white);
-}
+.system-design .prose pre { margin: 0 0 1.5rem 0; padding: 0; position: relative; display: block; background: rgba(var(--m-blue-rgb), 0.04) !important; border: none !important; border-radius: 0; overflow: visible; }
+.system-design .prose pre>code.language-formula, .system-design .prose pre>code.language-code { display: block; padding: 0.75rem 1.5rem; font-family: ui-monospace, monospace; font-size: 0.9rem; font-weight: 450; line-height: 1.5; color: var(--m-blue); text-align: left; white-space: pre-wrap; border: none !important; background: transparent !important; }
+.system-design .prose pre::before, .system-design .prose pre::after { content: ""; position: absolute; width: 8px; height: 8px; border: 1px solid var(--m-blue); background: transparent !important; z-index: 2; pointer-events: none; }
+.system-design .prose pre::before { top: 4px; left: 4px; border-right: 0 !important; border-bottom: 0 !important; }
+.system-design .prose pre::after { bottom: 4px; right: 4px; border-left: 0 !important; border-top: 0 !important; }
 
-/* Bento grid system */
-.heuristics-bento {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  grid-auto-flow: dense;
+@media (max-width: 640px) { .system-design .prose pre>code.language-formula { padding: 1rem 1.25rem; font-size: 0.8rem; } }
+.system-essay::after { content: ""; display: block; width: 2rem; height: 2px; background: var(--m-blue); margin-top: 1.5rem; }
 
-  max-width: calc(4 * 260px + 3 * 2rem);
-  margin: 0 auto;
-}
+/* Schematic Intervention */
+.system-essay:nth-of-type(2n)::before { content: ""; position: absolute; top: -2rem; bottom: -4rem; left: -2.55rem; width: 1px; background: linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 12px), linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 4px); background-size: 1px 12px, 1px 4px; opacity: 0.25; }
+.system-essay:nth-of-type(2n) .essay-title::before { content: "REF.0" counter(system-ref); position: absolute; left: -4.6rem; top: 0.1rem; font-family: ui-monospace, monospace; font-size: 0.5rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: var(--m-red); transform: rotate(-90deg); opacity: 1; }
+.system-essay:nth-of-type(4n) .essay-title::after { content: ""; position: absolute; top: 50%; left: -4rem; width: 2rem; height: 1px; background: var(--m-red); opacity: 0.4; }
+.system-essay:nth-of-type(4n)::after { content: ""; position: absolute; bottom: 0.1rem; left: -2.68rem; width: 5px; height: 5px; background: var(--m-red); transform: rotate(45deg); opacity: 0.6; }
+.system-essay:nth-of-type(5n)::before { content: ""; position: absolute; top: 0; left: -1.5rem; width: 0; height: 0; border-style: solid; border-width: 12px 12px 0 0; border-color: var(--m-red) transparent transparent transparent; opacity: 0.2; }
+.system-essay:nth-of-type(6n)::before { content: ""; position: absolute; top: 20%; left: -2.75rem; width: 6px; height: 6px; border: 1px solid var(--m-blue); border-radius: 50%; background: white; z-index: 1; }
 
-/* Block base */
-.heuristic-block {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 1.25rem 1.25rem 1.5rem;
-  background-color: var(--m-white); /* Updated to Mondrian White */
-}
+@media (max-width: 800px) { .system-essay::before, .system-essay::after, .essay-title::before, .essay-title::after, .system-design .prose blockquote::before { display: none !important; } }
 
-/* Layout variants */
-.layout-1x1 {
-  aspect-ratio: 1 / 1;
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.layout-2x1 {
-  grid-column: span 2;
-  grid-row: span 1;
-  min-height: 260px;
-}
-
-.layout-1x2 {
-  grid-column: span 1;
-  grid-row: span 2;
-  min-height: 520px;
-}
-
-.layout-2x2 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-/* Media */
-.heuristic-media img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 0.75rem;
-}
-
-/* Content */
-.heuristic-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-/* Gravity behavior */
-.layout-2x2,
-.layout-1x2 {
-  justify-content: flex-end;
-}
-
-.layout-2x2 .heuristic-content,
-.layout-1x2 .heuristic-content {
-  padding-top: 1.5rem;
-}
-
-.layout-2x2,
-.layout-2x1,
-.layout-1x2 {
-  box-shadow: inset 0 0 0 0.25px rgba(var(--m-red-rgb), 0.1); 
-}
-
-/* Typography */
-.heuristic-lead {
-  font-family: var(--font-main); /* Explicitly Sans-Serif */
-  font-size: 1rem;
-  font-weight: 700; /* Bold for technical authority */
-  font-style: normal;
-  line-height: 1.6;
-  letter-spacing: -0.005em;
-  margin: 0;
-  color: var(--m-blue); 
-}
-
-.heuristic-body {
-  font-family: var(--font-main);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  letter-spacing: -0.005em;
-  margin: 0;
-  color: var(--m-black);
-}
-
-/* Responsive */
-@media (max-width: 1100px) {
-  .heuristics-bento {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 800px) {
-  .heuristics-bento {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .heuristic-block {
-    padding-bottom: 1.25rem;
-  }
-
-  .heuristics-bento {
-    grid-template-columns: 1fr;
-    grid-auto-flow: row;
-    gap: 1.5rem;
-  }
-
-  .layout-1x1,
-  .layout-2x1,
-  .layout-1x2,
-  .layout-2x2 {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .layout-2x1,
-  .layout-1x2 {
-    min-height: unset;
-  }
-}
-
-/* ============================
-   Reading intent: typography
-============================ */
-
-/* Base reset: keep everything calm */
-.heuristic-block {
-  font-family: var(--font-main);
-}
-
-/* All non-title-only blocks stay sans-serif */
-.heuristic-block:not(.type-title-only) .heuristic-lead {
-  font-family: var(--font-main);
-}
-
-/* --------------------------------
-   TITLE-ONLY BLOCKS
-   Editorial pause / anchor
--------------------------------- */
-
-.heuristic-block.type-title-only {
-  justify-content: flex-end; /* Preserved gravity */
-}
-
-.heuristic-block.type-title-only .heuristic-lead {
-  font-family: var(--font-serif) !important; /* Retained Serif for editorial pause */
-  font-style: italic;
-  font-weight: 900;
-  font-size: 2.5rem;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-
-  color: var(--m-black); /* Updated to Mondrian Red */
-}
-
-.heuristic-block.type-title-only .heuristic-body {
-  display: none;
-}
-
-/* --------------------------------
-   TITLE + TEXT (no image)
--------------------------------- */
-
-.heuristic-block.type-title-text .heuristic-lead {
-  font-family: var(--font-main);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--m-blue);
-}
-
-.heuristic-block.type-title-text .heuristic-body {
-  font-size: 0.95rem;
-  color: var(--m-black);
-}
-
-/* --------------------------------
-   IMAGE + TITLE (+ optional text)
--------------------------------- */
-
-.heuristic-block.type-image-title .heuristic-lead,
-.heuristic-block.type-image-title-text .heuristic-lead {
-  font-family: var(--font-main);
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--m-blue);
-}
-
-.heuristic-block.type-image-title .heuristic-body {
-  display: none;
-}
-
-/* --------------------------------
-   IMAGE + TEXT (no title)
--------------------------------- */
-
-.heuristic-block.type-image-text .heuristic-body {
-  font-size: 0.9rem;
-  color: var(--m-black);
-}
-
-/* --------------------------------
-   TEXT-ONLY (no title)
--------------------------------- */
-
-.heuristic-block.type-text-only .heuristic-lead {
-  display: none;
-}
-
-.heuristic-block.type-text-only .heuristic-body {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--m-black);
-}
-
-/* --------------------------------
-   IMAGE-ONLY
--------------------------------- */
-
-.heuristic-block.type-image-only {
-  padding: 0;
-}
-
-.heuristic-block.type-image-only .heuristic-content {
-  display: none;
-}
-
-.heuristic-block.type-image-only .heuristic-media img {
-  margin-bottom: 0;
-}
-
-/* ============================
-   Structured consolidation
-============================ */
-
-.section.structured-consolidation {
-  padding: 4rem 1.5rem 6rem;
-  background-color: var(--m-white);
-  margin: 0;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-.structured-grid {
-  column-width: 240px;
-  column-gap: 2rem;
-  max-width: calc(240px * 3 + 2rem * 2);
-  margin: 0 auto;    
-
-}
-
-/* ============================
-   Tiles: Silent Framework
-============================ */
-
-.consolidation-tile {
-  break-inside: avoid;
-  margin-bottom: 3.5rem; /* Increased for better airiness */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.tile-header::before {
-  content: "";
-  display: block;
-  width: 24px;   
-  height: 8px;   
-  margin-bottom: 0.75rem; /* Precise gap between bar and text */
-  flex-shrink: 0;
-}
-
-/* Mapping Types to the Triad */
+/* Structured Consolidation */
+.section.structured-consolidation { padding: 4rem 1.5rem 6rem; background-color: var(--m-white); margin: 0; min-height: 100vh; box-sizing: border-box; }
+.structured-grid { column-width: 240px; column-gap: 2rem; max-width: calc(240px * 3 + 2rem * 2); margin: 0 auto; }
+.consolidation-tile { break-inside: avoid; margin-bottom: 3.5rem; display: flex; flex-direction: column; align-items: flex-start; }
+.tile-header::before { content: ""; display: block; width: 24px; height: 8px; margin-bottom: 0.75rem; flex-shrink: 0; }
 .type-pdf .tile-header::before { background-color: var(--m-blue); }
 .type-pdf .tile-link { color: var(--m-blue); }
-
 .type-github .tile-header::before { background-color: var(--m-yellow); }
-.type-github .tile-link { 
-  color: var(--m-black); 
-  text-decoration: underline;
-  text-decoration-color: var(--m-yellow);
-  text-decoration-thickness: 2px;
-}
-
+.type-github .tile-link { color: var(--m-black); text-decoration: underline; text-decoration-color: var(--m-yellow); text-decoration-thickness: 2px; }
 .type-article .tile-header::before { background-color: var(--m-red); }
 .type-article .tile-link { color: var(--m-red); }
+.tile-header { display: flex; flex-direction: column; align-items: flex-start; gap: 0; margin-bottom: 0.5rem; }
+.tile-title { font-family: var(--font-main); font-size: 1rem; font-weight: 700; line-height: 1.2; color: var(--m-black); margin: 0; }
+.tile-description { margin-top: 0.25rem; margin-bottom: 0; font-family: var(--font-main); font-size: 0.9rem; line-height: 1.6; color: var(--m-black); }
+.tile-link { margin-top: 0.8rem; padding-left: 0; font-family: var(--font-main); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; text-transform: lowercase; text-decoration: none; transition: transform 0.2s ease, opacity 0.2s ease; display: inline-block; }
+.tile-link:hover { opacity: 0.7; transform: translateX(4px); }
 
-/* Header */
+/* Cross-Domain Heuristics */
+.section.cross-domain-heuristics { padding: 4rem 2rem 6rem; background-color: var(--m-white); }
+.heuristics-bento { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; grid-auto-flow: dense; max-width: calc(4 * 260px + 3 * 2rem); margin: 0 auto; }
+.heuristic-block { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 1.25rem 1.25rem 1.5rem; background-color: var(--m-white); font-family: var(--font-main); }
+.layout-1x1 { aspect-ratio: 1 / 1; grid-column: span 1; grid-row: span 1; }
+.layout-2x1 { grid-column: span 2; grid-row: span 1; min-height: 260px; }
+.layout-1x2 { grid-column: span 1; grid-row: span 2; min-height: 520px; }
+.layout-2x2 { grid-column: span 2; grid-row: span 2; }
+.heuristic-media img { width: 100%; max-width: 100%; height: auto; display: block; margin-bottom: 0.75rem; }
+.heuristic-content { display: flex; flex-direction: column; gap: 0.5rem; }
+.layout-2x2, .layout-1x2 { justify-content: flex-end; }
+.layout-2x2 .heuristic-content, .layout-1x2 .heuristic-content { padding-top: 1.5rem; }
+.layout-2x2, .layout-2x1, .layout-1x2 { box-shadow: inset 0 0 0 0.25px rgba(var(--m-red-rgb), 0.1); }
+.heuristic-lead { font-family: var(--font-main); font-size: 1rem; font-weight: 700; line-height: 1.6; letter-spacing: -0.005em; margin: 0; color: var(--m-blue); }
+.heuristic-body { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.7; letter-spacing: -0.005em; margin: 0; color: var(--m-black); }
 
-.tile-header {
-  display: flex;
-  flex-direction: column; /* Stacked: Lintel top, Title bottom */
-  align-items: flex-start;
-  gap: 0;
-  margin-bottom: 0.5rem;
+@media (max-width: 1100px) { .heuristics-bento { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 800px) { .heuristics-bento { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) {
+  .heuristic-block { padding-bottom: 1.25rem; }
+  .heuristics-bento { grid-template-columns: 1fr; grid-auto-flow: row; gap: 1.5rem; }
+  .layout-1x1, .layout-2x1, .layout-1x2, .layout-2x2 { grid-column: auto; grid-row: auto; }
+  .layout-2x1, .layout-1x2 { min-height: unset; }
 }
 
-.tile-title {
-  font-family: var(--font-main);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--m-black);
-  margin: 0;
-}
-
-/* Body */
-
-.tile-description {
-  margin-top: 0.25rem;
-  margin-bottom: 0;
-  font-family: var(--font-main);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--m-black);
-}
-
-/* Link: The Action Signal */
-
-.tile-link {
-  margin-top: 0.8rem;
-  padding-left: 0; /* REMOVED the calc() to align perfectly left */
-  
-  font-family: var(--font-main);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
-  text-decoration: none;
-  
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  display: inline-block;
-}
-
-.tile-link:hover {
-  opacity: 0.7;
-  transform: translateX(4px); /* Subtle "push" interaction on hover */
-}
-
-/* =============================================================
-   SYSTEM DESIGN SECTION: COLOR SYNC ONLY (LAYOUT PROTECTED)
-   ============================================================= */
-
-.system-design {
-  padding: 4rem 3.5rem 0;
-  background-color: var(--m-white);
-  min-height: 100vh;
-}
-
-@media (max-width: 900px) {
-  .system-design {
-    padding: 3rem 2rem 0;
-  }
-}
-
-.system-design-columns {
-  column-count: 2;
-  column-gap: 4rem;
-  column-fill: balance;
-  counter-reset: system-ref;
-}
-
-@media (min-width: 1300px) {
-  .system-design-columns {
-    column-count: 3;
-    column-gap: 5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .system-design-columns {
-    column-count: 1;
-    column-gap: 0;
-  }
-}
-
-.system-essay {
-  break-inside: avoid;
-  margin-bottom: 6rem;
-  position: relative;
-  counter-increment: system-ref;
-}
-
-.essay-title {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  color: var(--text-primary);
-  margin: 0 0 1.15rem 0;
-  text-wrap: balance;
-  position: relative;
-}
-
-.system-design .prose {
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--text-primary);
-}
-
-.system-design .prose p {
-  margin: 0 0 0.85rem 0;
-}
-
-/* --- THE GHOST GRID (YELLOW) --- */
-.system-design .prose blockquote {
-  margin: 2rem 0;
-  padding: 0 1.5rem; /* Restored to your original exact value */
-  border: none;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.55;
-  color: var(--text-secondary);
-  position: relative;
-  z-index: 1;
-}
-
-.system-design .prose blockquote::before {
-  content: "";
-  position: absolute;
-  inset: -1rem; /* Maintains original boundary */
-  z-index: -1;
-  /* 1.5px lines for visibility without layout shift */
-  background-image:
-    linear-gradient(to right, var(--m-yellow) 1.5px, transparent 1.5px),
-    linear-gradient(to bottom, var(--m-yellow) 1.5px, transparent 1.5px);
-  background-size: 40px 40px;
-  opacity: 0.15; /* Discernible yellow */
-  pointer-events: none;
-}
-
-/* --- CODE BLOCKS (BLUE) --- */
-.system-design .prose pre {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  position: relative;
-  display: block;
-  /* Using m-blue for the tint */
-  background: rgba(var(--m-blue-rgb), 0.04) !important;
-  border: none !important;
-  border-radius: 0;
-  overflow: visible;
-}
-
-.system-design .prose pre>code.language-formula,
-.system-design .prose pre>code.language-code {
-  display: block;
-  padding: 0.75rem 1.5rem;
-  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
-  font-size: 0.9rem;
-  font-weight: 450;
-  line-height: 1.5;
-  color: var(--m-blue);
-  text-align: left;
-  white-space: pre-wrap;
-  border: none !important;
-  background: transparent !important;
-}
-
-/* L-Brackets (Blue) */
-.system-design .prose pre::before,
-.system-design .prose pre::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 1px solid var(--m-blue);
-  background: transparent !important;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.system-design .prose pre::before {
-  top: 4px; left: 4px;
-  border-right: 0 !important; border-bottom: 0 !important;
-}
-
-.system-design .prose pre::after {
-  bottom: 4px; right: 4px;
-  border-left: 0 !important; border-top: 0 !important;
-}
-
-@media (max-width: 640px) {
-  .system-design .prose pre>code.language-formula {
-    padding: 1rem 1.25rem;
-    font-size: 0.8rem;
-  }
-}
-
-.system-essay::after {
-  content: "";
-  display: block;
-  width: 2rem;
-  height: 2px;
-  background: var(--m-blue);
-  margin-top: 1.5rem;
-}
-
-/* ============================================================
-   EDITORIAL INTERVENTIONS: THE SCHEMATIC GUTTER
-   ============================================================ */
-
-/* 1. THE RULER SPINE (Blue) */
-.system-essay:nth-of-type(2n)::before {
-  content: "";
-  position: absolute;
-  top: -2rem;
-  bottom: -4rem;
-  left: -2.55rem;
-  width: 1px;
-  background:
-    linear-gradient(to bottom,
-      var(--m-blue) 0px, var(--m-blue) 1px,
-      transparent 1px, transparent 12px),
-    linear-gradient(to bottom,
-      var(--m-blue) 0px, var(--m-blue) 1px,
-      transparent 1px, transparent 4px);
-  background-size: 1px 12px, 1px 4px;
-  opacity: 0.25;
-}
-
-/* 2. THE SYSTEM LABEL (Red) */
-.system-essay:nth-of-type(2n) .essay-title::before {
-  content: "REF.0" counter(system-ref);
-  position: absolute;
-  left: -4.6rem;
-  top: 0.1rem;
-  font-family: ui-monospace, Menlo, Monaco, monospace;
-  font-size: 0.5rem;
-  font-weight: 400;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--m-red);
-  transform: rotate(-90deg);
-  opacity: 1;
-}
-
-/* 3. THE HORIZONTAL DATUM (Red Diamond) */
-.system-essay:nth-of-type(4n) .essay-title::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -4rem;
-  width: 2rem;
-  height: 1px;
-  background: var(--m-red);
-  opacity: 0.4;
-}
-
-.system-essay:nth-of-type(4n)::after {
-  content: "";
-  position: absolute;
-  bottom: 0.1rem;
-  left: -2.68rem;
-  width: 5px;
-  height: 5px;
-  background: var(--m-red);
-  transform: rotate(45deg);
-  opacity: 0.6;
-}
-
-/* 4. THE SCHEMATIC TRIANGLE (Red) */
-.system-essay:nth-of-type(5n)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -1.5rem;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12px 12px 0 0;
-  border-color: var(--m-red) transparent transparent transparent;
-  opacity: 0.2;
-}
-
-/* 5. THE HOLLOW POINT PLOT (Blue) */
-.system-essay:nth-of-type(6n)::before {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: -2.75rem;
-  width: 6px;
-  height: 6px;
-  border: 1px solid var(--m-blue);
-  border-radius: 50%;
-  background: white;
-  z-index: 1;
-}
-
-@media (max-width: 800px) {
-  .system-essay::before,
-  .system-essay::after,
-  .essay-title::before,
-  .essay-title::after,
-  .system-design .prose blockquote::before {
-    display: none !important;
-  }
-}
+/* Heuristic Variants */
+.heuristic-block.type-title-only { justify-content: flex-end; }
+.heuristic-block.type-title-only .heuristic-lead { font-family: var(--font-serif) !important; font-style: italic; font-weight: 900; font-size: 2.5rem; line-height: 1.4; color: var(--m-black); }
+.heuristic-block.type-title-only .heuristic-body { display: none; }
+.heuristic-block.type-title-text .heuristic-lead { font-weight: 700; font-size: 1rem; color: var(--m-blue); }
+.heuristic-block.type-image-title .heuristic-lead, .heuristic-block.type-image-title-text .heuristic-lead { font-weight: 700; font-size: 0.9rem; color: var(--m-blue); }
+.heuristic-block.type-image-title .heuristic-body { display: none; }
+.heuristic-block.type-image-text .heuristic-body { font-size: 0.9rem; }
+.heuristic-block.type-text-only .heuristic-lead { display: none; }
+.heuristic-block.type-text-only .heuristic-body { font-size: 1rem; line-height: 1.75; }
+.heuristic-block.type-image-only { padding: 0; }
+.heuristic-block.type-image-only .heuristic-content { display: none; }
+.heuristic-block.type-image-only .heuristic-media img { margin-bottom: 0; }
