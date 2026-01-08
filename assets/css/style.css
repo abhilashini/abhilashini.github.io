@@ -49,6 +49,13 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .art-link { color: var(--m-blue); text-decoration: underline; text-underline-offset: 4px; }
 .end-glyph { display: inline-block; width: 8px; height: 8px; background: var(--m-red); margin-left: 6px; }
 
+/* --- VELVET GEOMETRIC HOVER --- */
+.conceptual-nav a, .art-link { position: relative; display: inline; text-decoration: none !important; z-index: 1; padding: 1px 3px; margin: 0 -3px; background-image: linear-gradient(var(--fill-col), var(--fill-col)); background-repeat: no-repeat; background-position: bottom; background-size: 100% 0%; transition: background-size 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s ease; }
+.conceptual-nav a { --fill-col: var(--m-red); }
+.art-link { --fill-col: var(--m-blue); }
+.conceptual-nav a:hover, .art-link:hover { color: var(--m-white) !important; background-size: 100% 88%; }
+.conceptual-nav a:hover + .end-glyph { background-color: var(--m-black); transition: background-color 0.8s ease; }
+
 /* Footer */
 .footer-row { height: 10vh; display: flex; gap: var(--line); }
 .footer-link { flex: 1; display: flex; justify-content: center; align-items: center; font-family: var(--font-main); font-weight: 700; text-transform: lowercase; }
