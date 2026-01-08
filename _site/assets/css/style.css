@@ -226,6 +226,12 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .heuristic-lead { font-family: var(--font-main); font-size: 1rem; font-weight: 700; line-height: 1.6; letter-spacing: -0.005em; margin: 0; color: var(--m-blue); }
 .heuristic-body { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.7; letter-spacing: -0.005em; margin: 0; color: var(--m-black); }
 
+.image-popup { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.image-popup:target { opacity: 1; pointer-events: auto; }
+.popup-content { max-width: 90vw; max-height: 85vh; object-fit: contain; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+.popup-close { position: absolute; top: 20px; right: 30px; color: var(--m-white); font-size: 3rem; text-decoration: none; font-family: var(--font-main); font-weight: 300; }
+.heuristic-media a { cursor: zoom-in; display: block; }
+
 @media (max-width: 1100px) { .heuristics-bento { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 800px) { .heuristics-bento { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 500px) {

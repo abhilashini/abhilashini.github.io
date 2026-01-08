@@ -2,8 +2,7 @@
   <div class="heuristics-bento">
 
     {% for item in site.data.cross_domain_heuristics %}
-      <article
-        class="
+    <article class="
           heuristic-block
           type-{{ item.type }}
           {% case item.layout %}
@@ -13,27 +12,33 @@
             {% else %}layout-1x1
           {% endcase %}
           {% if item.image %}has-image{% else %}text-only{% endif %}
-        "
-      >
+        ">
 
-        {% if item.image %}
-          <div class="heuristic-media">
-            <img src="{{ item.image }}" alt="" />
-          </div>
+      {% if item.image %}
+      <div class="heuristic-media">
+        <a href="#img-{{ forloop.index }}">
+          <img src="{{ item.image }}" alt="" />
+        </a>
+
+        <div id="img-{{ forloop.index }}" class="image-popup">
+          <a href="#_" class="popup-close">×</a>
+          <img src="{{ item.image }}" class="popup-content" />
+        </div>
+      </div>
+      {% endif %}
+
+      {% if item.title or item.body %}
+      <div class="heuristic-content">
+        {% if item.title %}
+        <p class="heuristic-lead">{{ item.title }}</p>
         {% endif %}
-
-        {% if item.title or item.body %}
-          <div class="heuristic-content">
-            {% if item.title %}
-              <p class="heuristic-lead">{{ item.title }}</p>
-            {% endif %}
-            {% if item.body %}
-              <p class="heuristic-body">{{ item.body }}</p>
-            {% endif %}
-          </div>
+        {% if item.body %}
+        <p class="heuristic-body">{{ item.body }}</p>
         {% endif %}
+      </div>
+      {% endif %}
 
-      </article>
+    </article>
     {% endfor %}
 
   </div>
