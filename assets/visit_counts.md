@@ -3,10 +3,11 @@ title: Vist Counts Tracker
 permalink: /visits/
 ---
 
-#### Counts <small><i>not unique</i></small>
+#### Counts <small class="alert"><i>not unique</i></small>
 
 | Observed Date | Count | Notes |
 | :--- | :--- | :--- |
+| Jan 9, 2026 | 1150 | Redesigns: 2 + 1 |
 | Jun 27, 2025 | 342 |  |
 | May 27, 2025 | 332 |  |
 | May 8, 2025 | 275 |  |
@@ -21,5 +22,8 @@ permalink: /visits/
   }
   td, th {
     padding: 10px;
+  }
+  .alert {
+    color: orange;
   }
 </style>
