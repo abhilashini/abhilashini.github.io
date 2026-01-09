@@ -1,6 +1,7 @@
 /* --- GLOBAL RESET & FONTS --- */
 * { box-sizing: border-box; }
 html { font-size: 16px; }
+img { -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none; user-drag: none; pointer-events: none; } /* Prevents dragging or long-press saving of images specifically */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,800;1,900&family=Inter:wght@400;500;700;900&display=swap');
@@ -54,8 +55,10 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 
 .spine::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0; background: var(--m-yellow); animation: fluidDropDown 1.8s var(--fluid-ease) 3.0s forwards; }
 
-.anchor-square { position: relative; background: var(--m-white); }
-.anchor-square::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0; background: var(--m-red); animation: fluidDropDown 0.9s var(--fluid-ease) 4.2s forwards; }
+.anchor-square { position: relative; background: var(--m-white); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.anchor-square::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0; background: var(--m-red); animation: fluidDropDown 0.9s var(--fluid-ease) 4.2s forwards; z-index: 1; }
+.visitor-stats { opacity: 0; transition: opacity 0.3s var(--fluid-ease); filter: brightness(0) invert(1); transform: scale(0.7); pointer-events: none; z-index: 2; }
+.anchor-square:hover .visitor-stats { opacity: 1; }
 
 /* --- LAYOUT --- */
 .header { height: 10vh; display: flex; align-items: center; padding-left: 2.5rem; }
@@ -183,6 +186,13 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .system-design .prose pre::before { top: 4px; left: 4px; border-right: 0 !important; border-bottom: 0 !important; }
 .system-design .prose pre::after { bottom: 4px; right: 4px; border-left: 0 !important; border-top: 0 !important; }
 .system-essay::after { content: ""; display: block; width: 2rem; height: 2px; background: var(--m-blue); margin-top: 1.5rem; }
+.mermaid { background: transparent !important; display: flex; justify-content: center; overflow: visible; padding-bottom: 2rem; }
+.mermaid svg { height: auto !important; max-width: 100%; border: none !important; }
+.mermaid .node rect, .mermaid .node polygon, .mermaid .node circle, .mermaid .node ellipse { fill: rgba(var(--m-blue-rgb), 0.04) !important; stroke: none !important; stroke-width: 0px !important; }
+.mermaid .label { color: var(--m-black) !important; font-weight: 600; line-height: 1.5; }
+.mermaid .edgeLabel rect { fill: var(--m-yellow) !important; stroke: none !important;}
+.mermaid .nodeLabel, .mermaid .node .label { color: var(--m-blue) !important; font-weight: 500; }
+.mermaid .nodeLabel div, .mermaid .node .label div { color: var(--m-blue) !important; }
 
 /* --- SCHEMATIC INTERVENTION --- */
 .system-essay:nth-of-type(2n)::before { content: ""; position: absolute; top: -2rem; bottom: -4rem; left: -2.55rem; width: 1px; background: linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 12px), linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 4px); background-size: 1px 12px, 1px 4px; opacity: 0.25; }
