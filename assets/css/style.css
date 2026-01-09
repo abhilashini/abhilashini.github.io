@@ -254,3 +254,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .heuristic-block.type-image-only { padding: 0; }
 .heuristic-block.type-image-only .heuristic-content { display: none; }
 .heuristic-block.type-image-only .heuristic-media img { margin-bottom: 0; }
+
+.back-to-top { position: fixed; bottom: var(--line); right: var(--line); width: 45px; height: 45px; background: var(--m-white); border: calc(var(--line) / 2) solid var(--m-black); display: flex; align-items: center; justify-content: center; z-index: 1000; text-decoration: none; transition: transform 0.3s var(--fluid-ease), background 0.3s ease; box-sizing: border-box; }
+.up-arrow { width: 12px; height: 12px; border-top: 4px solid var(--m-black); border-left: 4px solid var(--m-black); transform: rotate(45deg); margin-top: 4px; }
+.back-to-top:hover { background: var(--m-yellow); transform: translateY(-4px); }
