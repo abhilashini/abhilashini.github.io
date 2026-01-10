@@ -69,3 +69,17 @@ document.addEventListener('DOMContentLoaded', function () {
         document.head.appendChild(script);
     }
 });
+
+function toggleCredits() {
+    const modal = document.getElementById('credits-modal');
+    if (!modal) return;
+    const isVisible = modal.style.display === 'flex';
+    modal.style.display = isVisible ? 'none' : 'flex';
+}
+
+// Global listeners for closing
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById('credits-modal').style.display = 'none';
+    }
+});
