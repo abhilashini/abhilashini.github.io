@@ -1,0 +1,3 @@
+This site's layout is a spatial adaptation of the **De Stijl** movement.
+The visual structure uses **Piet Mondrian’s** neoplastic compositions as a framework to balance mathematical structure with asymmetrical randomness.
+For more information: [Wikipedia: De Stijl](https://en.wikipedia.org/wiki/De_Stijl)

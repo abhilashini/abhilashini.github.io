@@ -70,11 +70,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-function toggleCredits() {
+async function toggleCredits() {
     const modal = document.getElementById('credits-modal');
-    if (!modal) return;
-    const isVisible = modal.style.display === 'flex';
-    modal.style.display = isVisible ? 'none' : 'flex';
+    const modalBody = document.getElementById('modal-body');
+    
+    if (modal.style.display === 'flex') {
+        modal.style.display = 'none';
+    } else {
+        modal.style.display = 'flex';
+        
+        if (modalBody.innerHTML.trim() === "" || modalBody.innerHTML === "Loading...") {
+            try {
+                // Fetch the RAW text file
+                const response = await fetch('/credits.txt');
+                const text = await response.text();
+                
+                // Parse the raw text into styled HTML
+                let html = text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+                    .replace(/\n+/g, '<br><br>');
+
+                modalBody.innerHTML = html;
+            } catch (err) {
+                modalBody.innerHTML = "Error loading credits.";
+            }
+        }
+    }
 }
 
 // Global listeners for closing

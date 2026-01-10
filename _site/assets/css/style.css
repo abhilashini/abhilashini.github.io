@@ -100,15 +100,24 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .colophon-trigger { font-family: var(--font-main); font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--m-white); opacity: 0; transition: opacity 0.3s ease; font-weight: bold; z-index: 5; margin: 0; }
 .visitor-stats { opacity: 0; transition: opacity 0.3s var(--fluid-ease); filter: brightness(0) invert(1); transform: scale(0.7); pointer-events: none; z-index: 2; }
 .anchor-square:hover .colophon-trigger, .anchor-square:hover .visitor-stats { opacity: 1; }
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 9999; cursor: pointer; }
-.modal-content { background: var(--m-white); padding: 3rem; width: 90%; max-width: 500px; border: var(--line) solid var(--m-black); cursor: default; }
 
-.close-mark { position: absolute; top: 2rem; right: 2rem; width: 24px; height: 24px; cursor: pointer; transition: transform 0.3s ease; }
+@keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalScale { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 9999; cursor: pointer; animation: modalFade 0.4s var(--fluid-ease); }
+.modal-content { position: relative; background: var(--m-white); padding: 4rem 3rem 3rem 3rem; width: 90%; max-width: 420px; border: var(--line) solid var(--m-black); cursor: default; animation: modalScale 0.5s var(--fluid-ease) 0.1s both; }
+.close-mark { position: absolute; top: 1.5rem; right: 1.5rem; width: 24px; height: 24px; cursor: pointer; z-index: 10; transition: transform 0.3s ease; }
 .close-mark::before, .close-mark::after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 3px; background: var(--m-black); }
 .close-mark::before { transform: rotate(45deg); }
 .close-mark::after { transform: rotate(-45deg); }
 .close-mark:hover { transform: rotate(90deg); }
-.modal-content { position: relative; background: var(--m-white); padding: 4rem 3rem 3rem 3rem; width: 90%; max-width: 450px; border: var(--line) solid var(--m-black); }
+#modal-body { color: var(--m-black); font-family: var(--font-main); font-size: 0.9rem; line-height: 1.4; }
+#modal-body a { color: var(--m-red); text-decoration: underline; font-weight: bold; }
+#modal-body strong { font-weight: 700; }
+.modal-signature { display: flex; gap: 8px; margin-top: 2rem; }
+.sig-bar { height: 8px; width: 40px; }
+.sig-red { background-color: var(--m-red); }
+.sig-blue { background-color: var(--m-blue); }
+.sig-yellow { background-color: var(--m-yellow); }
 
 /* --- RESPONSIVE CORE --- */
 @media (max-width: 800px) {
