@@ -12,7 +12,7 @@
     A system that meets user needs can be complete but terminal. 
     Isolate the common factors to carve a neutral core; 
     it is the difference between a one-off tool and a scalable, reusable service.
-  image: ![Design for structure, not content](/assets/images/design_for_structure.png)
+  image: "/assets/images/design_for_structure.png"
 
 - layout: square
   type: text-only
