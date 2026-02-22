@@ -14,11 +14,9 @@
     it is the difference between a one-off tool and a scalable, reusable service.
   image: "/assets/images/design_for_structure.png"
 
-- layout: square
-  type: text-only
-  body: >
-    Failure is rarely caused by a single bad decision. It emerges from layers of
-    reasonable tradeoffs interacting under conditions no one explicitly designed for.
+- layout: wide
+  type: image-only
+  image: "/assets/images/shiny_object_syndrome.png"
 
 - layout: square
   type: text-only
