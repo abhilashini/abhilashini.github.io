@@ -1,11 +1,18 @@
-- layout: large
-  type: image-title-text
-  title: "Loose coupling over clever abstractions"
+- layout: square
+  type: title-text
+  title: "The Horsepower Trap"
   body: >
-    Systems age under change, not load. The more tightly coupled the components,
-    the more unpredictable the blast radius of even small modifications. Favor
-    explicit contracts and boring interfaces over elegant but implicit behavior.
-  image: "https://placehold.co/800x800"
+     Powerful engines pull rusted wagons, but they don't fix the rust.
+     Fast hardware masks design noise. The resulting friction drains human time.
+     A clear "why" makes systems adaptable. 
+
+- layout: large
+  type: image-text
+  body: >
+    A system that meets user needs can be complete but terminal. 
+    Isolate the common factors to carve a neutral core; 
+    it is the difference between a one-off tool and a scalable, reusable service.
+  image: ![Design for structure, not content](/assets/images/design_for_structure.png)
 
 - layout: square
   type: text-only
@@ -48,13 +55,6 @@
   body: >
     Improving performance in isolation often shifts complexity elsewhere.
     Always reason about the system boundary where incentives diverge.
-
-- layout: wide
-  type: title-text
-  title: "Versioning is a social contract"
-  body: >
-    Backward compatibility failures are communication failures first.
-    Treat breaking changes as coordination problems, not technical ones.
 
 - layout: square
   type: image-title-text
