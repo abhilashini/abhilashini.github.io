@@ -47,7 +47,7 @@
     structure fails when misapplied or scaled without care.
   url: "https://github.com/abhilashini/microservices-skeletons"
 
-  - type: article
+- type: article
   title: "The Architecture of Silence"
   description: >
     Why resilient systems depend on deliberate gaps between components
