@@ -12,7 +12,7 @@
         {{ item.description }}
       </p>
 
-      <a class="tile-link" href="{{ item.url }}" aria-label="
+      <a class="tile-link" href="{{ item.url }}"  target="_blank" rel="noopener" aria-label="
         {% case item.type %}
           {% when 'pdf' %}Read PDF: {{ item.title }}
           {% when 'github' %}View repository: {{ item.title }}
