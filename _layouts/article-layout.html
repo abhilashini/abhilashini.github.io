@@ -1,12 +1,18 @@
 ---
 layout: default
 ---
-<div class="system-design">
-  <div class="system-design-columns">
-    <article class="system-essay">
-      <h2 class="essay-title">{{ page.title }}</h2>
-      <div class="prose">
-        {{ content }} </div>
-    </article>
+<section class="section system-design">
+  <div class="system-design-inner">
+    <div class="system-design-columns">
+      <article class="system-essay">
+
+        <h2 class="essay-title">{{ page.title }}</h2>
+        
+        <div class="essay-body prose">
+          {{ content }}
+        </div>
+
+      </article>
+    </div>
   </div>
-</div>
+</section>

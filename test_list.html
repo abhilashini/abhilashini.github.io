@@ -1,9 +1,0 @@
----
-layout: default
----
-<ul>
-  {% for article in site.articles %}
-    <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-  {% endfor %}
-</ul>
-<p>Total articles found: {{ site.articles | size }}</p>
