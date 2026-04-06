@@ -190,27 +190,39 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 @media (min-width: 900px) and (max-width: 1106px) { #persistent-nav .conceptual-nav .nav-full { font-size: 0.85rem; } }
 
 /* --- SYSTEM DESIGN --- */
+/* --- CENTER-OUTWARD DYNAMIC COLUMNS --- */
 .system-design { padding: 8rem 2rem; background-color: var(--m-white); min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; }
-.system-design-inner { width: 100%; max-width: 1400px; }
-.system-design-columns { column-width: 450px; column-gap: 5rem; width: fit-content; margin: 0 auto; counter-reset: system-ref; }
-.system-essay { break-inside: avoid; position: relative; counter-increment: system-ref; margin-bottom: 5rem; display: inline-block; width: 100%; }
-.mermaid { display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100%; margin: 2.5rem 0; break-inside: avoid; overflow: hidden; }
-.mermaid svg { max-width: 100% !important; height: auto !important; display: block; }
-.system-design .prose pre { margin: 2.5rem 0; padding: 1.5rem; background: rgba(var(--m-blue-rgb), 0.04) !important; position: relative; white-space: pre-wrap; word-wrap: break-word; overflow-x: auto; max-width: 100%; border: none; }
-.system-design .prose pre::before { content: ""; position: absolute; width: 12px; height: 12px; border: 1.5px solid var(--m-blue); top: 0; left: 0; border-right: 0; border-bottom: 0; }
-.system-design .prose pre::after { content: ""; position: absolute; width: 12px; height: 12px; border: 1.5px solid var(--m-blue); bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.system-design-inner { display: flex; justify-content: center; max-width: 1400px; width: 100%; }
+.system-design-columns { column-width: 450px; column-gap: 5rem; height: 75vh; column-fill: auto; width: max-content; max-width: 100%; margin: 0 auto; counter-reset: system-ref; }
+.system-essay { break-inside: auto; position: relative; counter-increment: system-ref; width: 100%; }
+
+/* --- QUOTES, MERMAID & FORMULA BLOCKS --- */
 .system-design blockquote { position: relative; padding: 2.5rem; margin: 3rem 0; border: none; background-image: linear-gradient(rgba(var(--m-yellow-rgb), 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--m-yellow-rgb), 0.4) 1px, transparent 1px); background-size: 20px 20px; background-color: rgba(var(--m-yellow-rgb), 0.02); break-inside: avoid; }
 .system-design blockquote p { font-style: italic; font-family: "Georgia", serif; line-height: 1.8; color: var(--m-black); position: relative; z-index: 1; margin: 0; }
-.essay-title::before { content: "MOD_TYPE // Σ-" counter(system-ref); position: absolute; left: -4.5rem; top: 0.8rem; font-family: ui-monospace, monospace; font-size: 0.5rem; color: var(--m-red); transform: rotate(-90deg); letter-spacing: 0.3em; opacity: 0.8; }
-.system-essay::before { content: ""; position: absolute; top: -1rem; right: -1rem; width: 20px; height: 20px; border-top: 1px solid var(--m-blue); border-right: 1px solid var(--m-blue); opacity: 0.2; }
-.system-essay:nth-of-type(even)::after { content: ""; position: absolute; bottom: -2rem; left: -2rem; width: 8px; height: 8px; border: 1px solid var(--m-red); border-radius: 50%; opacity: 0.3; }
-.system-essay:nth-of-type(2n)::before { content: ""; position: absolute; top: -2rem; bottom: -4rem; left: -2.55rem; width: 1px; background: linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 12px), linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 4px); background-size: 1px 12px, 1px 4px; opacity: 0.25; border: none; }
-.system-essay:nth-of-type(2n) .essay-title::before { content: "REF.0" counter(system-ref); position: absolute; left: -4.6rem; top: 0.1rem; font-family: ui-monospace, monospace; font-size: 0.5rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: var(--m-red); transform: rotate(-90deg); opacity: 1; }
-.system-essay:nth-of-type(4n) .essay-title::after { content: ""; position: absolute; top: 50%; left: -4rem; width: 2rem; height: 1px; background: var(--m-red); opacity: 0.4; }
-.system-essay:nth-of-type(4n)::after { content: ""; position: absolute; bottom: 0.1rem; left: -2.68rem; width: 5px; height: 5px; background: var(--m-red); transform: rotate(45deg); opacity: 0.6; border: none; border-radius: 0; }
-.system-essay:nth-of-type(5n)::before { content: ""; position: absolute; top: 0; left: -1.5rem; width: 0; height: 0; border-style: solid; border-width: 12px 12px 0 0; border-color: var(--m-red) transparent transparent transparent; opacity: 0.2; background: none; }
-.system-essay:nth-of-type(6n)::before { content: ""; position: absolute; top: 20%; left: -2.75rem; width: 6px; height: 6px; border: 1px solid var(--m-blue); border-radius: 50%; background: white; z-index: 1; }
-.system-essay .essay-body::after { content: ""; display: block; width: 2.5rem; height: 2px; background: var(--m-blue); margin-top: 2.5rem; opacity: 0.5; }
+.mermaid { display: flex; justify-content: center; align-items: center; width: 100%; max-width: 100%; margin: 2.5rem 0; break-inside: avoid; overflow: hidden; }
+.mermaid svg { max-width: 100% !important; height: auto !important; display: block; }
+.system-design .prose pre { margin: 2.5rem 0; padding: 1.5rem; background: rgba(var(--m-blue-rgb), 0.04) !important; position: relative; white-space: pre-wrap; word-wrap: break-word; overflow-x: auto; max-width: 100%; border: none; break-inside: avoid; }
+.system-design .prose pre::before { content: ""; position: absolute; width: 12px; height: 12px; border: 1.5px solid var(--m-blue); top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.system-design .prose pre::after { content: ""; position: absolute; width: 12px; height: 12px; border: 1.5px solid var(--m-blue); bottom: 0; right: 0; border-left: 0; border-top: 0; }
+
+/* --- THE RESTORED GLYPHS (Mapped to Single Article Structure) --- */
+.essay-body { position: relative; }
+/* 1. Rotated Reference Text */
+.essay-title::before { content: "REF.0" counter(system-ref); position: absolute; left: -4.6rem; top: 0.1rem; font-family: ui-monospace, monospace; font-size: 0.5rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: var(--m-red); transform: rotate(-90deg); opacity: 1; }
+/* 2. The Red Dash */
+.essay-title::after { content: ""; position: absolute; top: 50%; left: -4rem; width: 2rem; height: 1px; background: var(--m-red); opacity: 0.4; }
+/* 3. The Gradient Tracking Line */
+.system-essay::before { content: ""; position: absolute; top: -2rem; bottom: -4rem; left: -2.55rem; width: 1px; background: linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 12px), linear-gradient(to bottom, var(--m-blue) 0px, var(--m-blue) 1px, transparent 1px, transparent 4px); background-size: 1px 12px, 1px 4px; opacity: 0.25; }
+/* 4. The Red Diamond */
+.system-essay::after { content: ""; position: absolute; bottom: 0.1rem; left: -2.68rem; width: 5px; height: 5px; background: var(--m-red); transform: rotate(45deg); opacity: 0.6; }
+/* 5. The Red Triangle */
+.essay-body::before { content: ""; position: absolute; top: 0; left: -1.5rem; width: 0; height: 0; border-style: solid; border-width: 12px 12px 0 0; border-color: var(--m-red) transparent transparent transparent; opacity: 0.2; }
+/* 6. The White/Blue Node Circle */
+.essay-body::after { content: ""; position: absolute; top: 20%; left: -2.75rem; width: 6px; height: 6px; border: 1px solid var(--m-blue); border-radius: 50%; background: var(--m-white); z-index: 1; }
+/* 7. End of Content Dash */
+.system-design .prose::after { content: ""; display: block; width: 2.5rem; height: 2px; background: var(--m-blue); margin-top: 3rem; opacity: 0.5; }
+
+@media (max-width: 800px) { .system-essay::before, .system-essay::after, .essay-title::before, .essay-title::after, .essay-body::before, .essay-body::after { display: none !important; } .system-design-columns { height: auto; } }
 
 /* --- STRUCTURED CONSOLIDATION --- */
 .section.structured-consolidation { padding: 4rem 1.5rem 6rem; background-color: var(--m-white); margin: 0; min-height: 100vh; box-sizing: border-box; }
