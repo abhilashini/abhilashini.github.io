@@ -190,24 +190,27 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 @media (min-width: 900px) and (max-width: 1106px) { #persistent-nav .conceptual-nav .nav-full { font-size: 0.85rem; } }
 
 /* --- SYSTEM DESIGN --- */
-.system-design { padding: 8rem 2rem; background-color: var(--m-white); min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; }
-.system-design-inner { width: 100%; max-width: 1400px; display: flex; justify-content: center; }
-.system-design-columns { column-gap: 5rem; column-fill: auto; counter-reset: system-ref; width: auto; margin: 0 auto; }
-@media (min-width: 901px) { .system-design-columns { column-count: 2; width: 1000px; } }
-@media (min-width: 1401px) { .system-design-columns { column-count: 3; width: 1400px; } }
-@media (max-width: 900px) { .system-design-columns { column-count: 1; width: 100%; } }
-.system-essay { break-inside: avoid; position: relative; counter-increment: system-ref; margin-bottom: 4rem; padding-left: 1rem; }
-.essay-title { display: block; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; line-height: 1.2; color: var(--m-black); margin-bottom: 2rem; position: relative; }
-.essay-title::before { content: "DOC.REF/0" counter(system-ref); position: absolute; left: -3.5rem; top: 0.2rem; font-family: ui-monospace, monospace; font-size: 0.55rem; color: var(--m-red); transform: rotate(-90deg); letter-spacing: 0.2em; }
-.system-design .prose { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.65; color: var(--m-black); text-align: left; }
-.system-design .prose blockquote { margin: 2.5rem 0; padding: 1.5rem; border: none; font-style: italic; font-family: var(--font-serif); position: relative; z-index: 1; }
-.system-design .prose blockquote::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(to right, var(--m-yellow) 1px, transparent 1px), linear-gradient(to bottom, var(--m-yellow) 1px, transparent 1px); background-size: 25px 25px; opacity: 0.12; border: 1px solid rgba(211, 84, 0, 0.1); }
-.system-design .prose pre { margin: 1.5rem 0; padding: 0.75rem 1.25rem; background: rgba(var(--m-blue-rgb), 0.04) !important; border: 1px solid rgba(var(--m-blue-rgb), 0.1) !important; position: relative; }
-.system-design .prose pre::before { content: "DATA_STRUC"; position: absolute; top: -0.6rem; right: 1rem; font-size: 0.5rem; background: var(--m-white); padding: 0 0.4rem; color: var(--m-blue); font-family: ui-monospace, monospace; }
-.system-essay::after { content: ""; display: block; width: 3rem; height: 1px; background: var(--m-blue); margin-top: 2rem; opacity: 0.6; }
-.mermaid { width: 100%; max-width: 100%; overflow: hidden; padding: 1rem 0; }
+.system-design { padding: 8rem 2rem; background-color: var(--m-white); min-height: 100vh; display: flex; justify-content: center; }
+.system-design-inner { width: 100%; max-width: 1400px; margin: 0 auto; }
+.system-design-columns { column-gap: 5rem; column-fill: balance; counter-reset: system-ref; width: 100%; }
+@media (min-width: 901px) { .system-design-columns { column-count: 2; } }
+@media (min-width: 1401px) { .system-design-columns { column-count: 3; } }
+@media (max-width: 900px) { .system-design-columns { column-count: 1; } }
+.system-essay { break-inside: auto; position: relative; counter-increment: system-ref; padding-left: 1rem; }
+.essay-title { display: block; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; line-height: 1.2; color: var(--m-black); margin-bottom: 2.5rem; position: relative; }
+.essay-title::before { content: "DOC.REF/0" counter(system-ref); position: absolute; left: -4rem; top: 0.5rem; font-family: ui-monospace, monospace; font-size: 0.55rem; color: var(--m-red); transform: rotate(-90deg); letter-spacing: 0.2em; }
+.system-design .prose { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.75; color: var(--m-black); }
+.system-design .prose p { margin-bottom: 1.2rem; text-align: justify; }
+.system-design .prose blockquote { margin: 3rem 0; padding: 2rem; border: none; font-style: italic; font-family: var(--font-serif); position: relative; z-index: 1; }
+.system-design .prose blockquote::before { content: ""; position: absolute; inset: -0.5rem; z-index: -1; background-image: linear-gradient(to right, var(--m-yellow) 1px, transparent 1px), linear-gradient(to bottom, var(--m-yellow) 1px, transparent 1px); background-size: 35px 35px; opacity: 0.15; border: 1px solid rgba(var(--m-yellow-rgb), 0.2); }
+.system-design .prose pre { margin: 2rem 0; padding: 1.25rem; background: rgba(var(--m-blue-rgb), 0.04) !important; border: none !important; position: relative; overflow: hidden; width: 100%; box-sizing: border-box; }
+.system-design .prose pre>code { font-family: ui-monospace, monospace; font-size: 0.85rem; color: var(--m-blue); white-space: pre-wrap; word-break: break-all; }
+.system-design .prose pre::before, .system-design .prose pre::after { content: ""; position: absolute; width: 10px; height: 10px; border: 1.5px solid var(--m-blue); z-index: 2; }
+.system-design .prose pre::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.system-design .prose pre::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.system-essay::after { content: ""; display: block; width: 4rem; height: 1px; background: var(--m-blue); margin-top: 3rem; }
+.mermaid { width: 100%; max-width: 100%; overflow: hidden; padding: 2rem 0; break-inside: avoid; }
 .mermaid svg { width: 100% !important; height: auto !important; }
-.system-essay:nth-of-type(odd)::before { content: ""; position: absolute; top: 10%; left: -2rem; width: 6px; height: 6px; background: var(--m-red); border-radius: 50%; opacity: 0.4; }
 
 /* --- STRUCTURED CONSOLIDATION --- */
 .section.structured-consolidation { padding: 4rem 1.5rem 6rem; background-color: var(--m-white); margin: 0; min-height: 100vh; box-sizing: border-box; }
