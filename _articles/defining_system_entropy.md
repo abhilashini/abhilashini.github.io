@@ -1,0 +1,13 @@
+---
+layout: article-layout
+title: "Defining System Entropy"
+---
+Every system, from a simple script to a global mesh, begins its journey toward disorder the moment it is deployed. Technical debt is simply the measurement of that energy loss over time.
+
+We can visualize the rate of decay by looking at the relationship between change frequency and the stability of the core abstractions:
+
+```formula
+system_entropy = (new_dependencies + undocumented_hacks) / rationale_retention
+```
+
+The goal of a senior architect isn't to stop entropy—that is impossible—but to ensure the rationale for the system's existence remains clearer than the complexity of its implementation.

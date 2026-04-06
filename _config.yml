@@ -1,11 +1,9 @@
 title: Abhilashini A J
-description: "Scrapbook of Thoughts"
+description: "Human-centered System Design"
 baseurl: /
 url: "https://abhilashini.github.io"
 markdown: kramdown
-defaults:
-  - scope:
-      path: "_data/ai_points.yml"
-      type: ai-points
-    values:
-      pattern-style: "letter-spacing: 0.1em; opacity: 0.3;"
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/

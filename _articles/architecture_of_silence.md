@@ -1,0 +1,7 @@
+---
+layout: article-layout
+title: "The Architecture of Silence"
+---
+In system design, what we leave out is often more critical than what we include. We are trained to look for features, endpoints, and data flows, but the most resilient systems are defined by their empty spaces—the decoupling points where components *don't* know about each other.
+
+This "silence" between services is what prevents a localized failure from becoming a global catastrophe. When every part of a system is chatty and interconnected, the noise of a single error amplifies until the entire structure vibrates apart.
