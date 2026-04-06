@@ -214,7 +214,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 
 /* --- STRUCTURED CONSOLIDATION --- */
 .section.structured-consolidation { padding: 4rem 1.5rem 6rem; background-color: var(--m-white); margin: 0; min-height: 100vh; box-sizing: border-box; }
-.structured-grid { column-width: 240px; column-gap: 2rem; max-width: calc(240px * 3 + 2rem * 2); margin: 0 auto; }
+.structured-grid { column-width: 240px; column-gap: 2rem; max-width: calc(240px * 6 + 2rem * 2); margin: 0 auto; }
 .consolidation-tile { break-inside: avoid; margin-bottom: 3.5rem; display: flex; flex-direction: column; align-items: flex-start; }
 .tile-header::before { content: ""; display: block; width: 24px; height: 8px; margin-bottom: 0.75rem; flex-shrink: 0; }
 .type-pdf .tile-header::before { background-color: var(--m-blue); }
