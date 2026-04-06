@@ -192,25 +192,19 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 /* --- SYSTEM DESIGN --- */
 .system-design { padding: 8rem 2rem; background-color: var(--m-white); min-height: 100vh; display: flex; justify-content: center; }
 .system-design-inner { width: 100%; max-width: 1400px; margin: 0 auto; }
-.system-design-columns { column-gap: 5rem; column-fill: balance; counter-reset: system-ref; width: 100%; }
+.system-design-columns { column-gap: 5rem; column-fill: auto; counter-reset: system-ref; width: 100%; height: 80vh; }
 @media (min-width: 901px) { .system-design-columns { column-count: 2; } }
 @media (min-width: 1401px) { .system-design-columns { column-count: 3; } }
-@media (max-width: 900px) { .system-design-columns { column-count: 1; } }
-.system-essay { break-inside: auto; position: relative; counter-increment: system-ref; padding-left: 1rem; }
-.essay-title { display: block; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; line-height: 1.2; color: var(--m-black); margin-bottom: 2.5rem; position: relative; }
-.essay-title::before { content: "DOC.REF/0" counter(system-ref); position: absolute; left: -4rem; top: 0.5rem; font-family: ui-monospace, monospace; font-size: 0.55rem; color: var(--m-red); transform: rotate(-90deg); letter-spacing: 0.2em; }
-.system-design .prose { font-family: var(--font-main); font-size: 0.95rem; line-height: 1.75; color: var(--m-black); }
-.system-design .prose p { margin-bottom: 1.2rem; text-align: justify; }
-.system-design .prose blockquote { margin: 3rem 0; padding: 2rem; border: none; font-style: italic; font-family: var(--font-serif); position: relative; z-index: 1; }
-.system-design .prose blockquote::before { content: ""; position: absolute; inset: -0.5rem; z-index: -1; background-image: linear-gradient(to right, var(--m-yellow) 1px, transparent 1px), linear-gradient(to bottom, var(--m-yellow) 1px, transparent 1px); background-size: 35px 35px; opacity: 0.15; border: 1px solid rgba(var(--m-yellow-rgb), 0.2); }
-.system-design .prose pre { margin: 2rem 0; padding: 1.25rem; background: rgba(var(--m-blue-rgb), 0.04) !important; border: none !important; position: relative; overflow: hidden; width: 100%; box-sizing: border-box; }
-.system-design .prose pre>code { font-family: ui-monospace, monospace; font-size: 0.85rem; color: var(--m-blue); white-space: pre-wrap; word-break: break-all; }
-.system-design .prose pre::before, .system-design .prose pre::after { content: ""; position: absolute; width: 10px; height: 10px; border: 1.5px solid var(--m-blue); z-index: 2; }
-.system-design .prose pre::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
-.system-design .prose pre::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
-.system-essay::after { content: ""; display: block; width: 4rem; height: 1px; background: var(--m-blue); margin-top: 3rem; }
-.mermaid { width: 100%; max-width: 100%; overflow: hidden; padding: 2rem 0; break-inside: avoid; }
-.mermaid svg { width: 100% !important; height: auto !important; }
+.system-essay { break-inside: avoid; position: relative; counter-increment: system-ref; margin-bottom: 5rem; }
+.essay-title::before { content: "MOD_TYPE // Σ-" counter(system-ref); position: absolute; left: -4.5rem; top: 0.8rem; font-family: ui-monospace, monospace; font-size: 0.5rem; color: var(--m-red); transform: rotate(-90deg); letter-spacing: 0.3em; opacity: 0.8; }
+.system-essay::before { content: ""; position: absolute; top: -1rem; right: -1rem; width: 20px; height: 20px; border-top: 1px solid var(--m-blue); border-right: 1px solid var(--m-blue); opacity: 0.2; }
+.system-essay:nth-of-type(even)::after { content: ""; position: absolute; bottom: -2rem; left: -2rem; width: 8px; height: 8px; border: 1px solid var(--m-red); border-radius: 50%; opacity: 0.3; }
+.mermaid { width: 100%; display: flex; justify-content: center; padding: 2.5rem 0; break-inside: avoid; }
+.mermaid svg { height: auto !important; max-width: 100% !important; width: auto !important; }
+.system-design .prose pre { margin: 2.5rem 0; padding: 1.5rem; background: rgba(var(--m-blue-rgb), 0.04) !important; border: none !important; position: relative; }
+.system-design .prose pre::before { content: ""; position: absolute; width: 12px; height: 12px; border: 1.5px solid var(--m-blue); top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.system-design .prose pre::after { content: ""; position: absolute; width: 12px; height: 12px; border: 1.5px solid var(--m-blue); bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.system-essay .essay-body::after { content: ""; display: block; width: 2.5rem; height: 2px; background: var(--m-blue); margin-top: 2.5rem; opacity: 0.5; }
 
 /* --- STRUCTURED CONSOLIDATION --- */
 .section.structured-consolidation { padding: 4rem 1.5rem 6rem; background-color: var(--m-white); margin: 0; min-height: 100vh; box-sizing: border-box; }
