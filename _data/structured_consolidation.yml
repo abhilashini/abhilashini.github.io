@@ -81,3 +81,15 @@
     A small essay demonstrating how diagrams and reasoning
     coexist when thinking about systems.
   url: "/articles/mermaid-in-the-mix.html"
+
+- type: article
+  title: "Complex Topologies"
+  description: >
+    Medium-Long essat demonstrating Diagram usage and multi-paragraph flow.
+  url: "/articles/merging-complex-topologies.html"
+
+- type: article
+  title: "Minimalist Heuristic"
+  description: >
+    Short: Demonstrating the centering logic and the blue-dash end marker
+  url: "/articles/the-Minimalist-heuristic.html"
