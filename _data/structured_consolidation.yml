@@ -52,32 +52,32 @@
   description: >
     Why resilient systems depend on deliberate gaps between components
     and how silence between services prevents cascading failures.
-  url: "/articles/architecture_of_silence/"
+  url: "/articles/architecture_of_silence.html"
 
 - type: article
   title: "Defining System Entropy"
   description: >
     A way to reason about the gradual decay of software systems and
     why preserving architectural rationale slows that entropy.
-  url: "/articles/defining_system_entropy/"
+  url: "/articles/defining_system_entropy.html"
 
 - type: article
   title: "The Human in the Loop"
   description: >
     Automation scales human judgment rather than eliminating it.
     Systems must assume manual intervention will eventually occur.
-  url: "/articles/human_in_the_loop/"
+  url: "/articles/human_in_the_loop.html"
 
 - type: article
   title: "Agnosticism as Strategy"
   description: >
     Designing around problems rather than vendors creates
     long-lived systems that can survive infrastructure shifts.
-  url: "/articles/agnosticism_as_strategy/"
+  url: "/articles/agnosticism_as_strategy.html"
 
 - type: article
   title: "Mermaid in the Mix"
   description: >
     A small essay demonstrating how diagrams and reasoning
     coexist when thinking about systems.
-  url: "/articles/mermaid_in_the_mix/"
+  url: "/articles/mermaid_in_the_mix.html"

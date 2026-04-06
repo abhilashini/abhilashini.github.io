@@ -6,4 +6,4 @@ markdown: kramdown
 collections:
   articles:
     output: true
-    permalink: /articles/:name/
+    permalink: /articles/:name.html
