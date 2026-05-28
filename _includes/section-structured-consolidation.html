@@ -16,7 +16,7 @@
         {% case item.type %}
           {% when 'pdf' %}Read PDF: {{ item.title }}
           {% when 'github' %}View repository: {{ item.title }}
-          {% else %}Read article: {{ item.title }}
+          {% else %}Read more: {{ item.title }}
         {% endcase %}
       ">
         {% case item.type %}
@@ -25,7 +25,7 @@
         {% when "github" %}
         View repository
         {% else %}
-        Read article
+        Read more
         {% endcase %}
       </a>
 
