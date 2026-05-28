@@ -45,7 +45,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 
 /* --- CHOREOGRAPHED REVEAL OVERLAYS --- */
 .header::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-red); z-index: 1; animation: fluidSwipeRight 1.4s var(--fluid-ease) 0.8s forwards; }
-.header-title { font-family: var(--font-main) !important; font-size: 0.95rem !important; font-weight: 900 !important; letter-spacing: 0.5em; text-transform: uppercase; color: var(--m-black); position: relative; z-index: 2; animation: textColorShift 0.8s var(--fluid-ease) 1.6s forwards; }gut
+.header-title { font-family: var(--font-main) !important; font-size: 1.4rem !important; font-weight: 900 !important; letter-spacing: 0.25em; text-transform: uppercase; color: var(--m-black); position: relative; z-index: 2; animation: textColorShift 0.8s var(--fluid-ease) 1.6s forwards; }gut
 .blue-top { position: relative; background: var(--m-white); overflow: hidden; }
 .blue-top::after { content: ""; position: absolute; top: 0; left: 0; height: 100%; width: 0; background: var(--m-blue); z-index: 1; animation: fluidSwipeRight 1.4s var(--fluid-ease) 1.8s forwards; }
 
@@ -65,7 +65,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .blue-top { flex: 1; }
 .nav-bottom { flex: 1.5; }
 .col-left { display: flex; flex-direction: column; gap: var(--line); }
-.intro-block { flex: 1; background: var(--m-black); border: var(--m-white) 7px solid; color: var(--m-white); }
+.intro-block { flex: 1; background: var(--m-black); border: var(--m-white) 7px solid; }
 .assembly-row { height: calc(40vh * 0.5); display: grid; grid-template-columns: 1fr 1fr; gap: var(--line); }
 .squares-container { display: flex; gap: var(--line); }
 .squares-container .cell { flex: 1; aspect-ratio: 1/1; }
@@ -75,7 +75,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 
 /* --- TYPOGRAPHY --- */
 .anchor-text { color: var(--m-yellow); font-weight: bold; font-style: italic; }
-.body-text { font-family: var(--font-main); font-size: 1.45rem; font-weight: 500; line-height: 1.6; color: var(--m-black); letter-spacing: -0.01em; margin: 0; }
+.body-text { font-family: var(--font-main); font-size: 1.45rem; font-weight: 500; line-height: 1.6; color: var(--m-white); letter-spacing: -0.01em; margin: 0; }
 .body-text::first-letter { font-weight: 900; font-size: 5rem; float: left; line-height: 0.8; margin-right: 0.15rem; margin-left: -0.05rem; letter-spacing: -0.01em; color: var(--m-red); padding-top: 10px; }
 .nav-text { font-family: var(--font-main); font-size: 1.3rem; font-weight: 700; line-height: 1.4; }
 .art-link { color: var(--m-blue); text-decoration: underline; text-underline-offset: 4px; }
