@@ -25,7 +25,7 @@ img { -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-
 /* --- BASE ARCHITECTURE --- */
 body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto; }
 .mondrian-canvas { display: flex; flex-direction: column; height: 100vh; padding: var(--line); gap: var(--line); }
-.cell { background: #FFF; position: relative; overflow: hidden; }
+.cell { background: var(--m-white); position: relative; overflow: hidden; }
 
 /* --- FLUID ANIMATION KEYFRAMES --- */
 @keyframes fluidSwipeRight { 
@@ -65,7 +65,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .blue-top { flex: 1; }
 .nav-bottom { flex: 1.5; }
 .col-left { display: flex; flex-direction: column; gap: var(--line); }
-.intro-block { flex: 1; }
+.intro-block { flex: 1; background: var(--m-black); border: var(--m-white) 7px solid; color: var(--m-white); }
 .assembly-row { height: calc(40vh * 0.5); display: grid; grid-template-columns: 1fr 1fr; gap: var(--line); }
 .squares-container { display: flex; gap: var(--line); }
 .squares-container .cell { flex: 1; aspect-ratio: 1/1; }
@@ -74,8 +74,9 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
 .flex-bottom { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
 
 /* --- TYPOGRAPHY --- */
-.body-text { font-family: var(--font-main); font-size: 1.15rem; font-weight: 500; line-height: 1.6; color: #000; letter-spacing: -0.01em; margin: 0; }
-.body-text::first-letter { font-weight: 900; font-size: 3.8rem; float: left; line-height: 0.8; margin-right: 0.5rem; color: var(--m-red); padding-top: 7px; }
+.anchor-text { color: var(--m-yellow); font-weight: bold; font-style: italic; }
+.body-text { font-family: var(--font-main); font-size: 1.45rem; font-weight: 500; line-height: 1.6; color: var(--m-black); letter-spacing: -0.01em; margin: 0; }
+.body-text::first-letter { font-weight: 900; font-size: 5rem; float: left; line-height: 0.8; margin-right: 0.15rem; margin-left: -0.05rem; letter-spacing: -0.01em; color: var(--m-red); padding-top: 10px; }
 .nav-text { font-family: var(--font-main); font-size: 1.3rem; font-weight: 700; line-height: 1.4; }
 .art-link { color: var(--m-blue); text-decoration: underline; text-underline-offset: 4px; }
 .end-glyph { display: inline-block; width: 8px; height: 8px; background: var(--m-red); margin-left: 6px; }
@@ -140,7 +141,7 @@ body { margin: 0; background: var(--m-black); min-height: 100vh; overflow: auto;
   .footer-link[href*="github"] { background: var(--m-yellow); color: var(--m-black) !important; }
   .footer-link[href*="medium"] { background: var(--m-red); color: var(--m-white) !important; }
   .anchor-square { display: none; }
-  .body-text::first-letter { font-size: 3.5rem; line-height: 0.8; padding-top: 7px; }
+  .body-text::first-letter { font-size: 5rem; line-height: 0.8; padding-top: 10px; margin-right: 0.15rem; margin-left: -0.05rem; letter-spacing: -0.01em; }
   .back-to-top { bottom: 1.5rem; right: 1.5rem; width: 40px; height: 40px; border-width: 3px; }
 }
 
