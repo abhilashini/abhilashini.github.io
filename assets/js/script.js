@@ -1,20 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Navigation & UI Logic
     document.addEventListener('keydown', function (event) {
         if (event.key === "Escape" && window.location.hash.startsWith('#img-')) {
             window.location.hash = '#_';
         }
     });
 
-    const backToTop = document.querySelector('.back-to-top');
-    if (backToTop) {
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
-    // 2. Content Protection Logic
     document.addEventListener('copy', (e) => {
         const selection = document.getSelection().toString();
         const pagelink = '\n\nRead more at: https://abhilashini.github.io/';
@@ -29,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         section.appendChild(hiddenTag);
     });
 
-    // 3. Optimized Mermaid Loading
     const mermaidBlocks = document.querySelectorAll('.language-mermaid');
     if (mermaidBlocks.length > 0) {
         const script = document.createElement('script');
@@ -68,40 +57,58 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         document.head.appendChild(script);
     }
-});
 
-async function toggleCredits() {
-    const modal = document.getElementById('credits-modal');
-    const modalBody = document.getElementById('modal-body');
-    
-    if (modal.style.display === 'flex') {
-        modal.style.display = 'none';
-    } else {
-        modal.style.display = 'flex';
-        
-        if (modalBody.innerHTML.trim() === "" || modalBody.innerHTML === "Loading...") {
-            try {
-                // Fetch the RAW text file
-                const response = await fetch('/credits.txt');
-                const text = await response.text();
-                
-                // Parse the raw text into styled HTML
-                let html = text
-                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-                    .replace(/\n+/g, '<br><br>');
+    const grid = document.querySelector('.grid');
+const cells = [...document.querySelectorAll('.grid .cell')];
 
-                modalBody.innerHTML = html;
-            } catch (err) {
-                modalBody.innerHTML = "Error loading credits.";
-            }
-        }
-    }
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    grid.classList.remove('rigid');
+    return;
 }
 
-// Global listeners for closing
-document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") {
-        document.getElementById('credits-modal').style.display = 'none';
-    }
+setTimeout(() => grid.classList.remove('rigid'), 1600);
+setTimeout(enableTracking, 3200);
+
+function enableTracking() {
+    if (window.innerWidth <= 960) return;
+
+    grid.classList.add('tracking');
+
+    grid.addEventListener('mousemove', ({ clientX: mouseX, clientY: mouseY }) => {
+        cells.forEach((cell, index) => {
+            const rect = cell.getBoundingClientRect();
+            const cellX = rect.left + rect.width / 2;
+            const cellY = rect.top + rect.height / 2;
+
+            const dx = mouseX - cellX;
+            const dy = mouseY - cellY;
+
+            const distance = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
+
+            let px = 0;
+            let py = 0;
+
+            if (distance < 220) {
+                const force = ((220 - distance) / 220) ** 1.5;
+                px = -(dx / distance) * force * 40;
+                py = -(dy / distance) * force * 40;
+            }
+
+            const depth = ((index * 7) % 5) + 1;
+
+            px += ((mouseX / innerWidth) - 0.5) * depth * 8;
+            py += ((mouseY / innerHeight) - 0.5) * depth * 8;
+
+            cell.style.setProperty('--mx', `${px}px`);
+            cell.style.setProperty('--my', `${py}px`);
+        });
+    });
+
+    grid.addEventListener('mouseleave', () => {
+        cells.forEach(cell => {
+            cell.style.setProperty('--mx', '0px');
+            cell.style.setProperty('--my', '0px');
+        });
+    });
+}
 });
