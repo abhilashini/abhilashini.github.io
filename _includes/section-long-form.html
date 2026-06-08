@@ -1,0 +1,36 @@
+<section class="section structured-consolidation">
+  <div class="structured-grid">
+
+    {% for item in site.data.structured_consolidation %}
+    <article class="consolidation-tile type-{{ item.type }}">
+
+      <header class="tile-header">
+        <h2 class="tile-title">{{ item.title }}</h2>
+      </header>
+
+      <p class="tile-description">
+        {{ item.description }}
+      </p>
+
+      <a class="tile-link" href="{{ item.url | relative_url }}"  target="_blank" rel="noopener" aria-label="
+        {% case item.type %}
+          {% when 'pdf' %}Read PDF: {{ item.title }}
+          {% when 'github' %}View repository: {{ item.title }}
+          {% else %}Read more: {{ item.title }}
+        {% endcase %}
+      ">
+        {% case item.type %}
+        {% when "pdf" %}
+        Read PDF
+        {% when "github" %}
+        View repository
+        {% else %}
+        Read more
+        {% endcase %}
+      </a>
+
+    </article>
+    {% endfor %}
+
+  </div>
+</section>

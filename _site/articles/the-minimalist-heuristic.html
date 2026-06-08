@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Abhilashini">
+  <meta name="copyright" content="© Abhilashini">
+  <meta name="robots" content="noai, noimageai">
+  <meta property="og:title" content="Engineering x Design Thinking by Abhilashini">
+  <meta property="og:url" content="https://abhilashini.github.io/">
+  <title>Abhilashini A J</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  
+  <header id="persistent-nav">
+  <div class="persistent-nav-inner">
+
+    <a href="/" class="home-button" aria-label="Home">
+      <span class="home-shape">
+        <span class="home-icon" aria-hidden="true"></span>
+      </span>
+      <span class="home-text">Home</span>
+    </a>
+
+    <nav class="conceptual-nav">
+      <p class="nav-full">
+        This site distills the agnostic line of inquiry I follow. 
+        While I primarily explore systems in parts and as a whole, it's also a space for outlier ideas.
+        The <a href="/long-form/" class="art-link">long-form content</a>
+        has playbooks, write-ups, and projects I learn from. There is also
+        <a href="/mosaic/" class="art-link">a mosaic of thoughts</a>
+        I collect along the way<span class="end-glyph"></span>
+      </p>
+
+      <p class="nav-compact">
+        An agnostic inquiry into systems, featuring 
+        <a href="/long-form/" class="art-link">long-form content</a> 
+        and a shifting <a href="/mosaic/" class="art-link">mosaic of thoughts</a><span class="end-glyph"></span>
+      </p>
+    </nav>
+
+  </div>
+</header>
+  
+
+  <main id="page">
+    <section class="section system-design">
+  <div class="system-design-inner">
+    <div class="system-design-columns">
+      <article class="system-essay">
+
+        <h2 class="essay-title">The Minimalist Heuristic</h2>
+        
+        <div class="essay-body prose">
+          <p>If a component can be removed without affecting the observable outcome of a transaction, it is not an optimization; it is a liability. Systems thrive on the absence of unnecessary chatter.</p>
+
+<blockquote>
+  <p>“Automation does not eliminate the need for human judgment; it scales the impact of that judgment.”</p>
+</blockquote>
+
+<p>Every byte sent across a wire is a potential point of failure. By reducing the surface area of our internal communication, we increase the overall resilience of our architecture. This is not just about performance—it is about cognitive load. A system that is easy to reason about is a system that is easy to fix when it eventually, inevitably, breaks.</p>
+
+<p>We must treat code as a cost, not an asset. Every line of “clever” logic is a future debugging session waiting to happen. In a truly resilient environment, the most valuable engineer is the one who solves a problem by deleting a service rather than adding a new one.</p>
+
+<pre><code class="language-mermaid">graph LR
+  A[Input] --&gt; B(Logic)
+  B --&gt; C[Output]
+  style B fill:#f9f,stroke:#333,stroke-width:4px
+</code></pre>
+
+<p>If a component can be removed without affecting the observable outcome of a transaction, it is not an optimization; it is a liability. Systems thrive on the absence of unnecessary chatter.</p>
+
+<blockquote>
+  <p>“Automation does not eliminate the need for human judgment; it scales the impact of that judgment.”</p>
+</blockquote>
+
+<p>Every byte sent across a wire is a potential point of failure. By reducing the surface area of our internal communication, we increase the overall resilience of our architecture. This is not just about performance—it is about cognitive load. A system that is easy to reason about is a system that is easy to fix when it eventually, inevitably, breaks.</p>
+
+<p>We must treat code as a cost, not an asset. Every line of “clever” logic is a future debugging session waiting to happen. In a truly resilient environment, the most valuable engineer is the one who solves a problem by deleting a service rather than adding a new one.</p>
+
+        </div>
+
+      </article>
+    </div>
+  </div>
+</section>
+  </main>
+  <script src="/assets/js/script.js" defer></script>
+
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <span class="up-arrow"></span>
+</a>
+
+</body>
+
+</html>
