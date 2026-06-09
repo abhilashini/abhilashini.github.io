@@ -5,11 +5,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* ═══════════════════════════ PAGE‑BODY SCOPING ═══════════════════════════ */
-body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); height: 100vh; display: flex; flex-direction: column; overflow: hidden; font-weight: 400; line-height: 1.6; }
+body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); }
 /* Index (Card) Page */
 .home-wrapper { width: 100%; min-height: 100vh; background-color: var(--bg-page); display: flex; justify-content: center; align-items: center; overflow-x: hidden; }
 /* Library (Filter) Page */
-.library-wrapper { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); height: 100vh; display: flex; flex-direction: column; overflow: hidden; font-weight: 400; line-height: 1.6; }
+.library-wrapper { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); flex: 1; height: 100vh; display: flex; flex-direction: column; font-weight: 400; line-height: 1.6; overflow: hidden; }
 /* Heuristics (Bento) Page */
 body.heuristics-page { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); min-height: 100vh; display: flex; flex-direction: column; font-weight: 400; line-height: 1.6; overflow-x: hidden; overflow-y: auto; }
 
@@ -145,6 +145,9 @@ body.heuristics-page { font-family: var(--font-main); background: var(--bg-page)
 .meta-type.type-download { color: var(--accent-download); }
 .meta-type.type-repo { color: var(--accent-repo); }
 .empty-state { text-align: center; padding: 5rem 2rem; font-family: var(--font-serif); font-size: 1.2rem; color: #b0afa8; }
+body:has(.library-wrapper) { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+body:has(.library-wrapper) #page { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+body:has(.library-wrapper) .library-wrapper { height: 100%; }
 
 /* ═══════════════════════════ HEURISTICS / BENTO PAGE (File 3) ═══════════════════════════ */
 .page-content { flex: 1; width: 100%; }
