@@ -5,13 +5,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* ═══════════════════════════ PAGE‑BODY SCOPING ═══════════════════════════ */
-body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); }
-/* Index (Card) Page */
+body { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); display: flex; flex-direction: column; }
+main#page { flex: 1; display: flex; flex-direction: column; }
 .home-wrapper { width: 100%; min-height: 100vh; background-color: var(--bg-page); display: flex; justify-content: center; align-items: center; overflow-x: hidden; }
 /* Library (Filter) Page */
 .library-wrapper { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); flex: 1; height: 100vh; display: flex; flex-direction: column; font-weight: 400; line-height: 1.6; overflow: hidden; }
-/* Heuristics (Bento) Page */
-body.heuristics-page { font-family: var(--font-main); background: var(--bg-page); color: var(--text-body); min-height: 100vh; display: flex; flex-direction: column; font-weight: 400; line-height: 1.6; overflow-x: hidden; overflow-y: auto; }
 
 /* ═══════════════════════════ SHARED HEADER (Files 2 & 3) ═══════════════════════════ */
 .header { display: flex; align-items: center; padding: 18px 32px; flex-shrink: 0; background: var(--bg-page); gap: 24px; }
@@ -181,6 +179,16 @@ body:has(.library-wrapper) .library-wrapper { height: 100%; }
 .heuristic-block.type-image-only { padding: 0; }
 .heuristic-block.type-image-only .heuristic-content { display: none; }
 .heuristic-block.type-image-only .heuristic-media img { margin-bottom: 0; }
+body:has(.heuristics-bento) { height: 100vh; overflow: hidden; }
+body:has(.heuristics-bento) #page { flex: 1; overflow-y: auto; display: flex; flex-direction: column; min-height: 0; }
+.bento-back-to-top { position: fixed; bottom: 2.5rem; right: 2.5rem; background: none; border: none; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 99; padding: 0; text-decoration: none; }
+.bento-back-to-top.visible { opacity: 0.35; visibility: visible; }
+.bento-back-to-top:hover { transform: translateY(-4px); opacity: 0.9; }
+.bento-top-shape { width: 28px; height: 20px; background-color: var(--color-orange); clip-path: polygon(50% 0%, 0% 100%, 100% 100%); transition: background-color 0.3s ease; }
+.bento-back-to-top:hover .bento-top-shape { background-color: var(--m-blue); }
+.bento-top-text { font-family: var(--font-main); font-size: 0.75rem; font-weight: 500; color: var(--text-body); text-align: center; line-height: 1.3; transition: color 0.3s ease; }
+.bento-back-to-top:hover .bento-top-text { color: var(--m-blue); }
+@media (max-width: 768px) { .bento-top-text { display: none; } .bento-top-shape { width: 22px; height: 16px; } .bento-back-to-top { bottom: 1.5rem; right: 1.5rem; } }
 
 /* ═══════════════════════════ RESPONSIVE ═══════════════════════════ */
 /* Index Page (File 1) */

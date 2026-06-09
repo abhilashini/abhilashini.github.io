@@ -113,4 +113,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (document.getElementById('filterPane')) initLibraryFilters();
+
+    const bentoContainer = document.getElementById('page');
+    const bentoScrollBtn = document.getElementById('bentoBackToTop');
+    
+    if (bentoContainer && bentoScrollBtn) {
+        // Since #page is now the element scrolling, we listen directly to its offsets
+        bentoContainer.addEventListener('scroll', function () {
+            if (bentoContainer.scrollTop > 400) {
+                bentoScrollBtn.classList.add('visible');
+            } else {
+                bentoScrollBtn.classList.remove('visible');
+            }
+        });
+
+        // Smoothly transitions the container back to zero layout height
+        bentoScrollBtn.addEventListener('click', function () {
+            bentoContainer.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
