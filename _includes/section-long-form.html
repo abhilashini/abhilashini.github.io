@@ -1,36 +1,72 @@
-<section class="section structured-consolidation">
-  <div class="structured-grid">
+{% assign entries = site.data.long_form_content %}
 
-    {% for item in site.data.structured_consolidation %}
-    <article class="consolidation-tile type-{{ item.type }}">
+<div class="library-wrapper">
+  <div class="main-content">
 
-      <header class="tile-header">
-        <h2 class="tile-title">{{ item.title }}</h2>
-      </header>
+    <aside class="filter-pane" id="filterPane">
+      <h2 class="filter-pane-heading">Filters</h2>
 
-      <p class="tile-description">
-        {{ item.description }}
-      </p>
+      <div class="filter-section content-type-section">
+        <h3>Content Type</h3>
+        <div class="type-list" id="contentTypeFilters">
+          <button class="type-item filter-btn active" data-type="all"><span class="filter-btn-text">All</span></button>
+          <button class="type-item filter-btn" data-type="read"><span class="filter-btn-text">Write‑up</span></button>
+          <button class="type-item filter-btn" data-type="download"><span class="filter-btn-text">PDF</span></button>
+          <button class="type-item filter-btn" data-type="repo"><span class="filter-btn-text">Repo</span></button>
+        </div>
+      </div>
 
-      <a class="tile-link" href="{{ item.url | relative_url }}"  target="_blank" rel="noopener" aria-label="
-        {% case item.type %}
+      <div class="filter-section timeline-section">
+        <h3>Timeline</h3>
+        <div class="timeline-list" id="timelineList"></div>
+      </div>
+
+      <button class="reset-btn" id="resetBtn">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <span>Reset</span>
+      </button>
+    </aside>
+
+    <div class="right-pane">
+      <div class="entries-count-bar">
+        <span class="filter-indicator" id="filterIndicator"></span>
+        <span id="entriesCountText">{{ entries.size }} items</span>
+      </div>
+      <div class="entries-list" id="entriesList">
+        <div class="entries-items-container" id="entriesItemsContainer">
+          {% for item in entries %}
+          {% assign entry_type = item.type %}
+          {% case entry_type %}
+          {% when 'pdf' %}{% assign type_key = 'download' %}{% assign type_label = 'Download' %}
+          {% when 'github' %}{% assign type_key = 'repo' %}{% assign type_label = 'View' %}
+          {% else %}{% assign type_key = 'read' %}{% assign type_label = 'Read' %}
+          {% endcase %}
+
+          {%- capture aria_label -%}
+          {% case entry_type %}
           {% when 'pdf' %}Read PDF: {{ item.title }}
           {% when 'github' %}View repository: {{ item.title }}
           {% else %}Read more: {{ item.title }}
-        {% endcase %}
-      ">
-        {% case item.type %}
-        {% when "pdf" %}
-        Read PDF
-        {% when "github" %}
-        View repository
-        {% else %}
-        Read more
-        {% endcase %}
-      </a>
+          {% endcase %}
+          {%- endcapture -%}
 
-    </article>
-    {% endfor %}
-
+          <div class="entry-item" data-type="{{ type_key }}" data-date="{{ item.date }}">
+            <h3 class="entry-title">
+              <a href="{{ item.url | relative_url }}" target="_blank" rel="noopener"
+                aria-label="{{ aria_label | escape }}">
+                {{ item.title | escape }}
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">{{ item.date | date: "%b %Y" }}</span>
+              <span class="meta-dot dot-{{ type_key }}"></span>
+              <span class="meta-type type-{{ type_key }}">{{ type_label }}</span>
+            </div>
+            <p class="entry-excerpt">{{ item.description | escape }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

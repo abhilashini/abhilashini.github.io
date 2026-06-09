@@ -11,55 +11,310 @@
   <title>Abhilashini A J</title>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600&family=Work+Sans:ital,wght@0,300;0,350;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
   
-  <header id="persistent-nav">
-  <div class="persistent-nav-inner">
-
-    <a href="/" class="home-button" aria-label="Home">
-      <span class="home-shape">
-        <span class="home-icon" aria-hidden="true"></span>
-      </span>
-      <span class="home-text">Home</span>
-    </a>
-
-    <nav class="conceptual-nav">
-      <p class="nav-full">
-        This site distills the agnostic line of inquiry I follow. 
-        While I primarily explore systems in parts and as a whole, it's also a space for outlier ideas.
-        The <a href="/long-form/" class="art-link">long-form content</a>
-        has playbooks, write-ups, and projects I learn from. There is also
-        <a href="/mosaic/" class="art-link">a mosaic of thoughts</a>
-        I collect along the way<span class="end-glyph"></span>
-      </p>
-
-      <p class="nav-compact">
-        An agnostic inquiry into systems, featuring 
-        <a href="/long-form/" class="art-link">long-form content</a> 
-        and a shifting <a href="/mosaic/" class="art-link">mosaic of thoughts</a><span class="end-glyph"></span>
-      </p>
-    </nav>
-
-  </div>
+  <header class="header">
+  <a href="/" class="home-brand" aria-label="Go to home page">
+    <div class="home-vesica"></div>
+    <span class="home-label">Home</span>
+  </a>
+  <p class="nav-paragraph">
+    <span class="nav-full">This site distills the agnostic line of inquiry I follow. The <a href="/long-form/"
+        class="text-link">long-form content</a> has playbooks, write-ups, and projects
+      I learn from. There's also a <a href="/mosaic/" class="text-link">mosaic of thoughts</a> I collect
+      along the <span class="nowrap-group">way<span class="end-glyph"></span></span></span>
+    <span class="nav-short">An agnostic inquiry into systems, featuring <a href="/long-form/">long-form
+        content</a> and a shifting <a href="/mosaic/">mosaic of thoughts</a>.</span>
+  </p>
 </header>
   
 
   <main id="page">
-    <section class="section structured-consolidation">
-  <div class="structured-grid">
-
     
 
+<div class="library-wrapper">
+  <div class="main-content">
+
+    <aside class="filter-pane" id="filterPane">
+      <h2 class="filter-pane-heading">Filters</h2>
+
+      <div class="filter-section content-type-section">
+        <h3>Content Type</h3>
+        <div class="type-list" id="contentTypeFilters">
+          <button class="type-item filter-btn active" data-type="all"><span class="filter-btn-text">All</span></button>
+          <button class="type-item filter-btn" data-type="read"><span class="filter-btn-text">Write‑up</span></button>
+          <button class="type-item filter-btn" data-type="download"><span class="filter-btn-text">PDF</span></button>
+          <button class="type-item filter-btn" data-type="repo"><span class="filter-btn-text">Repo</span></button>
+        </div>
+      </div>
+
+      <div class="filter-section timeline-section">
+        <h3>Timeline</h3>
+        <div class="timeline-list" id="timelineList"></div>
+      </div>
+
+      <button class="reset-btn" id="resetBtn">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <span>Reset</span>
+      </button>
+    </aside>
+
+    <div class="right-pane">
+      <div class="entries-count-bar">
+        <span class="filter-indicator" id="filterIndicator"></span>
+        <span id="entriesCountText">13 items</span>
+      </div>
+      <div class="entries-list" id="entriesList">
+        <div class="entries-items-container" id="entriesItemsContainer">
+          
+          
+          <div class="entry-item" data-type="read" data-date="2024-10-06">
+            <h3 class="entry-title">
+              <a href="/medium.com/@abhilashini/system-patterns-atlas-7f4b3d4e5c2f" target="_blank" rel="noopener"
+                aria-label="Read more: System Patterns Atlas
+          ">
+                System Patterns Atlas
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Oct 2024</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">An opinionated collection of system design patterns observed across large-scale platforms, annotated with trade-offs, failure modes, and real deployment constraints. Includes diagrams, notes, and evolving commentary rather than polished templates.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="download" data-date="2024-11-05">
+            <h3 class="entry-title">
+              <a href="/assets/docs/structured-consolidation-working-paper.pdf" target="_blank" rel="noopener"
+                aria-label="Read PDF: Structured Consolidation: A Working Paper
+          ">
+                Structured Consolidation: A Working Paper
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Nov 2024</span>
+              <span class="meta-dot dot-download"></span>
+              <span class="meta-type type-download">Download</span>
+            </div>
+            <p class="entry-excerpt">A long-form working paper that documents how disparate system design ideas were progressively consolidated into a smaller, reusable set of principles. Focuses on synthesis, not prescription.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="repo" data-date="2025-01-05">
+            <h3 class="entry-title">
+              <a href="https://github.com/abhilashini/resilient-systems-case-notes" target="_blank" rel="noopener"
+                aria-label="View repository: Resilient Systems Case Notes
+          ">
+                Resilient Systems Case Notes
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Jan 2025</span>
+              <span class="meta-dot dot-repo"></span>
+              <span class="meta-type type-repo">View</span>
+            </div>
+            <p class="entry-excerpt">A set of loosely structured case notes drawn from production systems that experienced partial failure. Each entry focuses on what broke, what held, and which assumptions turned out to be incorrect.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="repo" data-date="2025-03-16">
+            <h3 class="entry-title">
+              <a href="https://github.com/abhilashini/system-design-artifacts" target="_blank" rel="noopener"
+                aria-label="View repository: System Design Interview Artifacts
+          ">
+                System Design Interview Artifacts
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Mar 2025</span>
+              <span class="meta-dot dot-repo"></span>
+              <span class="meta-type type-repo">View</span>
+            </div>
+            <p class="entry-excerpt">Diagrams, sketches, and written walkthroughs created while reasoning through open-ended system design problems. Not optimized for interviews, but for clarity of thought and constraint discovery.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="download" data-date="2025-05-13">
+            <h3 class="entry-title">
+              <a href="/assets/docs/system-boundaries-and-interfaces.pdf" target="_blank" rel="noopener"
+                aria-label="Read PDF: Notes on System Boundaries and Interfaces
+          ">
+                Notes on System Boundaries and Interfaces
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">May 2025</span>
+              <span class="meta-dot dot-download"></span>
+              <span class="meta-type type-download">Download</span>
+            </div>
+            <p class="entry-excerpt">A concise PDF exploring how system boundaries emerge over time, how interfaces harden or erode, and why many scalability problems are boundary problems in disguise.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="repo" data-date="2025-03-13">
+            <h3 class="entry-title">
+              <a href="https://github.com/abhilashini/microservices-skeletons" target="_blank" rel="noopener"
+                aria-label="View repository: Microservices Skeletons and Anti-Patterns
+          ">
+                Microservices Skeletons and Anti-Patterns
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Mar 2025</span>
+              <span class="meta-dot dot-repo"></span>
+              <span class="meta-type type-repo">View</span>
+            </div>
+            <p class="entry-excerpt">Starter project skeletons paired with explicit anti-patterns. Each template includes a corresponding example of how the same structure fails when misapplied or scaled without care.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="read" data-date="2025-07-13">
+            <h3 class="entry-title">
+              <a href="/articles/architecture-of-silence.html" target="_blank" rel="noopener"
+                aria-label="Read more: The Architecture of Silence
+          ">
+                The Architecture of Silence
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Jul 2025</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">Why resilient systems depend on deliberate gaps between components and how silence between services prevents cascading failures.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="read" data-date="2025-09-03">
+            <h3 class="entry-title">
+              <a href="/articles/defining-system-entropy.html" target="_blank" rel="noopener"
+                aria-label="Read more: Defining System Entropy
+          ">
+                Defining System Entropy
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Sep 2025</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">A way to reason about the gradual decay of software systems and why preserving architectural rationale slows that entropy.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="read" data-date="2025-12-28">
+            <h3 class="entry-title">
+              <a href="/articles/human-in-the-loop.html" target="_blank" rel="noopener"
+                aria-label="Read more: The Human in the Loop
+          ">
+                The Human in the Loop
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Dec 2025</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">Automation scales human judgment rather than eliminating it. Systems must assume manual intervention will eventually occur.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="read" data-date="2026-01-25">
+            <h3 class="entry-title">
+              <a href="/articles/agnosticism-as-strategy.html" target="_blank" rel="noopener"
+                aria-label="Read more: Agnosticism as Strategy
+          ">
+                Agnosticism as Strategy
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Jan 2026</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">Designing around problems rather than vendors creates long-lived systems that can survive infrastructure shifts.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="read" data-date="2026-02-08">
+            <h3 class="entry-title">
+              <a href="/articles/mermaid-in-the-mix.html" target="_blank" rel="noopener"
+                aria-label="Read more: Mermaid in the Mix
+          ">
+                Mermaid in the Mix
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Feb 2026</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">A small essay demonstrating how diagrams and reasoning coexist when thinking about systems.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="read" data-date="2026-03-19">
+            <h3 class="entry-title">
+              <a href="/articles/merging-complex-topologies.html" target="_blank" rel="noopener"
+                aria-label="Read more: Complex Topologies
+          ">
+                Complex Topologies
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">Mar 2026</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">Medium-Long essat demonstrating Diagram usage and multi-paragraph flow.
+</p>
+          </div>
+          
+          
+          <div class="entry-item" data-type="read" data-date="2026-05-22">
+            <h3 class="entry-title">
+              <a href="/articles/the-minimalist-heuristic.html" target="_blank" rel="noopener"
+                aria-label="Read more: Minimalist Heuristic
+          ">
+                Minimalist Heuristic
+              </a>
+            </h3>
+            <div class="entry-meta">
+              <span class="meta-date">May 2026</span>
+              <span class="meta-dot dot-read"></span>
+              <span class="meta-type type-read">Read</span>
+            </div>
+            <p class="entry-excerpt">Short: Demonstrating the centering logic and the blue-dash end marker
+</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 
   </main>
-  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/library-filters.js" defer></script>
+<script src="/assets/js/script.js" defer></script>
 
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
     <span class="up-arrow"></span>

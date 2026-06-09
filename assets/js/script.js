@@ -59,56 +59,58 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const grid = document.querySelector('.grid');
-const cells = [...document.querySelectorAll('.grid .cell')];
+    const cells = [...document.querySelectorAll('.grid .cell')];
 
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    grid.classList.remove('rigid');
-    return;
-}
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        grid.classList.remove('rigid');
+        return;
+    }
 
-setTimeout(() => grid.classList.remove('rigid'), 1600);
-setTimeout(enableTracking, 3200);
+    setTimeout(() => grid.classList.remove('rigid'), 1600);
+    setTimeout(enableTracking, 3200);
 
-function enableTracking() {
-    if (window.innerWidth <= 960) return;
+    function enableTracking() {
+        if (window.innerWidth <= 960) return;
 
-    grid.classList.add('tracking');
+        grid.classList.add('tracking');
 
-    grid.addEventListener('mousemove', ({ clientX: mouseX, clientY: mouseY }) => {
-        cells.forEach((cell, index) => {
-            const rect = cell.getBoundingClientRect();
-            const cellX = rect.left + rect.width / 2;
-            const cellY = rect.top + rect.height / 2;
+        grid.addEventListener('mousemove', ({ clientX: mouseX, clientY: mouseY }) => {
+            cells.forEach((cell, index) => {
+                const rect = cell.getBoundingClientRect();
+                const cellX = rect.left + rect.width / 2;
+                const cellY = rect.top + rect.height / 2;
 
-            const dx = mouseX - cellX;
-            const dy = mouseY - cellY;
+                const dx = mouseX - cellX;
+                const dy = mouseY - cellY;
 
-            const distance = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
+                const distance = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
 
-            let px = 0;
-            let py = 0;
+                let px = 0;
+                let py = 0;
 
-            if (distance < 220) {
-                const force = ((220 - distance) / 220) ** 1.5;
-                px = -(dx / distance) * force * 40;
-                py = -(dy / distance) * force * 40;
-            }
+                if (distance < 220) {
+                    const force = ((220 - distance) / 220) ** 1.5;
+                    px = -(dx / distance) * force * 40;
+                    py = -(dy / distance) * force * 40;
+                }
 
-            const depth = ((index * 7) % 5) + 1;
+                const depth = ((index * 7) % 5) + 1;
 
-            px += ((mouseX / innerWidth) - 0.5) * depth * 8;
-            py += ((mouseY / innerHeight) - 0.5) * depth * 8;
+                px += ((mouseX / innerWidth) - 0.5) * depth * 8;
+                py += ((mouseY / innerHeight) - 0.5) * depth * 8;
 
-            cell.style.setProperty('--mx', `${px}px`);
-            cell.style.setProperty('--my', `${py}px`);
+                cell.style.setProperty('--mx', `${px}px`);
+                cell.style.setProperty('--my', `${py}px`);
+            });
         });
-    });
 
-    grid.addEventListener('mouseleave', () => {
-        cells.forEach(cell => {
-            cell.style.setProperty('--mx', '0px');
-            cell.style.setProperty('--my', '0px');
+        grid.addEventListener('mouseleave', () => {
+            cells.forEach(cell => {
+                cell.style.setProperty('--mx', '0px');
+                cell.style.setProperty('--my', '0px');
+            });
         });
-    });
-}
+    }
+
+    if (document.getElementById('filterPane')) initLibraryFilters();
 });
