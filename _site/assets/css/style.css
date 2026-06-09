@@ -62,19 +62,19 @@ body.heuristics-page { font-family: var(--font-main); background: var(--bg-page)
 .grid .cell:nth-child(4) { --base-x: 15%; --base-y: -15%; --base-s: 1.2; z-index: 0; }
 .grid .cell:nth-child(5) { --base-x: 12%; --base-s: 1.15; z-index: 1; }
 .grid .cell:nth-child(6) { z-index: 3; }
-.grid .cell:nth-child(7) { /* no extra offsets */ }
+/* .grid .cell:nth-child(7) { } no extra offsets */ 
 .grid .cell:nth-child(8) { --base-x: -10%; --base-y: 10%; --base-r: 15deg; z-index: 2; }
 .grid .cell:nth-child(9) { --base-x: -10%; --base-y: 5%; z-index: 3; }
-.grid .cell:nth-child(10) { /* no extra offsets */ }
-.grid .cell:nth-child(11) { /* no extra offsets */ }
+/* .grid .cell:nth-child(10) { } no extra offsets */  
+/* .grid .cell:nth-child(11) { } no extra offsets */  
 .grid .cell:nth-child(12) { --base-x: 5%; --base-y: -5%; --base-s: 0.9; }
 .grid .cell:nth-child(13) { --base-x: 15%; --base-y: -5%; --base-s: 0.85; }
 .grid .cell:nth-child(14) { z-index: 4; }
 .grid .cell:nth-child(15) { z-index: 3; --base-y: -2%; }
 .grid .cell:nth-child(16) { --base-x: 15%; --base-y: 5%; --base-s: 1.15; z-index: 3; }
 .grid .cell:nth-child(17) { --base-x: -8%; --base-y: 12%; --base-r: 8deg; }
-.grid .cell:nth-child(18) { /* no extra offsets */ }
-.grid .cell:nth-child(19) { /* no extra offsets */ }
+/* .grid .cell:nth-child(18) { } no extra offsets */  
+/* .grid .cell:nth-child(19) { } no extra offsets */  
 .grid .cell:nth-child(20) { --base-x: 12%; --base-y: 18%; z-index: 1; }
 .c-orange { background-color: var(--color-orange); }
 .c-yellow { background-color: var(--color-yellow); }
