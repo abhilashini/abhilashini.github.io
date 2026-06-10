@@ -45,6 +45,7 @@ main#page { flex: 1; display: flex; flex-direction: column; }
 .social-links a.icon-gh { color: var(--color-charcoal); }
 .social-links a.icon-cr { color: var(--color-charcoal); }
 .social-links a.icon-li { color: var(--color-charcoal); }
+.social-links a.icon-co { color: var(--color-charcoal); }
 .social-links a::after { content: attr(data-tooltip); position: absolute; bottom: -28px; left: 50%; transform: translateX(-50%) translateY(3px); font-family: var(--font-main); font-size: 0.75rem; font-weight: 500; color: var(--text-body); opacity: 0; visibility: hidden; transition: all 0.3s ease; pointer-events: none; }
 .social-links a:hover { transform: translateY(-4px); opacity: 0.9; }
 .social-links a:hover::after { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
