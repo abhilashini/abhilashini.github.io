@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - headerHeight;
+                    const offsetPosition = elementPosition - headerHeight - 16;
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
