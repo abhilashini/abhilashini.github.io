@@ -169,7 +169,7 @@
         }
     }
 
-    const backBtn = document.getElementById('bentoBackToTop');
+    const backBtn = document.getElementById('backToTop');
     if (backBtn) {
         const pageContainer = document.getElementById('page');
         const scroller = (pageContainer && getComputedStyle(pageContainer).overflowY === 'auto') ? pageContainer : window;
