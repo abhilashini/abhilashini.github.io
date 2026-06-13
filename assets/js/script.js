@@ -1,199 +1,189 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('keydown', function (event) {
-        if (event.key === "Escape" && window.location.hash.startsWith('#img-')) {
+(function() {
+    'use strict';
+
+    const getHeaderHeight = () => document.querySelector('.header')?.offsetHeight || 80;
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && window.location.hash.startsWith('#img-')) {
             window.location.hash = '#_';
         }
     });
 
     document.addEventListener('copy', (e) => {
         const selection = document.getSelection().toString();
-        const pagelink = '\n\nRead more at: https://abhilashini.github.io/';
-        e.clipboardData.setData('text/plain', selection + pagelink);
-        e.preventDefault();
+        if (selection) {
+            e.clipboardData.setData('text/plain', selection + '\n\nRead more at: https://abhilashini.github.io/');
+            e.preventDefault();
+        }
     });
 
     document.querySelectorAll('.section').forEach(section => {
-        const hiddenTag = document.createElement('span');
-        hiddenTag.style.display = 'none';
-        hiddenTag.textContent = 'Original content by Abhilashini – https://abhilashini.github.io';
-        section.appendChild(hiddenTag);
+        const watermark = document.createElement('span');
+        watermark.style.display = 'none';
+        watermark.textContent = 'Original content by Abhilashini – https://abhilashini.github.io';
+        section.appendChild(watermark);
     });
 
-    if (document.querySelector('.article-main')) {
-        // convert .language-mermaid blocks to pure .mermaid divs
-        document.querySelectorAll('.language-mermaid').forEach(function (el) {
-            var div = document.createElement('div');
+    const articleMain = document.querySelector('.article-main');
+    if (articleMain && typeof mermaid !== 'undefined') {
+        // Convert .language-mermaid blocks to .mermaid divs
+        document.querySelectorAll('.language-mermaid').forEach(el => {
+            const div = document.createElement('div');
             div.className = 'mermaid';
             div.textContent = el.textContent.trim();
             el.parentNode.replaceChild(div, el);
         });
 
-        if (typeof mermaid !== 'undefined') {
-            mermaid.initialize({
-                startOnLoad: false,
-                theme: 'neutral',
-                flowchart: {
-                    nodeSpacing: 50,  // Forces consistent horizontal space between nodes
-                    rankSpacing: 50,  // Forces consistent vertical space between levels
-                    padding: 20       // Gives the entire SVG breathing room
-                },
-                // Keep your existing themeCSS exactly as it is below:
-                themeCSS: '.node rect, .node circle, .node ellipse, .node polygon, .node path { fill: #FCFBF8 !important; stroke: #dcd9d3 !important; stroke-width: 1px !important; } .edgePath .path { stroke: #8a8a8a !important; stroke-width: 1.2px !important; } .node text, .label text { fill: #4A4A4A !important; font-family: "Work Sans", sans-serif !important; font-size: 13px !important; } .edgeLabel { background-color: #FCFBF8 !important; } .edgeLabel span, .edgeLabel p { background-color: #FCFBF8 !important; }',
-            });
-            mermaid.run();
-        }
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: 'neutral',
+            flowchart: { nodeSpacing: 50, rankSpacing: 50, padding: 20 },
+            themeCSS: `
+                .node rect, .node circle, .node ellipse, .node polygon, .node path { fill: #FCFBF8 !important; stroke: #dcd9d3 !important; stroke-width: 1px !important; }
+                .edgePath .path { stroke: #8a8a8a !important; stroke-width: 1.2px !important; }
+                .node text, .label text { fill: #4A4A4A !important; font-family: "Work Sans", sans-serif !important; font-size: 13px !important; }
+                .edgeLabel { background-color: #FCFBF8 !important; }
+                .edgeLabel span, .edgeLabel p { background-color: #FCFBF8 !important; }
+            `
+        });
+        mermaid.run();
     }
 
     const grid = document.querySelector('.grid');
-    const cells = [...document.querySelectorAll('.grid .cell')];
+    if (grid) {
+        const cells = [...document.querySelectorAll('.grid .cell')];
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        grid.classList.remove('rigid');
-        return;
-    }
+        if (prefersReduced) {
+            grid.classList.remove('rigid');
+        } else {
+            setTimeout(() => grid.classList.remove('rigid'), 1600);
+            setTimeout(() => {
+                if (window.innerWidth <= 960) return;
+                grid.classList.add('tracking');
 
-    setTimeout(() => grid.classList.remove('rigid'), 1600);
-    setTimeout(enableTracking, 3200);
+                const onMouseMove = ({ clientX: mouseX, clientY: mouseY }) => {
+                    cells.forEach((cell, idx) => {
+                        const rect = cell.getBoundingClientRect();
+                        const cellX = rect.left + rect.width / 2;
+                        const cellY = rect.top + rect.height / 2;
+                        const dx = mouseX - cellX;
+                        const dy = mouseY - cellY;
+                        const distance = Math.hypot(dx, dy) || 1;
 
-    function enableTracking() {
-        if (window.innerWidth <= 960) return;
+                        let px = 0, py = 0;
+                        if (distance < 220) {
+                            const force = ((220 - distance) / 220) ** 1.5;
+                            px = -(dx / distance) * force * 40;
+                            py = -(dy / distance) * force * 40;
+                        }
+                        const depth = ((idx * 7) % 5) + 1;
+                        px += ((mouseX / innerWidth) - 0.5) * depth * 8;
+                        py += ((mouseY / innerHeight) - 0.5) * depth * 8;
 
-        grid.classList.add('tracking');
-
-        grid.addEventListener('mousemove', ({ clientX: mouseX, clientY: mouseY }) => {
-            cells.forEach((cell, index) => {
-                const rect = cell.getBoundingClientRect();
-                const cellX = rect.left + rect.width / 2;
-                const cellY = rect.top + rect.height / 2;
-
-                const dx = mouseX - cellX;
-                const dy = mouseY - cellY;
-
-                const distance = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
-
-                let px = 0;
-                let py = 0;
-
-                if (distance < 220) {
-                    const force = ((220 - distance) / 220) ** 1.5;
-                    px = -(dx / distance) * force * 40;
-                    py = -(dy / distance) * force * 40;
-                }
-
-                const depth = ((index * 7) % 5) + 1;
-
-                px += ((mouseX / innerWidth) - 0.5) * depth * 8;
-                py += ((mouseY / innerHeight) - 0.5) * depth * 8;
-
-                cell.style.setProperty('--mx', `${px}px`);
-                cell.style.setProperty('--my', `${py}px`);
-            });
-        });
-
-        grid.addEventListener('mouseleave', () => {
-            cells.forEach(cell => {
-                cell.style.setProperty('--mx', '0px');
-                cell.style.setProperty('--my', '0px');
-            });
-        });
-    }
-
-    if (document.getElementById('filterPane')) initLibraryFilters();
-
-    const article = document.querySelector('.article-main');
-    const tocList = document.getElementById('tocList');
-    if (article && tocList && document.querySelector('.has-toc')) {
-        const headings = article.querySelectorAll('h2');
-        headings.forEach((h2, index) => {
-            if (!h2.id) h2.id = 'section-' + index;
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="#${h2.id}">${h2.textContent}</a>`;
-            tocList.appendChild(li);
-        });
-    }
-
-    // === Align TOC sidebar to article title (h1) ===
-    const tocSidebar = document.querySelector('.toc-sidebar');
-    const articleTitle = document.querySelector('.article-main h1');
-    if (tocSidebar && articleTitle) {
-        const alignToc = () => {
-            const rect = articleTitle.getBoundingClientRect();
-            const targetTop = rect.top + window.scrollY;
-            const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
-            // Place TOC exactly at the title's vertical position, never above header
-            const finalTop = Math.max(targetTop, headerHeight - 10);
-            tocSidebar.style.top = `${finalTop}px`;
-        };
-        alignToc();
-        window.addEventListener('resize', alignToc);
-        window.addEventListener('load', alignToc);
-    }
-
-    const tocLinks = document.querySelectorAll('.toc-list a');
-    if (tocLinks.length) {
-        const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
-        tocLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - headerHeight - 16;
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
+                        cell.style.setProperty('--mx', `${px}px`);
+                        cell.style.setProperty('--my', `${py}px`);
                     });
-                    history.pushState(null, null, `#${targetId}`);
-                }
+                };
+
+                const onMouseLeave = () => {
+                    cells.forEach(cell => {
+                        cell.style.setProperty('--mx', '0px');
+                        cell.style.setProperty('--my', '0px');
+                    });
+                };
+
+                grid.addEventListener('mousemove', onMouseMove);
+                grid.addEventListener('mouseleave', onMouseLeave);
+            }, 3200);
+        }
+    }
+
+    if (document.getElementById('filterPane')) {
+        // Assume initLibraryFilters is defined globally (in another file)
+        if (typeof initLibraryFilters === 'function') initLibraryFilters();
+    }
+
+    if (articleMain) {
+        // --- TOC generation (if .has-toc present) ---
+        const tocList = document.getElementById('tocList');
+        const hasTocClass = document.querySelector('.has-toc');
+        if (tocList && hasTocClass) {
+            const headings = articleMain.querySelectorAll('h2');
+            headings.forEach((h2, idx) => {
+                if (!h2.id) h2.id = `section-${idx}`;
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#${h2.id}">${h2.textContent}</a>`;
+                tocList.appendChild(li);
             });
-        });
-    }
+        }
 
-    const progressBar = document.getElementById('progressBar');
-    const siteHeader = document.querySelector('.header');
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        const articleTitle = articleMain.querySelector('h1');
+        if (tocSidebar && articleTitle) {
+            const alignToc = () => {
+                const rect = articleTitle.getBoundingClientRect();
+                const targetTop = rect.top + window.scrollY;
+                const headerHeight = getHeaderHeight();
+                tocSidebar.style.top = `${Math.max(targetTop, headerHeight - 10)}px`;
+            };
+            alignToc();
+            window.addEventListener('resize', alignToc);
+            window.addEventListener('load', alignToc);
+        }
 
-    function updateProgress() {
-        if (!article) return;
-        const headerHeight = siteHeader ? siteHeader.offsetHeight : 0;
+        const tocLinks = document.querySelectorAll('.toc-list a');
+        if (tocLinks.length) {
+            const headerHeight = getHeaderHeight();
+            tocLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        const offsetPos = targetEl.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+                        window.scrollTo({ top: offsetPos, behavior: 'smooth' });
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            });
+        }
+
+        const progressBar = document.getElementById('progressBar');
+        const siteHeader = document.querySelector('.header');
         if (progressBar) {
-            progressBar.style.top = headerHeight + 'px';
-        }
-        const rect = article.getBoundingClientRect();
-        const scrollableHeight = rect.height - window.innerHeight + headerHeight;
-        let progress = 0;
-        if (scrollableHeight > 0) {
-            progress = Math.min(1, Math.max(0, -(rect.top - headerHeight) / scrollableHeight));
-        }
-        if (progressBar) {
-            progressBar.style.setProperty('--progress-width', (progress * 100) + '%');
+            const updateProgress = () => {
+                const headerH = siteHeader ? siteHeader.offsetHeight : 0;
+                progressBar.style.top = `${headerH}px`;
+                const rect = articleMain.getBoundingClientRect();
+                const scrollable = rect.height - window.innerHeight + headerH;
+                let progress = 0;
+                if (scrollable > 0) {
+                    progress = Math.min(1, Math.max(0, -(rect.top - headerH) / scrollable));
+                }
+                progressBar.style.setProperty('--progress-width', `${progress * 100}%`);
+            };
+            updateProgress();
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            window.addEventListener('resize', updateProgress);
         }
     }
 
-    // initial call + listeners
-    if (progressBar) {
-        updateProgress();
-        window.addEventListener('scroll', updateProgress, { passive: true });
-        window.addEventListener('resize', updateProgress);
-    }
+    const backBtn = document.getElementById('bentoBackToTop');
+    if (backBtn) {
+        const pageContainer = document.getElementById('page');
+        const scroller = (pageContainer && getComputedStyle(pageContainer).overflowY === 'auto') ? pageContainer : window;
 
-    const btn = document.getElementById('bentoBackToTop');
-    if (btn) {
-        const scroller = (() => {
-            const p = document.getElementById('page');
-            return (p && getComputedStyle(p).overflowY === 'auto') ? p : window;
-        })();
-
-        const update = () => {
-            const top = scroller === window ? window.scrollY : scroller.scrollTop;
-            btn.classList.toggle('visible', top > 400);
+        const updateBtn = () => {
+            const scrollTop = scroller === window ? window.scrollY : scroller.scrollTop;
+            backBtn.classList.toggle('visible', scrollTop > 400);
         };
 
-        scroller.addEventListener('scroll', update, { passive: true });
-        update();
+        scroller.addEventListener('scroll', updateBtn, { passive: true });
+        updateBtn();
 
-        btn.addEventListener('click', () => {
+        backBtn.addEventListener('click', () => {
             scroller.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-});
+})();
