@@ -207,6 +207,7 @@ body.article-page { padding-top: calc(80px + 2rem); }
 .article-main .mermaid { max-width: var(--measure); margin: 2.25rem auto 0.5rem; text-align: center; }
 .article-main .mermaid svg { width: auto !important; height: auto !important; }
 .article-main .mermaid-bleed { width: 100vw; max-width: 1200px; margin-left: 50%; transform: translateX(-50%); }
+.article-wrapper.has-toc { max-width: calc(1000px + var(--toc-width) + 3rem); /* ≈ 1248px */ }
 
 /* Heuristics / Bento Page */
 .page-content { flex: 1; width: 100%; }
