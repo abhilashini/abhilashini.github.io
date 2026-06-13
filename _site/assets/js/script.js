@@ -101,6 +101,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.getElementById('filterPane')) initLibraryFilters();
 
+    const article = document.querySelector('.article-main');
+    const tocList = document.getElementById('tocList');
+    if (article && tocList && document.querySelector('.has-toc')) {
+        const headings = article.querySelectorAll('h2');
+        headings.forEach((h2, index) => {
+            if (!h2.id) h2.id = 'section-' + index;
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#${h2.id}">${h2.textContent}</a>`;
+            tocList.appendChild(li);
+        });
+    }
+
+    const progressBar = document.getElementById('progressBar');
+    const siteHeader = document.querySelector('.header');
+
+    function updateProgress() {
+        if (!article) return;
+        const headerHeight = siteHeader ? siteHeader.offsetHeight : 0;
+        if (progressBar) {
+            progressBar.style.top = headerHeight + 'px';
+        }
+        const rect = article.getBoundingClientRect();
+        const scrollableHeight = rect.height - window.innerHeight + headerHeight;
+        let progress = 0;
+        if (scrollableHeight > 0) {
+            progress = Math.min(1, Math.max(0, -(rect.top - headerHeight) / scrollableHeight));
+        }
+        if (progressBar) {
+            progressBar.style.setProperty('--progress-width', (progress * 100) + '%');
+        }
+    }
+
+    // initial call + listeners
+    if (progressBar) {
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+    }
+
     const bentoContainer = document.getElementById('page');
     const bentoScrollBtn = document.getElementById('bentoBackToTop');
 
