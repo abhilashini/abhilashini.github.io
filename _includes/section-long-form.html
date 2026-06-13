@@ -52,8 +52,9 @@
 
           <div class="entry-item" data-type="{{ type_key }}" data-date="{{ item.date }}">
             <h3 class="entry-title">
-              <a href="{{ item.url | relative_url }}" rel="noopener" {% if type_key=='repo' %}target="_blank" {% endif
-                %} aria-label="{{ aria_label | escape }}">
+              <a href="{{ item.url | relative_url }}" rel="noopener" 
+                {% if type_key != 'read' %}target="_blank"{% endif %} 
+                aria-label="{{ aria_label | escape }}">
                 {{ item.title | escape }}
               </a>
             </h3>

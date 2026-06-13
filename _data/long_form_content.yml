@@ -42,7 +42,7 @@
     A concise PDF exploring how system boundaries emerge over time,
     how interfaces harden or erode, and why many scalability problems
     are boundary problems in disguise.
-  url: "/assets/docs/system-boundaries-and-interfaces.pdf"
+  url: "/assets/docs/AI_Transformation_Playbook.pdf"
 
 - type: github
   title: "Microservices Skeletons and Anti-Patterns"
