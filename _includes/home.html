@@ -19,11 +19,11 @@
 
       <div class="social-links">
         <a href="#" class="icon-gh" aria-label="GitHub" data-tooltip="github"><i class="fa-brands fa-github"></i></a>
-        <a href="#" class="icon-cr" aria-label="Career" data-tooltip="career"><i
-            class="fa-solid fa-list-ol"></i></a>
+        <a href="#" class="icon-cr" aria-label="Career" data-tooltip="work" data-modal="work"><i
+            class="fa-solid fa-briefcase"></i></a>
         <a href="#" class="icon-li" aria-label="LinkedIn" data-tooltip="linkedin"><i
             class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" class="icon-co" aria-label="Colophon" data-tooltip="colophon"><i class="fa-solid fa-quote-left"></i></a>
+        <a href="#" class="icon-co" aria-label="Colophon" data-tooltip="colophon" data-modal="colophon"><i class="fa-solid fa-shapes"></i></a>
       </div>
     </div>
 
@@ -55,5 +55,11 @@
         <div class="cell vesica-sec c-teal"></div>
       </div>
     </div>
+  </div>
+</div>
+<div id="modalOverlay" class="modal-overlay" aria-hidden="true">
+  <div class="modal-container" role="dialog" aria-modal="true">
+    <button class="modal-close" aria-label="Close modal">✕</button>
+    <div class="modal-content" id="modalContent"></div>
   </div>
 </div>
