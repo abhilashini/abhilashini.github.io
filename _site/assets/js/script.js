@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('load', alignToc);
     }
 
-    // === Smooth scroll with fixed header offset for TOC links ===
     const tocLinks = document.querySelectorAll('.toc-list a');
     if (tocLinks.length) {
         const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
@@ -140,12 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                    const offsetPosition = elementPosition - headerHeight - 16; // 16px breathing room
+                    const offsetPosition = elementPosition - headerHeight;
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
                     });
-                    // Update URL hash without jumping (optional)
                     history.pushState(null, null, `#${targetId}`);
                 }
             });
