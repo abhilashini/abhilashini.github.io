@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Abhilashini">
+  <meta name="copyright" content="© Abhilashini">
+  <meta name="robots" content="noai, noimageai">
+  <meta property="og:title" content="Engineering x Design Thinking by Abhilashini">
+  <meta property="og:url" content="https://abhilashini.github.io/">
+  <title>Abhilashini A J</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600&family=Work+Sans:ital,wght@0,300;0,350;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="article-page">
+  
+  <header class="header">
+  <a href="/" class="home-brand" aria-label="Go to home page">
+    <div class="home-vesica"></div>
+    <span class="home-label">Home</span>
+  </a>
+  <p class="nav-paragraph">
+    <span class="nav-full">This site distills the agnostic line of inquiry I follow. The <a href="/long-form/"
+        class="text-link">long-form content</a> has playbooks, write-ups, and projects
+      I learn from. There's also a <a href="/mosaic/" class="text-link">mosaic of thoughts</a> I collect
+      along the <span class="nowrap-group">way<span class="end-glyph"></span></span></span>
+    <span class="nav-short">An agnostic inquiry into systems, featuring <a href="/long-form/">long-form
+        content</a> and a shifting <a href="/mosaic/">mosaic of thoughts</a>.</span>
+  </p>
+</header>
+  
+
+  <main id="page">
+    
+
+<div class="progress-bar" id="progressBar"></div>
+
+<article class="article-wrapper has-toc" id="articleContent">
+  
+  <aside class="toc-sidebar">
+    <nav aria-label="Table of Contents">
+      <ul class="toc-list" id="tocList"></ul>
+    </nav>
+  </aside>
+
+  <div class="article-main">
+    <header class="article-header">
+      <h1>On the shape of silence</h1>
+      
+        <p class="lede">A well‑designed page does not decorate. It makes room. This is a working  demonstration of an editorial container that adapts to prose, code,  mathematics, and diagrams without ever raising its voice.
+</p>
+        <hr class="lede-break">
+      
+    </header>
+
+    <p>This paragraph opens without a drop cap — dark, crisp, and perfectly integrated. The abstract above is now in bold serif, tying directly to your home page’s typographic voice.</p>
+
+<p>Body text remains Inter. Headings are Fraunces. The reading rhythm is clear, the TOC sticky on the left (hidden on mobile), and every element speaks the same quiet language.</p>
+
+<blockquote>
+  <p>“The details are not the details. They make the design.”
+<br />— Charles Eames</p>
+</blockquote>
+
+<blockquote>
+  <p>Every element on this page is optional. When a piece of content appears, it inherits the same quiet language.</p>
+</blockquote>
+
+<h2 id="1-the-measure-of-text">1. The measure of text</h2>
+
+<p>Inline code <code class="language-plaintext highlighter-rouge">like this</code> uses a highly restrained charcoal wash. <a href="#">Editorial restraint</a> is underlined in purple.</p>
+
+<p class="img-figure"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&amp;h=600&amp;fit=crop&amp;auto=format" alt="Calm mountain landscape" />
+<em>Caption with a short rule above, warm charcoal.</em></p>
+
+<div class="image-grid">
+
+  <p class="img-figure"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&amp;h=400&amp;fit=crop&amp;auto=format" alt="Mountains" />
+<em>First of a pair</em></p>
+
+  <p class="img-figure"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&amp;h=400&amp;fit=crop&amp;auto=format" alt="Lake" />
+<em>Second image, auto‑gridded</em></p>
+
+</div>
+
+<h2 id="the-anatomy-of-lists">The anatomy of lists</h2>
+
+<p>Here is how a standard unordered list flows within the system. Note how the bullets are slightly muted to keep the visual focus on the words.</p>
+
+<ul>
+  <li><strong>First principle:</strong> Remove all unnecessary decoration.</li>
+  <li><strong>Second principle:</strong> Ensure the container adapts to the content, not the other way around.</li>
+  <li><strong>Third principle:</strong> Treat white space as a structural element, equal in importance to ink.</li>
+</ul>
+
+<h2 id="2-when-code-enters">2. When code enters</h2>
+
+<p>Code blocks keep the sharp white background and Prism’s own token colours — no over‑engineering. Notice how the horizontal scroll is contained entirely within the structural border on mobile.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">moving_average</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Return a simple moving average of given window size.</span><span class="sh">"""</span>
+    <span class="k">if</span> <span class="n">window</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Window must be at least 1</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">-</span> <span class="n">window</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">avg</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">window</span><span class="p">])</span> <span class="o">/</span> <span class="n">window</span>
+        <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">avg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Example usage
+</span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">moving_average</span><span class="p">(</span><span class="n">prices</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Inline <code class="language-plaintext highlighter-rouge">like this</code> keeps the muted grey background, completely neutral.</p>
+
+<h2 id="3-diagrams-and-formulas">3. Diagrams and formulas</h2>
+
+<pre><code class="language-mermaid">graph TD
+  A[Start] --&gt; B{Is it quiet?}
+  B --&gt;|Yes| C[Keep writing]
+  B --&gt;|No| D[Remove decoration]
+  D --&gt; B
+</code></pre>
+<p class="diagram-caption"><em>No box, no border.</em></p>
+
+<p>Another diagram:</p>
+
+<div class="mermaid-bleed">
+  <pre><code class="language-mermaid">graph LR
+A[User Input] --&gt; B(AI Agent);
+B --&gt;|Probabilistic Decision| C{System Logic};
+C --&gt;|Deterministic Rule| D[Database];
+D --&gt;|Feedback Loop| A;
+</code></pre>
+</div>
+<p class="diagram-caption"><em>A wide LR graph breathing comfortably.</em></p>
+
+<p>Math inline $\int_a^b f(x)\,dx$ and displayed:</p>
+
+\[\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}\]
+
+<h2 id="a-broader-mosaic">A broader mosaic</h2>
+
+<p>Here is how a mixed-orientation gallery behaves when the system auto-aligns the elements.</p>
+
+<div class="image-gallery">
+
+  <p class="span-2"><img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=1200&amp;h=600&amp;fit=crop&amp;auto=format" alt="Minimalist architecture" /></p>
+
+  <p><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&amp;h=800&amp;fit=crop&amp;auto=format" alt="Room corner" /></p>
+
+  <p><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&amp;h=600&amp;fit=crop&amp;auto=format" alt="Abstract shapes" /></p>
+
+  <p class="span-2"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&amp;h=600&amp;fit=crop&amp;auto=format" alt="Building facade" /></p>
+
+</div>
+
+<h2 id="4-footnotes-and-ending">4. Footnotes and ending</h2>
+
+<p>Footnotes are classical superscript links<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup> that point to a clean list at the end.<sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup></p>
+
+<hr />
+
+<p>If an article has no TOC, remove the <code class="language-plaintext highlighter-rouge">has-toc</code> class and the <code class="language-plaintext highlighter-rouge">&lt;aside&gt;</code> — the layout falls back to a single column.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>A footnote with a back‑link <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Another note, equally clean. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+    <footer class="article-footer">
+      <span>Published 13 June 2026 · 
+        
+          <a href="/tags/essays">essays</a>, 
+        
+          <a href="/tags/design">design</a>
+        
+      </span>
+      <a href="/long-form/" class="back-link">← Back to index</a>
+    </footer>
+  </div>
+</article>
+
+<button id="bentoBackToTop" class="bento-back-to-top" aria-label="Scroll back to top">
+  <span class="bento-top-shape"></span>
+  <span class="bento-top-text">scroll <br> to top</span>
+</button>
+  </main>
+  <script src="/assets/js/library-filters.js" defer></script>
+<script src="/assets/js/script.js" defer></script>
+
+
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <span class="up-arrow"></span>
+</a>
+
+
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
+
+</body>
+
+</html>
