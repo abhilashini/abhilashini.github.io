@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetTop = rect.top + window.scrollY;
             const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
             // Place TOC exactly at the title's vertical position, never above header
-            const finalTop = Math.max(targetTop, headerHeight + 8);
+            const finalTop = Math.max(targetTop, headerHeight - 10);
             tocSidebar.style.top = `${finalTop}px`;
         };
         alignToc();
