@@ -112,6 +112,46 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // === Align TOC sidebar to article title (h1) ===
+    const tocSidebar = document.querySelector('.toc-sidebar');
+    const articleTitle = document.querySelector('.article-main h1');
+    if (tocSidebar && articleTitle) {
+        const alignToc = () => {
+            const rect = articleTitle.getBoundingClientRect();
+            const targetTop = rect.top + window.scrollY;
+            const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+            // Place TOC exactly at the title's vertical position, never above header
+            const finalTop = Math.max(targetTop, headerHeight + 8);
+            tocSidebar.style.top = `${finalTop}px`;
+        };
+        alignToc();
+        window.addEventListener('resize', alignToc);
+        window.addEventListener('load', alignToc);
+    }
+
+    // === Smooth scroll with fixed header offset for TOC links ===
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    if (tocLinks.length) {
+        const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+        tocLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - headerHeight - 16; // 16px breathing room
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    // Update URL hash without jumping (optional)
+                    history.pushState(null, null, `#${targetId}`);
+                }
+            });
+        });
+    }
+
     const progressBar = document.getElementById('progressBar');
     const siteHeader = document.querySelector('.header');
 
