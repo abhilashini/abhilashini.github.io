@@ -19,43 +19,29 @@ document.addEventListener('DOMContentLoaded', function () {
         section.appendChild(hiddenTag);
     });
 
-    const mermaidBlocks = document.querySelectorAll('.language-mermaid');
-    if (mermaidBlocks.length > 0) {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
-        script.async = true;
+    if (document.querySelector('.article-main')) {
+        // convert .language-mermaid blocks to pure .mermaid divs
+        document.querySelectorAll('.language-mermaid').forEach(function (el) {
+            var div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = el.textContent.trim();
+            el.parentNode.replaceChild(div, el);
+        });
 
-        script.onload = function () {
+        if (typeof mermaid !== 'undefined') {
             mermaid.initialize({
                 startOnLoad: false,
-                theme: 'base',
-                themeVariables: {
-                    // Match these to your CSS variables for geometry calculations
-                    fontFamily: 'var(--font-main)',
-                    fontSize: '16px',
-                    primaryColor: 'rgba(0, 85, 170, 0.04)',
-                    edgeLabelBackground: '#FFD700',
-                    lineColor: '#000000',
-                    tertiaryColor: 'rgba(0, 85, 170, 0.04)'
-                },
+                theme: 'neutral',
                 flowchart: {
-                    htmlLabels: true,
-                    useMaxWidth: false,
-                    padding: 30 // Critical for box-size calculation
-                }
+                    nodeSpacing: 50,  // Forces consistent horizontal space between nodes
+                    rankSpacing: 50,  // Forces consistent vertical space between levels
+                    padding: 20       // Gives the entire SVG breathing room
+                },
+                // Keep your existing themeCSS exactly as it is below:
+                themeCSS: '.node rect, .node circle, .node ellipse, .node polygon, .node path { fill: #FCFBF8 !important; stroke: #dcd9d3 !important; stroke-width: 1px !important; } .edgePath .path { stroke: #8a8a8a !important; stroke-width: 1.2px !important; } .node text, .label text { fill: #4A4A4A !important; font-family: "Work Sans", sans-serif !important; font-size: 13px !important; } .edgeLabel { background-color: #FCFBF8 !important; } .edgeLabel span, .edgeLabel p { background-color: #FCFBF8 !important; }',
             });
-
-            mermaidBlocks.forEach((block, i) => {
-                const container = document.createElement('div');
-                container.className = 'mermaid';
-                container.id = `mermaid-diag-${i}`;
-                container.textContent = block.innerText; // Use textContent for safety
-                block.parentElement.replaceWith(container);
-            });
-
             mermaid.run();
-        };
-        document.head.appendChild(script);
+        }
     }
 
     const grid = document.querySelector('.grid');
@@ -114,25 +100,89 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (document.getElementById('filterPane')) initLibraryFilters();
 
-    const bentoContainer = document.getElementById('page');
+    const article = document.querySelector('.article-main');
+    const tocList = document.getElementById('tocList');
+    if (article && tocList && document.querySelector('.has-toc')) {
+        const headings = article.querySelectorAll('h2');
+        headings.forEach((h2, index) => {
+            if (!h2.id) h2.id = 'section-' + index;
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#${h2.id}">${h2.textContent}</a>`;
+            tocList.appendChild(li);
+        });
+    }
+
+    const progressBar = document.getElementById('progressBar');
+    const siteHeader = document.querySelector('.header');
+
+    function updateProgress() {
+        if (!article) return;
+        const headerHeight = siteHeader ? siteHeader.offsetHeight : 0;
+        if (progressBar) {
+            progressBar.style.top = headerHeight + 'px';
+        }
+        const rect = article.getBoundingClientRect();
+        const scrollableHeight = rect.height - window.innerHeight + headerHeight;
+        let progress = 0;
+        if (scrollableHeight > 0) {
+            progress = Math.min(1, Math.max(0, -(rect.top - headerHeight) / scrollableHeight));
+        }
+        if (progressBar) {
+            progressBar.style.setProperty('--progress-width', (progress * 100) + '%');
+        }
+    }
+
+    // initial call + listeners
+    if (progressBar) {
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+    }
+
     const bentoScrollBtn = document.getElementById('bentoBackToTop');
-    
-    if (bentoContainer && bentoScrollBtn) {
-        // Since #page is now the element scrolling, we listen directly to its offsets
-        bentoContainer.addEventListener('scroll', function () {
-            if (bentoContainer.scrollTop > 400) {
+    if (bentoScrollBtn) {
+        const getScrollContainer = () => {
+            const page = document.getElementById('page');
+            if (page && getComputedStyle(page).overflowY === 'auto') {
+                return page;                     // Bento page: #page scrolls
+            }
+            return window;                       // Article page: window scrolls
+        };
+
+        let scrollContainer = getScrollContainer();
+
+        const updateBackToTopVisibility = () => {
+            const scrollTop = scrollContainer === window
+                ? window.scrollY
+                : scrollContainer.scrollTop;
+            if (scrollTop > 400) {
                 bentoScrollBtn.classList.add('visible');
             } else {
                 bentoScrollBtn.classList.remove('visible');
             }
+        };
+
+        if (scrollContainer === window) {
+            window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+            updateBackToTopVisibility();
+        } else {
+            scrollContainer.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+            updateBackToTopVisibility();
+        }
+
+        bentoScrollBtn.addEventListener('click', () => {
+            if (scrollContainer === window) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         });
 
-        // Smoothly transitions the container back to zero layout height
-        bentoScrollBtn.addEventListener('click', function () {
-            bentoContainer.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        window.addEventListener('resize', () => {
+            scrollContainer = getScrollContainer();
+            if (scrollContainer !== window && scrollContainer !== document.getElementById('page')) {
+                updateBackToTopVisibility();
+            }
         });
     }
 });

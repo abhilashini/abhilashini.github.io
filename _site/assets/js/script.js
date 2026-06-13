@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         section.appendChild(hiddenTag);
     });
 
-    // --- Mermaid diagram conversion & rendering (article pages only) ---
     if (document.querySelector('.article-main')) {
         // convert .language-mermaid blocks to pure .mermaid divs
         document.querySelectorAll('.language-mermaid').forEach(function (el) {
@@ -140,25 +139,50 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('resize', updateProgress);
     }
 
-    const bentoContainer = document.getElementById('page');
     const bentoScrollBtn = document.getElementById('bentoBackToTop');
+    if (bentoScrollBtn) {
+        const getScrollContainer = () => {
+            const page = document.getElementById('page');
+            if (page && getComputedStyle(page).overflowY === 'auto') {
+                return page;                     // Bento page: #page scrolls
+            }
+            return window;                       // Article page: window scrolls
+        };
 
-    if (bentoContainer && bentoScrollBtn) {
-        // Since #page is now the element scrolling, we listen directly to its offsets
-        bentoContainer.addEventListener('scroll', function () {
-            if (bentoContainer.scrollTop > 400) {
+        let scrollContainer = getScrollContainer();
+
+        const updateBackToTopVisibility = () => {
+            const scrollTop = scrollContainer === window
+                ? window.scrollY
+                : scrollContainer.scrollTop;
+            if (scrollTop > 400) {
                 bentoScrollBtn.classList.add('visible');
             } else {
                 bentoScrollBtn.classList.remove('visible');
             }
+        };
+
+        if (scrollContainer === window) {
+            window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+            updateBackToTopVisibility();
+        } else {
+            scrollContainer.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+            updateBackToTopVisibility();
+        }
+
+        bentoScrollBtn.addEventListener('click', () => {
+            if (scrollContainer === window) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         });
 
-        // Smoothly transitions the container back to zero layout height
-        bentoScrollBtn.addEventListener('click', function () {
-            bentoContainer.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        window.addEventListener('resize', () => {
+            scrollContainer = getScrollContainer();
+            if (scrollContainer !== window && scrollContainer !== document.getElementById('page')) {
+                updateBackToTopVisibility();
+            }
         });
     }
 });
