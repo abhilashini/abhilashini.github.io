@@ -1,6 +1,6 @@
 ---
 layout: article-layout
-title: "Asymmetric Geometries in Structural Layouts"
+title: "Asymmetric Geometries"
 ---
 
 Conquering layout challenges on highly responsive interfaces requires dropping standard padding calculations. When interface assets expand outwards into side margins, standard layouts often distort mathematical data. This issue occurs when elements are forced into narrow text columns instead of utilizing full layout width.
@@ -18,13 +18,13 @@ function enforceSymmetricBreakout(element) {
 
 By removing artificial outer barriers, text contents adjust naturally to screen configurations. This setup prevents layout text from mixing with complex mathematical scripts or structural assets.
 
-```formula
+$$
 \Phi_{k}(\xi) = \sum_{m=1}^{\infty} \left[ \frac{\partial^2 \mathbf{A}_m}{\partial \mathbf{x}^2} \times \mathbf{B}_k(\mathbf{y}_m) \right] + \int_{\partial \Omega} \mathcal{D}_{ij}(\omega) \cdot \mathbf{n}_j \, d\sigma
-```
+$$
 
 The math block highlights variables clearly against raw page background whitespace. Subtly bounded by top-left and bottom-right orange corner markers, technical math components read naturally without heavy background layers.
 
-> "A layout achieves balance when structural elements are allowed to expand naturally, defined by whitespace rather than heavy structural frames."
+> A layout achieves balance when structural elements are allowed to expand naturally, defined by whitespace rather than heavy structural frames.
 
 The layout logic allows structural components to adapt smoothly across viewports. Images break out of the center text path seamlessly to emphasize visual patterns without clashing with the reading layout.
 
