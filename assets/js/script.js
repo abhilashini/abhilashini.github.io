@@ -139,50 +139,23 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('resize', updateProgress);
     }
 
-    const bentoScrollBtn = document.getElementById('bentoBackToTop');
-    if (bentoScrollBtn) {
-        const getScrollContainer = () => {
-            const page = document.getElementById('page');
-            if (page && getComputedStyle(page).overflowY === 'auto') {
-                return page;                     // Bento page: #page scrolls
-            }
-            return window;                       // Article page: window scrolls
+    const btn = document.getElementById('bentoBackToTop');
+    if (btn) {
+        const scroller = (() => {
+            const p = document.getElementById('page');
+            return (p && getComputedStyle(p).overflowY === 'auto') ? p : window;
+        })();
+
+        const update = () => {
+            const top = scroller === window ? window.scrollY : scroller.scrollTop;
+            btn.classList.toggle('visible', top > 400);
         };
 
-        let scrollContainer = getScrollContainer();
+        scroller.addEventListener('scroll', update, { passive: true });
+        update();
 
-        const updateBackToTopVisibility = () => {
-            const scrollTop = scrollContainer === window
-                ? window.scrollY
-                : scrollContainer.scrollTop;
-            if (scrollTop > 400) {
-                bentoScrollBtn.classList.add('visible');
-            } else {
-                bentoScrollBtn.classList.remove('visible');
-            }
-        };
-
-        if (scrollContainer === window) {
-            window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
-            updateBackToTopVisibility();
-        } else {
-            scrollContainer.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
-            updateBackToTopVisibility();
-        }
-
-        bentoScrollBtn.addEventListener('click', () => {
-            if (scrollContainer === window) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            scrollContainer = getScrollContainer();
-            if (scrollContainer !== window && scrollContainer !== document.getElementById('page')) {
-                updateBackToTopVisibility();
-            }
+        btn.addEventListener('click', () => {
+            scroller.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 });
