@@ -19,43 +19,30 @@ document.addEventListener('DOMContentLoaded', function () {
         section.appendChild(hiddenTag);
     });
 
-    const mermaidBlocks = document.querySelectorAll('.language-mermaid');
-    if (mermaidBlocks.length > 0) {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
-        script.async = true;
+    // --- Mermaid diagram conversion & rendering (article pages only) ---
+    if (document.querySelector('.article-main')) {
+        // convert .language-mermaid blocks to pure .mermaid divs
+        document.querySelectorAll('.language-mermaid').forEach(function (el) {
+            var div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = el.textContent.trim();
+            el.parentNode.replaceChild(div, el);
+        });
 
-        script.onload = function () {
+        if (typeof mermaid !== 'undefined') {
             mermaid.initialize({
                 startOnLoad: false,
-                theme: 'base',
-                themeVariables: {
-                    // Match these to your CSS variables for geometry calculations
-                    fontFamily: 'var(--font-main)',
-                    fontSize: '16px',
-                    primaryColor: 'rgba(0, 85, 170, 0.04)',
-                    edgeLabelBackground: '#FFD700',
-                    lineColor: '#000000',
-                    tertiaryColor: 'rgba(0, 85, 170, 0.04)'
-                },
+                theme: 'neutral',
                 flowchart: {
-                    htmlLabels: true,
-                    useMaxWidth: false,
-                    padding: 30 // Critical for box-size calculation
-                }
+                    nodeSpacing: 50,  // Forces consistent horizontal space between nodes
+                    rankSpacing: 50,  // Forces consistent vertical space between levels
+                    padding: 20       // Gives the entire SVG breathing room
+                },
+                // Keep your existing themeCSS exactly as it is below:
+                themeCSS: '.node rect, .node circle, .node ellipse, .node polygon, .node path { fill: #FCFBF8 !important; stroke: #dcd9d3 !important; stroke-width: 1px !important; } .edgePath .path { stroke: #8a8a8a !important; stroke-width: 1.2px !important; } .node text, .label text { fill: #4A4A4A !important; font-family: "Work Sans", sans-serif !important; font-size: 13px !important; } .edgeLabel { background-color: #FCFBF8 !important; } .edgeLabel span, .edgeLabel p { background-color: #FCFBF8 !important; }',
             });
-
-            mermaidBlocks.forEach((block, i) => {
-                const container = document.createElement('div');
-                container.className = 'mermaid';
-                container.id = `mermaid-diag-${i}`;
-                container.textContent = block.innerText; // Use textContent for safety
-                block.parentElement.replaceWith(container);
-            });
-
             mermaid.run();
-        };
-        document.head.appendChild(script);
+        }
     }
 
     const grid = document.querySelector('.grid');
@@ -116,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const bentoContainer = document.getElementById('page');
     const bentoScrollBtn = document.getElementById('bentoBackToTop');
-    
+
     if (bentoContainer && bentoScrollBtn) {
         // Since #page is now the element scrolling, we listen directly to its offsets
         bentoContainer.addEventListener('scroll', function () {

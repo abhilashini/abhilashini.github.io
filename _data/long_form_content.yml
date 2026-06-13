@@ -86,7 +86,7 @@
   url: "/articles/agnosticism-as-strategy.html"
 
 - type: article
-  title: "Mermaid in the Mix"
+  title: "Mermaid in the mix"
   date: 2026-02-08
   description: >
     A small essay demonstrating how diagrams and reasoning
@@ -94,10 +94,10 @@
   url: "/articles/mermaid-in-the-mix.html"
 
 - type: article
-  title: "Complex Topologies"
+  title: "Merging Complex Topologies"
   date: 2026-03-19
   description: >
-    Medium-Long essat demonstrating Diagram usage and multi-paragraph flow.
+    Medium-Long essay demonstrating Diagram usage and multi-paragraph flow.
   url: "/articles/merging-complex-topologies.html"
 
 - type: article
@@ -106,3 +106,26 @@
   description: >
     Short: Demonstrating the centering logic and the blue-dash end marker
   url: "/articles/the-minimalist-heuristic.html"
+
+- type: article
+  title: "Asymmetric Geometries"
+  date: 2026-06-11
+  description: >
+    Some dumbass check
+  url: "/articles/asymmetric-geometries.html"
+
+- type: article
+  title: "Simple Sample"
+  date: 2026-06-01
+  description: >
+    Checking if image is styled
+  url: "/articles/sample-article.html"
+
+- type: article
+  title: "On the shape of silence"
+  date: 2026-06-13
+  description: >
+    A well‑designed page does not decorate. It makes room. This is a working 
+    demonstration of an editorial container that adapts to prose, code, 
+    mathematics, and diagrams without ever raising its voice.
+  url: "/articles/quiet-silence.html"

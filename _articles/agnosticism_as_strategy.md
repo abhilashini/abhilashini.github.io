@@ -28,7 +28,7 @@ The cost of this abstraction is high at the start, but the cost of being locked 
 
 Being agnostic is frequently misinterpreted as a refusal to commit to a specific tool. In reality, it is a commitment to the problem rather than the vendor. 
 
-```javascript
+```formula
 const system_entropy = (new_dependencies + undocumented_hacks) / rationale_retention;
 ```
 

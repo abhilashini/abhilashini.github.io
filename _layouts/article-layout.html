@@ -1,18 +1,41 @@
 ---
 layout: default
 ---
-<section class="section system-design">
-  <div class="system-design-inner">
-    <div class="system-design-columns">
-      <article class="system-essay">
+{% assign article_meta = site.data.long_form_content | where: "title", page.title | first %}
 
-        <h2 class="essay-title">{{ page.title }}</h2>
-        
-        <div class="essay-body prose">
-          {{ content }}
-        </div>
+<div class="progress-bar" id="progressBar"></div>
 
-      </article>
-    </div>
+<article class="article-wrapper {% if page.toc %}has-toc{% endif %}" id="articleContent">
+  
+  <aside class="toc-sidebar">
+    <nav aria-label="Table of Contents">
+      <ul class="toc-list" id="tocList"></ul>
+    </nav>
+  </aside>
+
+  <div class="article-main">
+    <header class="article-header">
+      <h1>{{ page.title }}</h1>
+      {% if article_meta.description %}
+        <p class="lede">{{ article_meta.description }}</p>
+        <hr class="lede-break">
+      {% endif %}
+    </header>
+
+    {{ content }}
+
+    <footer class="article-footer">
+      <span>Published {{ article_meta.date | default: page.date | date: "%d %B %Y" }} · 
+        {% for tag in page.tags %}
+          <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </span>
+      <a href="/long-form/" class="back-link">← Back to index</a>
+    </footer>
   </div>
-</section>
+</article>
+
+<button id="bentoBackToTop" class="bento-back-to-top" aria-label="Scroll back to top">
+  <span class="bento-top-shape"></span>
+  <span class="bento-top-text">scroll <br> to top</span>
+</button>

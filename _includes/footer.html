@@ -1,7 +1,21 @@
 <script src="/assets/js/library-filters.js" defer></script>
 <script src="/assets/js/script.js" defer></script>
+
 {% if page.section != "home" %}
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
     <span class="up-arrow"></span>
 </a>
+{% endif %}
+
+{% if page.layout == "article-layout" %}
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
 {% endif %}

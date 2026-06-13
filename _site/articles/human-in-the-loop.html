@@ -13,10 +13,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600&family=Work+Sans:ital,wght@0,300;0,350;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="article-page">
   
   <header class="header">
   <a href="/" class="home-brand" aria-label="Go to home page">
@@ -35,15 +36,29 @@
   
 
   <main id="page">
-    <section class="section system-design">
-  <div class="system-design-inner">
-    <div class="system-design-columns">
-      <article class="system-essay">
+    
 
-        <h2 class="essay-title">The Human in the Loop</h2>
-        
-        <div class="essay-body prose">
-          <p>We often speak of “automation” as a way to remove human error, but automation usually just relocates the error to a higher level of abstraction. A human might misconfigure a server; an automated script might misconfigure a thousand.</p>
+<div class="progress-bar" id="progressBar"></div>
+
+<article class="article-wrapper " id="articleContent">
+  
+  <aside class="toc-sidebar">
+    <nav aria-label="Table of Contents">
+      <ul class="toc-list" id="tocList"></ul>
+    </nav>
+  </aside>
+
+  <div class="article-main">
+    <header class="article-header">
+      <h1>The Human in the Loop</h1>
+      
+        <p class="lede">Automation scales human judgment rather than eliminating it. Systems must assume manual intervention will eventually occur.
+</p>
+        <hr class="lede-break">
+      
+    </header>
+
+    <p>We often speak of “automation” as a way to remove human error, but automation usually just relocates the error to a higher level of abstraction. A human might misconfigure a server; an automated script might misconfigure a thousand.</p>
 
 <blockquote>
   <p>Automation does not eliminate the need for human judgment; it scales the impact of that judgment.</p>
@@ -51,19 +66,41 @@
 
 <p>A truly human-centered system provides “guardrails, not walls.” It assumes that an operator will eventually need to take manual control and ensures the interface for doing so is visible, predictable, and calm.</p>
 
-        </div>
 
-      </article>
-    </div>
+    <footer class="article-footer">
+      <span>Published 28 December 2025 · 
+        
+      </span>
+      <a href="/long-form/" class="back-link">← Back to index</a>
+    </footer>
   </div>
-</section>
+</article>
+
+<button id="bentoBackToTop" class="bento-back-to-top" aria-label="Scroll back to top">
+  <span class="bento-top-shape"></span>
+  <span class="bento-top-text">scroll <br> to top</span>
+</button>
   </main>
   <script src="/assets/js/library-filters.js" defer></script>
 <script src="/assets/js/script.js" defer></script>
 
+
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
     <span class="up-arrow"></span>
 </a>
+
+
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
 
 </body>
 

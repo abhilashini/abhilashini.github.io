@@ -2,7 +2,7 @@
 <html>
 {% include head.html %}
 
-<body>
+<body{% if page.layout == 'article-layout' %} class="article-page"{% endif %}>
   {% if page.section != "home" %}
   {% include persistent-nav.html %}
   {% endif %}

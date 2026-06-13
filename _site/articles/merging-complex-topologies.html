@@ -13,10 +13,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600&family=Work+Sans:ital,wght@0,300;0,350;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="article-page">
   
   <header class="header">
   <a href="/" class="home-brand" aria-label="Go to home page">
@@ -35,15 +36,29 @@
   
 
   <main id="page">
-    <section class="section system-design">
-  <div class="system-design-inner">
-    <div class="system-design-columns">
-      <article class="system-essay">
+    
 
-        <h2 class="essay-title">Merging Complex Topologies</h2>
-        
-        <div class="essay-body prose">
-          <p>System evolution is rarely a clean slate. We are usually stitching together disparate topologies, each with its own gravity and failure modes. When merging these, the interface is the only thing that matters.</p>
+<div class="progress-bar" id="progressBar"></div>
+
+<article class="article-wrapper " id="articleContent">
+  
+  <aside class="toc-sidebar">
+    <nav aria-label="Table of Contents">
+      <ul class="toc-list" id="tocList"></ul>
+    </nav>
+  </aside>
+
+  <div class="article-main">
+    <header class="article-header">
+      <h1>Merging Complex Topologies</h1>
+      
+        <p class="lede">Medium-Long essay demonstrating Diagram usage and multi-paragraph flow.
+</p>
+        <hr class="lede-break">
+      
+    </header>
+
+    <p>System evolution is rarely a clean slate. We are usually stitching together disparate topologies, each with its own gravity and failure modes. When merging these, the interface is the only thing that matters.</p>
 
 <pre><code class="language-mermaid">graph TD
 A[Legacy Node] --&gt;|Encapsulation| B(Bridge API)
@@ -66,19 +81,41 @@ C --&gt; D[Target Mesh]
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-        </div>
 
-      </article>
-    </div>
+    <footer class="article-footer">
+      <span>Published 19 March 2026 · 
+        
+      </span>
+      <a href="/long-form/" class="back-link">← Back to index</a>
+    </footer>
   </div>
-</section>
+</article>
+
+<button id="bentoBackToTop" class="bento-back-to-top" aria-label="Scroll back to top">
+  <span class="bento-top-shape"></span>
+  <span class="bento-top-text">scroll <br> to top</span>
+</button>
   </main>
   <script src="/assets/js/library-filters.js" defer></script>
 <script src="/assets/js/script.js" defer></script>
 
+
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
     <span class="up-arrow"></span>
 </a>
+
+
+
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" defer></script>
 
 </body>
 
