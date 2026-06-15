@@ -85,37 +85,66 @@
 <!-- Hidden modal content templates -->
 <div id="modal-content-work" style="display: none;" aria-hidden="true">
   <div class="modal-work">
+
     <div class="work-intro">
-      I’m in Bangalore, India and looking for remote‑only roles.<br>
-      Currently I explore how modular systems evolve, break, and mend — the overlap where data models meet real‑world
+      I’m in Bangalore, India and looking for remote-only roles.<br>
+      Currently I explore how modular systems evolve, break, and mend — the overlap where data models meet real-world
       constraints.
     </div>
-    <hr class="work-rule" aria-hidden="true">
 
-    <div class="work-entry">
-      <p class="work-year">2021–2025</p>
-      <p class="work-role">Lead Engineer <span>· A</span></p>
-      <p class="work-desc">Architected data pipelines that turned messy logs into reliable decision tools. Led a small
-        remote team with a focus on quiet documentation and low‑friction delivery.</p>
+    <div class="work-list">
+
+      <div class="work-entry">
+        <div class="work-year">
+          2021–2025
+        </div>
+        <div class="work-details">
+          <div class="work-role">
+            Lead Engineer <span>· A</span>
+          </div>
+          <div class="work-desc">
+            Architected data pipelines that turned messy logs into reliable decision tools. Led a small remote team with
+            a focus on quiet documentation and low-friction delivery.
+          </div>
+        </div>
+      </div>
+
+      <div class="work-entry">
+        <div class="work-year">
+          2019–2020
+        </div>
+        <div class="work-details">
+          <div class="work-role">
+            Data Scientist <span>· B</span>
+          </div>
+          <div class="work-desc">
+            Built forecasting models that cut inventory waste by 18%. The models were simple, the impact was real.
+          </div>
+        </div>
+      </div>
+
+      <div class="work-entry">
+        <div class="work-year">
+          2013–2019
+        </div>
+        <div class="work-details">
+          <div class="work-role">
+            Senior Engineer <span>· C</span>
+          </div>
+          <div class="work-desc">
+            Core infrastructure for a high-traffic analytics platform. Shaped internal tooling and mentored engineers
+            towards self-sufficiency.
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="work-entry">
-      <p class="work-year">2019–2020</p>
-      <p class="work-role">Data Scientist <span>· B</span></p>
-      <p class="work-desc">Built forecasting models that cut inventory waste by 18% — the models were simple, the impact
-        was real.</p>
+    <div class="work-cta">
+      Beyond the timelines and titles, I'm always happy to connect and exchange ideas. LinkedIn is usually the easiest
+      place to find me.
     </div>
 
-    <div class="work-entry">
-      <p class="work-year">2013–2019</p>
-      <p class="work-role">Senior Engineer <span>· C</span></p>
-      <p class="work-desc">Core infrastructure for a high‑traffic analytics platform. Shaped internal tooling and
-        mentored engineers towards self‑sufficiency.</p>
-    </div>
-
-    <div class="work-cta">If you're building a remote team or have an open position that fits my background, let’s connect on 
-      <a href="https://linkedin.com/in/yourprofile" class="cta-link" target="_blank" rel="noopener">LinkedIn →</a>
-    </div>
   </div>
 </div>
 
@@ -172,7 +201,12 @@
 
 <div id="modalOverlay" class="modal-overlay" aria-hidden="true">
   <div class="modal-container" role="dialog" aria-modal="true">
-    <button class="modal-close" aria-label="Close modal">✕</button>
+    <div class="modal-header">
+      <button class="modal-close">
+        <span class="close-symbol">✕</span>
+        <span class="close-label">esc</span>
+      </button>
+    </div>
     <div class="modal-content" id="modalContent"></div>
   </div>
 </div>
