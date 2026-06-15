@@ -188,80 +188,42 @@
     }
 
     const modalOverlay = document.getElementById('modalOverlay');
-const modalContainer = document.querySelector('#modalOverlay .modal-container');
-const modalContent = document.getElementById('modalContent');
+    const modalContent = document.getElementById('modalContent');
+    const templateWork = document.getElementById('modal-content-work');
+    const templateColophon = document.getElementById('modal-content-colophon');
 
-const modalData = {
-  work: {
-    html: `
-      <div class="work-timeline">
-        <div class="work-item">
-          <div class="work-year">2023–present</div>
-          <h3 class="work-title">Senior Systems Designer</h3>
-          <div class="work-company">Studio XYZ · Berlin</div>
-          <p class="work-desc">Lead cross-disciplinary teams to design modular systems for cultural institutions. Develop design‑to‑code pipelines and research frameworks.</p>
-        </div>
-        <div class="work-item">
-          <div class="work-year">2020–2023</div>
-          <h3 class="work-title">Researcher & Designer</h3>
-          <div class="work-company">Institute of Complexity · Amsterdam</div>
-          <p class="work-desc">Investigated feedback loops in socio‑technical systems. Published three peer‑reviewed papers and co‑created interactive data visualisations.</p>
-        </div>
-        <div class="work-item">
-          <div class="work-year">2018–2020</div>
-          <h3 class="work-title">Junior Analyst</h3>
-          <div class="work-company">Data Structures Lab · Remote</div>
-          <p class="work-desc">Built internal tools for data cleaning and visualisation. Collaborated on open‑source documentation projects.</p>
-        </div>
-      </div>
-    `
-  },
-  colophon: {
-    html: `
-      <div class="colophon-content">
-        <p>This site is set in <strong class="colophon-highlight">Fraunces</strong> (serif) and <strong class="colophon-highlight">Work Sans</strong> (sans-serif). The colour palette draws from Bauhaus: <span style="color:var(--color-orange);">orange</span>, <span style="color:var(--color-yellow-ui);">yellow</span>, <span style="color:var(--color-teal);">teal</span>, <span style="color:var(--color-purple-ui);">purple</span>, and charcoal on a warm off‑white background.</p>
-        <p>The homepage’s interactive grid is a playful nod to modular systems. Diagrams are rendered with <strong class="colophon-highlight">Mermaid.js</strong>. Icons by Font Awesome. No tracking, no cookies — just content.</p>
-        <p>Built with <strong class="colophon-highlight">Jekyll</strong> and hosted on GitHub Pages. The source code is available in the repository.</p>
-        <p>Thanks for stopping by. – Abhilashini</p>
-      </div>
-    `
-  }
-};
+    function openModal(type) {
+        const template = type === 'work' ? templateWork : templateColophon;
+        if (!template) return;
 
-function openModal(type) {
-  if (!modalData[type]) return;
-  modalContent.innerHTML = modalData[type].html;
-  modalOverlay.classList.add('active');
-  modalOverlay.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
+        modalContent.innerHTML = template.innerHTML;
+        modalOverlay.classList.add('active');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
 
-function closeModal() {
-  modalOverlay.classList.remove('active');
-  modalOverlay.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
 
-// Close button (assuming you have a .modal-close inside modal container)
-const closeBtn = document.querySelector('.modal-close');
-if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    const closeBtn = document.querySelector('.modal-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-// Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
-});
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+    });
 
-// Click outside
-modalOverlay.addEventListener('click', (e) => {
-  if (e.target === modalOverlay) closeModal();
-});
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
 
-// Attach to your links (data-modal="work" and data-modal="colophon")
-document.querySelectorAll('.social-links a[data-modal]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const modalType = link.getAttribute('data-modal');
-    openModal(modalType);
-  });
-});
+    document.querySelectorAll('.social-links a[data-modal]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalType = link.getAttribute('data-modal');
+            openModal(modalType);
+        });
+    });
 })();

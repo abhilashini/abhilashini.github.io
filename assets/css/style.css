@@ -261,136 +261,47 @@ body:has(.heuristics-bento) #page { flex: 1; overflow-y: auto; display: flex; fl
 @media (max-width: 800px) { .header { padding: 12px 16px; gap: 12px; } .home-brand { font-size: 0.85rem; gap: 6px; } .home-vesica { width: 16px; height: 16px; } .nav-paragraph { font-size: 0.85rem; } .nav-full { display: none; } .nav-short { display: inline; } .main-content { flex-direction: column; padding: 0 1.5rem; gap: 1rem; } .filter-pane { width: 100%; padding: 1.5rem 0 0 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "filters reset" "content timeline" "content timeline"; gap: 1rem 1.5rem; max-height: none; overflow-y: visible; align-items: start; } .filter-pane-heading { grid-area: filters; margin-bottom: 0; } .reset-btn { grid-area: reset; justify-self: end; align-self: center; } .content-type-section { grid-area: content; } .timeline-section { grid-area: timeline; } .right-pane { padding: 1rem 0 2rem 0; } .entries-count-bar { padding-bottom: 0.8rem; } .entries-list { padding-bottom: 2rem; } .entries-items-container { gap: 1.8rem; } .months-inline-list { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px 4px; padding-left: 0; margin-top: 4px; margin-bottom: 4px; } .month-btn-inline { text-align: center; font-size: 0.73rem; padding: 4px 2px; width: 100%; } .month-btn-inline .month-text { padding: 2px 3px; } .heuristics-bento { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 500px) { .heuristic-block { padding-bottom: 1.25rem; } .heuristics-bento { grid-template-columns: 1fr; grid-auto-flow: row; gap: 1.5rem; } .layout-1x1, .layout-2x1, .layout-1x2, .layout-2x2 { grid-column: auto; grid-row: auto; } .layout-2x1, .layout-1x2 { min-height: unset; } }
 
-/* Modal base – shared */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(26, 26, 26, 0.94);
-  backdrop-filter: blur(4px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
-  padding: 2rem;
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.25s ease, visibility 0s linear 0s;
-}
-
-.modal-container {
-  background: var(--bg-page);
-  max-width: 720px;
-  width: 100%;
-  max-height: 85vh;
-  position: relative;
-  overflow-y: auto;
-  border: 1px solid var(--rule);
-  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease-out;
-  transform: scale(0.98);
-}
-
-.modal-overlay.active .modal-container {
-  transform: scale(1);
-}
-
-/* No banner – just content */
-.modal-content {
-  padding: 2.5rem 2.5rem 3rem 2.5rem;
-  font-family: var(--font-main);
-}
-
-/* Work timeline – immersive, year‑as‑anchor */
-.work-timeline {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.work-item {
-  margin-bottom: 2.5rem;
-  border-left: 2px solid var(--rule);
-  padding-left: 1.5rem;
-  transition: border-color 0.2s;
-}
-
-.work-item:hover {
-  border-left-color: var(--color-teal);
-}
-
-.work-year {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--color-purple-ui);
-  letter-spacing: -0.01em;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.work-title {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--text-heading);
-  margin: 0.25rem 0 0.2rem 0;
-  line-height: 1.3;
-}
-
-.work-company {
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: var(--text-secondary);
-  margin-bottom: 0.75rem;
-  font-style: normal;
-}
-
-.work-desc {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-body);
-  margin: 0;
-}
-
-/* No extra footer, no loud accents */
-.modal-content hr {
-  display: none;
-}
-
-/* Colophon remains as before (optional – we'll keep it simple too) */
-.colophon-content p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.colophon-highlight {
-  background: var(--color-yellow-ui);
-  display: inline-block;
-  padding: 0 0.2em;
-  font-weight: 500;
-}
-
-/* Responsive */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 26, 26, 0.82); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0s linear 0.25s; padding: 2rem; }
+.modal-overlay.active { opacity: 1; visibility: visible; transition: opacity 0.25s ease, visibility 0s linear 0s; }
+.modal-container { background: #fef9e7; max-width: 640px; width: 100%; position: relative; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04); transition: transform 0.3s ease-out; transform: scale(0.98); }
+.modal-overlay.active .modal-container { transform: scale(1); }
+.modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.25rem; line-height: 1; color: var(--text-secondary, #5c5b57); opacity: 0.7; cursor: pointer; z-index: 2; padding: 0.25rem; transition: opacity 0.2s, color 0.2s; }
+.modal-close:hover { opacity: 1; color: var(--text-heading, #1a1a1a); }
+.modal-content { padding: 2.25rem 2.25rem 2.25rem 2.25rem; font-family: var(--font-main, 'Work Sans', sans-serif); color: var(--text-body, #3b3a36); line-height: 1.5; }
+.work-intro { font-size: 1rem; line-height: 1.55; color: var(--text-heading, #1a1a1a); margin: 0 0 1.75rem; max-width: 34em; font-weight: 400; }
+.work-rule { border: none; border-top: 1px solid var(--rule, #d9d7d1); width: 48px; margin: 0 auto 2rem; }
+.work-entry { margin-bottom: 1.6rem; }
+.work-entry:last-of-type { margin-bottom: 1.8rem; }
+.work-year { font-size: 1rem; font-weight: 600; color: var(--text-heading, #1a1a1a); margin: 0 0 0.15rem; line-height: 1.3; }
+.work-role { font-size: 0.95rem; font-weight: 500; color: var(--text-heading, #1a1a1a); margin: 0 0 0.35rem; }
+.work-role span { font-weight: 400; color: var(--text-secondary, #5c5b57); }
+.work-desc { margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-body, #3b3a36); }
+.work-cta { margin-top: 0.5rem; }
+.cta-link { font-family: var(--font-main, 'Work Sans', sans-serif); font-size: 0.92rem; font-weight: 500; color: var(--text-heading, #1a1a1a); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.2s; border-bottom: 1px solid transparent; }
+.cta-link:hover { color: var(--text-secondary, #5c5b57); border-bottom-color: var(--text-secondary, #5c5b57); }
+.cta-arrow { font-size: 1rem; font-weight: 400; transition: transform 0.2s; }
+.cta-link:hover .cta-arrow { transform: translateX(2px); }
+.colophon-intro { font-size: 1rem; line-height: 1.55; color: var(--text-heading, #1a1a1a); margin: 0 0 2rem; max-width: 34em; }
+.colophon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem 1.5rem; margin-bottom: 2rem; }
+.colophon-item { display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+.colophon-item i { font-size: 1.35rem; color: var(--text-secondary, #5c5b57); margin-bottom: 0.1rem; }
+.colophon-item h4 { font-family: var(--font-main, 'Work Sans', sans-serif); font-size: 0.92rem; font-weight: 600; color: var(--text-heading, #1a1a1a); margin: 0; letter-spacing: -0.01em; }
+.colophon-item p { font-size: 0.82rem; line-height: 1.4; color: var(--text-body, #3b3a36); margin: 0; }
+.font-name-serif { font-family: var(--font-serif, 'Fraunces', serif); font-size: 1.1em; }
+.font-name-sans { font-family: var(--font-main, 'Work Sans', sans-serif); font-size: 1.1em; }
+.colophon-source { text-align: center; }
+.colophon-source .colophon-item { display: inline-flex; flex-direction: row; align-items: center; gap: 0.6rem; }
+.colophon-source i { font-size: 1.2rem; }
+.colophon-source h4 { font-size: 0.9rem; }
+.colophon-source p { font-size: 0.85rem; margin-left: 0.3rem; }
 @media (max-width: 640px) {
-  .modal-overlay {
-    padding: 1rem;
-  }
-  .modal-content {
-    padding: 1.5rem;
-  }
-  .work-item {
-    padding-left: 1rem;
-    margin-bottom: 2rem;
-  }
-  .work-title {
-    font-size: 1rem;
-  }
+  .modal-overlay { padding: 1rem; }
+  .modal-content { padding: 1.5rem; }
+  .work-intro, .colophon-intro { font-size: 0.95rem; }
+  .colophon-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1.2rem; }
+}
+@media (max-width: 420px) {
+  .colophon-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .colophon-source { text-align: left; }
+  .colophon-source .colophon-item { flex-direction: row; align-items: center; }
 }
