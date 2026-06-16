@@ -4,26 +4,129 @@
       <div class="accent-bar"></div>
       <h1>Hi! <strong>I'm Abhilashini.</strong></h1>
 
-      <p class="has-dropcap">I like the contrast of <strong class="drawn-highlight">structured mess<svg
-            class="highlight-svg" viewBox="0 0 100 10" preserveAspectRatio="none">
-            <path d="M2,8 Q50,0 98,6" />
-          </svg></strong>. It's the sweet spot between order and chaos. It's also where systems sit between the
-        universal
-        and the specific. My work and curiosities keep me at this overlap, where change and continuity meet in practice.
-      </p>
 
-      <p>This site distills the agnostic line of inquiry I follow. I primarily explore systems in parts and as a whole,
-        weaving in things that pique my interest. The <a href="/long-form/" class="text-link">long-form content</a> has
-        playbooks, write-ups, and projects I learn from. There's also a <a href="/mosaic/" class="text-link">mosaic of
-          thoughts</a> I collect along the <span class="nowrap-group">way<span class="end-glyph"></span></span></p>
+      <div class="content-view active" id="view-home">
+
+        <p class="has-dropcap">
+          I like the contrast of
+          <strong class="drawn-highlight">
+            structured mess
+            <svg class="highlight-svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M2,8 Q50,0 98,6" />
+            </svg>
+          </strong>.
+          It's the sweet spot between order and chaos. It's also where systems sit between the universal and the
+          specific. My work and curiosities keep me at this overlap, where change and continuity meet in practice.
+        </p>
+
+        <p>
+          This site distills the agnostic line of inquiry I follow. I primarily explore systems in parts and as a whole,
+          weaving in things that pique my interest. The <a href="/long-form/" class="text-link">long-form content</a>
+          has playbooks, write-ups, and projects I learn from. There's also a <a href="/mosaic/"
+            class="text-link">mosaic of thoughts</a> I collect along the <span class="nowrap-group">way<span
+              class="end-glyph"></span></span>.
+        </p>
+
+      </div>
+
+      <div class="content-view" id="view-work">
+
+        <p class="work-intro">
+          I'm in Bangalore, India and looking for remote-only roles. Currently I explore how modular systems evolve,
+          break, and mend, where data models meet real-world constraints. You can always reach me through <a href="#"
+            class="text-link">LinkedIn</a>.
+        </p>
+
+        <div class="work-list">
+
+          <div class="work-entry">
+            <div class="work-meta">
+              Lead Engineer <span>A</span> <span>2021–2025</span>
+            </div>
+
+            <div class="work-desc">
+              Architected data pipelines that turned messy logs into reliable decision tools. Led a small remote team
+              with a focus on quiet documentation and low-friction delivery.
+            </div>
+          </div>
+
+          <div class="work-entry">
+            <div class="work-meta">
+              Data Scientist <span>B</span> <span>2019–2020</span>
+            </div>
+
+            <div class="work-desc">
+              Built forecasting models that cut inventory waste by 18%. The models were simple, the impact was real.
+            </div>
+          </div>
+
+          <div class="work-entry">
+            <div class="work-meta">
+              Senior Engineer <span>C</span> <span>2013–2019</span>
+            </div>
+
+            <div class="work-desc">
+              Core infrastructure for a high-traffic analytics platform. Shaped internal tooling and mentored engineers
+              towards self-sufficiency.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="content-view" id="view-colophon">
+
+        <p class="colophon-intro">
+          This site is built on simple, durable parts. Here's what holds it together.
+        </p>
+
+        <div class="colophon-grid">
+
+          <div class="colophon-item">
+            <i class="fa-solid fa-palette"></i>
+            <h4>Design & colour</h4>
+            <p>Inspired by Bauhaus geometry and palette.</p>
+          </div>
+          <div class="colophon-item">
+            <i class="fa-solid fa-font"></i>
+            <h4>Typography</h4>
+            <p><span class="font-name-serif">Fraunces</span> & <span class="font-name-sans">Work Sans</span>, served via
+              Google Fonts.</p>
+          </div>
+          <div class="colophon-item">
+            <i class="fa-solid fa-flask-vial"></i>
+            <h4>Engine</h4>
+            <p>Static site built with Jekyll.</p>
+          </div>
+
+          <div class="colophon-item">
+            <i class="fa-solid fa-server"></i>
+            <h4>Hosting</h4>
+            <p>Deployed via GitHub Pages.</p>
+          </div>
+          <div class="colophon-item">
+            <i class="fa-solid fa-chart-diagram"></i>
+            <h4>Diagrams and Charts</h4>
+            <p>Rendered using Mermaid.js.</p>
+          </div>
+          <div class="colophon-item">
+            <i class="fa-solid fa-font-awesome"></i>
+            <h4>Icons</h4>
+            <p>Font Awesome system.</p>
+          </div>
+
+        </div>
+
+      </div>
 
       <div class="social-links">
         <a href="#" class="icon-gh" aria-label="GitHub" data-tooltip="github"><i class="fa-brands fa-github"></i></a>
-        <a href="#" class="icon-cr" aria-label="Career" data-tooltip="work" data-modal="work"><i
+        <a href="#" class="icon-cr view-trigger" aria-label="Career" data-tooltip="work" data-view="work"><i
             class="fa-solid fa-briefcase"></i></a>
         <a href="#" class="icon-li" aria-label="LinkedIn" data-tooltip="linkedin"><i
             class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" class="icon-co" aria-label="Colophon" data-tooltip="colophon" data-modal="colophon"><i
+        <a href="#" class="icon-co view-trigger" aria-label="Colophon" data-tooltip="colophon" data-view="colophon"><i
             class="fa-solid fa-shapes"></i></a>
       </div>
     </div>
@@ -56,134 +159,5 @@
         <div class="cell vesica-sec c-teal"></div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- Hidden modal content templates -->
-<div id="modal-content-work" style="display: none;" aria-hidden="true">
-  <div class="modal-work">
-
-    <div class="work-intro">
-      I’m in Bangalore, India and looking for remote-only roles.<br>
-      Currently I explore how modular systems evolve, break, and mend — the overlap where data models meet real-world
-      constraints.
-    </div>
-
-    <div class="work-list">
-
-      <div class="work-entry">
-        <div class="work-year">
-          2021–2025
-        </div>
-        <div class="work-details">
-          <div class="work-role">
-            Lead Engineer <span>· A</span>
-          </div>
-          <div class="work-desc">
-            Architected data pipelines that turned messy logs into reliable decision tools. Led a small remote team with
-            a focus on quiet documentation and low-friction delivery.
-          </div>
-        </div>
-      </div>
-
-      <div class="work-entry">
-        <div class="work-year">
-          2019–2020
-        </div>
-        <div class="work-details">
-          <div class="work-role">
-            Data Scientist <span>· B</span>
-          </div>
-          <div class="work-desc">
-            Built forecasting models that cut inventory waste by 18%. The models were simple, the impact was real.
-          </div>
-        </div>
-      </div>
-
-      <div class="work-entry">
-        <div class="work-year">
-          2013–2019
-        </div>
-        <div class="work-details">
-          <div class="work-role">
-            Senior Engineer <span>· C</span>
-          </div>
-          <div class="work-desc">
-            Core infrastructure for a high-traffic analytics platform. Shaped internal tooling and mentored engineers
-            towards self-sufficiency.
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="work-cta">
-      Beyond the timelines and titles, I'm always happy to connect and exchange ideas. LinkedIn is usually the easiest
-      place to find me.
-    </div>
-
-  </div>
-</div>
-
-<div id="modal-content-colophon" style="display: none;" aria-hidden="true">
-  <div class="modal-colophon">
-    <div class="colophon-intro">
-      This site is built on simple, durable parts. Here’s what holds it together.
-    </div>
-
-    <div class="colophon-grid">
-      <div class="colophon-item">
-        <i class="fa-solid fa-palette"></i>
-        <h4>Design & colour</h4>
-        <p>Inspired by Bauhaus geometry and palette.</p>
-      </div>
-      <div class="colophon-item">
-        <i class="fa-solid fa-font"></i>
-        <h4>Typography</h4>
-        <p><span class="font-name-serif">Fraunces</span> & <span class="font-name-sans">Work Sans</span>, served via
-          Google Fonts.</p>
-      </div>
-      <div class="colophon-item">
-        <i class="fa-solid fa-flask-vial"></i>
-        <h4>Engine</h4>
-        <p>Static site built with Jekyll.</p>
-      </div>
-
-      <div class="colophon-item">
-        <i class="fa-solid fa-server"></i>
-        <h4>Hosting</h4>
-        <p>Deployed via GitHub Pages.</p>
-      </div>
-      <div class="colophon-item">
-        <i class="fa-solid fa-chart-diagram"></i>
-        <h4>Diagrams and Charts</h4>
-        <p>Rendered using Mermaid.js.</p>
-      </div>
-      <div class="colophon-item">
-        <i class="fa-solid fa-font-awesome"></i>
-        <h4>Icons</h4>
-        <p>Font Awesome system.</p>
-      </div>
-    </div>
-
-    <div class="colophon-source">
-      <div class="colophon-item">
-        <i class="fa-solid fa-code-branch"></i>
-        <h4>Source</h4>
-        <p>Available in the public repository.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="modalOverlay" class="modal-overlay" aria-hidden="true">
-  <div class="modal-container" role="dialog" aria-modal="true">
-    <div class="modal-header">
-      <button class="modal-close">
-        <span class="close-symbol">✕</span>
-        <span class="close-label">esc</span>
-      </button>
-    </div>
-    <div class="modal-content" id="modalContent"></div>
   </div>
 </div>

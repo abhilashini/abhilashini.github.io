@@ -187,43 +187,29 @@
         });
     }
 
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalContent = document.getElementById('modalContent');
-    const templateWork = document.getElementById('modal-content-work');
-    const templateColophon = document.getElementById('modal-content-colophon');
+    const views = document.querySelectorAll(".content-view");
+    const triggers = document.querySelectorAll(".view-trigger");
 
-    function openModal(type) {
-        const template = type === 'work' ? templateWork : templateColophon;
-        if (!template) return;
+    function showView(name) {
+        views.forEach(view => {
+            view.classList.toggle(
+                "active",
+                view.id === `view-${name}`
+            );
+        });
 
-        modalContent.innerHTML = template.innerHTML;
-        modalOverlay.classList.add('active');
-        modalOverlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        triggers.forEach(trigger => {
+            trigger.classList.toggle(
+                "active",
+                trigger.dataset.view === name
+            );
+        });
     }
 
-    function closeModal() {
-        modalOverlay.classList.remove('active');
-        modalOverlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    const closeBtn = document.querySelector('.modal-close');
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
-    });
-
-    modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) closeModal();
-    });
-
-    document.querySelectorAll('.social-links a[data-modal]').forEach(link => {
-        link.addEventListener('click', (e) => {
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", e => {
             e.preventDefault();
-            const modalType = link.getAttribute('data-modal');
-            openModal(modalType);
+            showView(trigger.dataset.view);
         });
     });
 })();
