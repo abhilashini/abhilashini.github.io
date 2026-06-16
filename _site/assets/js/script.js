@@ -26,7 +26,6 @@
 
     const articleMain = document.querySelector('.article-main');
     if (articleMain && typeof mermaid !== 'undefined') {
-        // Convert .language-mermaid blocks to .mermaid divs
         document.querySelectorAll('.language-mermaid').forEach(el => {
             const div = document.createElement('div');
             div.className = 'mermaid';
@@ -100,12 +99,10 @@
     }
 
     if (document.getElementById('filterPane')) {
-        // Assume initLibraryFilters is defined globally (in another file)
         if (typeof initLibraryFilters === 'function') initLibraryFilters();
     }
 
     if (articleMain) {
-        // --- TOC generation (if .has-toc present) ---
         const tocList = document.getElementById('tocList');
         const hasTocClass = document.querySelector('.has-toc');
         if (tocList && hasTocClass) {
@@ -188,7 +185,7 @@
     }
 
     const views = document.querySelectorAll(".content-view");
-    const triggers = document.querySelectorAll(".view-trigger");
+    const triggers = document.querySelectorAll(".nav-link[data-view]");
 
     function showView(name) {
         views.forEach(view => {
