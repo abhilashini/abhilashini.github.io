@@ -2,10 +2,9 @@
 <html>
 {% include head.html %}
 
-<body{% if page.layout == 'article-layout' %} class="article-page"{% endif %}>
-  {% if page.section != "home" %}
+<body class="{% if page.layout == 'article-layout' %}article-page{% endif %} {% if page.section == 'home' %}home-page-root{% endif %}"></body>  
+
   {% include persistent-nav.html %}
-  {% endif %}
 
   <main id="page">
     {{ content }}

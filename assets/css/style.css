@@ -24,6 +24,8 @@ main#page { flex: 1; display: flex; flex-direction: column; }
 .nav-short { display: none; }
 
 /* Index / Card Page */
+body.home-page-root .header { position: absolute; top: 0; left: 0; width: 100%; z-index: 100; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-6px); transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s; }
+body.home-page-root.nav-visible .header { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
 .card { display: flex; width: 85vw; max-width: 1200px; min-height: 65vh; gap: 6rem; align-items: center; z-index: 1; }
 .text-panel { flex: 1.1; display: flex; flex-direction: column; justify-content: center; padding-right: 1rem; z-index: 2; transform: translateY(-2rem); }
 .accent-bar { width: 48px; height: 4px; background-color: var(--text-heading); margin-bottom: 2rem; }

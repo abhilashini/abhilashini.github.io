@@ -201,6 +201,10 @@
                 trigger.dataset.view === name
             );
         });
+
+        if (document.body.classList.contains('home-page-root')) {
+            document.body.classList.toggle("nav-visible", name !== "home");
+        }
     }
 
     triggers.forEach(trigger => {
@@ -209,4 +213,13 @@
             showView(trigger.dataset.view);
         });
     });
+
+    const localHomeBrand = document.querySelector(".home-page-root .home-brand");
+    if (localHomeBrand) {
+        localHomeBrand.addEventListener("click", (e) => {
+            e.preventDefault();
+            // Smoothly transition back to the preface view instead of breaking flow with a refresh
+            showView("home"); 
+        });
+    }
 })();
