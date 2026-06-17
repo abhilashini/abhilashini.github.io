@@ -185,7 +185,7 @@
     }
 
     const views = document.querySelectorAll(".content-view");
-    const triggers = document.querySelectorAll(".nav-link[data-view]");
+    const triggers = document.querySelectorAll(".nav-item[data-view]");
 
     function showView(name) {
         views.forEach(view => {
