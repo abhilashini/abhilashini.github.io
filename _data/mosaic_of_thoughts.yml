@@ -1,10 +1,36 @@
 - layout: square
   type: title-text
-  title: "The Horsepower Trap"
+  title: "runtime cost ≠ system cost"
   body: >
-     Powerful engines pull rusted wagons, but they don't fix the rust.
-     Fast hardware masks design noise. The resulting friction drains human time.
-     A clear "why" makes systems adaptable. 
+    Better hardware can mask noisy code for a long time.
+    The cost becomes visible when the system needs to evolve.
+
+- layout: square
+  type: image-text
+  body: >
+    Some ideas are clearer when they are shown.
+    Some are clearer when they are said.
+    The form should follow the idea.
+  image: "/assets/images/picture_not_worth_words.png"
+
+- layout: wide
+  type: image-only
+  image: "/assets/images/shiny_object_syndrome.png"
+
+- layout: tall
+  type: title-text
+  title: "Understanding comes before optimisation"
+  body: >
+    Some complexity is accidental. Some complexity is earned.
+    What looks tangled from the outside may be the shape of things being brought together.
+    Something that needs simplification may not have been understood yet.
+
+- layout: wide
+  type: image-text
+  body: >
+    [TK]Users experience delay as uncertainty. Even when throughput is acceptable,
+    long-tail latency erodes trust and amplifies perceived instability.
+  image: "https://placehold.co/900x400"
 
 - layout: large
   type: image-text
@@ -14,39 +40,14 @@
     it is the difference between a one-off tool and a scalable, reusable service.
   image: "/assets/images/design_for_structure.png"
 
-- layout: wide
-  type: image-only
-  image: "/assets/images/shiny_object_syndrome.png"
-
-- layout: square
-  type: text-only
-  body: >
-    Observability is not dashboards. It is the ability to ask new questions of your
-    system without shipping new code. Systems that cannot be interrogated evolve
-    blindly, guided more by superstition than evidence.
-
-- layout: wide
-  type: image-text
-  body: >
-    Users experience delay as uncertainty. Even when throughput is acceptable,
-    long-tail latency erodes trust and amplifies perceived instability.
-  image: "https://placehold.co/900x400"
-
-- layout: square
-  type: title-text
-  title: "Latency is a product feature"
-  body: >
-    Performance is not an implementation detail. It is part of the user contract,
-    shaping how reliable and predictable a system feels under real conditions.
-
 - layout: square
   type: image-only
   image: "https://placehold.co/600x600"
 
 - layout: tall
   type: image-title
-  title: "Design for recovery, not perfection"
-  image: "https://placehold.co/600x900"
+  title: "Computation scales more easily than coordination"
+  image: "/assets/images/computation_vs_coordination.jpg"
 
 - layout: square
   type: text-only
@@ -65,8 +66,8 @@
 - layout: square
   type: text-only
   body: >
-    What you measure becomes what the system optimizes for,
-    even when the metric stops representing the underlying goal.
+    Effort can make a path feel more necessary than it is.
+    We get better at improving a path, and sometimes forget to ask whether it is still the path we want.
 
 - layout: large
   type: image-text
@@ -78,4 +79,4 @@
 
 - layout: square
   type: title-only
-  title: "Scale exposes assumptions."
+  title: "Friction reveals hidden structure."
