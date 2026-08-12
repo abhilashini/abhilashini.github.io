@@ -28,21 +28,13 @@
 - layout: wide
   type: image-text
   body: >
-    [TK]Users experience delay as uncertainty. Even when throughput is acceptable,
-    long-tail latency erodes trust and amplifies perceived instability.
-  image: "https://placehold.co/900x400"
-
-- layout: large
-  type: image-text
-  body: >
-    A system that meets user needs can be complete but terminal. 
-    Isolate the common factors to carve a neutral core; 
-    it is the difference between a one-off tool and a scalable, reusable service.
+    A system built around one need can be complete but terminal. 
+    What is common can form a core; what is specific can remain at the edges.
   image: "/assets/images/design_for_structure.png"
 
-- layout: square
+- layout: wide
   type: image-only
-  image: "https://placehold.co/600x600"
+  image: "assets/images/automation_and_bureaucracy.jpg"
 
 - layout: tall
   type: image-title
@@ -52,31 +44,15 @@
 - layout: square
   type: text-only
   body: >
-    Improving performance in isolation often shifts complexity elsewhere.
-    Always reason about the system boundary where incentives diverge.
-
-- layout: square
-  type: image-title-text
-  title: "Human workflows are part of the system"
-  body: >
-    Alert fatigue, handoffs, and institutional knowledge gaps shape behavior
-    as much as code paths do. Ignoring them creates invisible failure modes.
-  image: "https://placehold.co/600x400"
-
-- layout: square
-  type: text-only
-  body: >
     Effort can make a path feel more necessary than it is.
     We get better at improving a path, and sometimes forget to ask whether it is still the path we want.
 
-- layout: large
-  type: image-text
+- layout: square
+  type: text-title
+  title: Observability and uncertainty
   body: >
-    Growth does not introduce new problems so much as it magnifies
-    the ones that were quietly tolerated before. Scale is a stress test
-    for assumptions, not a feature milestone.
-  image: "https://placehold.co/1000x800"
+    What cannot be predicted can still be observed.
 
 - layout: square
   type: title-only
-  title: "Friction reveals hidden structure."
+  title: "Friction reveals what the system was built around."
