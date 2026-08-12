@@ -5,6 +5,10 @@
     Better hardware can mask noisy code for a long time.
     The cost becomes visible when the system needs to evolve.
 
+- layout: wide
+  type: image-only
+  image: "/assets/images/shiny_object_syndrome.png"
+
 - layout: square
   type: image-text
   body: >
@@ -13,17 +17,11 @@
     The form should follow the idea.
   image: "/assets/images/picture_not_worth_words.jpg"
 
-- layout: wide
-  type: image-only
-  image: "/assets/images/shiny_object_syndrome.png"
-
-- layout: tall
-  type: title-text
-  title: "Understanding comes before optimisation"
+- layout: square
+  type: text-title
+  title: Observability and uncertainty
   body: >
-    Some complexity is accidental. Some complexity is earned.
-    What looks tangled from the outside may be the shape of things being brought together.
-    Something that needs simplification may not have been understood yet.
+    What cannot be predicted can still be observed.
 
 - layout: wide
   type: image-text
@@ -32,14 +30,17 @@
     What is common can form a core; what is specific can remain at the edges.
   image: "/assets/images/design_for_structure.png"
 
+- layout: square
+  type: title-text
+  title: "Understanding comes before optimisation"
+  body: >
+    Some complexity is accidental. Some complexity is earned.
+    What looks tangled from the outside may be the shape of things being brought together.
+    Something that needs simplification may not have been understood yet.
+
 - layout: wide
   type: image-only
   image: "/assets/images/automation_and_bureaucracy.jpg"
-
-- layout: tall
-  type: image-title
-  title: "Computation scales more easily than coordination"
-  image: "/assets/images/computation_vs_coordination.jpg"
 
 - layout: square
   type: text-only
@@ -47,11 +48,10 @@
     Effort can make a path feel more necessary than it is.
     We get better at improving a path, and sometimes forget to ask whether it is still the path we want.
 
-- layout: square
-  type: text-title
-  title: Observability and uncertainty
-  body: >
-    What cannot be predicted can still be observed.
+- layout: wide
+  type: image-title
+  title: "Computation scales more easily than coordination"
+  image: "/assets/images/computation_vs_coordination.jpg"
 
 - layout: square
   type: title-only
