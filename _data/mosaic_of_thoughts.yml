@@ -11,7 +11,7 @@
     Some ideas are clearer when they are shown.
     Some are clearer when they are said.
     The form should follow the idea.
-  image: "/assets/images/picture_not_worth_words.png"
+  image: "/assets/images/picture_not_worth_words.jpg"
 
 - layout: wide
   type: image-only
@@ -34,7 +34,7 @@
 
 - layout: wide
   type: image-only
-  image: "assets/images/automation_and_bureaucracy.jpg"
+  image: "/assets/images/automation_and_bureaucracy.jpg"
 
 - layout: tall
   type: image-title
