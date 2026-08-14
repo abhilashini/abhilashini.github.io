@@ -26,7 +26,7 @@
 - layout: wide
   type: image-text
   body: >
-    A system built around one need can be complete but terminal. 
+    A system built around one need can be complete but terminal.<br> 
     What is common can form a core; what is specific can remain at the edges.
   image: "/assets/images/design_for_structure.png"
 

@@ -12,7 +12,7 @@
           <button class="type-item filter-btn active" data-type="all"><span class="filter-btn-text">All</span></button>
           <button class="type-item filter-btn" data-type="read"><span class="filter-btn-text">Write‑up</span></button>
           <button class="type-item filter-btn" data-type="download"><span class="filter-btn-text">PDF</span></button>
-          <button class="type-item filter-btn" data-type="repo"><span class="filter-btn-text">Repo</span></button>
+          <button class="type-item filter-btn" data-type="code"><span class="filter-btn-text">Code</span></button>
         </div>
       </div>
 
@@ -38,7 +38,7 @@
           {% assign entry_type = item.type %}
           {% case entry_type %}
           {% when 'pdf' %}{% assign type_key = 'download' %}{% assign type_label = 'Download' %}
-          {% when 'github' %}{% assign type_key = 'repo' %}{% assign type_label = 'View' %}
+          {% when 'github' %}{% assign type_key = 'code' %}{% assign type_label = 'View' %}
           {% else %}{% assign type_key = 'read' %}{% assign type_label = 'Read' %}
           {% endcase %}
 

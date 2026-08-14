@@ -1,14 +1,20 @@
 <header class="header">
-  <a href="/" class="home-brand" aria-label="Go to home page">
+  <a href="/" class="home-brand {% if page.url == '/' or page.url == '/index.html' %}active{% endif %}" aria-label="Go to home page">
     <div class="home-vesica"></div>
     <span class="home-label">Home</span>
   </a>
   <p class="nav-paragraph">
-    <span class="nav-full">This site distills the agnostic line of inquiry I follow. The <a href="/long-form/"
-        class="text-link">long-form content</a> has playbooks, write-ups, and projects
-      I learn from. There's also a <a href="/mosaic/" class="text-link">mosaic of thoughts</a> I collect
-      along the <span class="nowrap-group">way<span class="end-glyph"></span></span></span>
-    <span class="nav-short">An agnostic inquiry into systems, featuring <a href="/long-form/">long-form
-        content</a> and a shifting <a href="/mosaic/">mosaic of thoughts</a>.</span>
+    <span class="nav-full">This site distills the agnostic line of inquiry I follow. The 
+      <a href="/long-form/" class="text-link {% if page.url contains '/long-form/' %}active{% endif %}">long-form content</a> 
+      has playbooks, write-ups, and projects I learn from. There's also a 
+      <a href="/mosaic/" class="text-link {% if page.url contains '/mosaic/' %}active{% endif %}">mosaic of thoughts</a> 
+      I collect along the <span class="nowrap-group">way<span class="end-glyph"></span></span>
+    </span>
+    
+    <span class="nav-short">An agnostic inquiry into systems, featuring 
+      <a href="/long-form/" class="{% if page.url contains '/long-form/' %}active{% endif %}">long-form content</a> 
+      and a shifting 
+      <a href="/mosaic/" class="{% if page.url contains '/mosaic/' %}active{% endif %}">mosaic of thoughts</a>.
+    </span>
   </p>
 </header>
