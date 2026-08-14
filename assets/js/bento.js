@@ -121,7 +121,10 @@
         // Controls are now bundled cleanly inside the container
         const modalHTML = `
             <div class="bento-modal" id="bentoModal" role="dialog" aria-modal="true">
-                <button class="bento-modal-close" id="bentoClose" aria-label="Close">×</button>
+                <button class="bento-modal-close" id="bentoClose" aria-label="Close">
+                    <span class="x-icon">×</span>
+                    <span class="esc-text">ESC</span>
+                </button>
                 <div class="bento-modal-container">
                     <div class="bento-modal-inner" id="bentoModalInner"></div>
                     <div class="bento-modal-controls">
