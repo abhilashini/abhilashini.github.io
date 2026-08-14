@@ -34,7 +34,7 @@
   type: title-text
   title: "Understanding comes before optimisation"
   body: >
-    Some complexity is accidental. Some complexity is earned.
+    Some complexity is *accidental*. Some complexity is __earned__.
     What looks tangled from the outside may be the shape of things being brought together.
     Something that needs simplification may not have been understood yet.
 

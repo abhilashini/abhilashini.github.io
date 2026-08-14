@@ -8,12 +8,13 @@
         const blocks = Array.from(container.querySelectorAll('.heuristic-block'));
         if (blocks.length === 0) return;
 
-        // Inject the DOM element for the Expand Tooltip so we can use FontAwesome cleanly
+        // Inject the DOM element for the Expand Tooltip
         blocks.forEach(block => {
             if (!block.querySelector('.bento-expand-hint')) {
                 const hint = document.createElement('div');
                 hint.className = 'bento-expand-hint';
-                hint.innerHTML = '<i class="fa-solid fa-up-right-and-down-left-from-center"></i><span>Expand</span>';
+                // Swap applied here: Text first, icon second
+                hint.innerHTML = '<span>Expand</span><i class="fa-solid fa-up-right-and-down-left-from-center"></i>';
                 block.appendChild(hint);
             }
         });
