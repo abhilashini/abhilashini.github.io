@@ -1,5 +1,5 @@
 <section class="section cross-domain-heuristics">
-  <div class="heuristics-bento">
+  <div class="heuristics-bento" id="bentoContainer">
 
     {% for item in site.data.mosaic_of_thoughts %}
     <article class="
@@ -12,18 +12,11 @@
             {% else %}layout-1x1
           {% endcase %}
           {% if item.image %}has-image{% else %}text-only{% endif %}
-        ">
+        " data-index="{{ forloop.index0 }}">
 
       {% if item.image %}
       <div class="heuristic-media">
-        <a href="#img-{{ forloop.index }}">
-          <img src="{{ item.image }}" alt="" />
-        </a>
-
-        <div id="img-{{ forloop.index }}" class="image-popup">
-          <a href="#_" class="popup-close">×</a>
-          <img src="{{ item.image }}" class="popup-content" />
-        </div>
+        <img src="{{ item.image }}" alt="" loading="lazy" />
       </div>
       {% endif %}
 
