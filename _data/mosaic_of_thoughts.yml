@@ -13,7 +13,7 @@
   type: image-text
   body: >
     Some ideas are clearer when they are shown.
-    Some are clearer when they are said.
+    Some are clearer when they are said.<br><br>
     The form should follow the idea.
   image: "/assets/images/picture_not_worth_words.jpg"
 
@@ -34,7 +34,7 @@
   type: title-text
   title: "Understanding comes before optimisation"
   body: >
-    Some complexity is *accidental*. Some complexity is __earned__.
+    Some complexity is *accidental*. Some complexity is *earned*.
     What looks tangled from the outside may be the shape of things being brought together.
     Something that needs simplification may not have been understood yet.
 
