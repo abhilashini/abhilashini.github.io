@@ -3,43 +3,23 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('bentoContainer');
-        if (!container) return;
+        const modal = document.getElementById('bentoModal');
+        if (!container || !modal) return;
 
         const blocks = Array.from(container.querySelectorAll('.heuristic-block'));
-        if (blocks.length === 0) return;
+        if (!blocks.length) return;
 
-        // Inject the DOM element for the Expand Tooltip
         blocks.forEach(block => {
             if (!block.querySelector('.bento-expand-hint')) {
-                const hint = document.createElement('div');
-                hint.className = 'bento-expand-hint';
-                // Swap applied here: Text first, icon second
-                hint.innerHTML = '<span>Expand</span><i class="fa-solid fa-up-right-and-down-left-from-center"></i>';
-                block.appendChild(hint);
+                block.insertAdjacentHTML('beforeend', '<div class="bento-expand-hint"><span>Expand</span><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>');
             }
         });
 
-        /* ====================================================================
-           1. DETERMINISTIC MAGAZINE OPTIMIZER & ORPHAN CENTERING
-        ==================================================================== */
-        
-        const getActiveCols = () => {
-            const w = window.innerWidth;
-            if (w <= 500) return 1;
-            if (w <= 800) return 2;
-            if (w <= 1100) return 3;
-            return 4;
-        };
+        const getActiveCols = () => window.innerWidth <= 500 ? 1 : window.innerWidth <= 800 ? 2 : window.innerWidth <= 1100 ? 3 : 4;
+        const getCacheKey = (cols) => `bento_${blocks.length}_c${cols}_` + blocks.map(b => b.className.match(/layout-[1-2]x[1-2]/)?.[0] || '1x1').join('');
 
-        const generateCacheKey = (items, cols) => {
-            // Automatically busts cache if you add/remove/change items in Jekyll
-            const classes = items.map(el => el.className.match(/layout-[0-9]x[0-9]/)?.[0] || '1x1').join('');
-            return `bento_${items.length}_c${cols}_${classes}`; 
-        };
-
-        const applyLayoutOptimizer = () => {
+        const applyLayout = () => {
             const cols = getActiveCols();
-            
             blocks.forEach(b => b.classList.remove('orphan-centered'));
 
             if (cols === 1) {
@@ -47,56 +27,47 @@
                 return;
             }
 
-            const cacheKey = generateCacheKey(blocks, cols);
-            const cachedOrder = sessionStorage.getItem(cacheKey);
+            const key = getCacheKey(cols);
+            const cached = sessionStorage.getItem(key);
             let finalOrder = [];
 
-            if (cachedOrder) {
-                const order = JSON.parse(cachedOrder);
-                order.forEach(index => {
-                    const block = blocks.find(b => b.dataset.index == index);
+            if (cached) {
+                JSON.parse(cached).forEach(idx => {
+                    const block = blocks.find(b => b.dataset.index == idx);
                     if (block) {
                         finalOrder.push(block);
                         container.appendChild(block);
                     }
                 });
             } else {
-                const squares = blocks.filter(b => !b.className.match(/layout-2x2|layout-2x1|layout-1x2/));
-                const wides = blocks.filter(b => b.classList.contains('layout-2x1'));
-                const talls = blocks.filter(b => b.classList.contains('layout-1x2'));
-                const larges = blocks.filter(b => b.classList.contains('layout-2x2'));
+                const sq = blocks.filter(b => !b.className.match(/layout-[1-2]x[1-2]/));
+                const w = blocks.filter(b => b.classList.contains('layout-2x1'));
+                const t = blocks.filter(b => b.classList.contains('layout-1x2'));
+                const l = blocks.filter(b => b.classList.contains('layout-2x2'));
+                let left = true; 
 
-                let alignLeft = true; 
-
-                while (squares.length > 0 || wides.length > 0 || talls.length > 0 || larges.length > 0) {
-                    if (alignLeft) {
-                        if (wides.length > 0) finalOrder.push(wides.shift());
-                        if (talls.length > 0) finalOrder.push(talls.shift());
-                        if (squares.length > 0) finalOrder.push(squares.shift());
-                        if (squares.length > 0) finalOrder.push(squares.shift());
+                while (sq.length || w.length || t.length || l.length) {
+                    if (left) {
+                        if (w.length) finalOrder.push(w.shift());
+                        if (t.length) finalOrder.push(t.shift());
+                        if (sq.length) finalOrder.push(sq.shift());
+                        if (sq.length) finalOrder.push(sq.shift());
                     } else {
-                        if (squares.length > 0) finalOrder.push(squares.shift());
-                        if (squares.length > 0) finalOrder.push(squares.shift());
-                        if (wides.length > 0) finalOrder.push(wides.shift());
-                        if (larges.length > 0) finalOrder.push(larges.shift());
+                        if (sq.length) finalOrder.push(sq.shift());
+                        if (sq.length) finalOrder.push(sq.shift());
+                        if (w.length) finalOrder.push(w.shift());
+                        if (l.length) finalOrder.push(l.shift());
                     }
-                    alignLeft = !alignLeft; 
+                    left = !left; 
                 }
 
                 finalOrder.forEach(b => container.appendChild(b));
-                const indices = finalOrder.map(b => b.dataset.index);
-                sessionStorage.setItem(cacheKey, JSON.stringify(indices));
+                sessionStorage.setItem(key, JSON.stringify(finalOrder.map(b => b.dataset.index)));
             }
 
-            // --- Robust Visual Orphan Detection ---
             requestAnimationFrame(() => {
-                let maxBottom = 0;
-                const rects = finalOrder.map(b => {
-                    const r = b.getBoundingClientRect();
-                    if (r.bottom > maxBottom) maxBottom = r.bottom;
-                    return { block: b, bottom: r.bottom };
-                });
-                
+                const rects = finalOrder.map(b => ({ block: b, bottom: b.getBoundingClientRect().bottom }));
+                const maxBottom = Math.max(...rects.map(r => r.bottom));
                 const bottomBlocks = rects.filter(r => Math.abs(r.bottom - maxBottom) < 10);
                 
                 if (bottomBlocks.length === 1) {
@@ -108,112 +79,77 @@
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(applyLayoutOptimizer, 250);
+            resizeTimer = setTimeout(applyLayout, 250);
         });
         
-        applyLayoutOptimizer();
+        applyLayout();
 
-
-        /* ====================================================================
-           2. DYNAMIC CAROUSEL MODAL (Infinite Loop)
-        ==================================================================== */
-        
-        // Controls are now bundled cleanly inside the container
-        const modalHTML = `
-            <div class="bento-modal" id="bentoModal" role="dialog" aria-modal="true">
-                <button class="bento-modal-close" id="bentoClose" aria-label="Close">
-                    <span class="x-icon">×</span>
-                    <span class="esc-text">ESC</span>
-                </button>
-                <div class="bento-modal-container">
-                    <div class="bento-modal-inner" id="bentoModalInner"></div>
-                    <div class="bento-modal-controls">
-                        <button class="bento-nav-btn prev" id="bentoPrev" aria-label="Previous">
-                            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-                        </button>
-                        <span id="bentoCounter">1 / n</span>
-                        <button class="bento-nav-btn next" id="bentoNext" aria-label="Next">
-                            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-        const modal = document.getElementById('bentoModal');
-        const modalInner = document.getElementById('bentoModalInner');
-        const closeBtn = document.getElementById('bentoClose');
-        const prevBtn = document.getElementById('bentoPrev');
-        const nextBtn = document.getElementById('bentoNext');
+        const inner = document.getElementById('bentoModalInner');
         const counter = document.getElementById('bentoCounter');
+        let activeBlocks = [], currentIndex = 0, touchStartX = 0;
 
-        let currentActiveBlocks = [];
-        let currentVisualIndex = 0;
-
-        const renderModalContent = () => {
-            const block = currentActiveBlocks[currentVisualIndex];
+        const renderModal = () => {
+            const block = activeBlocks[currentIndex];
             if (!block) return;
 
-            modalInner.innerHTML = block.innerHTML;
-            modalInner.className = 'bento-modal-inner';
-            const typeClass = Array.from(block.classList).find(c => c.startsWith('type-'));
-            if (typeClass) modalInner.classList.add(typeClass);
+            inner.innerHTML = block.innerHTML;
+            inner.className = 'bento-modal-inner ' + (Array.from(block.classList).find(c => c.startsWith('type-')) || '');
+            
+            const hint = inner.querySelector('.bento-expand-hint');
+            if (hint) hint.remove();
 
-            // Hide the expand hint inside the modal view
-            const hint = modalInner.querySelector('.bento-expand-hint');
-            if (hint) hint.style.display = 'none';
+            const media = inner.querySelector('.heuristic-media');
+            if (media) media.style.pointerEvents = 'none';
 
-            const clonedMedia = modalInner.querySelector('.heuristic-media');
-            if (clonedMedia) clonedMedia.style.pointerEvents = 'none';
-
-            counter.textContent = `${currentVisualIndex + 1} / ${currentActiveBlocks.length}`;
+            counter.textContent = `${currentIndex + 1} / ${activeBlocks.length}`;
         };
 
-        const openModal = (block) => {
-            currentActiveBlocks = Array.from(container.querySelectorAll('.heuristic-block'));
-            currentVisualIndex = currentActiveBlocks.indexOf(block);
-            renderModalContent();
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
+        const toggleModal = (show, block = null) => {
+            if (show && block) {
+                activeBlocks = Array.from(container.querySelectorAll('.heuristic-block'));
+                currentIndex = activeBlocks.indexOf(block);
+                renderModal();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            } else {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         };
 
-        const closeModal = () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+        const navigate = (dir) => {
+            currentIndex = (currentIndex + dir + activeBlocks.length) % activeBlocks.length;
+            renderModal();
         };
 
-        container.addEventListener('click', (e) => {
+        container.addEventListener('click', e => {
             const block = e.target.closest('.heuristic-block');
-            if (block) openModal(block);
+            if (block) toggleModal(true, block);
         });
 
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal || e.target.classList.contains('bento-modal-container')) closeModal();
+        document.getElementById('bentoClose').addEventListener('click', () => toggleModal(false));
+        
+        modal.addEventListener('click', e => {
+            if (e.target === modal || e.target.classList.contains('bento-modal-container')) toggleModal(false);
         });
 
-        prevBtn.addEventListener('click', () => {
-            currentVisualIndex = (currentVisualIndex - 1 + currentActiveBlocks.length) % currentActiveBlocks.length;
-            renderModalContent();
-        });
+        document.getElementById('bentoPrev').addEventListener('click', () => navigate(-1));
+        document.getElementById('bentoNext').addEventListener('click', () => navigate(1));
 
-        nextBtn.addEventListener('click', () => {
-            currentVisualIndex = (currentVisualIndex + 1) % currentActiveBlocks.length;
-            renderModalContent();
-        });
-
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', e => {
             if (!modal.classList.contains('active')) return;
-            if (e.key === 'Escape') closeModal();
-            if (e.key === 'ArrowLeft') {
-                currentVisualIndex = (currentVisualIndex - 1 + currentActiveBlocks.length) % currentActiveBlocks.length;
-                renderModalContent();
-            }
-            if (e.key === 'ArrowRight') {
-                currentVisualIndex = (currentVisualIndex + 1) % currentActiveBlocks.length;
-                renderModalContent();
-            }
+            if (e.key === 'Escape') toggleModal(false);
+            if (e.key === 'ArrowLeft') navigate(-1);
+            if (e.key === 'ArrowRight') navigate(1);
         });
+
+        modal.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modal.addEventListener('touchend', e => {
+            const diff = e.changedTouches[0].screenX - touchStartX;
+            if (Math.abs(diff) > 50) navigate(diff > 0 ? -1 : 1);
+        }, { passive: true });
     });
 })();
